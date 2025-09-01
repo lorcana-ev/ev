@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lorcana EV Calculator</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Lorcana EV Calculator</h1>
+    <div class="controls">
+      <label>
+        Set
+        <select id="setSelection">
+          <option value="001">The First Chapter</option>
+          <!-- Options will be populated dynamically -->
+        </select>
+      </label>
+      <label>
+        Price Type
+        <select id="priceType">
+          <option value="market">Market</option>
+          <option value="median">Median</option>
+          <option value="low">Low</option>
+        </select>
+      </label>
+      <label>
+        Scenario
+        <select id="scenario">
+          <option value="base">Base</option>
+          <option value="conservative">Conservative</option>
+          <option value="optimistic">Optimistic</option>
+          <option value="custom">Custom</option>
+        </select>
+      </label>
+      <button id="reset">Reset</button>
+    </div>
+  </header>
+
+  <div id="loadingStatus" class="loading">
+    Loading card and price data...
+  </div>
+
+  <main id="mainContent" style="display: none;">
+    <section class="ev-cards">
+      <div class="card">
+        <h2>Pack EV</h2>
+        <div id="evPack" class="big-num">$–</div>
+        <div id="packBreakdown" class="mini"></div>
+      </div>
+      <div class="card">
+        <h2>Box EV (24)</h2>
+        <div id="evBox" class="big-num">$–</div>
+        <div id="boxOdds" class="mini"></div>
+      </div>
+      <div class="card">
+        <h2>Case EV (96)</h2>
+        <div id="evCase" class="big-num">$–</div>
+        <div id="caseOdds" class="mini"></div>
+      </div>
+    </section>
+
+    <section class="analysis-section">
+      <div class="analysis-tabs">
+        <button class="tab-button active" data-tab="summary">Price Summary</button>
+        <button class="tab-button" data-tab="setviewer">Set Viewer</button>
+      </div>
+
+      <div class="tab-content active" id="summary-tab">
+        <div class="charts">
+          <div class="card">
+            <h3>Rarity Price Summary</h3>
+            <div class="table-container">
+              <table id="rarityTable">
+                <thead>
+                  <tr>
+                    <th>Rarity</th>
+                    <th>Finish</th>
+                    <th>Count</th>
+                    <th>Mean</th>
+                    <th>Median</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Hit Odds</h3>
+            <ul id="hitList">
+              <!-- populated with odds for Enchanted, Foil Legendary, etc. -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="setviewer-tab">
+        <div class="set-viewer-controls">
+          <div class="viewer-filters">
+            <label>
+              Filter by Rarity
+              <select id="rarityFilter">
+                <option value="">All Rarities</option>
+              </select>
+            </label>
+            <label>
+              Sort by
+              <select id="sortBy">
+                <option value="number">Card Number</option>
+                <option value="name">Name</option>
+                <option value="rarity">Rarity</option>
+                <option value="cost">Ink Cost</option>
+                <option value="price">Price (Base)</option>
+              </select>
+            </label>
+            <label>
+              View
+              <select id="viewMode">
+                <option value="grid">Grid View</option>
+                <option value="table">Table View</option>
+              </select>
+            </label>
+          </div>
+          <div class="viewer-stats" id="setStats">
+            <!-- Set statistics will be populated here -->
+          </div>
+        </div>
+
+        <div class="set-viewer-content">
+          <div id="cardGrid" class="card-grid">
+            <!-- Cards will be populated here -->
+          </div>
+          <div id="cardTable" class="card-table-view" style="display: none;">
+            <table class="card-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Cost</th>
+                  <th>Type</th>
+                  <th>Rarity</th>
+                  <th>Base Price</th>
+                  <th>Foil Price</th>
+                </tr>
+              </thead>
+              <tbody id="cardTableBody">
+                <!-- Table rows will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fineprint">
+      <p>
+        Assumptions: 12-card pack (1 foil any rarity, 2 rare-or-higher, 3 uncommons, 6 commons). 
+        Box = 24 packs. Case = 4 boxes (96 packs).
+        Odds are community-based estimates; adjust via Scenario.
+      </p>
+      <p>
+        Data sourced from <a href="https://dreamborn.ink" target="_blank">dreamborn.ink</a>.
+        Prices from TCGPlayer. This tool is for educational purposes only.
+      </p>
+    </section>
+  </main>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

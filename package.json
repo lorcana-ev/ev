@@ -1,0 +1,22 @@
+{
+  "name": "lorcana-ev",
+  "version": "1.0.0",
+  "description": "Expected Value calculator for Disney Lorcana trading card packs",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "serve": "node scripts/serve.js",
+    "verify": "node scripts/verify-data.js",
+    "verify-ruby": "ruby scripts/verify-data.rb",
+    "test": "node scripts/test-app.js",
+    "test-sets": "node scripts/test-sets.js",
+    "test-no-pricing": "node scripts/test-no-pricing.js",
+    "test-setviewer": "node scripts/test-setviewer.js"
+  },
+  "keywords": ["lorcana", "tcg", "trading-cards", "expected-value", "ev"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

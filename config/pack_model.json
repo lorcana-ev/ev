@@ -1,0 +1,58 @@
+{
+  "cards_per_pack": 12,
+  "packs_per_box": 24,
+  "boxes_per_case": 4,
+  "slots": { 
+    "rare_or_higher_slots": 2, 
+    "foil_slots": 1, 
+    "commons": 6, 
+    "uncommons": 3 
+  },
+
+  "rare_slot_odds": { 
+    "rare": 0.73, 
+    "super rare": 0.19, 
+    "legendary": 0.08 
+  },
+
+  "foil_odds": {
+    "common": 0.70,
+    "uncommon": 0.20,
+    "rare": 0.07,
+    "super rare": 0.02,
+    "legendary": 0.001,
+    "enchanted": 0.009
+  },
+
+  "scenarios": {
+    "conservative": {
+      "rare_slot_odds": { 
+        "rare": 0.76, 
+        "super rare": 0.17, 
+        "legendary": 0.07 
+      },
+      "foil_enchanted_per_pack": 0.010
+    },
+    "base": {
+      "rare_slot_odds": { 
+        "rare": 0.73, 
+        "super rare": 0.19, 
+        "legendary": 0.08 
+      },
+      "foil_enchanted_per_pack": 0.0125
+    },
+    "optimistic": {
+      "rare_slot_odds": { 
+        "rare": 0.70, 
+        "super rare": 0.20, 
+        "legendary": 0.10 
+      },
+      "foil_enchanted_per_pack": 0.014
+    }
+  },
+
+  "bulk_floor": { 
+    "common": 0.00, 
+    "uncommon": 0.00 
+  }
+}
