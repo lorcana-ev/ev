@@ -208,15 +208,11 @@ export class SetViewer {
     const cardsHtml = this.filteredCards.map(card => {
       const basePrice = this.getCardPrice(card, 'base');
       const foilPrice = this.getCardPrice(card, 'foil');
-      const imageUrl = this.getCardImageUrl(card);
 
       return `
         <div class="card-item" data-card-id="${card.id}">
           <div class="card-image">
-            ${imageUrl ? 
-              `<img src="${imageUrl}" alt="${card.name}" onerror="this.parentElement.innerHTML='No Image'">` :
-              'No Image'
-            }
+            ${this.getCardImageHtml(card, '')}
           </div>
           <div class="card-info">
             <div class="card-name">${card.name || 'Unknown'}</div>
@@ -259,16 +255,12 @@ export class SetViewer {
     const rowsHtml = this.filteredCards.map(card => {
       const basePrice = this.getCardPrice(card, 'base');
       const foilPrice = this.getCardPrice(card, 'foil');
-      const imageUrl = this.getCardImageUrl(card);
       const rarityClass = (card.rarity || '').toLowerCase().replace(/\s+/g, '-');
 
       return `
         <tr data-card-id="${card.id}">
           <td>
-            ${imageUrl ? 
-              `<img class="card-table-image" src="${imageUrl}" alt="${card.name}" onerror="this.alt='No Image'; this.src=''">` :
-              '<div class="card-table-image">No Image</div>'
-            }
+            ${this.getCardImageHtml(card, 'card-table-image')}
           </td>
           <td class="card-table-name">
             <div class="name">${card.name || 'Unknown'}</div>
@@ -294,11 +286,22 @@ export class SetViewer {
   }
 
   getCardImageUrl(card) {
-    if (!card.path) return null;
+    if (!card.id) return null;
     
-    // Construct dreamborn.ink image URL
-    // The path is usually like "/cards/ariel/on-human-legs"
-    return `https://dreamborn.ink${card.path}.webp`;
+    // Use the correct CDN format: https://cdn.dreamborn.ink/images/en/cards/{card-id}
+    return `https://cdn.dreamborn.ink/images/en/cards/${card.id}`;
+  }
+
+  // Generate image HTML with fallback handling
+  getCardImageHtml(card, className = 'card-table-image') {
+    const imageUrl = this.getCardImageUrl(card);
+    
+    if (!imageUrl) {
+      return `<div class="${className}" style="display: flex; align-items: center; justify-content: center; background: var(--bg-primary); color: var(--text-tertiary); font-size: 12px;">No Image</div>`;
+    }
+    
+    // Use a much simpler onerror handler
+    return `<img class="${className}" src="${imageUrl}" alt="${card.name}" onerror="this.style.display='none'; this.nextSibling.style.display='flex';"><div class="${className}" style="display: none; align-items: center; justify-content: center; background: var(--bg-primary); color: var(--text-tertiary); font-size: 12px;">No Image</div>`;
   }
 }
 

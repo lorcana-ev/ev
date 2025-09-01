@@ -7,7 +7,6 @@ import { setViewer } from './lib/setviewer.js';
 
 const els = {
   setSelection: document.getElementById('setSelection'),
-  priceType: document.getElementById('priceType'),
   scenario: document.getElementById('scenario'),
   reset: document.getElementById('reset'),
   evPack: document.getElementById('evPack'),
@@ -18,6 +17,8 @@ const els = {
   caseOdds: document.getElementById('caseOdds'),
   rarityTableBody: document.querySelector('#rarityTable tbody'),
   hitList: document.getElementById('hitList'),
+  currentScenario: document.getElementById('currentScenario'),
+  currentScenarioOdds: document.getElementById('currentScenarioOdds'),
   loadingStatus: document.getElementById('loadingStatus'),
   mainContent: document.getElementById('mainContent'),
 };
@@ -59,6 +60,15 @@ async function init() {
     setViewer.initialize(cards, state.priceIndex);
     setViewer.setCurrentSet(state.selectedSet);
     
+    // Initialize current scenario display
+    const initialScenario = els.scenario?.value || 'base';
+    if (els.currentScenario) {
+      els.currentScenario.textContent = initialScenario;
+    }
+    
+    // Initialize scenario odds display
+    updateScenarioOdds(initialScenario);
+    
     renderAll();
     
     hideLoading();
@@ -97,8 +107,11 @@ function setupSetSelection() {
   for (const set of state.availableSets) {
     const option = document.createElement('option');
     option.value = set.code;
-    option.textContent = `${set.name} (${set.count} cards)`;
-    if (set.isSpecial) option.textContent += ' ⭐';
+    
+    // Format: "Set Name (count cards, Set #)"
+    const setNumber = parseInt(set.code) || set.code;
+    option.textContent = `${set.name} (${set.count} cards, Set ${setNumber})`;
+    
     els.setSelection.appendChild(option);
   }
   
@@ -116,12 +129,6 @@ function wireUI() {
     });
   }
   
-  if (els.priceType) {
-    els.priceType.addEventListener('change', () => { 
-      recomputeSummaries(); 
-      renderAll(); 
-    });
-  }
   
   if (els.scenario) {
     els.scenario.addEventListener('change', () => { 
@@ -143,14 +150,50 @@ function wireUI() {
 }
 
 function recomputeSummaries() {
-  const priceType = els.priceType?.value || 'market';
+  const priceType = 'market';
   state.summaries = buildRaritySummaries(state.printings, state.priceIndex, priceType, state.selectedSet);
 }
 
 function applyScenarioAndRender() {
   const s = els.scenario?.value || 'base';
   state.workingConfig = applyScenario(state.baseConfig, s);
+  
+  // Update current scenario display
+  if (els.currentScenario) {
+    els.currentScenario.textContent = s;
+  }
+  
+  // Update scenario odds display
+  updateScenarioOdds(s);
+  
   renderAll();
+}
+
+function updateScenarioOdds(scenarioName) {
+  if (!els.currentScenarioOdds || !state.baseConfig) return;
+  
+  const cfg = applyScenario(state.baseConfig, scenarioName);
+  const rareSlotOdds = cfg.rare_slot_odds || state.baseConfig.rare_slot_odds;
+  const foilOdds = cfg.foil_odds || state.baseConfig.foil_odds;
+  const enchantedPerPack = cfg.foil_enchanted_per_pack || state.baseConfig.scenarios?.[scenarioName]?.foil_enchanted_per_pack || 0.0125;
+  
+  const rareSlotHtml = Object.entries(rareSlotOdds)
+    .map(([rarity, odds]) => `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${(odds * 100).toFixed(0)}%`)
+    .join(' | ');
+  
+  const foilSlotHtml = Object.entries(foilOdds)
+    .map(([rarity, odds]) => `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${(odds * 100).toFixed(1)}%`)
+    .join(' | ');
+  
+  els.currentScenarioOdds.innerHTML = `
+    <strong>Rare+ Slot Odds:</strong><br>
+    ${rareSlotHtml}<br><br>
+    
+    <strong>Foil Slot Odds:</strong><br>
+    ${foilSlotHtml}<br><br>
+    
+    <strong>Enchanted Rate:</strong> ${(enchantedPerPack * 100).toFixed(2)}% per pack
+  `;
 }
 
 function renderAll() {
@@ -159,7 +202,7 @@ function renderAll() {
   }
   
   const cfg = state.workingConfig;
-  const priceType = els.priceType?.value || 'market';
+  const priceType = 'market';
 
   // Check if we have any pricing data for this set
   const hasPricingData = Object.keys(state.summaries).length > 0;

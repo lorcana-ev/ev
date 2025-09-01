@@ -113,7 +113,7 @@ async function testSetViewer() {
       if (sampleCard) {
         const imageUrl = viewer.getCardImageUrl(sampleCard);
         console.log(`  • Sample image URL: ${imageUrl || 'None'}`);
-        console.log(`  • Sample card path: ${sampleCard.path || 'None'}`);
+        console.log(`  • Sample card ID: ${sampleCard.id || 'None'}`);
       }
       
       // Test sorting
@@ -137,13 +137,13 @@ async function testSetViewer() {
     }
     
     // Test image URL construction
-    const cardWithPath = cardArray.find(card => card.path);
-    if (cardWithPath) {
-      const imageUrl = viewer.getCardImageUrl(cardWithPath);
+    const cardWithId = cardArray.find(card => card.id);
+    if (cardWithId) {
+      const imageUrl = viewer.getCardImageUrl(cardWithId);
       console.log(`  • Image URL construction:`);
-      console.log(`    Card path: ${cardWithPath.path}`);
+      console.log(`    Card ID: ${cardWithId.id}`);
       console.log(`    Generated URL: ${imageUrl}`);
-      console.log(`    URL valid format: ${imageUrl?.startsWith('https://dreamborn.ink') ? '✅' : '❌'}`);
+      console.log(`    URL valid format: ${imageUrl?.startsWith('https://cdn.dreamborn.ink') ? '✅' : '❌'}`);
     }
     
     console.log('\n✨ Testing edge cases...');

@@ -18,20 +18,11 @@
         </select>
       </label>
       <label>
-        Price Type
-        <select id="priceType">
-          <option value="market">Market</option>
-          <option value="median">Median</option>
-          <option value="low">Low</option>
-        </select>
-      </label>
-      <label>
-        Scenario
+        <span>Scenario <span class="scenario-help" title="Base: Standard pull rates &#10;Conservative: Lower hit rates &#10;Optimistic: Higher hit rates">?</span></span>
         <select id="scenario">
           <option value="base">Base</option>
           <option value="conservative">Conservative</option>
           <option value="optimistic">Optimistic</option>
-          <option value="custom">Custom</option>
         </select>
       </label>
       <button id="reset">Reset</button>
@@ -88,7 +79,19 @@
           </div>
 
           <div class="card">
-            <h3>Hit Odds</h3>
+            <h3>Hit Odds & Scenarios</h3>
+            <div class="scenario-info">
+              <p><strong>Current Scenario:</strong> <span id="currentScenario">Base</span></p>
+              <div class="scenario-details">
+                <div class="scenario-explanation">
+                  <strong>Pack Structure:</strong> 12 cards (2 rare+ slots, 1 foil slot, 6 commons, 3 uncommons)<br><br>
+                  
+                  <div id="currentScenarioOdds">
+                    <!-- Will be populated dynamically -->
+                  </div>
+                </div>
+              </div>
+            </div>
             <ul id="hitList">
               <!-- populated with odds for Enchanted, Foil Legendary, etc. -->
             </ul>

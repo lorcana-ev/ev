@@ -8,9 +8,9 @@ export const SET_NAMES = {
   '004': 'Ursula\'s Return',
   '005': 'Shimmering Skies',
   '006': 'Azurite Sea',
-  '007': 'Set 7', 
-  '008': 'Set 8', 
-  '009': 'Set 9 (No Pricing)', // Indicate no pricing available
+  '007': 'Archazia\'s Island', 
+  '008': 'Reign of Jafar', 
+  '009': 'Fabled', 
   'C1': 'Convention Exclusives',
   'D23': 'D23 Expo Exclusives',
   'P1': 'Promos Series 1',
@@ -44,19 +44,15 @@ export function getAllSets(cards) {
     setDistribution.get(setId).count++;
   }
   
-  // Sort sets by release order, with special sets at the end
-  const sortedSets = Array.from(setDistribution.values()).sort((a, b) => {
-    if (a.isSpecial && !b.isSpecial) return 1;
-    if (!a.isSpecial && b.isSpecial) return -1;
-    
-    if (!a.isSpecial && !b.isSpecial) {
+  // Filter out special sets (promos and exclusives) and sort by release order
+  const filteredSets = Array.from(setDistribution.values())
+    .filter(set => !set.isSpecial)
+    .sort((a, b) => {
       const aIndex = SET_RELEASE_ORDER.indexOf(a.code);
       const bIndex = SET_RELEASE_ORDER.indexOf(b.code);
       if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
-    }
-    
-    return a.code.localeCompare(b.code);
-  });
+      return a.code.localeCompare(b.code);
+    });
   
-  return sortedSets;
+  return filteredSets;
 }
