@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "created_at": "2025-09-01T23:24:59.575Z",
+    "manual_entries": 6,
+    "product_ids_available": 18,
+    "next_update_strategy": "use_product_ids_for_api_calls"
+  },
+  "manual_data": {
+    "009-001": {
+      "base": {
+        "TP": {
+          "price": 8.4,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F650141",
+          "productId": 650141
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 19.42,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F650141",
+          "productId": 650141
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    },
+    "009-004": {
+      "base": {
+        "TP": {
+          "price": 4.59,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651122",
+          "productId": 651122
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 13.33,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651122",
+          "productId": 651122
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    },
+    "009-224": {
+      "base": {
+        "TP": {
+          "price": 0.93,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651122",
+          "productId": 651122
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 14.61,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651122",
+          "productId": 651122
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    },
+    "009-233": {
+      "base": {
+        "TP": {
+          "price": 5.26,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F649231",
+          "productId": 649231
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 6.7,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F649231",
+          "productId": 649231
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    },
+    "009-228": {
+      "base": {
+        "TP": {
+          "price": 8.36,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651119",
+          "productId": 651119
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 13.06,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F651119",
+          "productId": 651119
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    },
+    "009-238": {
+      "base": {
+        "TP": {
+          "price": 6.24,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F649236",
+          "productId": 649236
+        }
+      },
+      "foil": {
+        "TP": {
+          "price": 7.84,
+          "link": "https://partner.tcgplayer.com/c/4892540/1830156/21018/?u=https%3A%2F%2Ftcgplayer.com%2Fproduct%2F649236",
+          "productId": 649236
+        }
+      },
+      "source": "manual_tcgplayer",
+      "added_at": "2025-09-01T00:00:00.000Z"
+    }
+  },
+  "product_ids": {
+    "009-111": {
+      "cardId": "009-111",
+      "tcgplayerId": "647663",
+      "cardName": "Mickey Mouse - Brave Little Prince (Iconic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-005": {
+      "cardId": "009-005",
+      "tcgplayerId": "651106",
+      "cardName": "Minnie Mouse - Sweetheart Princess (Iconic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-045": {
+      "cardId": "009-045",
+      "tcgplayerId": "651119",
+      "cardName": "Dumbo - Ninth Wonder of the Universe (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-040": {
+      "cardId": "009-040",
+      "tcgplayerId": "651121",
+      "cardName": "Belle - Accomplished Mystic (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-174": {
+      "cardId": "009-174",
+      "tcgplayerId": "649236",
+      "cardName": "Lilo - Best Explorer Ever (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-151": {
+      "cardId": "009-151",
+      "tcgplayerId": "651117",
+      "cardName": "Hades - Infernal Schemer (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-041": {
+      "cardId": "009-041",
+      "tcgplayerId": "651107",
+      "cardName": "Winnie the Pooh - Hunny Wizard (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-026": {
+      "cardId": "009-026",
+      "tcgplayerId": "649230",
+      "cardName": "Circle of Life (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-175": {
+      "cardId": "009-175",
+      "tcgplayerId": "651108",
+      "cardName": "Scar - Finally King (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-004": {
+      "cardId": "009-004",
+      "tcgplayerId": "651122",
+      "cardName": "Beast - Gracious Prince (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-110": {
+      "cardId": "009-110",
+      "tcgplayerId": "649231",
+      "cardName": "Powerline - World's Greatest Rock Star (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-077": {
+      "cardId": "009-077",
+      "tcgplayerId": "651113",
+      "cardName": "Max Goof - Chart Topper (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-107": {
+      "cardId": "009-107",
+      "tcgplayerId": "651123",
+      "cardName": "Ariel - Adventurous Collector (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-178": {
+      "cardId": "009-178",
+      "tcgplayerId": "651114",
+      "cardName": "Jasmine - Fearless Princess (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-130": {
+      "cardId": "009-130",
+      "tcgplayerId": "651116",
+      "cardName": "I2I (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-080": {
+      "cardId": "009-080",
+      "tcgplayerId": "651112",
+      "cardName": "Mickey Mouse - Steamboat Pilot (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-002": {
+      "cardId": "009-002",
+      "tcgplayerId": "651110",
+      "cardName": "Pongo - Determined Father (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-143": {
+      "cardId": "009-143",
+      "tcgplayerId": "651120",
+      "cardName": "Cruella De Vil - Style Icon (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "pricing": null,
+      "last_updated": null
+    }
+  },
+  "api_data": {}
+}

@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "extracted_at": "2025-09-01T23:25:50.569Z",
+    "source": "justtcg_api",
+    "total_products": 2,
+    "last_updated": "2025-09-01T23:26:49.816Z",
+    "ev_methodology": "rarity_weighted_realistic"
+  },
+  "products": {
+    "disney_lorcana__fabled_booster_box_case": {
+      "name": "Disney Lorcana: Fabled Booster Box Case",
+      "set": "Fabled",
+      "tcgplayerId": "645300",
+      "product_type": "case",
+      "variants": {
+        "Sealed_Normal": {
+          "condition": "Sealed",
+          "printing": "Normal",
+          "price": 613.44,
+          "priceChange7d": 9.06,
+          "priceChange30d": 8.25,
+          "lastUpdated": "2025-09-01T21:07:42.000Z"
+        }
+      },
+      "best_price": {
+        "price": 613.44,
+        "condition": "Sealed",
+        "printing": "Normal"
+      },
+      "fetched_at": "2025-09-01T23:17:12.374Z",
+      "estimated_value": {
+        "ev": 413308.83,
+        "calculation_method": "simple_average",
+        "based_on_cards": 23,
+        "pack_ev": 2870.2,
+        "calculated_at": "2025-09-01T23:25:50.593Z",
+        "value_ratio": 673.76,
+        "value_assessment": "good_value"
+      },
+      "realistic_estimated_value": {
+        "ev": 211794,
+        "pack_ev": 1470.79,
+        "methodology": "rarity_weighted_trimmed_mean",
+        "calculated_at": "2025-09-01T23:26:49.815Z",
+        "breakdown": {
+          "common": {
+            "base_avg_price": 180.97,
+            "foil_avg_price": 180.97,
+            "base_slot_contribution": 90.49,
+            "foil_slot_contribution": 108.58,
+            "total_ev_contribution": 289.55,
+            "card_count": 2
+          },
+          "uncommon": {
+            "base_avg_price": 0,
+            "foil_avg_price": 0,
+            "base_slot_contribution": 0,
+            "foil_slot_contribution": 0,
+            "total_ev_contribution": 0,
+            "card_count": 0
+          },
+          "rare": {
+            "base_avg_price": 95.7775,
+            "foil_avg_price": 99.625,
+            "base_slot_contribution": 14.37,
+            "foil_slot_contribution": 9.96,
+            "total_ev_contribution": 38.7,
+            "card_count": 4
+          },
+          "super_rare": {
+            "base_avg_price": 323.14166666666665,
+            "foil_avg_price": 323.14166666666665,
+            "base_slot_contribution": 12.93,
+            "foil_slot_contribution": 9.69,
+            "total_ev_contribution": 35.55,
+            "card_count": 6
+          },
+          "legendary": {
+            "base_avg_price": 327.58142857142855,
+            "foil_avg_price": 327.58142857142855,
+            "base_slot_contribution": 2.62,
+            "foil_slot_contribution": 4.91,
+            "total_ev_contribution": 10.16,
+            "card_count": 7
+          },
+          "enchanted": {
+            "base_avg_price": 5.1975,
+            "foil_avg_price": 10.552500000000002,
+            "base_slot_contribution": 0.01,
+            "foil_slot_contribution": 10.55,
+            "total_ev_contribution": 10.57,
+            "card_count": 4
+          }
+        },
+        "value_ratio": 345.26,
+        "value_assessment": "excellent_value"
+      }
+    },
+    "disney_lorcana__fabled_booster_box": {
+      "name": "Disney Lorcana: Fabled Booster Box",
+      "set": "Fabled",
+      "tcgplayerId": "645298",
+      "product_type": "booster_box",
+      "variants": {
+        "Sealed_Normal": {
+          "condition": "Sealed",
+          "printing": "Normal",
+          "price": 134.38,
+          "priceChange7d": -12.12,
+          "priceChange30d": -1.63,
+          "lastUpdated": "2025-09-01T21:07:42.000Z"
+        }
+      },
+      "best_price": {
+        "price": 134.38,
+        "condition": "Sealed",
+        "printing": "Normal"
+      },
+      "fetched_at": "2025-09-01T23:17:12.374Z",
+      "estimated_value": {
+        "ev": 68884.8,
+        "calculation_method": "simple_average",
+        "based_on_cards": 23,
+        "pack_ev": 2870.2,
+        "calculated_at": "2025-09-01T23:25:50.593Z",
+        "value_ratio": 512.61,
+        "value_assessment": "good_value"
+      },
+      "realistic_estimated_value": {
+        "ev": 35299,
+        "pack_ev": 1470.79,
+        "methodology": "rarity_weighted_trimmed_mean",
+        "calculated_at": "2025-09-01T23:26:49.815Z",
+        "breakdown": {
+          "common": {
+            "base_avg_price": 180.97,
+            "foil_avg_price": 180.97,
+            "base_slot_contribution": 90.49,
+            "foil_slot_contribution": 108.58,
+            "total_ev_contribution": 289.55,
+            "card_count": 2
+          },
+          "uncommon": {
+            "base_avg_price": 0,
+            "foil_avg_price": 0,
+            "base_slot_contribution": 0,
+            "foil_slot_contribution": 0,
+            "total_ev_contribution": 0,
+            "card_count": 0
+          },
+          "rare": {
+            "base_avg_price": 95.7775,
+            "foil_avg_price": 99.625,
+            "base_slot_contribution": 14.37,
+            "foil_slot_contribution": 9.96,
+            "total_ev_contribution": 38.7,
+            "card_count": 4
+          },
+          "super_rare": {
+            "base_avg_price": 323.14166666666665,
+            "foil_avg_price": 323.14166666666665,
+            "base_slot_contribution": 12.93,
+            "foil_slot_contribution": 9.69,
+            "total_ev_contribution": 35.55,
+            "card_count": 6
+          },
+          "legendary": {
+            "base_avg_price": 327.58142857142855,
+            "foil_avg_price": 327.58142857142855,
+            "base_slot_contribution": 2.62,
+            "foil_slot_contribution": 4.91,
+            "total_ev_contribution": 10.16,
+            "card_count": 7
+          },
+          "enchanted": {
+            "base_avg_price": 5.1975,
+            "foil_avg_price": 10.552500000000002,
+            "base_slot_contribution": 0.01,
+            "foil_slot_contribution": 10.55,
+            "total_ev_contribution": 10.57,
+            "card_count": 4
+          }
+        },
+        "value_ratio": 262.68,
+        "value_assessment": "excellent_value"
+      }
+    }
+  }
+}
