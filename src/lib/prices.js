@@ -34,12 +34,26 @@ export function indexPrices(pricesBlob) {
       
       // Handle foil variant
       if (cardData.foil?.TP?.price !== undefined) {
-        idx.set(`${cardId}-foil`, {
+        const foilPriceData = {
           market: num(cardData.foil.TP.price),
           low: num(cardData.foil.TP.price),
           median: num(cardData.foil.TP.price),
           ts: null
-        });
+        };
+        
+        idx.set(`${cardId}-foil`, foilPriceData);
+        
+        // Check if this might be an enchanted card (only has foil pricing, high price, and card number > 204 for Set 1)
+        const cardNumber = parseInt(cardId.split('-')[1] || '0');
+        const hasOnlyFoil = !cardData.base;
+        const isHighValue = foilPriceData.market > 20; // Enchanted cards are typically expensive
+        const isPotentiallyEnchanted = hasOnlyFoil && isHighValue && cardNumber > 204;
+        
+        // Also create enchanted variant pricing for potential enchanted cards
+        if (isPotentiallyEnchanted) {
+          idx.set(`${cardId}-foil-enchanted`, foilPriceData);
+          idx.set(`${cardId}-special-enchanted`, foilPriceData);
+        }
       }
     }
   }
