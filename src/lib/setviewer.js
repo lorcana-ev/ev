@@ -26,6 +26,10 @@ export class SetViewer {
   
   setPricingPriority(priority) {
     this.currentPricingPriority = priority;
+    // Re-render if we have cards to show the updated pricing
+    if (this.filteredCards.length > 0) {
+      this.updateCards();
+    }
   }
 
   setupEventListeners() {
