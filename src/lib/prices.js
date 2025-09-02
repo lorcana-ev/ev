@@ -109,41 +109,62 @@ export class MultiSourcePricing {
   
   indexJustTcgPricing(justTcgData) {
     const idx = new Map();
-    if (!justTcgData?.cards) return idx;
+    if (!justTcgData?.batches) return idx;
     
-    for (const [cardId, card] of Object.entries(justTcgData.cards)) {
-      if (!card?.variants) continue;
+    // Process all batch data
+    for (const [batchKey, batch] of Object.entries(justTcgData.batches)) {
+      if (!batch?.raw_cards || !Array.isArray(batch.raw_cards)) continue;
       
-      // Index base variants
-      const baseVariants = Object.values(card.variants).filter(v => 
-        v.condition === 'Near Mint' && 
-        (!v.printing || v.printing === 'Regular' || v.printing === 'Normal')
-      );
+      for (const card of batch.raw_cards) {
+        if (!card?.variants || !Array.isArray(card.variants)) continue;
+        
+        // Extract card ID from the card data
+        let cardId = null;
+        
+        // Try to extract from card number and set
+        if (card.set === 'Fabled' && card.number) {
+          // Convert card number like "242/204" to "009-242"
+          const cardNum = card.number.split('/')[0];
+          cardId = `009-${cardNum.padStart(3, '0')}`;
+        } else if (card.id && card.set) {
+          // Extract from other patterns if needed
+          console.log('Unknown card ID pattern:', card.id, card.set);
+          continue;
+        }
+        
+        if (!cardId) continue;
       
-      if (baseVariants.length > 0) {
-        const price = parseFloat(baseVariants[0].price);
-        idx.set(`${cardId}-base`, {
-          market: price,
-          low: price,
-          median: price,
-          ts: baseVariants[0].lastUpdated
-        });
-      }
+        // Index base variants
+        const baseVariants = card.variants.filter(v => 
+          v.condition === 'Near Mint' && 
+          (!v.printing || v.printing === 'Regular' || v.printing === 'Normal')
+        );
+        
+        if (baseVariants.length > 0) {
+          const price = parseFloat(baseVariants[0].price);
+          idx.set(`${cardId}-base`, {
+            market: price,
+            low: price,
+            median: price,
+            ts: baseVariants[0].lastUpdated
+          });
+        }
+        
+        // Index foil variants
+        const foilVariants = card.variants.filter(v => 
+          v.condition === 'Near Mint' && 
+          (v.printing === 'Holofoil' || v.printing === 'Cold Foil')
+        );
       
-      // Index foil variants
-      const foilVariants = Object.values(card.variants).filter(v => 
-        v.condition === 'Near Mint' && 
-        (v.printing === 'Holofoil' || v.printing === 'Cold Foil')
-      );
-      
-      if (foilVariants.length > 0) {
-        const price = parseFloat(foilVariants[0].price);
-        idx.set(`${cardId}-foil`, {
-          market: price,
-          low: price,
-          median: price,
-          ts: foilVariants[0].lastUpdated
-        });
+        if (foilVariants.length > 0) {
+          const price = parseFloat(foilVariants[0].price);
+          idx.set(`${cardId}-foil`, {
+            market: price,
+            low: price,
+            median: price,
+            ts: foilVariants[0].lastUpdated
+          });
+        }
       }
     }
     

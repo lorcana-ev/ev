@@ -58,7 +58,7 @@ export function buildPrintings(cardsBlob) {
       const rarity = mapRarity(v.rarity || baseRarity);
       const is_enchanted = rarity === 'enchanted';
       const card_id = c.id || `${set_code}-${number}`;
-      const printing_id = `${card_id}-${finish}${is_enchanted ? '-enchanted' : ''}`;
+      const printing_id = `${card_id}-${finish}`;  // Don't add -enchanted suffix, pricing uses standard format
 
       out.push({
         printing_id, 
