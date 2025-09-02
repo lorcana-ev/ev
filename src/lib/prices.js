@@ -5,7 +5,47 @@ import { median, mean, trimOutliers } from './util.js';
 export function indexPrices(pricesBlob) {
   const idx = new Map(); // printing_id -> {market, low, median, ts}
   
-  if (Array.isArray(pricesBlob)) {
+  // Check if this is unified pricing format
+  if (pricesBlob?.metadata?.version && pricesBlob?.cards) {
+    // Handle simplified UNIFIED_PRICING.json format (v3.0.0+)
+    for (const [cardId, cardData] of Object.entries(pricesBlob.cards)) {
+      if (!cardData) continue;
+      
+      // Handle base variant
+      if (cardData.base !== null && cardData.base > 0) {
+        idx.set(`${cardId}-base`, {
+          market: num(cardData.base),
+          low: num(cardData.base),
+          median: num(cardData.base),
+          ts: pricesBlob.metadata.created_at
+        });
+      }
+      
+      // Handle foil variant
+      if (cardData.foil !== null && cardData.foil > 0) {
+        const foilPriceData = {
+          market: num(cardData.foil),
+          low: num(cardData.foil),
+          median: num(cardData.foil),
+          ts: pricesBlob.metadata.created_at
+        };
+        
+        idx.set(`${cardId}-foil`, foilPriceData);
+        
+        // Check if this might be an enchanted card
+        const cardNumber = parseInt(cardId.split('-')[1] || '0');
+        const hasOnlyBase = cardData.base === null;
+        const isHighValue = foilPriceData.market > 20;
+        const isPotentiallyEnchanted = hasOnlyBase && isHighValue && cardNumber > 204;
+        
+        // Also create enchanted variant pricing for potential enchanted cards
+        if (isPotentiallyEnchanted) {
+          idx.set(`${cardId}-foil-enchanted`, foilPriceData);
+          idx.set(`${cardId}-special-enchanted`, foilPriceData);
+        }
+      }
+    }
+  } else if (Array.isArray(pricesBlob)) {
     // Handle array format
     for (const row of pricesBlob) {
       const pid = row.printing_id || row.id || resolvePid(row);
@@ -18,7 +58,7 @@ export function indexPrices(pricesBlob) {
       });
     }
   } else {
-    // Handle object format (card_id -> variants)
+    // Handle legacy object format (card_id -> variants)
     for (const [cardId, cardData] of Object.entries(pricesBlob)) {
       if (!cardData || typeof cardData !== 'object') continue;
       
@@ -26,7 +66,7 @@ export function indexPrices(pricesBlob) {
       if (cardData.base?.TP?.price !== undefined) {
         idx.set(`${cardId}-base`, {
           market: num(cardData.base.TP.price),
-          low: num(cardData.base.TP.price), // Using price as fallback
+          low: num(cardData.base.TP.price),
           median: num(cardData.base.TP.price),
           ts: null
         });
@@ -43,10 +83,10 @@ export function indexPrices(pricesBlob) {
         
         idx.set(`${cardId}-foil`, foilPriceData);
         
-        // Check if this might be an enchanted card (only has foil pricing, high price, and card number > 204 for Set 1)
+        // Check if this might be an enchanted card
         const cardNumber = parseInt(cardId.split('-')[1] || '0');
         const hasOnlyFoil = !cardData.base;
-        const isHighValue = foilPriceData.market > 20; // Enchanted cards are typically expensive
+        const isHighValue = foilPriceData.market > 20;
         const isPotentiallyEnchanted = hasOnlyFoil && isHighValue && cardNumber > 204;
         
         // Also create enchanted variant pricing for potential enchanted cards

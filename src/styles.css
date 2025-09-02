@@ -114,6 +114,102 @@ main {
   margin-bottom: 24px; 
 }
 
+.box-pricing-section {
+  margin-bottom: 24px;
+}
+
+.box-pricing-section h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.box-pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.box-pricing-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.box-pricing-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.box-pricing-info {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-label {
+  color: var(--text-secondary);
+}
+
+.price-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.value-ratio {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.value-ratio.good_value, .value-ratio.excellent_value {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.value-ratio.fair_value {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.value-ratio.poor_value {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.confidence-indicator {
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.confidence-indicator.high {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.confidence-indicator.medium {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+.confidence-indicator.low {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
 .charts {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -448,6 +544,19 @@ main {
   color: var(--text-secondary); 
   font-size: 13px; 
   margin-top: 8px;
+}
+
+.market-price {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.market-info {
+  padding: 4px 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .table-container {

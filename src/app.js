@@ -21,6 +21,8 @@ const els = {
   currentScenarioOdds: document.getElementById('currentScenarioOdds'),
   loadingStatus: document.getElementById('loadingStatus'),
   mainContent: document.getElementById('mainContent'),
+  boxMarketPrice: document.getElementById('boxMarketPrice'),
+  caseMarketPrice: document.getElementById('caseMarketPrice'),
 };
 
 let state = {
@@ -30,7 +32,8 @@ let state = {
   baseConfig: null,
   workingConfig: null,
   availableSets: [],
-  selectedSet: '001' // Default to first set
+  selectedSet: '001', // Default to first set
+  allBoxPricing: null
 };
 
 init();
@@ -45,6 +48,9 @@ async function init() {
 
     showLoading('Processing price data...');
     state.priceIndex = indexPrices(prices);
+    
+    showLoading('Loading box pricing data...');
+    await loadAllBoxPricing();
     
     showLoading('Analyzing available sets...');
     state.availableSets = getAllSets(cards);
@@ -125,6 +131,7 @@ function wireUI() {
       state.selectedSet = els.setSelection.value;
       recomputeSummaries(); 
       renderAll();
+      updateBoxPricing();
       setViewer.setCurrentSet(state.selectedSet);
     });
   }
@@ -300,4 +307,57 @@ function renderAll() {
   // Optional Monte Carlo display (commented out for performance)
   // const sim = simulateEV(state.summaries, cfg, 1000);
   // console.log('Simulated box EV:', sim);
+  
+  // Render box pricing
+  updateBoxPricing();
+}
+
+async function loadAllBoxPricing() {
+  try {
+    // For now, we only have Set 9 (Fabled) box pricing data
+    // In the future, this could load multiple sets' pricing data
+    const response = await fetch('./data/BOX_PRICING.json');
+    state.allBoxPricing = await response.json();
+  } catch (error) {
+    console.warn('Box pricing data not available:', error.message);
+    state.allBoxPricing = null;
+  }
+}
+
+function updateBoxPricing() {
+  // Clear existing pricing displays
+  if (els.boxMarketPrice) els.boxMarketPrice.innerHTML = '';
+  if (els.caseMarketPrice) els.caseMarketPrice.innerHTML = '';
+  
+  if (!state.allBoxPricing || !state.allBoxPricing.products) {
+    return;
+  }
+  
+  // Find box and case products for the current set
+  let boxProduct = null;
+  let caseProduct = null;
+  
+  for (const [productKey, product] of Object.entries(state.allBoxPricing.products)) {
+    if (product.product_type === 'booster_box' && product.set === getSetName(state.selectedSet)) {
+      boxProduct = product;
+    } else if (product.product_type === 'case' && product.set === getSetName(state.selectedSet)) {
+      caseProduct = product;
+    }
+  }
+  
+  // Update box pricing display
+  if (boxProduct && els.boxMarketPrice) {
+    const marketPrice = boxProduct.best_price ? boxProduct.best_price.price : null;
+    els.boxMarketPrice.innerHTML = marketPrice ? 
+      `<div class="market-info">Market: ${fmt(marketPrice)}</div>` : 
+      '';
+  }
+  
+  // Update case pricing display  
+  if (caseProduct && els.caseMarketPrice) {
+    const marketPrice = caseProduct.best_price ? caseProduct.best_price.price : null;
+    els.caseMarketPrice.innerHTML = marketPrice ? 
+      `<div class="market-info">Market: ${fmt(marketPrice)}</div>` : 
+      '';
+  }
 }
