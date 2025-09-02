@@ -283,8 +283,11 @@ function updateScenarioOdds(scenarioName) {
   const rareSlotHtml = Object.entries(rareSlotOdds)
     .map(([rarity, odds]) => {
       const percent = (odds * 100);
-      if (rarity === 'epic' || rarity === 'iconic') {
+      // Show more precision for Epic and Iconic due to low percentages
+      if (rarity === 'epic') {
         return `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${percent.toFixed(2)}%`;
+      } else if (rarity === 'iconic') {
+        return `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${percent.toFixed(3)}%`;
       }
       return `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${percent.toFixed(0)}%`;
     })
@@ -294,15 +297,7 @@ function updateScenarioOdds(scenarioName) {
     .map(([rarity, odds]) => `${rarity.charAt(0).toUpperCase() + rarity.slice(1)} ${(odds * 100).toFixed(1)}%`)
     .join(' | ');
   
-  // Extract Epic and Iconic for highlighting
-  const epicPercent = (rareSlotOdds.epic * 100).toFixed(2);
-  const iconicPercent = (rareSlotOdds.iconic * 100).toFixed(3);
-  const epicPerBox = (rareSlotOdds.epic * 24).toFixed(1);
-  
   els.currentScenarioOdds.innerHTML = `
-    <strong>Key Drop Rates:</strong><br>
-    <span style="color: var(--accent);">Epic: ${epicPercent}% per pack (${epicPerBox}/box) • Iconic: ${iconicPercent}% per pack (1 per ${Math.round(1/rareSlotOdds.iconic)} packs)</span><br><br>
-    
     <strong>Rare+ Slot Odds:</strong><br>
     ${rareSlotHtml}<br><br>
     
@@ -388,12 +383,12 @@ function renderAll() {
       const iconicPerCase = 1 - Math.pow(1 - iconicPerPack, 96);
       
       els.hitList.innerHTML = `
-        <li><strong>Epic</strong>: ${(100 * epicPerPack).toFixed(2)}% per pack, ${(epicPerPack * 24).toFixed(1)} expected per box</li>
-        <li><strong>Iconic</strong>: ${(100 * iconicPerPack).toFixed(3)}% per pack, 1 per ${Math.round(1/iconicPerPack)} packs</li>
-        <li>≥1 <strong>Iconic per box</strong>: ${(100 * iconicPerBox).toFixed(1)}%</li>
-        <li>≥1 <strong>Iconic per case</strong>: ${(100 * iconicPerCase).toFixed(1)}%</li>
-        <li><strong>Enchanted</strong> per pack: ${(100 * odds.enchanted.perPack).toFixed(3)}%</li>
-        <li>≥1 <strong>Enchanted per box</strong>: ${(100 * odds.enchanted.perBox).toFixed(1)}%</li>
+        <li><strong>Epic</strong>: ${(epicPerPack * 24).toFixed(1)} expected per box (${(100 * epicPerPack).toFixed(2)}% per pack)</li>
+        <li><strong>Iconic</strong>: 1 per ${Math.round(1/iconicPerPack)} packs (${(100 * iconicPerPack).toFixed(3)}% per pack)</li>
+        <li>≥1 <strong>Iconic per box</strong>: ${(100 * iconicPerBox).toFixed(1)}% chance</li>
+        <li>≥1 <strong>Iconic per case</strong>: ${(100 * iconicPerCase).toFixed(1)}% chance</li>
+        <li>≥1 <strong>Enchanted per box</strong>: ${(100 * odds.enchanted.perBox).toFixed(1)}% chance</li>
+        <li>≥1 <strong>Enchanted per case</strong>: ${(100 * odds.enchanted.perCase).toFixed(1)}% chance</li>
       `;
     }
   }
