@@ -17,7 +17,7 @@ export function applyScenario(baseConfig, scenarioName) {
     const delta = target - current;
     
     // Redistribute the difference among other foil rarities
-    const restKeys = ['common', 'uncommon', 'rare', 'super rare', 'legendary'];
+    const restKeys = ['common', 'uncommon', 'rare', 'super rare', 'legendary', 'epic', 'iconic'];
     const restSum = restKeys.reduce((t, k) => t + (cfg.foil_odds[k] || 0), 0);
     
     for (const k of restKeys) {
@@ -39,7 +39,9 @@ export function evPack(summaries, cfg, priceType = 'market', bulkFloor = { commo
   const EV_slot =
     (rOdds.rare || 0) * avg('rare', 'base') +
     (rOdds['super rare'] || 0) * avg('super rare', 'base') +
-    (rOdds.legendary || 0) * avg('legendary', 'base');
+    (rOdds.legendary || 0) * avg('legendary', 'base') +
+    (rOdds.epic || 0) * avg('epic', 'base') +
+    (rOdds.iconic || 0) * avg('iconic', 'base');
 
   const EV_rareplus = (cfg.slots.rare_or_higher_slots || 2) * EV_slot;
 
@@ -51,6 +53,8 @@ export function evPack(summaries, cfg, priceType = 'market', bulkFloor = { commo
     (f.rare || 0) * avg('rare', 'foil') +
     (f['super rare'] || 0) * avg('super rare', 'foil') +
     (f.legendary || 0) * avg('legendary', 'foil') +
+    (f.epic || 0) * avg('epic', 'foil') +
+    (f.iconic || 0) * avg('iconic', 'foil') +
     (f.enchanted || 0) * (summaries['enchanted|special']?.mean ?? summaries['enchanted|foil']?.mean ?? 0);
 
   // Optional: bulk floors for 6 commons, 3 uncommons (base)

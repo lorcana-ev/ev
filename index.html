@@ -25,6 +25,31 @@
           <option value="optimistic">Optimistic</option>
         </select>
       </label>
+      
+      <div class="pricing-controls">
+        <span class="pricing-label">Pricing Priority:</span>
+        <div class="pricing-selectors">
+          <label class="pricing-selector">
+            1st
+            <select id="pricingSource1">
+              <option value="justtcg">JustTCG</option>
+            </select>
+          </label>
+          <label class="pricing-selector">
+            2nd
+            <select id="pricingSource2">
+              <option value="dreamborn">Dreamborn</option>
+            </select>
+          </label>
+          <label class="pricing-selector">
+            3rd
+            <select id="pricingSource3">
+              <option value="lorcast">Lorcast</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      
       <button id="reset">Reset</button>
     </div>
   </header>
@@ -58,6 +83,7 @@
     <section class="analysis-section">
       <div class="analysis-tabs">
         <button class="tab-button active" data-tab="summary">Price Summary</button>
+        <button class="tab-button" data-tab="comparisons">Price Comparisons</button>
         <button class="tab-button" data-tab="setviewer">Set Viewer</button>
       </div>
 
@@ -74,6 +100,7 @@
                     <th>Count</th>
                     <th>Mean</th>
                     <th>Median</th>
+                    <th title="Pricing Sources: D=Dreamborn, L=Lorcast, J=JustTCG">Sources</th>
                   </tr>
                 </thead>
                 <tbody></tbody>
@@ -98,6 +125,46 @@
             <ul id="hitList">
               <!-- populated with odds for Enchanted, Foil Legendary, etc. -->
             </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="comparisons-tab">
+        <div class="charts">
+          <div class="card">
+            <h3>Pricing Source Comparisons</h3>
+            <p class="comparison-info">
+              Cards with pricing from multiple sources, sorted by highest variance. 
+              Shows differences between <strong>Dreamborn</strong>, <strong>Lorcast</strong>, and <strong>JustTCG</strong> pricing.
+            </p>
+            <div class="comparison-controls">
+              <label>
+                <input type="checkbox" id="showOnlyHighVariance" checked> 
+                Show only high variance cards (>50% difference)
+              </label>
+              <label>
+                Minimum variance: $<input type="number" id="minVariance" value="1" step="0.50" min="0" style="width: 80px;">
+              </label>
+            </div>
+            <div class="table-container">
+              <table id="comparisonsTable">
+                <thead>
+                  <tr>
+                    <th>Card</th>
+                    <th>Rarity</th>
+                    <th>Finish</th>
+                    <th>Dreamborn</th>
+                    <th>Lorcast</th>
+                    <th>JustTCG</th>
+                    <th>Variance</th>
+                    <th>% Diff</th>
+                  </tr>
+                </thead>
+                <tbody id="comparisonsTableBody">
+                  <!-- Will be populated dynamically -->
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

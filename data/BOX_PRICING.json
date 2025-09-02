@@ -3,7 +3,7 @@
     "extracted_at": "2025-09-01T23:25:50.569Z",
     "source": "justtcg_api",
     "total_products": 2,
-    "last_updated": "2025-09-01T23:26:49.816Z",
+    "last_updated": "2025-09-01T23:49:06.887Z",
     "ev_methodology": "rarity_weighted_realistic"
   },
   "products": {
@@ -38,61 +38,61 @@
         "value_assessment": "good_value"
       },
       "realistic_estimated_value": {
-        "ev": 211794,
-        "pack_ev": 1470.79,
+        "ev": 23060.05,
+        "pack_ev": 160.14,
         "methodology": "rarity_weighted_trimmed_mean",
-        "calculated_at": "2025-09-01T23:26:49.815Z",
+        "calculated_at": "2025-09-01T23:49:06.885Z",
         "breakdown": {
           "common": {
-            "base_avg_price": 180.97,
-            "foil_avg_price": 180.97,
-            "base_slot_contribution": 90.49,
-            "foil_slot_contribution": 108.58,
-            "total_ev_contribution": 289.55,
-            "card_count": 2
+            "base_avg_price": 0.06362068965517242,
+            "foil_avg_price": 0.31827586206896546,
+            "base_slot_contribution": 0.03,
+            "foil_slot_contribution": 0.19,
+            "total_ev_contribution": 0.25,
+            "card_count": 72
           },
           "uncommon": {
-            "base_avg_price": 0,
-            "foil_avg_price": 0,
-            "base_slot_contribution": 0,
-            "foil_slot_contribution": 0,
-            "total_ev_contribution": 0,
-            "card_count": 0
+            "base_avg_price": 0.08454545454545458,
+            "foil_avg_price": 1.179772727272727,
+            "base_slot_contribution": 0.03,
+            "foil_slot_contribution": 0.29,
+            "total_ev_contribution": 0.35,
+            "card_count": 54
           },
           "rare": {
-            "base_avg_price": 95.7775,
-            "foil_avg_price": 99.625,
-            "base_slot_contribution": 14.37,
-            "foil_slot_contribution": 9.96,
-            "total_ev_contribution": 38.7,
-            "card_count": 4
+            "base_avg_price": 0.45775000000000016,
+            "foil_avg_price": 2.1249999999999996,
+            "base_slot_contribution": 0.07,
+            "foil_slot_contribution": 0.21,
+            "total_ev_contribution": 0.35,
+            "card_count": 48
           },
           "super_rare": {
-            "base_avg_price": 323.14166666666665,
-            "foil_avg_price": 323.14166666666665,
-            "base_slot_contribution": 12.93,
-            "foil_slot_contribution": 9.69,
-            "total_ev_contribution": 35.55,
-            "card_count": 6
+            "base_avg_price": 1.26125,
+            "foil_avg_price": 4.80875,
+            "base_slot_contribution": 0.05,
+            "foil_slot_contribution": 0.14,
+            "total_ev_contribution": 0.25,
+            "card_count": 18
           },
           "legendary": {
-            "base_avg_price": 327.58142857142855,
-            "foil_avg_price": 327.58142857142855,
-            "base_slot_contribution": 2.62,
-            "foil_slot_contribution": 4.91,
-            "total_ev_contribution": 10.16,
-            "card_count": 7
+            "base_avg_price": 9.841,
+            "foil_avg_price": 18.383999999999997,
+            "base_slot_contribution": 0.08,
+            "foil_slot_contribution": 0.28,
+            "total_ev_contribution": 0.43,
+            "card_count": 12
           },
           "enchanted": {
-            "base_avg_price": 5.1975,
-            "foil_avg_price": 10.552500000000002,
-            "base_slot_contribution": 0.01,
-            "foil_slot_contribution": 10.55,
-            "total_ev_contribution": 10.57,
-            "card_count": 4
+            "base_avg_price": 156.53571428571428,
+            "foil_avg_price": 157.2492857142857,
+            "base_slot_contribution": 0.31,
+            "foil_slot_contribution": 157.25,
+            "total_ev_contribution": 157.88,
+            "card_count": 16
           }
         },
-        "value_ratio": 345.26,
+        "value_ratio": 37.59,
         "value_assessment": "excellent_value"
       }
     },
@@ -127,61 +127,61 @@
         "value_assessment": "good_value"
       },
       "realistic_estimated_value": {
-        "ev": 35299,
-        "pack_ev": 1470.79,
+        "ev": 3843.34,
+        "pack_ev": 160.14,
         "methodology": "rarity_weighted_trimmed_mean",
-        "calculated_at": "2025-09-01T23:26:49.815Z",
+        "calculated_at": "2025-09-01T23:49:06.885Z",
         "breakdown": {
           "common": {
-            "base_avg_price": 180.97,
-            "foil_avg_price": 180.97,
-            "base_slot_contribution": 90.49,
-            "foil_slot_contribution": 108.58,
-            "total_ev_contribution": 289.55,
-            "card_count": 2
+            "base_avg_price": 0.06362068965517242,
+            "foil_avg_price": 0.31827586206896546,
+            "base_slot_contribution": 0.03,
+            "foil_slot_contribution": 0.19,
+            "total_ev_contribution": 0.25,
+            "card_count": 72
           },
           "uncommon": {
-            "base_avg_price": 0,
-            "foil_avg_price": 0,
-            "base_slot_contribution": 0,
-            "foil_slot_contribution": 0,
-            "total_ev_contribution": 0,
-            "card_count": 0
+            "base_avg_price": 0.08454545454545458,
+            "foil_avg_price": 1.179772727272727,
+            "base_slot_contribution": 0.03,
+            "foil_slot_contribution": 0.29,
+            "total_ev_contribution": 0.35,
+            "card_count": 54
           },
           "rare": {
-            "base_avg_price": 95.7775,
-            "foil_avg_price": 99.625,
-            "base_slot_contribution": 14.37,
-            "foil_slot_contribution": 9.96,
-            "total_ev_contribution": 38.7,
-            "card_count": 4
+            "base_avg_price": 0.45775000000000016,
+            "foil_avg_price": 2.1249999999999996,
+            "base_slot_contribution": 0.07,
+            "foil_slot_contribution": 0.21,
+            "total_ev_contribution": 0.35,
+            "card_count": 48
           },
           "super_rare": {
-            "base_avg_price": 323.14166666666665,
-            "foil_avg_price": 323.14166666666665,
-            "base_slot_contribution": 12.93,
-            "foil_slot_contribution": 9.69,
-            "total_ev_contribution": 35.55,
-            "card_count": 6
+            "base_avg_price": 1.26125,
+            "foil_avg_price": 4.80875,
+            "base_slot_contribution": 0.05,
+            "foil_slot_contribution": 0.14,
+            "total_ev_contribution": 0.25,
+            "card_count": 18
           },
           "legendary": {
-            "base_avg_price": 327.58142857142855,
-            "foil_avg_price": 327.58142857142855,
-            "base_slot_contribution": 2.62,
-            "foil_slot_contribution": 4.91,
-            "total_ev_contribution": 10.16,
-            "card_count": 7
+            "base_avg_price": 9.841,
+            "foil_avg_price": 18.383999999999997,
+            "base_slot_contribution": 0.08,
+            "foil_slot_contribution": 0.28,
+            "total_ev_contribution": 0.43,
+            "card_count": 12
           },
           "enchanted": {
-            "base_avg_price": 5.1975,
-            "foil_avg_price": 10.552500000000002,
-            "base_slot_contribution": 0.01,
-            "foil_slot_contribution": 10.55,
-            "total_ev_contribution": 10.57,
-            "card_count": 4
+            "base_avg_price": 156.53571428571428,
+            "foil_avg_price": 157.2492857142857,
+            "base_slot_contribution": 0.31,
+            "foil_slot_contribution": 157.25,
+            "total_ev_contribution": 157.88,
+            "card_count": 16
           }
         },
-        "value_ratio": 262.68,
+        "value_ratio": 28.6,
         "value_assessment": "excellent_value"
       }
     }

@@ -158,32 +158,36 @@ function convertJustTcgCardToStandardFormat(justTcgCard, batchTimestamp) {
   return result;
 }
 
-async function fetchBatchFromJustTcg(page = 1) {
-  console.log(`📦 Fetching batch ${page} (cards ${(page-1)*CARDS_PER_BATCH + 1}-${page*CARDS_PER_BATCH})...`);
+async function fetchBatchFromJustTcg(offset = 0) {
+  console.log(`📦 Fetching batch at offset ${offset} (cards ${offset + 1}-${offset + CARDS_PER_BATCH})...`);
   
   try {
-    const url = `${JUSTTCG_BASE_URL}/cards?game=disney-lorcana&set=Fabled&limit=${CARDS_PER_BATCH}&page=${page}`;
+    const url = `${JUSTTCG_BASE_URL}/cards?game=disney-lorcana&set=Fabled&limit=${CARDS_PER_BATCH}&offset=${offset}`;
     console.log(`🔗 URL: ${url}`);
     
     const response = await makeApiRequest(url);
     
     if (response.statusCode === 200 && response.data.data) {
       const cards = response.data.data;
+      const meta = response.data.meta || {};
       console.log(`✅ Successfully fetched ${cards.length} cards from JustTCG`);
+      console.log(`📊 Meta info: total=${meta.total}, offset=${meta.offset}, hasMore=${meta.hasMore}`);
       
       return {
         success: true,
         cards: cards,
-        hasMore: cards.length === CARDS_PER_BATCH
+        meta: meta,
+        hasMore: meta.hasMore === true
       };
     } else {
       console.log(`❌ API returned status ${response.statusCode}`);
-      return { success: false, cards: [], hasMore: false };
+      console.log(`Response data:`, response.data);
+      return { success: false, cards: [], meta: {}, hasMore: false };
     }
     
   } catch (error) {
-    console.log(`❌ Error fetching batch ${page}: ${error.message}`);
-    return { success: false, cards: [], hasMore: false };
+    console.log(`❌ Error fetching batch at offset ${offset}: ${error.message}`);
+    return { success: false, cards: [], meta: {}, hasMore: false };
   }
 }
 
@@ -194,14 +198,15 @@ function calculateBatchPriorities(pricingData) {
   const existingBatches = Object.keys(pricingData.batches);
   const maxBatchesEstimated = Math.ceil(242 / CARDS_PER_BATCH); // ~13 batches for Set 9
   
-  for (let page = 1; page <= maxBatchesEstimated; page++) {
-    const batchKey = `page_${page}`;
+  for (let batchIndex = 0; batchIndex < maxBatchesEstimated; batchIndex++) {
+    const offset = batchIndex * CARDS_PER_BATCH;
+    const batchKey = `offset_${offset}`;
     const existingBatch = pricingData.batches[batchKey];
     
     if (!existingBatch) {
       // Missing batch - highest priority
       priorities.push({
-        page: page,
+        offset: offset,
         batchKey: batchKey,
         priority: 1,
         reason: 'missing_batch',
@@ -214,7 +219,7 @@ function calculateBatchPriorities(pricingData) {
       
       if (ageInDays > 1) { // Refresh batches older than 1 day
         priorities.push({
-          page: page,
+          offset: offset,
           batchKey: batchKey,
           priority: 2,
           reason: 'outdated_batch',
@@ -225,10 +230,10 @@ function calculateBatchPriorities(pricingData) {
     }
   }
   
-  // Sort by priority (1 = highest), then by page number
+  // Sort by priority (1 = highest), then by offset
   priorities.sort((a, b) => {
     if (a.priority !== b.priority) return a.priority - b.priority;
-    return a.page - b.page;
+    return a.offset - b.offset;
   });
   
   return priorities;
@@ -277,7 +282,7 @@ async function updateBatches(maxBatches = 3) {
     }
     
     // Fetch batch from JustTCG
-    const batchResult = await fetchBatchFromJustTcg(batchInfo.page);
+    const batchResult = await fetchBatchFromJustTcg(batchInfo.offset);
     batchesFetched++;
     pricingData.metadata.total_api_requests++;
     
@@ -286,9 +291,10 @@ async function updateBatches(maxBatches = 3) {
       
       // Store raw batch data
       pricingData.batches[batchInfo.batchKey] = {
-        page: batchInfo.page,
+        offset: batchInfo.offset,
         fetched_at: batchTimestamp,
         card_count: batchResult.cards.length,
+        meta: batchResult.meta,
         raw_cards: batchResult.cards
       };
       
@@ -317,12 +323,24 @@ async function updateBatches(maxBatches = 3) {
         }
       }
       
-      console.log(`   📊 Batch ${batchInfo.page}: ${batchMappings}/${batchResult.cards.length} cards mapped`);
+      console.log(`   📊 Offset ${batchInfo.offset}: ${batchMappings}/${batchResult.cards.length} cards mapped`);
       totalCardsProcessed += batchResult.cards.length;
       pricingData.metadata.total_batches_fetched++;
       
+      // Check if we've reached the end
+      if (!batchResult.hasMore) {
+        console.log(`   ✅ Reached end of results at offset ${batchInfo.offset}`);
+        break;
+      }
+      
     } else {
-      console.log(`   ❌ Failed to fetch batch ${batchInfo.page}`);
+      console.log(`   ❌ Failed to fetch batch at offset ${batchInfo.offset}`);
+      
+      // If we get 0 cards, we might have reached the end
+      if (batchResult.success && batchResult.cards.length === 0) {
+        console.log(`   ✅ No more cards available - reached end of set`);
+        break;
+      }
     }
     
     // Rate limiting between batches
@@ -346,6 +364,130 @@ async function updateBatches(maxBatches = 3) {
   
   const coverage = (Object.keys(pricingData.cards).length / 242 * 100).toFixed(1);
   console.log(`   Set 9 coverage: ${coverage}%`);
+  
+  return pricingData;
+}
+
+async function completeSetPull() {
+  console.log('🚀 Starting complete JustTCG Set 9 (Fabled) pull...\n');
+  
+  // Load data
+  const pricingData = loadJustTcgPricing();
+  const allCards = loadCards();
+  
+  if (allCards.length === 0) {
+    console.error('❌ No cards data available');
+    return;
+  }
+  
+  // Reset existing data for fresh pull
+  pricingData.batches = {};
+  pricingData.cards = {};
+  pricingData.metadata.total_batches_fetched = 0;
+  pricingData.metadata.total_api_requests = 0;
+  
+  let allFetchedCards = [];
+  let offset = 0;
+  let hasMoreResults = true;
+  let totalBatches = 0;
+  let successfulMappings = 0;
+  
+  console.log('📊 Starting complete pagination through JustTCG API...\n');
+  
+  while (hasMoreResults) {
+    console.log(`\n🎯 Fetching batch at offset ${offset}...`);
+    
+    const batchResult = await fetchBatchFromJustTcg(offset);
+    pricingData.metadata.total_api_requests++;
+    totalBatches++;
+    
+    if (batchResult.success && batchResult.cards.length > 0) {
+      const batchTimestamp = new Date().toISOString();
+      const batchKey = `offset_${offset}`;
+      
+      // Store raw batch data
+      pricingData.batches[batchKey] = {
+        offset: offset,
+        fetched_at: batchTimestamp,
+        card_count: batchResult.cards.length,
+        meta: batchResult.meta,
+        raw_cards: batchResult.cards
+      };
+      
+      allFetchedCards.push(...batchResult.cards);
+      
+      console.log(`✅ Batch ${totalBatches}: fetched ${batchResult.cards.length} cards (total: ${allFetchedCards.length})`);
+      
+      // Check hasMore from meta data
+      hasMoreResults = batchResult.hasMore;
+      
+      if (!hasMoreResults) {
+        console.log(`🏁 API indicates no more results available`);
+        break;
+      }
+      
+      // Move to next batch
+      offset += CARDS_PER_BATCH;
+      pricingData.metadata.total_batches_fetched++;
+      
+      // Rate limiting between batches
+      if (hasMoreResults) {
+        console.log(`   ⏳ Waiting ${DELAY_MS}ms before next batch...`);
+        await delay(DELAY_MS);
+      }
+      
+    } else if (batchResult.success && batchResult.cards.length === 0) {
+      console.log(`🏁 Empty result set - reached end of data`);
+      hasMoreResults = false;
+      
+    } else {
+      console.log(`❌ Failed to fetch batch at offset ${offset}`);
+      hasMoreResults = false;
+    }
+  }
+  
+  console.log(`\n📊 Complete Fetch Summary:`);
+  console.log(`   Total batches: ${totalBatches}`);
+  console.log(`   Total cards fetched: ${allFetchedCards.length}`);
+  console.log(`   API requests made: ${pricingData.metadata.total_api_requests}`);
+  
+  // Now map all cards to our internal format
+  console.log(`\n🔄 Mapping ${allFetchedCards.length} cards to internal format...`);
+  
+  for (let i = 0; i < allFetchedCards.length; i++) {
+    const justTcgCard = allFetchedCards[i];
+    console.log(`   🔍 [${i+1}/${allFetchedCards.length}] Mapping: ${justTcgCard.name}`);
+    
+    const matchedCard = findMatchingCardId(justTcgCard, allCards);
+    if (matchedCard) {
+      const pricingInfo = convertJustTcgCardToStandardFormat(justTcgCard, new Date().toISOString());
+      if (pricingInfo) {
+        pricingData.cards[matchedCard.id] = pricingInfo;
+        successfulMappings++;
+        
+        // Show sample pricing
+        const variants = Object.values(pricingInfo.variants);
+        const bestPrice = variants.find(v => v.condition === 'Near Mint') || variants[0];
+        if (bestPrice) {
+          console.log(`     ✅ ${matchedCard.id}: $${bestPrice.price} (${variants.length} variants)`);
+        }
+      }
+    } else {
+      console.log(`     ❌ No match found for: ${justTcgCard.name}`);
+    }
+  }
+  
+  // Save complete data
+  saveJustTcgPricing(pricingData);
+  
+  // Final summary
+  console.log('\n🎉 Complete Set Pull Summary:');
+  console.log(`   Total cards from JustTCG: ${allFetchedCards.length}`);
+  console.log(`   Successfully mapped: ${successfulMappings}`);
+  console.log(`   Mapping success rate: ${(successfulMappings/allFetchedCards.length*100).toFixed(1)}%`);
+  console.log(`   Set 9 coverage: ${successfulMappings}/242 cards (${(successfulMappings/242*100).toFixed(1)}%)`);
+  console.log(`   Total batches stored: ${Object.keys(pricingData.batches).length}`);
+  console.log(`   Total API requests: ${pricingData.metadata.total_api_requests}`);
   
   return pricingData;
 }
@@ -380,7 +522,7 @@ function showBatchStatus() {
 }
 
 // Export functions
-export { updateBatches, showBatchStatus, loadJustTcgPricing };
+export { updateBatches, showBatchStatus, loadJustTcgPricing, completeSetPull };
 
 // Command line interface
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -391,13 +533,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     showBatchStatus();
   } else if (command === 'update') {
     updateBatches(maxBatches).catch(console.error);
+  } else if (command === 'complete') {
+    completeSetPull().catch(console.error);
   } else {
     console.log('Usage:');
     console.log('  node batch-justtcg-pricing.js status');
     console.log('  node batch-justtcg-pricing.js update [max_batches]');
+    console.log('  node batch-justtcg-pricing.js complete');
     console.log('');
     console.log('Examples:');
     console.log('  node batch-justtcg-pricing.js status');
     console.log('  node batch-justtcg-pricing.js update 2    # Fetch 2 batches (40 cards)');
+    console.log('  node batch-justtcg-pricing.js complete   # Full set pull with proper pagination');
   }
 }

@@ -64,7 +64,7 @@ export class SetViewer {
     if (viewMode) {
       viewMode.addEventListener('change', () => {
         this.currentFilters.viewMode = viewMode.value;
-        this.updateViewMode();
+        this.renderCards(); // Re-render with new view mode
       });
     }
   }

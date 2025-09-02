@@ -4,8 +4,7 @@ export const formatUSD = (n) => isFinite(n) ? n.toLocaleString(undefined, { styl
 
 export function mapRarity(raw) {
   const r = String(raw || '').trim().toLowerCase().replace(/\s+/g, ' ');
-  if (['common', 'uncommon', 'rare', 'super rare', 'legendary'].includes(r)) return r;
-  if (['enchanted', 'iconic', 'epic'].includes(r)) return 'enchanted';
+  if (['common', 'uncommon', 'rare', 'super rare', 'legendary', 'epic', 'iconic', 'enchanted'].includes(r)) return r;
   return 'common';
 }
 

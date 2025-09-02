@@ -2,15 +2,27 @@
 import { mapRarity } from './util.js';
 
 export async function loadAll() {
-  const [filters, sorts, cards, prices, packModel] = await Promise.all([
+  const [filters, sorts, cards, unifiedPrices, dreambornPrices, lorcastData, justTcgData, packModel] = await Promise.all([
     fetch('./data/filters.json').then(r => r.json()),
     fetch('./data/sorts.json').then(r => r.json()),
     fetch('./data/cards.json').then(r => r.json()),
-    fetch('./data/USD.json').then(r => r.json()),
+    fetch('./data/UNIFIED_PRICING.json').then(r => r.json()),
+    fetch('./data/USD.json').then(r => r.json()).catch(() => null),
+    fetch('./data/LORCAST.json').then(r => r.json()).catch(() => null),
+    fetch('./data/JUSTTCG.json').then(r => r.json()).catch(() => null),
     fetch('./config/pack_model.json').then(r => r.json()),
   ]);
   const printings = buildPrintings(cards);
-  return { filters, sorts, cards, printings, prices, packModel };
+  
+  // Bundle all pricing sources - three main sources: Dreamborn (USD.json), Lorcast, JustTCG
+  const allPricingSources = {
+    dreamborn: dreambornPrices,
+    lorcast: lorcastData,
+    justtcg: justTcgData,
+    unified: unifiedPrices  // Keep unified as fallback/reference
+  };
+  
+  return { filters, sorts, cards, printings, prices: unifiedPrices, allPricingSources, packModel };
 }
 
 /**

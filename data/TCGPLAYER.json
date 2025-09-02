@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "created_at": "2025-09-01T23:24:59.575Z",
+    "created_at": "2025-09-01T23:49:02.006Z",
     "manual_entries": 6,
-    "product_ids_available": 18,
+    "product_ids_available": 241,
     "next_update_strategy": "use_product_ids_for_api_calls"
   },
   "manual_data": {
@@ -116,165 +116,2172 @@
     }
   },
   "product_ids": {
-    "009-111": {
-      "cardId": "009-111",
+    "009-242": {
+      "cardId": "009-242",
       "tcgplayerId": "647663",
       "cardName": "Mickey Mouse - Brave Little Prince (Iconic)",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-005": {
-      "cardId": "009-005",
+    "009-241": {
+      "cardId": "009-241",
       "tcgplayerId": "651106",
       "cardName": "Minnie Mouse - Sweetheart Princess (Iconic)",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-228": {
+      "cardId": "009-228",
+      "tcgplayerId": "651119",
+      "cardName": "Dumbo - Ninth Wonder of the Universe (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-226": {
+      "cardId": "009-226",
+      "tcgplayerId": "651121",
+      "cardName": "Belle - Accomplished Mystic (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-238": {
+      "cardId": "009-238",
+      "tcgplayerId": "649236",
+      "cardName": "Lilo - Best Explorer Ever (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-237": {
+      "cardId": "009-237",
+      "tcgplayerId": "651117",
+      "cardName": "Hades - Infernal Schemer (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-227": {
+      "cardId": "009-227",
+      "tcgplayerId": "651107",
+      "cardName": "Winnie the Pooh - Hunny Wizard (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-225": {
+      "cardId": "009-225",
+      "tcgplayerId": "649230",
+      "cardName": "Circle of Life (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-239": {
+      "cardId": "009-239",
+      "tcgplayerId": "651108",
+      "cardName": "Scar - Finally King (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-224": {
+      "cardId": "009-224",
+      "tcgplayerId": "651122",
+      "cardName": "Beast - Gracious Prince (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-233": {
+      "cardId": "009-233",
+      "tcgplayerId": "649231",
+      "cardName": "Powerline - World's Greatest Rock Star (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-230": {
+      "cardId": "009-230",
+      "tcgplayerId": "651113",
+      "cardName": "Max Goof - Chart Topper (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-232": {
+      "cardId": "009-232",
+      "tcgplayerId": "651123",
+      "cardName": "Ariel - Adventurous Collector (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-240": {
+      "cardId": "009-240",
+      "tcgplayerId": "651114",
+      "cardName": "Jasmine - Fearless Princess (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-234": {
+      "cardId": "009-234",
+      "tcgplayerId": "651116",
+      "cardName": "I2I (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-231": {
+      "cardId": "009-231",
+      "tcgplayerId": "651112",
+      "cardName": "Mickey Mouse - Steamboat Pilot (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-223": {
+      "cardId": "009-223",
+      "tcgplayerId": "651110",
+      "cardName": "Pongo - Determined Father (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-236": {
+      "cardId": "009-236",
+      "tcgplayerId": "651120",
+      "cardName": "Cruella De Vil - Style Icon (Enchanted)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:34.707Z",
       "pricing": null,
       "last_updated": null
     },
     "009-045": {
       "cardId": "009-045",
-      "tcgplayerId": "651119",
-      "cardName": "Dumbo - Ninth Wonder of the Universe (Enchanted)",
+      "tcgplayerId": "647680",
+      "cardName": "Dumbo - Ninth Wonder of the Universe",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
-      "pricing": null,
-      "last_updated": null
-    },
-    "009-040": {
-      "cardId": "009-040",
-      "tcgplayerId": "651121",
-      "cardName": "Belle - Accomplished Mystic (Enchanted)",
-      "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
-      "pricing": null,
-      "last_updated": null
-    },
-    "009-174": {
-      "cardId": "009-174",
-      "tcgplayerId": "649236",
-      "cardName": "Lilo - Best Explorer Ever (Enchanted)",
-      "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
-      "pricing": null,
-      "last_updated": null
-    },
-    "009-151": {
-      "cardId": "009-151",
-      "tcgplayerId": "651117",
-      "cardName": "Hades - Infernal Schemer (Enchanted)",
-      "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
-      "pricing": null,
-      "last_updated": null
-    },
-    "009-041": {
-      "cardId": "009-041",
-      "tcgplayerId": "651107",
-      "cardName": "Winnie the Pooh - Hunny Wizard (Enchanted)",
-      "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
-      "pricing": null,
-      "last_updated": null
-    },
-    "009-026": {
-      "cardId": "009-026",
-      "tcgplayerId": "649230",
-      "cardName": "Circle of Life (Enchanted)",
-      "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
     "009-175": {
       "cardId": "009-175",
-      "tcgplayerId": "651108",
-      "cardName": "Scar - Finally King (Enchanted)",
+      "tcgplayerId": "650108",
+      "cardName": "Scar - Finally King",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-004": {
-      "cardId": "009-004",
-      "tcgplayerId": "651122",
-      "cardName": "Beast - Gracious Prince (Enchanted)",
+    "009-043": {
+      "cardId": "009-043",
+      "tcgplayerId": "649990",
+      "cardName": "Elsa - Spirit of Winter",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-110": {
-      "cardId": "009-110",
-      "tcgplayerId": "649231",
-      "cardName": "Powerline - World's Greatest Rock Star (Enchanted)",
+    "009-111": {
+      "cardId": "009-111",
+      "tcgplayerId": "650047",
+      "cardName": "Mickey Mouse - Brave Little Prince",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
     "009-077": {
       "cardId": "009-077",
-      "tcgplayerId": "651113",
-      "cardName": "Max Goof - Chart Topper (Enchanted)",
+      "tcgplayerId": "649228",
+      "cardName": "Max Goof - Chart Topper",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-107": {
-      "cardId": "009-107",
-      "tcgplayerId": "651123",
-      "cardName": "Ariel - Adventurous Collector (Enchanted)",
+    "009-174": {
+      "cardId": "009-174",
+      "tcgplayerId": "649222",
+      "cardName": "Lilo - Best Explorer Ever",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-178": {
-      "cardId": "009-178",
-      "tcgplayerId": "651114",
-      "cardName": "Jasmine - Fearless Princess (Enchanted)",
+    "009-206": {
+      "cardId": "009-206",
+      "tcgplayerId": "650142",
+      "cardName": "Aurora - Holding Court (Epic)",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-130": {
-      "cardId": "009-130",
-      "tcgplayerId": "651116",
-      "cardName": "I2I (Enchanted)",
+    "009-151": {
+      "cardId": "009-151",
+      "tcgplayerId": "650086",
+      "cardName": "Hades - Infernal Schemer",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-080": {
-      "cardId": "009-080",
-      "tcgplayerId": "651112",
-      "cardName": "Mickey Mouse - Steamboat Pilot (Enchanted)",
+    "009-209": {
+      "cardId": "009-209",
+      "tcgplayerId": "647657",
+      "cardName": "Kuzco - Wanted Llama (Epic)",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
       "pricing": null,
       "last_updated": null
     },
-    "009-002": {
-      "cardId": "009-002",
-      "tcgplayerId": "651110",
-      "cardName": "Pongo - Determined Father (Enchanted)",
+    "009-210": {
+      "cardId": "009-210",
+      "tcgplayerId": "647660",
+      "cardName": "Elsa - Snow Queen (Epic)",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-173": {
+      "cardId": "009-173",
+      "tcgplayerId": "650107",
+      "cardName": "Nala - Undaunted Lioness",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-026": {
+      "cardId": "009-026",
+      "tcgplayerId": "649225",
+      "cardName": "Circle of Life",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-215": {
+      "cardId": "009-215",
+      "tcgplayerId": "650151",
+      "cardName": "Powerline - Musical Superstar (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:37.279Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-216": {
+      "cardId": "009-216",
+      "tcgplayerId": "650152",
+      "cardName": "Be King Undisputed (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-214": {
+      "cardId": "009-214",
+      "tcgplayerId": "650150",
+      "cardName": "Max Goof - Rockin' Teen (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-110": {
+      "cardId": "009-110",
+      "tcgplayerId": "649224",
+      "cardName": "Powerline - World's Greatest Rock Star",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-213": {
+      "cardId": "009-213",
+      "tcgplayerId": "647659",
+      "cardName": "Stand Out (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-076": {
+      "cardId": "009-076",
+      "tcgplayerId": "650017",
+      "cardName": "Genie - Of the Lamp",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-024": {
+      "cardId": "009-024",
+      "tcgplayerId": "649972",
+      "cardName": "Stitch - Carefree Surfer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-220": {
+      "cardId": "009-220",
+      "tcgplayerId": "650155",
+      "cardName": "Robin Hood - Capable Fighter (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-205": {
+      "cardId": "009-205",
+      "tcgplayerId": "650141",
+      "cardName": "The Queen - Conceited Ruler (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-217": {
+      "cardId": "009-217",
+      "tcgplayerId": "647656",
+      "cardName": "Alice - Accidentally Adrift (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-177": {
+      "cardId": "009-177",
+      "tcgplayerId": "650110",
+      "cardName": "Robin Hood - Champion of Sherwood",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-212": {
+      "cardId": "009-212",
+      "tcgplayerId": "650149",
+      "cardName": "Pegasus - Gift for Hercules (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-211": {
+      "cardId": "009-211",
+      "tcgplayerId": "650147",
+      "cardName": "Goofy - Set for Adventure (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-044": {
+      "cardId": "009-044",
+      "tcgplayerId": "649991",
+      "cardName": "Ursula - Voice Stealer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-222": {
+      "cardId": "009-222",
+      "tcgplayerId": "650157",
+      "cardName": "One Last Hope (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-141": {
+      "cardId": "009-141",
+      "tcgplayerId": "650076",
+      "cardName": "Alice - Accidentally Adrift",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-218": {
+      "cardId": "009-218",
+      "tcgplayerId": "650153",
+      "cardName": "Anna - Braving the Storm (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-176": {
+      "cardId": "009-176",
+      "tcgplayerId": "650109",
+      "cardName": "Little John - Sir Reginald",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-221": {
+      "cardId": "009-221",
+      "tcgplayerId": "650156",
+      "cardName": "Mickey Mouse - Standard Bearer (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
       "pricing": null,
       "last_updated": null
     },
     "009-143": {
       "cardId": "009-143",
-      "tcgplayerId": "651120",
-      "cardName": "Cruella De Vil - Style Icon (Enchanted)",
+      "tcgplayerId": "650078",
+      "cardName": "Cruella De Vil - Style Icon",
       "discovered_via": "justtcg_api",
-      "discovered_at": "2025-09-01T23:17:12.374Z",
+      "discovered_at": "2025-09-01T23:39:39.906Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-006": {
+      "cardId": "009-006",
+      "tcgplayerId": "649955",
+      "cardName": "Aurora - Holding Court",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-108": {
+      "cardId": "009-108",
+      "tcgplayerId": "650046",
+      "cardName": "Maleficent - Monstrous Dragon",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-207": {
+      "cardId": "009-207",
+      "tcgplayerId": "650143",
+      "cardName": "Stitch - Alien Dancer (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-208": {
+      "cardId": "009-208",
+      "tcgplayerId": "650145",
+      "cardName": "Ursula - Sea Witch (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-005": {
+      "cardId": "009-005",
+      "tcgplayerId": "649954",
+      "cardName": "Minnie Mouse - Sweetheart Princess",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-219": {
+      "cardId": "009-219",
+      "tcgplayerId": "650154",
+      "cardName": "The Queen - Mirror Seeker (Epic)",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-132": {
+      "cardId": "009-132",
+      "tcgplayerId": "650067",
+      "cardName": "A Pirate's Life",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-100": {
+      "cardId": "009-100",
+      "tcgplayerId": "650038",
+      "cardName": "Family Fishing Pole",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-153": {
+      "cardId": "009-153",
+      "tcgplayerId": "650088",
+      "cardName": "Aurora - Dreaming Guardian",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-089": {
+      "cardId": "009-089",
+      "tcgplayerId": "647668",
+      "cardName": "John Silver - Alien Pirate",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-040": {
+      "cardId": "009-040",
+      "tcgplayerId": "649987",
+      "cardName": "Belle - Accomplished Mystic",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-201": {
+      "cardId": "009-201",
+      "tcgplayerId": "647674",
+      "cardName": "Strength of a Raging Fire",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-053": {
+      "cardId": "009-053",
+      "tcgplayerId": "649997",
+      "cardName": "Elsa - Snow Queen",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-001": {
+      "cardId": "009-001",
+      "tcgplayerId": "649950",
+      "cardName": "The Queen - Conceited Ruler",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-046": {
+      "cardId": "009-046",
+      "tcgplayerId": "647679",
+      "cardName": "Dumbo - The Flying Elephant",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-163": {
+      "cardId": "009-163",
+      "tcgplayerId": "650097",
+      "cardName": "Develop Your Brain",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-160": {
+      "cardId": "009-160",
+      "tcgplayerId": "647672",
+      "cardName": "Alice - Growing Girl",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-064": {
+      "cardId": "009-064",
+      "tcgplayerId": "647677",
+      "cardName": "The Magic Feather",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-188": {
+      "cardId": "009-188",
+      "tcgplayerId": "650121",
+      "cardName": "Tinker Bell - Giant Fairy",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-178": {
+      "cardId": "009-178",
+      "tcgplayerId": "650111",
+      "cardName": "Jasmine - Fearless Princess",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:42.631Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-075": {
+      "cardId": "009-075",
+      "tcgplayerId": "647681",
+      "cardName": "Max Goof - Rebellious Teen",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-142": {
+      "cardId": "009-142",
+      "tcgplayerId": "650077",
+      "cardName": "Mulan - Considerate Diplomat",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-099": {
+      "cardId": "009-099",
+      "tcgplayerId": "650037",
+      "cardName": "Mother Knows Best",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-195": {
+      "cardId": "009-195",
+      "tcgplayerId": "650128",
+      "cardName": "Ariel - Sonic Warrior",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-150": {
+      "cardId": "009-150",
+      "tcgplayerId": "650085",
+      "cardName": "Grand Pabbie - Oldest and Wisest",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-078": {
+      "cardId": "009-078",
+      "tcgplayerId": "650018",
+      "cardName": "Bobby Zimuruski - Spray Cheese Kid",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-004": {
+      "cardId": "009-004",
+      "tcgplayerId": "649953",
+      "cardName": "Beast - Gracious Prince",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-109": {
+      "cardId": "009-109",
+      "tcgplayerId": "647682",
+      "cardName": "Powerline - Taking the Stage",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-018": {
+      "cardId": "009-018",
+      "tcgplayerId": "649966",
+      "cardName": "Julieta Madrigal - Excellent Cook",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-060": {
+      "cardId": "009-060",
+      "tcgplayerId": "650004",
+      "cardName": "Second Star to the Right",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-117": {
+      "cardId": "009-117",
+      "tcgplayerId": "650053",
+      "cardName": "Powerline - Musical Superstar",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-054": {
+      "cardId": "009-054",
+      "tcgplayerId": "649998",
+      "cardName": "Genie - Supportive Friend",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-062": {
+      "cardId": "009-062",
+      "tcgplayerId": "650006",
+      "cardName": "Last-Ditch Effort",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-135": {
+      "cardId": "009-135",
+      "tcgplayerId": "650070",
+      "cardName": "Dinner Bell",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-137": {
+      "cardId": "009-137",
+      "tcgplayerId": "650072",
+      "cardName": "Anna - True-Hearted",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-126": {
+      "cardId": "009-126",
+      "tcgplayerId": "650061",
+      "cardName": "Mulan - Elite Archer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-066": {
+      "cardId": "009-066",
+      "tcgplayerId": "650009",
+      "cardName": "White Rabbit's Pocket Watch",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-192": {
+      "cardId": "009-192",
+      "tcgplayerId": "650125",
+      "cardName": "John Silver - Greedy Treasure Seeker",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-036": {
+      "cardId": "009-036",
+      "tcgplayerId": "649983",
+      "cardName": "Rafiki - Mystical Fighter",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-047": {
+      "cardId": "009-047",
+      "tcgplayerId": "647678",
+      "cardName": "Timothy Q. Mouse - Flight Instructor",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:45.193Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-069": {
+      "cardId": "009-069",
+      "tcgplayerId": "650011",
+      "cardName": "Kuzco - Temperamental Emperor",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-129": {
+      "cardId": "009-129",
+      "tcgplayerId": "650064",
+      "cardName": "Tuk Tuk - Lively Partner",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-052": {
+      "cardId": "009-052",
+      "tcgplayerId": "649996",
+      "cardName": "Camilo Madrigal - Prankster",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-172": {
+      "cardId": "009-172",
+      "tcgplayerId": "650106",
+      "cardName": "Mickey Mouse - Trumpeter",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-097": {
+      "cardId": "009-097",
+      "tcgplayerId": "650035",
+      "cardName": "Under the Sea",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-074": {
+      "cardId": "009-074",
+      "tcgplayerId": "650016",
+      "cardName": "Goofy - Set for Adventure",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-030": {
+      "cardId": "009-030",
+      "tcgplayerId": "649977",
+      "cardName": "World's Greatest Criminal Mind",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-166": {
+      "cardId": "009-166",
+      "tcgplayerId": "650100",
+      "cardName": "Dig a Little Deeper",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-012": {
+      "cardId": "009-012",
+      "tcgplayerId": "649961",
+      "cardName": "Tinker Bell - Generous Fairy",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-187": {
+      "cardId": "009-187",
+      "tcgplayerId": "650120",
+      "cardName": "Lawrence - Jealous Manservant",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-055": {
+      "cardId": "009-055",
+      "tcgplayerId": "649999",
+      "cardName": "Olaf - Friendly Snowman",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-200": {
+      "cardId": "009-200",
+      "tcgplayerId": "650133",
+      "cardName": "Fire the Cannons!",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-113": {
+      "cardId": "009-113",
+      "tcgplayerId": "650049",
+      "cardName": "Roxanne - Powerline Fan",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-017": {
+      "cardId": "009-017",
+      "tcgplayerId": "649965",
+      "cardName": "Nani - Protective Sister",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-130": {
+      "cardId": "009-130",
+      "tcgplayerId": "650065",
+      "cardName": "I2I",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-162": {
+      "cardId": "009-162",
+      "tcgplayerId": "650096",
+      "cardName": "Robin Hood - Unrivaled Archer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-003": {
+      "cardId": "009-003",
+      "tcgplayerId": "649952",
+      "cardName": "Stitch - Rock Star",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-094": {
+      "cardId": "009-094",
+      "tcgplayerId": "647675",
+      "cardName": "Stand Out",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-073": {
+      "cardId": "009-073",
+      "tcgplayerId": "650015",
+      "cardName": "Prince Phillip - Vanquisher of Foes",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "004-039": {
+      "cardId": "004-039",
+      "tcgplayerId": "651127",
+      "cardName": "Bruno Madrigal - Undetected Uncle",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:48.055Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-107": {
+      "cardId": "009-107",
+      "tcgplayerId": "650045",
+      "cardName": "Ariel - Adventurous Collector",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-071": {
+      "cardId": "009-071",
+      "tcgplayerId": "650013",
+      "cardName": "Cursed Merfolk - Ursula's Handiwork",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-138": {
+      "cardId": "009-138",
+      "tcgplayerId": "650073",
+      "cardName": "Huey - Savvy Nephew",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-112": {
+      "cardId": "009-112",
+      "tcgplayerId": "650048",
+      "cardName": "Max Goof - Rockin' Teen",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-033": {
+      "cardId": "009-033",
+      "tcgplayerId": "649980",
+      "cardName": "Ursula's Shell Necklace",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-038": {
+      "cardId": "009-038",
+      "tcgplayerId": "649985",
+      "cardName": "Jafar - Keeper of Secrets",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-120": {
+      "cardId": "009-120",
+      "tcgplayerId": "647670",
+      "cardName": "Queen of Hearts - Sensing Weakness",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-171": {
+      "cardId": "009-171",
+      "tcgplayerId": "650105",
+      "cardName": "Philoctetes - No-Nonsense Instructor",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-025": {
+      "cardId": "009-025",
+      "tcgplayerId": "649973",
+      "cardName": "Look at This Family",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-183": {
+      "cardId": "009-183",
+      "tcgplayerId": "650116",
+      "cardName": "Eeyore - Overstuffed Donkey",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-165": {
+      "cardId": "009-165",
+      "tcgplayerId": "650099",
+      "cardName": "One Jump Ahead",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-190": {
+      "cardId": "009-190",
+      "tcgplayerId": "650123",
+      "cardName": "Captain Hook - Captain of the Jolly Roger",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-070": {
+      "cardId": "009-070",
+      "tcgplayerId": "650012",
+      "cardName": "Robin Hood - Daydreamer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-193": {
+      "cardId": "009-193",
+      "tcgplayerId": "650126",
+      "cardName": "Li Shang - Imperial Captain",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-065": {
+      "cardId": "009-065",
+      "tcgplayerId": "650008",
+      "cardName": "Magic Mirror",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-081": {
+      "cardId": "009-081",
+      "tcgplayerId": "650021",
+      "cardName": "Enchantress - Unexpected Judge",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-134": {
+      "cardId": "009-134",
+      "tcgplayerId": "650069",
+      "cardName": "Medallion Weights",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-049": {
+      "cardId": "009-049",
+      "tcgplayerId": "649993",
+      "cardName": "Kuzco - Wanted Llama",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-161": {
+      "cardId": "009-161",
+      "tcgplayerId": "650095",
+      "cardName": "Aurora - Regal Princess",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-020": {
+      "cardId": "009-020",
+      "tcgplayerId": "649968",
+      "cardName": "Moana - Of Motunui",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:50.851Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-184": {
+      "cardId": "009-184",
+      "tcgplayerId": "650117",
+      "cardName": "Robin Hood - Capable Fighter",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-118": {
+      "cardId": "009-118",
+      "tcgplayerId": "650054",
+      "cardName": "Sisu - Emboldened Warrior",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-157": {
+      "cardId": "009-157",
+      "tcgplayerId": "650092",
+      "cardName": "Judy Hopps - Optimistic Officer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-039": {
+      "cardId": "009-039",
+      "tcgplayerId": "649986",
+      "cardName": "Belle - Untrained Mystic",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-002": {
+      "cardId": "009-002",
+      "tcgplayerId": "649951",
+      "cardName": "Pongo - Determined Father",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-136": {
+      "cardId": "009-136",
+      "tcgplayerId": "650071",
+      "cardName": "Agrabah - Marketplace",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-035": {
+      "cardId": "009-035",
+      "tcgplayerId": "649982",
+      "cardName": "The Queen - Wicked and Vain",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-159": {
+      "cardId": "009-159",
+      "tcgplayerId": "650094",
+      "cardName": "Winnie the Pooh - Having a Think",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-197": {
+      "cardId": "009-197",
+      "tcgplayerId": "650130",
+      "cardName": "One Last Hope",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-015": {
+      "cardId": "009-015",
+      "tcgplayerId": "647652",
+      "cardName": "Ariel - Singing Mermaid",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-133": {
+      "cardId": "009-133",
+      "tcgplayerId": "650068",
+      "cardName": "Be King Undisputed",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-186": {
+      "cardId": "009-186",
+      "tcgplayerId": "650119",
+      "cardName": "Hercules - Beloved Hero",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-170": {
+      "cardId": "009-170",
+      "tcgplayerId": "650104",
+      "cardName": "Motunui - Island Paradise",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-119": {
+      "cardId": "009-119",
+      "tcgplayerId": "650055",
+      "cardName": "Sisu - Daring Visitor",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-014": {
+      "cardId": "009-014",
+      "tcgplayerId": "649963",
+      "cardName": "Pluto - Determined Defender",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-087": {
+      "cardId": "009-087",
+      "tcgplayerId": "650027",
+      "cardName": "Shenzi - Hyena Pack Leader",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-086": {
+      "cardId": "009-086",
+      "tcgplayerId": "650026",
+      "cardName": "Heihei - Bumbling Rooster",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-168": {
+      "cardId": "009-168",
+      "tcgplayerId": "650102",
+      "cardName": "Heart of Te Fiti",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-031": {
+      "cardId": "009-031",
+      "tcgplayerId": "649978",
+      "cardName": "Be Our Guest",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-101": {
+      "cardId": "009-101",
+      "tcgplayerId": "650039",
+      "cardName": "Signed Contract",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:53.369Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-037": {
+      "cardId": "009-037",
+      "tcgplayerId": "649984",
+      "cardName": "Ursula - Sea Witch",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-155": {
+      "cardId": "009-155",
+      "tcgplayerId": "650090",
+      "cardName": "Jasmine - Heir of Agrabah",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-102": {
+      "cardId": "009-102",
+      "tcgplayerId": "650040",
+      "cardName": "Hidden Cove - Tranquil Haven",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-139": {
+      "cardId": "009-139",
+      "tcgplayerId": "650074",
+      "cardName": "Dewey - Showy Nephew",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-121": {
+      "cardId": "009-121",
+      "tcgplayerId": "650056",
+      "cardName": "Lumiere - Fiery Friend",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-198": {
+      "cardId": "009-198",
+      "tcgplayerId": "650131",
+      "cardName": "Smash",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-093": {
+      "cardId": "009-093",
+      "tcgplayerId": "650032",
+      "cardName": "Daisy Duck - Secret Agent",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-042": {
+      "cardId": "009-042",
+      "tcgplayerId": "649989",
+      "cardName": "Peter Pan's Shadow - Not Sewn On",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-085": {
+      "cardId": "009-085",
+      "tcgplayerId": "650025",
+      "cardName": "Donald Duck - Perfect Gentleman",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-084": {
+      "cardId": "009-084",
+      "tcgplayerId": "650024",
+      "cardName": "Pegasus - Gift for Hercules",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-023": {
+      "cardId": "009-023",
+      "tcgplayerId": "649971",
+      "cardName": "Queen of Hearts - Wonderland Empress",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-032": {
+      "cardId": "009-032",
+      "tcgplayerId": "649979",
+      "cardName": "Lantern",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-122": {
+      "cardId": "009-122",
+      "tcgplayerId": "650057",
+      "cardName": "Card Soldiers - Full Deck",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-092": {
+      "cardId": "009-092",
+      "tcgplayerId": "650031",
+      "cardName": "Aladdin - Prince Ali",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-090": {
+      "cardId": "009-090",
+      "tcgplayerId": "650029",
+      "cardName": "Ursula - Deceiver",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-180": {
+      "cardId": "009-180",
+      "tcgplayerId": "650113",
+      "cardName": "Benja - Guardian of the Dragon Gem",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-105": {
+      "cardId": "009-105",
+      "tcgplayerId": "650043",
+      "cardName": "Simba - Scrappy Cub",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-103": {
+      "cardId": "009-103",
+      "tcgplayerId": "650041",
+      "cardName": "LeFou - Instigator",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-051": {
+      "cardId": "009-051",
+      "tcgplayerId": "649995",
+      "cardName": "Dolores Madrigal - Easy Listener",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-021": {
+      "cardId": "009-021",
+      "tcgplayerId": "649969",
+      "cardName": "Pluto - Friendly Pooch",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:56.248Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-152": {
+      "cardId": "009-152",
+      "tcgplayerId": "650087",
+      "cardName": "Mama Odie - Mystical Maven",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-072": {
+      "cardId": "009-072",
+      "tcgplayerId": "650014",
+      "cardName": "Prince Phillip - Warden of the Woods",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-131": {
+      "cardId": "009-131",
+      "tcgplayerId": "650066",
+      "cardName": "You Can Fly!",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-091": {
+      "cardId": "009-091",
+      "tcgplayerId": "650030",
+      "cardName": "Wildcat - Mechanic",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-181": {
+      "cardId": "009-181",
+      "tcgplayerId": "650114",
+      "cardName": "Jafar - Royal Vizier",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-083": {
+      "cardId": "009-083",
+      "tcgplayerId": "650023",
+      "cardName": "Donald Duck - Sleepwalker",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-203": {
+      "cardId": "009-203",
+      "tcgplayerId": "650135",
+      "cardName": "Beast's Mirror",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-007": {
+      "cardId": "009-007",
+      "tcgplayerId": "649956",
+      "cardName": "The Queen - Regal Monarch",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-191": {
+      "cardId": "009-191",
+      "tcgplayerId": "650124",
+      "cardName": "Hercules - True Hero",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-123": {
+      "cardId": "009-123",
+      "tcgplayerId": "650058",
+      "cardName": "Queen of Hearts - Impulsive Ruler",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-095": {
+      "cardId": "009-095",
+      "tcgplayerId": "650033",
+      "cardName": "Sudden Chill",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-158": {
+      "cardId": "009-158",
+      "tcgplayerId": "650093",
+      "cardName": "Maid Marian - Delightful Dreamer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-022": {
+      "cardId": "009-022",
+      "tcgplayerId": "649970",
+      "cardName": "Ursula - Vanessa",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-167": {
+      "cardId": "009-167",
+      "tcgplayerId": "650101",
+      "cardName": "Aurelian Gyrosensor",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-019": {
+      "cardId": "009-019",
+      "tcgplayerId": "649967",
+      "cardName": "Cinderella - Gentle and Kind",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-056": {
+      "cardId": "009-056",
+      "tcgplayerId": "650000",
+      "cardName": "Sven - Official Ice Deliverer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-058": {
+      "cardId": "009-058",
+      "tcgplayerId": "650002",
+      "cardName": "Luisa Madrigal - Magically Strong One",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-116": {
+      "cardId": "009-116",
+      "tcgplayerId": "650052",
+      "cardName": "Moana - Undeterred Voyager",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-202": {
+      "cardId": "009-202",
+      "tcgplayerId": "650134",
+      "cardName": "The Mob Song",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-009": {
+      "cardId": "009-009",
+      "tcgplayerId": "649958",
+      "cardName": "Stitch - Alien Dancer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:39:58.596Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-104": {
+      "cardId": "009-104",
+      "tcgplayerId": "650042",
+      "cardName": "Shere Khan - Menacing Predator",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-016": {
+      "cardId": "009-016",
+      "tcgplayerId": "649964",
+      "cardName": "Pluto - Rescue Dog",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-050": {
+      "cardId": "009-050",
+      "tcgplayerId": "649994",
+      "cardName": "Tick-Tock - Ever-Present Pursuer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-156": {
+      "cardId": "009-156",
+      "tcgplayerId": "650091",
+      "cardName": "Belle - Inventive Engineer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-013": {
+      "cardId": "009-013",
+      "tcgplayerId": "649962",
+      "cardName": "Mickey Mouse - True Friend",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-204": {
+      "cardId": "009-204",
+      "tcgplayerId": "650136",
+      "cardName": "Maui's Place of Exile - Hidden Island",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-147": {
+      "cardId": "009-147",
+      "tcgplayerId": "650082",
+      "cardName": "Flounder - Voice of Reason",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-196": {
+      "cardId": "009-196",
+      "tcgplayerId": "650129",
+      "cardName": "Ariel - Determined Mermaid",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-029": {
+      "cardId": "009-029",
+      "tcgplayerId": "649976",
+      "cardName": "Bruno's Return",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-114": {
+      "cardId": "009-114",
+      "tcgplayerId": "650050",
+      "cardName": "P.J. Pete - Caught Up in the Music",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-059": {
+      "cardId": "009-059",
+      "tcgplayerId": "650003",
+      "cardName": "Jafar - Lamp Thief",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-010": {
+      "cardId": "009-010",
+      "tcgplayerId": "649959",
+      "cardName": "Mulan - Free Spirit",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-146": {
+      "cardId": "009-146",
+      "tcgplayerId": "650081",
+      "cardName": "Anna - Braving the Storm",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-106": {
+      "cardId": "009-106",
+      "tcgplayerId": "650044",
+      "cardName": "Maui - Whale",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-124": {
+      "cardId": "009-124",
+      "tcgplayerId": "650059",
+      "cardName": "Rapunzel - Letting Down Her Hair",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-125": {
+      "cardId": "009-125",
+      "tcgplayerId": "650060",
+      "cardName": "Mulan - Injured Soldier",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-088": {
+      "cardId": "009-088",
+      "tcgplayerId": "650028",
+      "cardName": "Tinker Bell - Most Helpful",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-080": {
+      "cardId": "009-080",
+      "tcgplayerId": "650020",
+      "cardName": "Mickey Mouse - Steamboat Pilot",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-063": {
+      "cardId": "009-063",
+      "tcgplayerId": "650007",
+      "cardName": "I'm Stuck!",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-041": {
+      "cardId": "009-041",
+      "tcgplayerId": "649988",
+      "cardName": "Winnie the Pooh - Hunny Wizard",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:01.224Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-128": {
+      "cardId": "009-128",
+      "tcgplayerId": "650063",
+      "cardName": "Sergeant Tibbs - Courageous Cat",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-068": {
+      "cardId": "009-068",
+      "tcgplayerId": "650010",
+      "cardName": "Casa Madrigal - Casita",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-169": {
+      "cardId": "009-169",
+      "tcgplayerId": "650103",
+      "cardName": "Coconut Basket",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-082": {
+      "cardId": "009-082",
+      "tcgplayerId": "650022",
+      "cardName": "Virana - Fang Chief",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-048": {
+      "cardId": "009-048",
+      "tcgplayerId": "649992",
+      "cardName": "Elsa - Gloves Off",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-164": {
+      "cardId": "009-164",
+      "tcgplayerId": "650098",
+      "cardName": "Four Dozen Eggs",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-027": {
+      "cardId": "009-027",
+      "tcgplayerId": "649974",
+      "cardName": "Heal What Has Been Hurt",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-079": {
+      "cardId": "009-079",
+      "tcgplayerId": "650019",
+      "cardName": "Megara - Pulling the Strings",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-096": {
+      "cardId": "009-096",
+      "tcgplayerId": "650034",
+      "cardName": "Improvise",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-098": {
+      "cardId": "009-098",
+      "tcgplayerId": "650036",
+      "cardName": "Make the Potion",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-140": {
+      "cardId": "009-140",
+      "tcgplayerId": "650075",
+      "cardName": "Louie - Chill Nephew",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-127": {
+      "cardId": "009-127",
+      "tcgplayerId": "650062",
+      "cardName": "Raya - Headstrong",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-067": {
+      "cardId": "009-067",
+      "tcgplayerId": "647667",
+      "cardName": "Rose Lantern",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-154": {
+      "cardId": "009-154",
+      "tcgplayerId": "650089",
+      "cardName": "Aurora - Tranquil Princess",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-179": {
+      "cardId": "009-179",
+      "tcgplayerId": "650112",
+      "cardName": "Tiana - Diligent Waitress",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-061": {
+      "cardId": "009-061",
+      "tcgplayerId": "650005",
+      "cardName": "Poor Unfortunate Souls",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-008": {
+      "cardId": "009-008",
+      "tcgplayerId": "649957",
+      "cardName": "Rapunzel - Sunshine",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-011": {
+      "cardId": "009-011",
+      "tcgplayerId": "649960",
+      "cardName": "Daisy Duck - Musketeer Spy",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-148": {
+      "cardId": "009-148",
+      "tcgplayerId": "650083",
+      "cardName": "Hans - Noble Scoundrel",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-145": {
+      "cardId": "009-145",
+      "tcgplayerId": "650080",
+      "cardName": "Cruella De Vil - Fashionable Cruiser",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:03.832Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-115": {
+      "cardId": "009-115",
+      "tcgplayerId": "650051",
+      "cardName": "Gaston - Arrogant Hunter",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-149": {
+      "cardId": "009-149",
+      "tcgplayerId": "650084",
+      "cardName": "The Queen - Mirror Seeker",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-028": {
+      "cardId": "009-028",
+      "tcgplayerId": "649975",
+      "cardName": "Lost in the Woods",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-057": {
+      "cardId": "009-057",
+      "tcgplayerId": "650001",
+      "cardName": "Mama Odie - Voice of Wisdom",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-194": {
+      "cardId": "009-194",
+      "tcgplayerId": "650127",
+      "cardName": "Prince Eric - Dashing and Brave",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-144": {
+      "cardId": "009-144",
+      "tcgplayerId": "650079",
+      "cardName": "Mufasa - King of the Pride Lands",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-034": {
+      "cardId": "009-034",
+      "tcgplayerId": "649981",
+      "cardName": "Atlantica - Concert Hall",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-185": {
+      "cardId": "009-185",
+      "tcgplayerId": "650118",
+      "cardName": "Mickey Mouse - Standard Bearer",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-182": {
+      "cardId": "009-182",
+      "tcgplayerId": "650115",
+      "cardName": "Prince Naveen - Penniless Royal",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-199": {
+      "cardId": "009-199",
+      "tcgplayerId": "650132",
+      "cardName": "I Find 'Em, I Flatten 'Em",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
+      "pricing": null,
+      "last_updated": null
+    },
+    "009-189": {
+      "cardId": "009-189",
+      "tcgplayerId": "650122",
+      "cardName": "Tinker Bell - Tiny Tactician",
+      "discovered_via": "justtcg_api",
+      "discovered_at": "2025-09-01T23:40:06.387Z",
       "pricing": null,
       "last_updated": null
     }

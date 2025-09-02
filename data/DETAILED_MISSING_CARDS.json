@@ -1,0 +1,1798 @@
+{
+  "totalCards": 2051,
+  "missingAnalysis": {
+    "dreamborn": [
+      {
+        "id": "001-00N",
+        "setCode": "001",
+        "cardNumber": "00N",
+        "name": "Mickey Mouse - Brave Little Tailor Puzzle Insert (Bottom Left)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "002-00N",
+        "setCode": "002",
+        "cardNumber": "00N",
+        "name": "Minnie Mouse - Wide-Eyed Diver Puzzle Insert (Bottom Left)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-00N",
+        "setCode": "003",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Into the Inklands Sleeved Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-04a",
+        "setCode": "003",
+        "cardNumber": "04a",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-04b",
+        "setCode": "003",
+        "cardNumber": "04b",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-04c",
+        "setCode": "003",
+        "cardNumber": "04c",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-04d",
+        "setCode": "003",
+        "cardNumber": "04d",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-04e",
+        "setCode": "003",
+        "cardNumber": "04e",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "004-000",
+        "setCode": "004",
+        "cardNumber": "000",
+        "name": "Ursula - Sea Witch Queen Puzzle Insert (Set of 9)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "005-00N",
+        "setCode": "005",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Shimmering Skies Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "006-00N",
+        "setCode": "006",
+        "cardNumber": "00N",
+        "name": "Azurite Sea Puzzle Insert (Set of 9)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "007-00N",
+        "setCode": "007",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Archazia's Island Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "008-00N",
+        "setCode": "008",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Reign of Jafar Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "008-01f",
+        "setCode": "008",
+        "cardNumber": "01f",
+        "name": "Louie",
+        "rarity": "uncommon",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-02f",
+        "setCode": "008",
+        "cardNumber": "02f",
+        "name": "Dewey",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-03f",
+        "setCode": "008",
+        "cardNumber": "03f",
+        "name": "Huey",
+        "rarity": "uncommon",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-125f",
+        "setCode": "008",
+        "cardNumber": "125f",
+        "name": "Brutus",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-65f",
+        "setCode": "008",
+        "cardNumber": "65f",
+        "name": "Nero",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "009-000",
+        "setCode": "009",
+        "cardNumber": "000",
+        "name": "Bruno Madrigal",
+        "rarity": "super_rare",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      }
+    ],
+    "lorcast": [
+      {
+        "id": "001-00N",
+        "setCode": "001",
+        "cardNumber": "00N",
+        "name": "Mickey Mouse - Brave Little Tailor Puzzle Insert (Bottom Left)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "001-P1-001",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-002",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Stitch",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-003",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Elsa",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-004",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Cruella de Vil",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-005",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Maleficent",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-006",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Robin Hood",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-007",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Captain Hook",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-008",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-009",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Heihei",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-010",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Yzma",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-011",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-012",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Goofy",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-013",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Donald Duck",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "002-00N",
+        "setCode": "002",
+        "cardNumber": "00N",
+        "name": "Minnie Mouse - Wide-Eyed Diver Puzzle Insert (Bottom Left)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-004a",
+        "setCode": "003",
+        "cardNumber": "004a",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004b",
+        "setCode": "003",
+        "cardNumber": "004b",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004c",
+        "setCode": "003",
+        "cardNumber": "004c",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004d",
+        "setCode": "003",
+        "cardNumber": "004d",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004e",
+        "setCode": "003",
+        "cardNumber": "004e",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-00N",
+        "setCode": "003",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Into the Inklands Sleeved Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "003-223",
+        "setCode": "003",
+        "cardNumber": "223",
+        "name": "Piglet",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "004-000",
+        "setCode": "004",
+        "cardNumber": "000",
+        "name": "Ursula - Sea Witch Queen Puzzle Insert (Set of 9)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "005-00N",
+        "setCode": "005",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Shimmering Skies Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "006-00N",
+        "setCode": "006",
+        "cardNumber": "00N",
+        "name": "Azurite Sea Puzzle Insert (Set of 9)",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "007-00N",
+        "setCode": "007",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Archazia's Island Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "007-223",
+        "setCode": "007",
+        "cardNumber": "223",
+        "name": "Bolt",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "007-224",
+        "setCode": "007",
+        "cardNumber": "224",
+        "name": "Elsa",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-00N",
+        "setCode": "008",
+        "cardNumber": "00N",
+        "name": "Disney Lorcana: Reign of Jafar Booster Pack",
+        "rarity": "None",
+        "type": "unknown",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": false,
+          "justtcg": true
+        }
+      },
+      {
+        "id": "008-223",
+        "setCode": "008",
+        "cardNumber": "223",
+        "name": "Goofy",
+        "rarity": "legendary",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-224",
+        "setCode": "008",
+        "cardNumber": "224",
+        "name": "Pinocchio",
+        "rarity": "legendary",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      }
+    ],
+    "justtcg": [
+      {
+        "id": "001-041",
+        "setCode": "001",
+        "cardNumber": "041",
+        "name": "Elsa",
+        "rarity": "uncommon",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-001",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-002",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Stitch",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-003",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Elsa",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-004",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Cruella de Vil",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-005",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Maleficent",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-006",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Robin Hood",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-007",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Captain Hook",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-008",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-009",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Heihei",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-010",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Yzma",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-011",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Mickey Mouse",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-012",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Goofy",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "001-P1-013",
+        "setCode": "001",
+        "cardNumber": "P1",
+        "name": "Donald Duck",
+        "rarity": "promo",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004a",
+        "setCode": "003",
+        "cardNumber": "004a",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004b",
+        "setCode": "003",
+        "cardNumber": "004b",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004c",
+        "setCode": "003",
+        "cardNumber": "004c",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004d",
+        "setCode": "003",
+        "cardNumber": "004d",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-004e",
+        "setCode": "003",
+        "cardNumber": "004e",
+        "name": "Dalmatian Puppy",
+        "rarity": "common",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-110",
+        "setCode": "003",
+        "cardNumber": "110",
+        "name": "Jim Hawkins",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "003-223",
+        "setCode": "003",
+        "cardNumber": "223",
+        "name": "Piglet",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "004-192",
+        "setCode": "004",
+        "cardNumber": "192",
+        "name": "Rajah",
+        "rarity": "rare",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "004-223",
+        "setCode": "004",
+        "cardNumber": "223",
+        "name": "Yen Sid",
+        "rarity": "legendary",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "004-224",
+        "setCode": "004",
+        "cardNumber": "224",
+        "name": "Mulan",
+        "rarity": "legendary",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "004-225",
+        "setCode": "004",
+        "cardNumber": "225",
+        "name": "Mickey Mouse",
+        "rarity": "rare",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "005-223",
+        "setCode": "005",
+        "cardNumber": "223",
+        "name": "Half Hexwell Crown",
+        "rarity": "rare",
+        "type": "Item",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "006-094",
+        "setCode": "006",
+        "cardNumber": "094",
+        "name": "Prepare to Board!",
+        "rarity": "common",
+        "type": "Action",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "007-223",
+        "setCode": "007",
+        "cardNumber": "223",
+        "name": "Bolt",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "007-224",
+        "setCode": "007",
+        "cardNumber": "224",
+        "name": "Elsa",
+        "rarity": "super rare",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-01f",
+        "setCode": "008",
+        "cardNumber": "01f",
+        "name": "Louie",
+        "rarity": "uncommon",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-02f",
+        "setCode": "008",
+        "cardNumber": "02f",
+        "name": "Dewey",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-03f",
+        "setCode": "008",
+        "cardNumber": "03f",
+        "name": "Huey",
+        "rarity": "uncommon",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-125f",
+        "setCode": "008",
+        "cardNumber": "125f",
+        "name": "Brutus",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-223",
+        "setCode": "008",
+        "cardNumber": "223",
+        "name": "Goofy",
+        "rarity": "legendary",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-224",
+        "setCode": "008",
+        "cardNumber": "224",
+        "name": "Pinocchio",
+        "rarity": "legendary",
+        "type": "character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": false,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "008-65f",
+        "setCode": "008",
+        "cardNumber": "65f",
+        "name": "Nero",
+        "rarity": "common",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "009-000",
+        "setCode": "009",
+        "cardNumber": "000",
+        "name": "Bruno Madrigal",
+        "rarity": "super_rare",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": false,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "009-229",
+        "setCode": "009",
+        "cardNumber": "229",
+        "name": "Genie",
+        "rarity": "enchanted",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      },
+      {
+        "id": "009-235",
+        "setCode": "009",
+        "cardNumber": "235",
+        "name": "Mulan",
+        "rarity": "enchanted",
+        "type": "Character",
+        "presentIn": {
+          "dreamborn": true,
+          "lorcast": true,
+          "justtcg": false
+        }
+      }
+    ]
+  },
+  "missingFromMultiple": [
+    {
+      "id": "001-P1-001",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Mickey Mouse",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-002",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Stitch",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-003",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Elsa",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-004",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Cruella de Vil",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-005",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Maleficent",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-006",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Robin Hood",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-007",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Captain Hook",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-008",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Mickey Mouse",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-009",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Heihei",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-010",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Yzma",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-011",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Mickey Mouse",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-012",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Goofy",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "001-P1-013",
+      "setCode": "001",
+      "cardNumber": "P1",
+      "name": "Donald Duck",
+      "rarity": "promo",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-004a",
+      "setCode": "003",
+      "cardNumber": "004a",
+      "name": "Dalmatian Puppy",
+      "rarity": "common",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-004b",
+      "setCode": "003",
+      "cardNumber": "004b",
+      "name": "Dalmatian Puppy",
+      "rarity": "common",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-004c",
+      "setCode": "003",
+      "cardNumber": "004c",
+      "name": "Dalmatian Puppy",
+      "rarity": "common",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-004d",
+      "setCode": "003",
+      "cardNumber": "004d",
+      "name": "Dalmatian Puppy",
+      "rarity": "common",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-004e",
+      "setCode": "003",
+      "cardNumber": "004e",
+      "name": "Dalmatian Puppy",
+      "rarity": "common",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "003-223",
+      "setCode": "003",
+      "cardNumber": "223",
+      "name": "Piglet",
+      "rarity": "super rare",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "007-223",
+      "setCode": "007",
+      "cardNumber": "223",
+      "name": "Bolt",
+      "rarity": "super rare",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "007-224",
+      "setCode": "007",
+      "cardNumber": "224",
+      "name": "Elsa",
+      "rarity": "super rare",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-223",
+      "setCode": "008",
+      "cardNumber": "223",
+      "name": "Goofy",
+      "rarity": "legendary",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-224",
+      "setCode": "008",
+      "cardNumber": "224",
+      "name": "Pinocchio",
+      "rarity": "legendary",
+      "type": "character",
+      "presentIn": {
+        "dreamborn": true,
+        "lorcast": false,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-01f",
+      "setCode": "008",
+      "cardNumber": "01f",
+      "name": "Louie",
+      "rarity": "uncommon",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-02f",
+      "setCode": "008",
+      "cardNumber": "02f",
+      "name": "Dewey",
+      "rarity": "common",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-03f",
+      "setCode": "008",
+      "cardNumber": "03f",
+      "name": "Huey",
+      "rarity": "uncommon",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-65f",
+      "setCode": "008",
+      "cardNumber": "65f",
+      "name": "Nero",
+      "rarity": "common",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "008-125f",
+      "setCode": "008",
+      "cardNumber": "125f",
+      "name": "Brutus",
+      "rarity": "common",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "009-000",
+      "setCode": "009",
+      "cardNumber": "000",
+      "name": "Bruno Madrigal",
+      "rarity": "super_rare",
+      "type": "Character",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": true,
+        "justtcg": false
+      }
+    },
+    {
+      "id": "007-00N",
+      "setCode": "007",
+      "cardNumber": "00N",
+      "name": "Disney Lorcana: Archazia's Island Booster Pack",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "006-00N",
+      "setCode": "006",
+      "cardNumber": "00N",
+      "name": "Azurite Sea Puzzle Insert (Set of 9)",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "003-00N",
+      "setCode": "003",
+      "cardNumber": "00N",
+      "name": "Disney Lorcana: Into the Inklands Sleeved Booster Pack",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "008-00N",
+      "setCode": "008",
+      "cardNumber": "00N",
+      "name": "Disney Lorcana: Reign of Jafar Booster Pack",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "002-00N",
+      "setCode": "002",
+      "cardNumber": "00N",
+      "name": "Minnie Mouse - Wide-Eyed Diver Puzzle Insert (Bottom Left)",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "005-00N",
+      "setCode": "005",
+      "cardNumber": "00N",
+      "name": "Disney Lorcana: Shimmering Skies Booster Pack",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "001-00N",
+      "setCode": "001",
+      "cardNumber": "00N",
+      "name": "Mickey Mouse - Brave Little Tailor Puzzle Insert (Bottom Left)",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    },
+    {
+      "id": "004-000",
+      "setCode": "004",
+      "cardNumber": "000",
+      "name": "Ursula - Sea Witch Queen Puzzle Insert (Set of 9)",
+      "rarity": "None",
+      "type": "unknown",
+      "presentIn": {
+        "dreamborn": false,
+        "lorcast": false,
+        "justtcg": true
+      }
+    }
+  ],
+  "highValueMissing": [
+    {
+      "source": "dreamborn",
+      "cards": [
+        {
+          "id": "009-000",
+          "setCode": "009",
+          "cardNumber": "000",
+          "name": "Bruno Madrigal",
+          "rarity": "super_rare",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": false,
+            "lorcast": true,
+            "justtcg": false
+          }
+        }
+      ]
+    },
+    {
+      "source": "lorcast",
+      "cards": [
+        {
+          "id": "008-223",
+          "setCode": "008",
+          "cardNumber": "223",
+          "name": "Goofy",
+          "rarity": "legendary",
+          "type": "character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": false,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "008-224",
+          "setCode": "008",
+          "cardNumber": "224",
+          "name": "Pinocchio",
+          "rarity": "legendary",
+          "type": "character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": false,
+            "justtcg": false
+          }
+        }
+      ]
+    },
+    {
+      "source": "justtcg",
+      "cards": [
+        {
+          "id": "004-223",
+          "setCode": "004",
+          "cardNumber": "223",
+          "name": "Yen Sid",
+          "rarity": "legendary",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": true,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "004-224",
+          "setCode": "004",
+          "cardNumber": "224",
+          "name": "Mulan",
+          "rarity": "legendary",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": true,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "008-223",
+          "setCode": "008",
+          "cardNumber": "223",
+          "name": "Goofy",
+          "rarity": "legendary",
+          "type": "character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": false,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "008-224",
+          "setCode": "008",
+          "cardNumber": "224",
+          "name": "Pinocchio",
+          "rarity": "legendary",
+          "type": "character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": false,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "009-000",
+          "setCode": "009",
+          "cardNumber": "000",
+          "name": "Bruno Madrigal",
+          "rarity": "super_rare",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": false,
+            "lorcast": true,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "009-229",
+          "setCode": "009",
+          "cardNumber": "229",
+          "name": "Genie",
+          "rarity": "enchanted",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": true,
+            "justtcg": false
+          }
+        },
+        {
+          "id": "009-235",
+          "setCode": "009",
+          "cardNumber": "235",
+          "name": "Mulan",
+          "rarity": "enchanted",
+          "type": "Character",
+          "presentIn": {
+            "dreamborn": true,
+            "lorcast": true,
+            "justtcg": false
+          }
+        }
+      ]
+    }
+  ]
+}

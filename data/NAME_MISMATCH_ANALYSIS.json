@@ -1,0 +1,1741 @@
+{
+  "totalMismatches": 66,
+  "patterns": {
+    "punctuation_differences": [
+      {
+        "cardId": "003-094",
+        "names": {
+          "dreamborn": "Has Set My Heaaaaaaart . . .",
+          "lorcast": "Has Set My Heaaaaaaart . . .",
+          "justtcg": "Has Set My Heaaaaaaart . . ."
+        },
+        "normalized": {
+          "dreamborn": "has set my heaaaaaaart",
+          "lorcast": "has set my heaaaaaaart"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "004-063",
+        "names": {
+          "dreamborn": "Ursula's Plan",
+          "lorcast": "Ursula’s Plan",
+          "justtcg": "Ursula's Plan"
+        },
+        "normalized": {
+          "dreamborn": "ursulas plan",
+          "lorcast": "ursulas plan"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-068",
+        "names": {
+          "dreamborn": "Ursula's Lair",
+          "lorcast": "Ursula’s Lair",
+          "justtcg": "Ursula's Lair - Eye of the Storm"
+        },
+        "normalized": {
+          "dreamborn": "ursulas lair",
+          "lorcast": "ursulas lair"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-096",
+        "names": {
+          "dreamborn": "Ursula's Trickery",
+          "lorcast": "Ursula’s Trickery",
+          "justtcg": "Ursula's Trickery"
+        },
+        "normalized": {
+          "dreamborn": "ursulas trickery",
+          "lorcast": "ursulas trickery"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-097",
+        "names": {
+          "dreamborn": "We Don't Talk About Bruno",
+          "lorcast": "We Don’t Talk About Bruno",
+          "justtcg": "We Don't Talk About Bruno"
+        },
+        "normalized": {
+          "dreamborn": "we dont talk about bruno",
+          "lorcast": "we dont talk about bruno"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-102",
+        "names": {
+          "dreamborn": "Ursula's Garden",
+          "lorcast": "Ursula’s Garden",
+          "justtcg": "Ursula's Garden - Full of the Unfortunate"
+        },
+        "normalized": {
+          "dreamborn": "ursulas garden",
+          "lorcast": "ursulas garden"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-128",
+        "names": {
+          "dreamborn": "A Pirate's Life",
+          "lorcast": "A Pirate’s Life",
+          "justtcg": "A Pirate's Life"
+        },
+        "normalized": {
+          "dreamborn": "a pirates life",
+          "lorcast": "a pirates life"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-169",
+        "names": {
+          "dreamborn": "Ariel's Grotto",
+          "lorcast": "Ariel’s Grotto",
+          "justtcg": "Ariel's Grotto - A Secret Place"
+        },
+        "normalized": {
+          "dreamborn": "ariels grotto",
+          "lorcast": "ariels grotto"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-196",
+        "names": {
+          "dreamborn": "I Find 'Em, I Flatten 'Em",
+          "lorcast": "I Find ’Em, I Flatten ’Em",
+          "justtcg": "I Find 'Em, I Flatten 'Em"
+        },
+        "normalized": {
+          "dreamborn": "i find em i flatten em",
+          "lorcast": "i find em i flatten em"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-219",
+        "names": {
+          "dreamborn": "Ariel's Grotto",
+          "lorcast": "Ariel’s Grotto",
+          "justtcg": "Ariel's Grotto - A Secret Place (Enchanted)"
+        },
+        "normalized": {
+          "dreamborn": "ariels grotto",
+          "lorcast": "ariels grotto"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "009-033",
+        "names": {
+          "dreamborn": "Ursula’s Shell Necklace",
+          "lorcast": "Ursula's Shell Necklace",
+          "justtcg": "Ursula's Shell Necklace"
+        },
+        "normalized": {
+          "dreamborn": "ursulas shell necklace",
+          "lorcast": "ursulas shell necklace"
+        },
+        "setCode": "009"
+      },
+      {
+        "cardId": "009-066",
+        "names": {
+          "dreamborn": "White Rabbit’s Pocket Watch",
+          "lorcast": "White Rabbit's Pocket Watch",
+          "justtcg": "White Rabbit's Pocket Watch"
+        },
+        "normalized": {
+          "dreamborn": "white rabbits pocket watch",
+          "lorcast": "white rabbits pocket watch"
+        },
+        "setCode": "009"
+      },
+      {
+        "cardId": "009-132",
+        "names": {
+          "dreamborn": "A Pirate’s Life",
+          "lorcast": "A Pirate's Life",
+          "justtcg": "A Pirate's Life"
+        },
+        "normalized": {
+          "dreamborn": "a pirates life",
+          "lorcast": "a pirates life"
+        },
+        "setCode": "009"
+      },
+      {
+        "cardId": "009-199",
+        "names": {
+          "dreamborn": "I Find ’Em, I Flatten ’Em",
+          "lorcast": "I Find 'Em, I Flatten 'Em",
+          "justtcg": "I Find 'Em, I Flatten 'Em"
+        },
+        "normalized": {
+          "dreamborn": "i find em i flatten em",
+          "lorcast": "i find em i flatten em"
+        },
+        "setCode": "009"
+      },
+      {
+        "cardId": "009-203",
+        "names": {
+          "dreamborn": "Beast’s Mirror",
+          "lorcast": "Beast's Mirror",
+          "justtcg": "Beast's Mirror"
+        },
+        "normalized": {
+          "dreamborn": "beasts mirror",
+          "lorcast": "beasts mirror"
+        },
+        "setCode": "009"
+      }
+    ],
+    "case_differences": [
+      {
+        "cardId": "001-163",
+        "names": {
+          "dreamborn": "Let it Go",
+          "lorcast": "Let It Go",
+          "justtcg": "Let It Go"
+        },
+        "normalized": {
+          "dreamborn": "let it go",
+          "lorcast": "let it go"
+        },
+        "setCode": "001"
+      },
+      {
+        "cardId": "003-063",
+        "names": {
+          "dreamborn": "The Boss Is On A Roll",
+          "lorcast": "The Boss is on a Roll",
+          "justtcg": "The Boss is on a Roll"
+        },
+        "normalized": {
+          "dreamborn": "the boss is on a roll",
+          "lorcast": "the boss is on a roll"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-096",
+        "names": {
+          "dreamborn": "Strike A Good Match",
+          "lorcast": "Strike a Good Match",
+          "justtcg": "Strike a Good Match"
+        },
+        "normalized": {
+          "dreamborn": "strike a good match",
+          "lorcast": "strike a good match"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-155",
+        "names": {
+          "dreamborn": "Scrooge Mcduck",
+          "lorcast": "Scrooge McDuck",
+          "justtcg": "Scrooge McDuck - Uncle Moneybags"
+        },
+        "normalized": {
+          "dreamborn": "scrooge mcduck",
+          "lorcast": "scrooge mcduck"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-173",
+        "names": {
+          "dreamborn": "Gustav The Giant",
+          "lorcast": "Gustav the Giant",
+          "justtcg": "Gustav the Giant - Terror of the Kingdom"
+        },
+        "normalized": {
+          "dreamborn": "gustav the giant",
+          "lorcast": "gustav the giant"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-196",
+        "names": {
+          "dreamborn": "Ba-boom!",
+          "lorcast": "Ba-Boom!",
+          "justtcg": "Ba-Boom!"
+        },
+        "normalized": {
+          "dreamborn": "baboom",
+          "lorcast": "baboom"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "004-028",
+        "names": {
+          "dreamborn": "Look At This Family",
+          "lorcast": "Look at This Family",
+          "justtcg": "Look at This Family"
+        },
+        "normalized": {
+          "dreamborn": "look at this family",
+          "lorcast": "look at this family"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-029",
+        "names": {
+          "dreamborn": "Lost In The Woods",
+          "lorcast": "Lost in the Woods",
+          "justtcg": "Lost in the Woods"
+        },
+        "normalized": {
+          "dreamborn": "lost in the woods",
+          "lorcast": "lost in the woods"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-030",
+        "names": {
+          "dreamborn": "Sign The Scroll",
+          "lorcast": "Sign the Scroll",
+          "justtcg": "Sign the Scroll"
+        },
+        "normalized": {
+          "dreamborn": "sign the scroll",
+          "lorcast": "sign the scroll"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-061",
+        "names": {
+          "dreamborn": "Second Star To The Right",
+          "lorcast": "Second Star to the Right",
+          "justtcg": "Second Star to the Right"
+        },
+        "normalized": {
+          "dreamborn": "second star to the right",
+          "lorcast": "second star to the right"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-062",
+        "names": {
+          "dreamborn": "Swing Into Action",
+          "lorcast": "Swing into Action",
+          "justtcg": "Swing into Action"
+        },
+        "normalized": {
+          "dreamborn": "swing into action",
+          "lorcast": "swing into action"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-094",
+        "names": {
+          "dreamborn": "Make The Potion",
+          "lorcast": "Make the Potion",
+          "justtcg": "Make the Potion"
+        },
+        "normalized": {
+          "dreamborn": "make the potion",
+          "lorcast": "make the potion"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-095",
+        "names": {
+          "dreamborn": "Under The Sea",
+          "lorcast": "Under the Sea",
+          "justtcg": "Under the Sea"
+        },
+        "normalized": {
+          "dreamborn": "under the sea",
+          "lorcast": "under the sea"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-162",
+        "names": {
+          "dreamborn": "Dig A Little Deeper",
+          "lorcast": "Dig a Little Deeper",
+          "justtcg": "Dig a Little Deeper"
+        },
+        "normalized": {
+          "dreamborn": "dig a little deeper",
+          "lorcast": "dig a little deeper"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-166",
+        "names": {
+          "dreamborn": "Field Of Ice",
+          "lorcast": "Field of Ice",
+          "justtcg": "Field of Ice"
+        },
+        "normalized": {
+          "dreamborn": "field of ice",
+          "lorcast": "field of ice"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-207",
+        "names": {
+          "dreamborn": "Look At This Family",
+          "lorcast": "Look at This Family",
+          "justtcg": "Look at This Family (Enchanted)"
+        },
+        "normalized": {
+          "dreamborn": "look at this family",
+          "lorcast": "look at this family"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "004-210",
+        "names": {
+          "dreamborn": "Second Star To The Right",
+          "lorcast": "Second Star to the Right",
+          "justtcg": "Second Star to the Right (Enchanted)"
+        },
+        "normalized": {
+          "dreamborn": "second star to the right",
+          "lorcast": "second star to the right"
+        },
+        "setCode": "004"
+      },
+      {
+        "cardId": "005-028",
+        "names": {
+          "dreamborn": "Blast From Your Past",
+          "lorcast": "Blast from Your Past",
+          "justtcg": "Blast From Your Past"
+        },
+        "normalized": {
+          "dreamborn": "blast from your past",
+          "lorcast": "blast from your past"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-061",
+        "names": {
+          "dreamborn": "We Know The Way",
+          "lorcast": "We Know the Way",
+          "justtcg": "We Know the Way"
+        },
+        "normalized": {
+          "dreamborn": "we know the way",
+          "lorcast": "we know the way"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-062",
+        "names": {
+          "dreamborn": "Gathering Knowledge And Wisdom",
+          "lorcast": "Gathering Knowledge and Wisdom",
+          "justtcg": "Gathering Knowledge and Wisdom"
+        },
+        "normalized": {
+          "dreamborn": "gathering knowledge and wisdom",
+          "lorcast": "gathering knowledge and wisdom"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-124",
+        "names": {
+          "dreamborn": "Vanellope Von Schweetz",
+          "lorcast": "Vanellope von Schweetz",
+          "justtcg": "Vanellope von Schweetz - Random Roster Racer"
+        },
+        "normalized": {
+          "dreamborn": "vanellope von schweetz",
+          "lorcast": "vanellope von schweetz"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-129",
+        "names": {
+          "dreamborn": "Don't Let The Frostbite Bite",
+          "lorcast": "Don't Let the Frostbite Bite",
+          "justtcg": "Don't Let the Frostbite Bite"
+        },
+        "normalized": {
+          "dreamborn": "dont let the frostbite bite",
+          "lorcast": "dont let the frostbite bite"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-145",
+        "names": {
+          "dreamborn": "Sheriff Of Nottingham",
+          "lorcast": "Sheriff of Nottingham",
+          "justtcg": "Sheriff of Nottingham - Bushel Britches"
+        },
+        "normalized": {
+          "dreamborn": "sheriff of nottingham",
+          "lorcast": "sheriff of nottingham"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "005-151",
+        "names": {
+          "dreamborn": "Ludwig Von Drake",
+          "lorcast": "Ludwig von Drake",
+          "justtcg": "Ludwig Von Drake - Self-Proclaimed Genius"
+        },
+        "normalized": {
+          "dreamborn": "ludwig von drake",
+          "lorcast": "ludwig von drake"
+        },
+        "setCode": "005"
+      },
+      {
+        "cardId": "006-003",
+        "names": {
+          "dreamborn": "Winnie The Pooh",
+          "lorcast": "Winnie the Pooh",
+          "justtcg": "Winnie the Pooh - Hunny Pirate"
+        },
+        "normalized": {
+          "dreamborn": "winnie the pooh",
+          "lorcast": "winnie the pooh"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-063",
+        "names": {
+          "dreamborn": "Lose The Way",
+          "lorcast": "Lose the Way",
+          "justtcg": "Lose the Way"
+        },
+        "normalized": {
+          "dreamborn": "lose the way",
+          "lorcast": "lose the way"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-093",
+        "names": {
+          "dreamborn": "Bend To My Will",
+          "lorcast": "Bend to My Will",
+          "justtcg": "Bend to My Will"
+        },
+        "normalized": {
+          "dreamborn": "bend to my will",
+          "lorcast": "bend to my will"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-094",
+        "names": {
+          "dreamborn": "Prepare To Board!",
+          "lorcast": "Prepare to Board!",
+          "justtcg": null
+        },
+        "normalized": {
+          "dreamborn": "prepare to board",
+          "lorcast": "prepare to board"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-098",
+        "names": {
+          "dreamborn": "Megabot",
+          "lorcast": "MegaBot",
+          "justtcg": "Megabot"
+        },
+        "normalized": {
+          "dreamborn": "megabot",
+          "lorcast": "megabot"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-110",
+        "names": {
+          "dreamborn": "Vanellope von Schweetz",
+          "lorcast": "Vanellope Von Schweetz",
+          "justtcg": "Vanellope von Schweetz - Gutsy Go-Getter"
+        },
+        "normalized": {
+          "dreamborn": "vanellope von schweetz",
+          "lorcast": "vanellope von schweetz"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-129",
+        "names": {
+          "dreamborn": "Lead The Way",
+          "lorcast": "Lead the Way",
+          "justtcg": "Lead the Way"
+        },
+        "normalized": {
+          "dreamborn": "lead the way",
+          "lorcast": "lead the way"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-130",
+        "names": {
+          "dreamborn": "The Islands I Pulled From The Sea",
+          "lorcast": "The Islands I Pulled from the Sea",
+          "justtcg": "The Islands I Pulled From The Sea"
+        },
+        "normalized": {
+          "dreamborn": "the islands i pulled from the sea",
+          "lorcast": "the islands i pulled from the sea"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-146",
+        "names": {
+          "dreamborn": "HeiHei",
+          "lorcast": "Heihei",
+          "justtcg": "HeiHei - Not-So-Tricky Chicken"
+        },
+        "normalized": {
+          "dreamborn": "heihei",
+          "lorcast": "heihei"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-163",
+        "names": {
+          "dreamborn": "Sail The Azurite Sea",
+          "lorcast": "Sail the Azurite Sea",
+          "justtcg": "Sail the Azurite Sea"
+        },
+        "normalized": {
+          "dreamborn": "sail the azurite sea",
+          "lorcast": "sail the azurite sea"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "006-216",
+        "names": {
+          "dreamborn": "The Islands I Pulled From The Sea",
+          "lorcast": "The Islands I Pulled From the Sea",
+          "justtcg": "The Islands I Pulled From The Sea (Enchanted)"
+        },
+        "normalized": {
+          "dreamborn": "the islands i pulled from the sea",
+          "lorcast": "the islands i pulled from the sea"
+        },
+        "setCode": "006"
+      },
+      {
+        "cardId": "007-022",
+        "names": {
+          "dreamborn": "Fix-it Felix, Jr.",
+          "lorcast": "Fix-It Felix, Jr.",
+          "justtcg": "Fix-It Felix, Jr. - Pint-Sized Hero"
+        },
+        "normalized": {
+          "dreamborn": "fixit felix jr",
+          "lorcast": "fixit felix jr"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-038",
+        "names": {
+          "dreamborn": "So Much To Give",
+          "lorcast": "So Much to Give",
+          "justtcg": "So Much to Give"
+        },
+        "normalized": {
+          "dreamborn": "so much to give",
+          "lorcast": "so much to give"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-117",
+        "names": {
+          "dreamborn": "He's a Tramp",
+          "lorcast": "He's A Tramp",
+          "justtcg": "He's a Tramp"
+        },
+        "normalized": {
+          "dreamborn": "hes a tramp",
+          "lorcast": "hes a tramp"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-127",
+        "names": {
+          "dreamborn": "Cy-bug",
+          "lorcast": "Cy-Bug",
+          "justtcg": "Cy-Bug - Invasive Enemy"
+        },
+        "normalized": {
+          "dreamborn": "cybug",
+          "lorcast": "cybug"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-148",
+        "names": {
+          "dreamborn": "Out Of Order",
+          "lorcast": "Out of Order",
+          "justtcg": "Out of Order"
+        },
+        "normalized": {
+          "dreamborn": "out of order",
+          "lorcast": "out of order"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-154",
+        "names": {
+          "dreamborn": "Scrooge McDuck",
+          "lorcast": "Scrooge Mcduck",
+          "justtcg": "Scrooge McDuck - Resourceful Miser"
+        },
+        "normalized": {
+          "dreamborn": "scrooge mcduck",
+          "lorcast": "scrooge mcduck"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-163",
+        "names": {
+          "dreamborn": "HeiHei",
+          "lorcast": "Heihei",
+          "justtcg": "Heihei - Expanded Consciousness"
+        },
+        "normalized": {
+          "dreamborn": "heihei",
+          "lorcast": "heihei"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-178",
+        "names": {
+          "dreamborn": "All is Found",
+          "lorcast": "All Is Found",
+          "justtcg": "All Is Found"
+        },
+        "normalized": {
+          "dreamborn": "all is found",
+          "lorcast": "all is found"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-185",
+        "names": {
+          "dreamborn": "HeiHei",
+          "lorcast": "Heihei",
+          "justtcg": "Heihei - Rambling Rooster"
+        },
+        "normalized": {
+          "dreamborn": "heihei",
+          "lorcast": "heihei"
+        },
+        "setCode": "007"
+      },
+      {
+        "cardId": "007-220",
+        "names": {
+          "dreamborn": "All is Found",
+          "lorcast": "All Is Found",
+          "justtcg": "All Is Found (Enchanted)"
+        },
+        "normalized": {
+          "dreamborn": "all is found",
+          "lorcast": "all is found"
+        },
+        "setCode": "007"
+      }
+    ],
+    "word_order_differences": [],
+    "significant_differences": [
+      {
+        "cardId": "007-103",
+        "names": {
+          "dreamborn": "Tweedle Dee & Tweedle Dum",
+          "lorcast": "Tweedledee & Tweedledum",
+          "justtcg": "Tweedledee & Tweedledum - Strange Storytellers"
+        },
+        "normalized": {
+          "dreamborn": "tweedle dee tweedle dum",
+          "lorcast": "tweedledee tweedledum"
+        },
+        "setCode": "007"
+      }
+    ],
+    "subtitle_differences": [
+      {
+        "cardId": "003-04a",
+        "names": {
+          "dreamborn": null,
+          "lorcast": "Dalmatian Puppy",
+          "justtcg": "Dalmatian Puppy - Tail Wagger (4a/204)"
+        },
+        "normalized": {
+          "lorcast": "dalmatian puppy",
+          "justtcg": "dalmatian puppy tail wagger 4a204"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-04b",
+        "names": {
+          "dreamborn": null,
+          "lorcast": "Dalmatian Puppy",
+          "justtcg": "Dalmatian Puppy - Tail Wagger (4b/204)"
+        },
+        "normalized": {
+          "lorcast": "dalmatian puppy",
+          "justtcg": "dalmatian puppy tail wagger 4b204"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-04c",
+        "names": {
+          "dreamborn": null,
+          "lorcast": "Dalmatian Puppy",
+          "justtcg": "Dalmatian Puppy - Tail Wagger (4c/204)"
+        },
+        "normalized": {
+          "lorcast": "dalmatian puppy",
+          "justtcg": "dalmatian puppy tail wagger 4c204"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-04d",
+        "names": {
+          "dreamborn": null,
+          "lorcast": "Dalmatian Puppy",
+          "justtcg": "Dalmatian Puppy - Tail Wagger (4d/204)"
+        },
+        "normalized": {
+          "lorcast": "dalmatian puppy",
+          "justtcg": "dalmatian puppy tail wagger 4d204"
+        },
+        "setCode": "003"
+      },
+      {
+        "cardId": "003-04e",
+        "names": {
+          "dreamborn": null,
+          "lorcast": "Dalmatian Puppy",
+          "justtcg": "Dalmatian Puppy - Tail Wagger (4e/204)"
+        },
+        "normalized": {
+          "lorcast": "dalmatian puppy",
+          "justtcg": "dalmatian puppy tail wagger 4e204"
+        },
+        "setCode": "003"
+      }
+    ]
+  },
+  "setBreakdown": {
+    "001": 1,
+    "003": 11,
+    "004": 20,
+    "005": 7,
+    "006": 11,
+    "007": 11,
+    "009": 5
+  },
+  "allMismatches": [
+    {
+      "cardId": "001-163",
+      "names": {
+        "dreamborn": "Let it Go",
+        "lorcast": "Let It Go",
+        "justtcg": "Let It Go"
+      },
+      "normalized": {
+        "dreamborn": "let it go",
+        "lorcast": "let it go"
+      },
+      "setCode": "001"
+    },
+    {
+      "cardId": "003-063",
+      "names": {
+        "dreamborn": "The Boss Is On A Roll",
+        "lorcast": "The Boss is on a Roll",
+        "justtcg": "The Boss is on a Roll"
+      },
+      "normalized": {
+        "dreamborn": "the boss is on a roll",
+        "lorcast": "the boss is on a roll"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-094",
+      "names": {
+        "dreamborn": "Has Set My Heaaaaaaart . . .",
+        "lorcast": "Has Set My Heaaaaaaart . . .",
+        "justtcg": "Has Set My Heaaaaaaart . . ."
+      },
+      "normalized": {
+        "dreamborn": "has set my heaaaaaaart",
+        "lorcast": "has set my heaaaaaaart"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-096",
+      "names": {
+        "dreamborn": "Strike A Good Match",
+        "lorcast": "Strike a Good Match",
+        "justtcg": "Strike a Good Match"
+      },
+      "normalized": {
+        "dreamborn": "strike a good match",
+        "lorcast": "strike a good match"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-155",
+      "names": {
+        "dreamborn": "Scrooge Mcduck",
+        "lorcast": "Scrooge McDuck",
+        "justtcg": "Scrooge McDuck - Uncle Moneybags"
+      },
+      "normalized": {
+        "dreamborn": "scrooge mcduck",
+        "lorcast": "scrooge mcduck"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-173",
+      "names": {
+        "dreamborn": "Gustav The Giant",
+        "lorcast": "Gustav the Giant",
+        "justtcg": "Gustav the Giant - Terror of the Kingdom"
+      },
+      "normalized": {
+        "dreamborn": "gustav the giant",
+        "lorcast": "gustav the giant"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-196",
+      "names": {
+        "dreamborn": "Ba-boom!",
+        "lorcast": "Ba-Boom!",
+        "justtcg": "Ba-Boom!"
+      },
+      "normalized": {
+        "dreamborn": "baboom",
+        "lorcast": "baboom"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "004-028",
+      "names": {
+        "dreamborn": "Look At This Family",
+        "lorcast": "Look at This Family",
+        "justtcg": "Look at This Family"
+      },
+      "normalized": {
+        "dreamborn": "look at this family",
+        "lorcast": "look at this family"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-029",
+      "names": {
+        "dreamborn": "Lost In The Woods",
+        "lorcast": "Lost in the Woods",
+        "justtcg": "Lost in the Woods"
+      },
+      "normalized": {
+        "dreamborn": "lost in the woods",
+        "lorcast": "lost in the woods"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-030",
+      "names": {
+        "dreamborn": "Sign The Scroll",
+        "lorcast": "Sign the Scroll",
+        "justtcg": "Sign the Scroll"
+      },
+      "normalized": {
+        "dreamborn": "sign the scroll",
+        "lorcast": "sign the scroll"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-061",
+      "names": {
+        "dreamborn": "Second Star To The Right",
+        "lorcast": "Second Star to the Right",
+        "justtcg": "Second Star to the Right"
+      },
+      "normalized": {
+        "dreamborn": "second star to the right",
+        "lorcast": "second star to the right"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-062",
+      "names": {
+        "dreamborn": "Swing Into Action",
+        "lorcast": "Swing into Action",
+        "justtcg": "Swing into Action"
+      },
+      "normalized": {
+        "dreamborn": "swing into action",
+        "lorcast": "swing into action"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-063",
+      "names": {
+        "dreamborn": "Ursula's Plan",
+        "lorcast": "Ursula’s Plan",
+        "justtcg": "Ursula's Plan"
+      },
+      "normalized": {
+        "dreamborn": "ursulas plan",
+        "lorcast": "ursulas plan"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-068",
+      "names": {
+        "dreamborn": "Ursula's Lair",
+        "lorcast": "Ursula’s Lair",
+        "justtcg": "Ursula's Lair - Eye of the Storm"
+      },
+      "normalized": {
+        "dreamborn": "ursulas lair",
+        "lorcast": "ursulas lair"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-094",
+      "names": {
+        "dreamborn": "Make The Potion",
+        "lorcast": "Make the Potion",
+        "justtcg": "Make the Potion"
+      },
+      "normalized": {
+        "dreamborn": "make the potion",
+        "lorcast": "make the potion"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-095",
+      "names": {
+        "dreamborn": "Under The Sea",
+        "lorcast": "Under the Sea",
+        "justtcg": "Under the Sea"
+      },
+      "normalized": {
+        "dreamborn": "under the sea",
+        "lorcast": "under the sea"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-096",
+      "names": {
+        "dreamborn": "Ursula's Trickery",
+        "lorcast": "Ursula’s Trickery",
+        "justtcg": "Ursula's Trickery"
+      },
+      "normalized": {
+        "dreamborn": "ursulas trickery",
+        "lorcast": "ursulas trickery"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-097",
+      "names": {
+        "dreamborn": "We Don't Talk About Bruno",
+        "lorcast": "We Don’t Talk About Bruno",
+        "justtcg": "We Don't Talk About Bruno"
+      },
+      "normalized": {
+        "dreamborn": "we dont talk about bruno",
+        "lorcast": "we dont talk about bruno"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-102",
+      "names": {
+        "dreamborn": "Ursula's Garden",
+        "lorcast": "Ursula’s Garden",
+        "justtcg": "Ursula's Garden - Full of the Unfortunate"
+      },
+      "normalized": {
+        "dreamborn": "ursulas garden",
+        "lorcast": "ursulas garden"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-128",
+      "names": {
+        "dreamborn": "A Pirate's Life",
+        "lorcast": "A Pirate’s Life",
+        "justtcg": "A Pirate's Life"
+      },
+      "normalized": {
+        "dreamborn": "a pirates life",
+        "lorcast": "a pirates life"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-162",
+      "names": {
+        "dreamborn": "Dig A Little Deeper",
+        "lorcast": "Dig a Little Deeper",
+        "justtcg": "Dig a Little Deeper"
+      },
+      "normalized": {
+        "dreamborn": "dig a little deeper",
+        "lorcast": "dig a little deeper"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-166",
+      "names": {
+        "dreamborn": "Field Of Ice",
+        "lorcast": "Field of Ice",
+        "justtcg": "Field of Ice"
+      },
+      "normalized": {
+        "dreamborn": "field of ice",
+        "lorcast": "field of ice"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-169",
+      "names": {
+        "dreamborn": "Ariel's Grotto",
+        "lorcast": "Ariel’s Grotto",
+        "justtcg": "Ariel's Grotto - A Secret Place"
+      },
+      "normalized": {
+        "dreamborn": "ariels grotto",
+        "lorcast": "ariels grotto"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-196",
+      "names": {
+        "dreamborn": "I Find 'Em, I Flatten 'Em",
+        "lorcast": "I Find ’Em, I Flatten ’Em",
+        "justtcg": "I Find 'Em, I Flatten 'Em"
+      },
+      "normalized": {
+        "dreamborn": "i find em i flatten em",
+        "lorcast": "i find em i flatten em"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-207",
+      "names": {
+        "dreamborn": "Look At This Family",
+        "lorcast": "Look at This Family",
+        "justtcg": "Look at This Family (Enchanted)"
+      },
+      "normalized": {
+        "dreamborn": "look at this family",
+        "lorcast": "look at this family"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-210",
+      "names": {
+        "dreamborn": "Second Star To The Right",
+        "lorcast": "Second Star to the Right",
+        "justtcg": "Second Star to the Right (Enchanted)"
+      },
+      "normalized": {
+        "dreamborn": "second star to the right",
+        "lorcast": "second star to the right"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "004-219",
+      "names": {
+        "dreamborn": "Ariel's Grotto",
+        "lorcast": "Ariel’s Grotto",
+        "justtcg": "Ariel's Grotto - A Secret Place (Enchanted)"
+      },
+      "normalized": {
+        "dreamborn": "ariels grotto",
+        "lorcast": "ariels grotto"
+      },
+      "setCode": "004"
+    },
+    {
+      "cardId": "005-028",
+      "names": {
+        "dreamborn": "Blast From Your Past",
+        "lorcast": "Blast from Your Past",
+        "justtcg": "Blast From Your Past"
+      },
+      "normalized": {
+        "dreamborn": "blast from your past",
+        "lorcast": "blast from your past"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-061",
+      "names": {
+        "dreamborn": "We Know The Way",
+        "lorcast": "We Know the Way",
+        "justtcg": "We Know the Way"
+      },
+      "normalized": {
+        "dreamborn": "we know the way",
+        "lorcast": "we know the way"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-062",
+      "names": {
+        "dreamborn": "Gathering Knowledge And Wisdom",
+        "lorcast": "Gathering Knowledge and Wisdom",
+        "justtcg": "Gathering Knowledge and Wisdom"
+      },
+      "normalized": {
+        "dreamborn": "gathering knowledge and wisdom",
+        "lorcast": "gathering knowledge and wisdom"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-124",
+      "names": {
+        "dreamborn": "Vanellope Von Schweetz",
+        "lorcast": "Vanellope von Schweetz",
+        "justtcg": "Vanellope von Schweetz - Random Roster Racer"
+      },
+      "normalized": {
+        "dreamborn": "vanellope von schweetz",
+        "lorcast": "vanellope von schweetz"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-129",
+      "names": {
+        "dreamborn": "Don't Let The Frostbite Bite",
+        "lorcast": "Don't Let the Frostbite Bite",
+        "justtcg": "Don't Let the Frostbite Bite"
+      },
+      "normalized": {
+        "dreamborn": "dont let the frostbite bite",
+        "lorcast": "dont let the frostbite bite"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-145",
+      "names": {
+        "dreamborn": "Sheriff Of Nottingham",
+        "lorcast": "Sheriff of Nottingham",
+        "justtcg": "Sheriff of Nottingham - Bushel Britches"
+      },
+      "normalized": {
+        "dreamborn": "sheriff of nottingham",
+        "lorcast": "sheriff of nottingham"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "005-151",
+      "names": {
+        "dreamborn": "Ludwig Von Drake",
+        "lorcast": "Ludwig von Drake",
+        "justtcg": "Ludwig Von Drake - Self-Proclaimed Genius"
+      },
+      "normalized": {
+        "dreamborn": "ludwig von drake",
+        "lorcast": "ludwig von drake"
+      },
+      "setCode": "005"
+    },
+    {
+      "cardId": "006-003",
+      "names": {
+        "dreamborn": "Winnie The Pooh",
+        "lorcast": "Winnie the Pooh",
+        "justtcg": "Winnie the Pooh - Hunny Pirate"
+      },
+      "normalized": {
+        "dreamborn": "winnie the pooh",
+        "lorcast": "winnie the pooh"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-063",
+      "names": {
+        "dreamborn": "Lose The Way",
+        "lorcast": "Lose the Way",
+        "justtcg": "Lose the Way"
+      },
+      "normalized": {
+        "dreamborn": "lose the way",
+        "lorcast": "lose the way"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-093",
+      "names": {
+        "dreamborn": "Bend To My Will",
+        "lorcast": "Bend to My Will",
+        "justtcg": "Bend to My Will"
+      },
+      "normalized": {
+        "dreamborn": "bend to my will",
+        "lorcast": "bend to my will"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-094",
+      "names": {
+        "dreamborn": "Prepare To Board!",
+        "lorcast": "Prepare to Board!",
+        "justtcg": null
+      },
+      "normalized": {
+        "dreamborn": "prepare to board",
+        "lorcast": "prepare to board"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-098",
+      "names": {
+        "dreamborn": "Megabot",
+        "lorcast": "MegaBot",
+        "justtcg": "Megabot"
+      },
+      "normalized": {
+        "dreamborn": "megabot",
+        "lorcast": "megabot"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-110",
+      "names": {
+        "dreamborn": "Vanellope von Schweetz",
+        "lorcast": "Vanellope Von Schweetz",
+        "justtcg": "Vanellope von Schweetz - Gutsy Go-Getter"
+      },
+      "normalized": {
+        "dreamborn": "vanellope von schweetz",
+        "lorcast": "vanellope von schweetz"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-129",
+      "names": {
+        "dreamborn": "Lead The Way",
+        "lorcast": "Lead the Way",
+        "justtcg": "Lead the Way"
+      },
+      "normalized": {
+        "dreamborn": "lead the way",
+        "lorcast": "lead the way"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-130",
+      "names": {
+        "dreamborn": "The Islands I Pulled From The Sea",
+        "lorcast": "The Islands I Pulled from the Sea",
+        "justtcg": "The Islands I Pulled From The Sea"
+      },
+      "normalized": {
+        "dreamborn": "the islands i pulled from the sea",
+        "lorcast": "the islands i pulled from the sea"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-146",
+      "names": {
+        "dreamborn": "HeiHei",
+        "lorcast": "Heihei",
+        "justtcg": "HeiHei - Not-So-Tricky Chicken"
+      },
+      "normalized": {
+        "dreamborn": "heihei",
+        "lorcast": "heihei"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-163",
+      "names": {
+        "dreamborn": "Sail The Azurite Sea",
+        "lorcast": "Sail the Azurite Sea",
+        "justtcg": "Sail the Azurite Sea"
+      },
+      "normalized": {
+        "dreamborn": "sail the azurite sea",
+        "lorcast": "sail the azurite sea"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "006-216",
+      "names": {
+        "dreamborn": "The Islands I Pulled From The Sea",
+        "lorcast": "The Islands I Pulled From the Sea",
+        "justtcg": "The Islands I Pulled From The Sea (Enchanted)"
+      },
+      "normalized": {
+        "dreamborn": "the islands i pulled from the sea",
+        "lorcast": "the islands i pulled from the sea"
+      },
+      "setCode": "006"
+    },
+    {
+      "cardId": "007-022",
+      "names": {
+        "dreamborn": "Fix-it Felix, Jr.",
+        "lorcast": "Fix-It Felix, Jr.",
+        "justtcg": "Fix-It Felix, Jr. - Pint-Sized Hero"
+      },
+      "normalized": {
+        "dreamborn": "fixit felix jr",
+        "lorcast": "fixit felix jr"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-038",
+      "names": {
+        "dreamborn": "So Much To Give",
+        "lorcast": "So Much to Give",
+        "justtcg": "So Much to Give"
+      },
+      "normalized": {
+        "dreamborn": "so much to give",
+        "lorcast": "so much to give"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-103",
+      "names": {
+        "dreamborn": "Tweedle Dee & Tweedle Dum",
+        "lorcast": "Tweedledee & Tweedledum",
+        "justtcg": "Tweedledee & Tweedledum - Strange Storytellers"
+      },
+      "normalized": {
+        "dreamborn": "tweedle dee tweedle dum",
+        "lorcast": "tweedledee tweedledum"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-117",
+      "names": {
+        "dreamborn": "He's a Tramp",
+        "lorcast": "He's A Tramp",
+        "justtcg": "He's a Tramp"
+      },
+      "normalized": {
+        "dreamborn": "hes a tramp",
+        "lorcast": "hes a tramp"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-127",
+      "names": {
+        "dreamborn": "Cy-bug",
+        "lorcast": "Cy-Bug",
+        "justtcg": "Cy-Bug - Invasive Enemy"
+      },
+      "normalized": {
+        "dreamborn": "cybug",
+        "lorcast": "cybug"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-148",
+      "names": {
+        "dreamborn": "Out Of Order",
+        "lorcast": "Out of Order",
+        "justtcg": "Out of Order"
+      },
+      "normalized": {
+        "dreamborn": "out of order",
+        "lorcast": "out of order"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-154",
+      "names": {
+        "dreamborn": "Scrooge McDuck",
+        "lorcast": "Scrooge Mcduck",
+        "justtcg": "Scrooge McDuck - Resourceful Miser"
+      },
+      "normalized": {
+        "dreamborn": "scrooge mcduck",
+        "lorcast": "scrooge mcduck"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-163",
+      "names": {
+        "dreamborn": "HeiHei",
+        "lorcast": "Heihei",
+        "justtcg": "Heihei - Expanded Consciousness"
+      },
+      "normalized": {
+        "dreamborn": "heihei",
+        "lorcast": "heihei"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-178",
+      "names": {
+        "dreamborn": "All is Found",
+        "lorcast": "All Is Found",
+        "justtcg": "All Is Found"
+      },
+      "normalized": {
+        "dreamborn": "all is found",
+        "lorcast": "all is found"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-185",
+      "names": {
+        "dreamborn": "HeiHei",
+        "lorcast": "Heihei",
+        "justtcg": "Heihei - Rambling Rooster"
+      },
+      "normalized": {
+        "dreamborn": "heihei",
+        "lorcast": "heihei"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "007-220",
+      "names": {
+        "dreamborn": "All is Found",
+        "lorcast": "All Is Found",
+        "justtcg": "All Is Found (Enchanted)"
+      },
+      "normalized": {
+        "dreamborn": "all is found",
+        "lorcast": "all is found"
+      },
+      "setCode": "007"
+    },
+    {
+      "cardId": "009-033",
+      "names": {
+        "dreamborn": "Ursula’s Shell Necklace",
+        "lorcast": "Ursula's Shell Necklace",
+        "justtcg": "Ursula's Shell Necklace"
+      },
+      "normalized": {
+        "dreamborn": "ursulas shell necklace",
+        "lorcast": "ursulas shell necklace"
+      },
+      "setCode": "009"
+    },
+    {
+      "cardId": "009-066",
+      "names": {
+        "dreamborn": "White Rabbit’s Pocket Watch",
+        "lorcast": "White Rabbit's Pocket Watch",
+        "justtcg": "White Rabbit's Pocket Watch"
+      },
+      "normalized": {
+        "dreamborn": "white rabbits pocket watch",
+        "lorcast": "white rabbits pocket watch"
+      },
+      "setCode": "009"
+    },
+    {
+      "cardId": "009-132",
+      "names": {
+        "dreamborn": "A Pirate’s Life",
+        "lorcast": "A Pirate's Life",
+        "justtcg": "A Pirate's Life"
+      },
+      "normalized": {
+        "dreamborn": "a pirates life",
+        "lorcast": "a pirates life"
+      },
+      "setCode": "009"
+    },
+    {
+      "cardId": "009-199",
+      "names": {
+        "dreamborn": "I Find ’Em, I Flatten ’Em",
+        "lorcast": "I Find 'Em, I Flatten 'Em",
+        "justtcg": "I Find 'Em, I Flatten 'Em"
+      },
+      "normalized": {
+        "dreamborn": "i find em i flatten em",
+        "lorcast": "i find em i flatten em"
+      },
+      "setCode": "009"
+    },
+    {
+      "cardId": "009-203",
+      "names": {
+        "dreamborn": "Beast’s Mirror",
+        "lorcast": "Beast's Mirror",
+        "justtcg": "Beast's Mirror"
+      },
+      "normalized": {
+        "dreamborn": "beasts mirror",
+        "lorcast": "beasts mirror"
+      },
+      "setCode": "009"
+    },
+    {
+      "cardId": "003-04a",
+      "names": {
+        "dreamborn": null,
+        "lorcast": "Dalmatian Puppy",
+        "justtcg": "Dalmatian Puppy - Tail Wagger (4a/204)"
+      },
+      "normalized": {
+        "lorcast": "dalmatian puppy",
+        "justtcg": "dalmatian puppy tail wagger 4a204"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-04b",
+      "names": {
+        "dreamborn": null,
+        "lorcast": "Dalmatian Puppy",
+        "justtcg": "Dalmatian Puppy - Tail Wagger (4b/204)"
+      },
+      "normalized": {
+        "lorcast": "dalmatian puppy",
+        "justtcg": "dalmatian puppy tail wagger 4b204"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-04c",
+      "names": {
+        "dreamborn": null,
+        "lorcast": "Dalmatian Puppy",
+        "justtcg": "Dalmatian Puppy - Tail Wagger (4c/204)"
+      },
+      "normalized": {
+        "lorcast": "dalmatian puppy",
+        "justtcg": "dalmatian puppy tail wagger 4c204"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-04d",
+      "names": {
+        "dreamborn": null,
+        "lorcast": "Dalmatian Puppy",
+        "justtcg": "Dalmatian Puppy - Tail Wagger (4d/204)"
+      },
+      "normalized": {
+        "lorcast": "dalmatian puppy",
+        "justtcg": "dalmatian puppy tail wagger 4d204"
+      },
+      "setCode": "003"
+    },
+    {
+      "cardId": "003-04e",
+      "names": {
+        "dreamborn": null,
+        "lorcast": "Dalmatian Puppy",
+        "justtcg": "Dalmatian Puppy - Tail Wagger (4e/204)"
+      },
+      "normalized": {
+        "lorcast": "dalmatian puppy",
+        "justtcg": "dalmatian puppy tail wagger 4e204"
+      },
+      "setCode": "003"
+    }
+  ]
+}
