@@ -42,9 +42,10 @@ function extractJustTcgPricing(justTcgData) {
       basePrice = baseVariants[0].price;
     }
     
-    // Look for Near Mint Holofoil (foil)  
+    // Look for Near Mint foil variants (Holofoil or Cold Foil)
     const foilVariants = Object.values(variants).filter(v => 
-      v.printing === 'Holofoil' && v.condition === 'Near Mint' && v.price > 0
+      (v.printing === 'Holofoil' || v.printing === 'Cold Foil') && 
+      v.condition === 'Near Mint' && v.price > 0
     );
     if (foilVariants.length > 0) {
       foilPrice = foilVariants[0].price;

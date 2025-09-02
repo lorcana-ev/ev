@@ -1,0 +1,1128 @@
+{
+  "boxCaseProducts": {},
+  "foilAnalysis": {
+    "001": {
+      "total_cards": 225,
+      "cards_with_foil_pricing": 216,
+      "cards_missing_foil_pricing": 9,
+      "common_foil_issues": []
+    },
+    "002": {
+      "total_cards": 216,
+      "cards_with_foil_pricing": 216,
+      "cards_missing_foil_pricing": 0,
+      "common_foil_issues": []
+    },
+    "003": {
+      "total_cards": 226,
+      "cards_with_foil_pricing": 226,
+      "cards_missing_foil_pricing": 0,
+      "common_foil_issues": []
+    },
+    "004": {
+      "total_cards": 225,
+      "cards_with_foil_pricing": 224,
+      "cards_missing_foil_pricing": 1,
+      "common_foil_issues": []
+    },
+    "005": {
+      "total_cards": 223,
+      "cards_with_foil_pricing": 223,
+      "cards_missing_foil_pricing": 0,
+      "common_foil_issues": []
+    },
+    "006": {
+      "total_cards": 222,
+      "cards_with_foil_pricing": 222,
+      "cards_missing_foil_pricing": 0,
+      "common_foil_issues": []
+    },
+    "007": {
+      "total_cards": 222,
+      "cards_with_foil_pricing": 222,
+      "cards_missing_foil_pricing": 0,
+      "common_foil_issues": []
+    },
+    "008": {
+      "total_cards": 222,
+      "cards_with_foil_pricing": 220,
+      "cards_missing_foil_pricing": 2,
+      "common_foil_issues": [
+        {
+          "id": "008-002",
+          "name": "Dewey",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        }
+      ]
+    },
+    "009": {
+      "total_cards": 240,
+      "cards_with_foil_pricing": 38,
+      "cards_missing_foil_pricing": 202,
+      "common_foil_issues": [
+        {
+          "id": "009-163",
+          "name": "Develop Your Brain",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-109",
+          "name": "Powerline",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-047",
+          "name": "Timothy Q. Mouse",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-200",
+          "name": "Fire the Cannons!",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-112",
+          "name": "Max Goof",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-183",
+          "name": "Eeyore",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-165",
+          "name": "One Jump Ahead",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-081",
+          "name": "Enchantress",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-049",
+          "name": "Kuzco",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-039",
+          "name": "Belle",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-136",
+          "name": "Agrabah",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-031",
+          "name": "Be Our Guest",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-155",
+          "name": "Jasmine",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-102",
+          "name": "Hidden Cove",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-084",
+          "name": "Pegasus",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-092",
+          "name": "Aladdin",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-180",
+          "name": "Benja",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-051",
+          "name": "Dolores Madrigal",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-021",
+          "name": "Pluto",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-131",
+          "name": "You Can Fly!",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-181",
+          "name": "Jafar",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-083",
+          "name": "Donald Duck",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-203",
+          "name": "Beast’s Mirror",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-007",
+          "name": "The Queen",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-191",
+          "name": "Hercules",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-123",
+          "name": "Queen of Hearts",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-095",
+          "name": "Sudden Chill",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-158",
+          "name": "Maid Marian",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-022",
+          "name": "Ursula",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-058",
+          "name": "Luisa Madrigal",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-116",
+          "name": "Moana",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-009",
+          "name": "Stitch",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-016",
+          "name": "Pluto",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-050",
+          "name": "Tick-Tock",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-147",
+          "name": "Flounder",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-196",
+          "name": "Ariel",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-114",
+          "name": "P.J. Pete",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-010",
+          "name": "Mulan",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-146",
+          "name": "Anna",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-124",
+          "name": "Rapunzel",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-125",
+          "name": "Mulan",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-088",
+          "name": "Tinker Bell",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-080",
+          "name": "Mickey Mouse",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-063",
+          "name": "I'm Stuck!",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-041",
+          "name": "Winnie the Pooh",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-128",
+          "name": "Sergeant Tibbs",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-068",
+          "name": "Casa Madrigal",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-169",
+          "name": "Coconut Basket",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-082",
+          "name": "Virana",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-048",
+          "name": "Elsa",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-027",
+          "name": "Heal What Has Been Hurt",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-079",
+          "name": "Megara",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-096",
+          "name": "Improvise",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-098",
+          "name": "Make the Potion",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-140",
+          "name": "Louie",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-127",
+          "name": "Raya",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-067",
+          "name": "Rose Lantern",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-154",
+          "name": "Aurora",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-179",
+          "name": "Tiana",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-061",
+          "name": "Poor Unfortunate Souls",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-008",
+          "name": "Rapunzel",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-011",
+          "name": "Daisy Duck",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-148",
+          "name": "Hans",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-145",
+          "name": "Cruella De Vil",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-115",
+          "name": "Gaston",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-028",
+          "name": "Lost in the Woods",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-194",
+          "name": "Prince Eric",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-144",
+          "name": "Mufasa",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-034",
+          "name": "Atlantica",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-185",
+          "name": "Mickey Mouse",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-182",
+          "name": "Prince Naveen",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        },
+        {
+          "id": "009-189",
+          "name": "Tinker Bell",
+          "dreamborn_variants": [
+            "base",
+            "foil"
+          ]
+        }
+      ]
+    }
+  },
+  "sourceDiscrepancies": {
+    "001": {
+      "missing_dreamborn": [
+        "001-00N"
+      ],
+      "missing_lorcast": [
+        "001-P1-001",
+        "001-P1-002",
+        "001-P1-003",
+        "001-P1-004",
+        "001-P1-005",
+        "001-P1-006",
+        "001-P1-007",
+        "001-P1-008",
+        "001-P1-009",
+        "001-P1-010",
+        "001-P1-011",
+        "001-P1-012",
+        "001-P1-013",
+        "001-00N"
+      ],
+      "missing_justtcg": [
+        "001-041",
+        "001-P1-001",
+        "001-P1-002",
+        "001-P1-003",
+        "001-P1-004",
+        "001-P1-005",
+        "001-P1-006",
+        "001-P1-007",
+        "001-P1-008",
+        "001-P1-009",
+        "001-P1-010",
+        "001-P1-011",
+        "001-P1-012",
+        "001-P1-013"
+      ],
+      "name_mismatches": [
+        {
+          "id": "001-163",
+          "dreamborn_name": "Let it Go",
+          "lorcast_name": "Let It Go"
+        }
+      ]
+    },
+    "002": {
+      "missing_dreamborn": [
+        "002-00N"
+      ],
+      "missing_lorcast": [
+        "002-00N"
+      ],
+      "missing_justtcg": [],
+      "name_mismatches": []
+    },
+    "003": {
+      "missing_dreamborn": [
+        "003-04a",
+        "003-04b",
+        "003-04c",
+        "003-04d",
+        "003-04e",
+        "003-00N"
+      ],
+      "missing_lorcast": [
+        "003-004a",
+        "003-004b",
+        "003-004c",
+        "003-004d",
+        "003-004e",
+        "003-223",
+        "003-00N"
+      ],
+      "missing_justtcg": [
+        "003-004a",
+        "003-004b",
+        "003-004c",
+        "003-004d",
+        "003-004e",
+        "003-110",
+        "003-223"
+      ],
+      "name_mismatches": [
+        {
+          "id": "003-063",
+          "dreamborn_name": "The Boss Is On A Roll",
+          "lorcast_name": "The Boss is on a Roll"
+        },
+        {
+          "id": "003-094",
+          "dreamborn_name": "Has Set My Heaaaaaaart . . .",
+          "lorcast_name": "Has Set My Heaaaaaaart . . ."
+        },
+        {
+          "id": "003-096",
+          "dreamborn_name": "Strike A Good Match",
+          "lorcast_name": "Strike a Good Match"
+        },
+        {
+          "id": "003-155",
+          "dreamborn_name": "Scrooge Mcduck",
+          "lorcast_name": "Scrooge McDuck"
+        },
+        {
+          "id": "003-173",
+          "dreamborn_name": "Gustav The Giant",
+          "lorcast_name": "Gustav the Giant"
+        },
+        {
+          "id": "003-196",
+          "dreamborn_name": "Ba-boom!",
+          "lorcast_name": "Ba-Boom!"
+        }
+      ]
+    },
+    "004": {
+      "missing_dreamborn": [
+        "004-000"
+      ],
+      "missing_lorcast": [
+        "004-000"
+      ],
+      "missing_justtcg": [
+        "004-192",
+        "004-223",
+        "004-224",
+        "004-225"
+      ],
+      "name_mismatches": [
+        {
+          "id": "004-028",
+          "dreamborn_name": "Look At This Family",
+          "lorcast_name": "Look at This Family"
+        },
+        {
+          "id": "004-029",
+          "dreamborn_name": "Lost In The Woods",
+          "lorcast_name": "Lost in the Woods"
+        },
+        {
+          "id": "004-030",
+          "dreamborn_name": "Sign The Scroll",
+          "lorcast_name": "Sign the Scroll"
+        },
+        {
+          "id": "004-061",
+          "dreamborn_name": "Second Star To The Right",
+          "lorcast_name": "Second Star to the Right"
+        },
+        {
+          "id": "004-062",
+          "dreamborn_name": "Swing Into Action",
+          "lorcast_name": "Swing into Action"
+        },
+        {
+          "id": "004-063",
+          "dreamborn_name": "Ursula's Plan",
+          "lorcast_name": "Ursula’s Plan"
+        },
+        {
+          "id": "004-068",
+          "dreamborn_name": "Ursula's Lair",
+          "lorcast_name": "Ursula’s Lair"
+        },
+        {
+          "id": "004-094",
+          "dreamborn_name": "Make The Potion",
+          "lorcast_name": "Make the Potion"
+        },
+        {
+          "id": "004-095",
+          "dreamborn_name": "Under The Sea",
+          "lorcast_name": "Under the Sea"
+        },
+        {
+          "id": "004-096",
+          "dreamborn_name": "Ursula's Trickery",
+          "lorcast_name": "Ursula’s Trickery"
+        },
+        {
+          "id": "004-097",
+          "dreamborn_name": "We Don't Talk About Bruno",
+          "lorcast_name": "We Don’t Talk About Bruno"
+        },
+        {
+          "id": "004-102",
+          "dreamborn_name": "Ursula's Garden",
+          "lorcast_name": "Ursula’s Garden"
+        },
+        {
+          "id": "004-128",
+          "dreamborn_name": "A Pirate's Life",
+          "lorcast_name": "A Pirate’s Life"
+        },
+        {
+          "id": "004-162",
+          "dreamborn_name": "Dig A Little Deeper",
+          "lorcast_name": "Dig a Little Deeper"
+        },
+        {
+          "id": "004-166",
+          "dreamborn_name": "Field Of Ice",
+          "lorcast_name": "Field of Ice"
+        },
+        {
+          "id": "004-169",
+          "dreamborn_name": "Ariel's Grotto",
+          "lorcast_name": "Ariel’s Grotto"
+        },
+        {
+          "id": "004-196",
+          "dreamborn_name": "I Find 'Em, I Flatten 'Em",
+          "lorcast_name": "I Find ’Em, I Flatten ’Em"
+        },
+        {
+          "id": "004-207",
+          "dreamborn_name": "Look At This Family",
+          "lorcast_name": "Look at This Family"
+        },
+        {
+          "id": "004-210",
+          "dreamborn_name": "Second Star To The Right",
+          "lorcast_name": "Second Star to the Right"
+        },
+        {
+          "id": "004-219",
+          "dreamborn_name": "Ariel's Grotto",
+          "lorcast_name": "Ariel’s Grotto"
+        }
+      ]
+    },
+    "005": {
+      "missing_dreamborn": [
+        "005-00N"
+      ],
+      "missing_lorcast": [
+        "005-00N"
+      ],
+      "missing_justtcg": [
+        "005-223"
+      ],
+      "name_mismatches": [
+        {
+          "id": "005-028",
+          "dreamborn_name": "Blast From Your Past",
+          "lorcast_name": "Blast from Your Past"
+        },
+        {
+          "id": "005-061",
+          "dreamborn_name": "We Know The Way",
+          "lorcast_name": "We Know the Way"
+        },
+        {
+          "id": "005-062",
+          "dreamborn_name": "Gathering Knowledge And Wisdom",
+          "lorcast_name": "Gathering Knowledge and Wisdom"
+        },
+        {
+          "id": "005-124",
+          "dreamborn_name": "Vanellope Von Schweetz",
+          "lorcast_name": "Vanellope von Schweetz"
+        },
+        {
+          "id": "005-129",
+          "dreamborn_name": "Don't Let The Frostbite Bite",
+          "lorcast_name": "Don't Let the Frostbite Bite"
+        },
+        {
+          "id": "005-145",
+          "dreamborn_name": "Sheriff Of Nottingham",
+          "lorcast_name": "Sheriff of Nottingham"
+        },
+        {
+          "id": "005-151",
+          "dreamborn_name": "Ludwig Von Drake",
+          "lorcast_name": "Ludwig von Drake"
+        }
+      ]
+    },
+    "006": {
+      "missing_dreamborn": [
+        "006-00N"
+      ],
+      "missing_lorcast": [
+        "006-00N"
+      ],
+      "missing_justtcg": [
+        "006-094"
+      ],
+      "name_mismatches": [
+        {
+          "id": "006-003",
+          "dreamborn_name": "Winnie The Pooh",
+          "lorcast_name": "Winnie the Pooh"
+        },
+        {
+          "id": "006-063",
+          "dreamborn_name": "Lose The Way",
+          "lorcast_name": "Lose the Way"
+        },
+        {
+          "id": "006-093",
+          "dreamborn_name": "Bend To My Will",
+          "lorcast_name": "Bend to My Will"
+        },
+        {
+          "id": "006-094",
+          "dreamborn_name": "Prepare To Board!",
+          "lorcast_name": "Prepare to Board!"
+        },
+        {
+          "id": "006-098",
+          "dreamborn_name": "Megabot",
+          "lorcast_name": "MegaBot"
+        },
+        {
+          "id": "006-110",
+          "dreamborn_name": "Vanellope von Schweetz",
+          "lorcast_name": "Vanellope Von Schweetz"
+        },
+        {
+          "id": "006-129",
+          "dreamborn_name": "Lead The Way",
+          "lorcast_name": "Lead the Way"
+        },
+        {
+          "id": "006-130",
+          "dreamborn_name": "The Islands I Pulled From The Sea",
+          "lorcast_name": "The Islands I Pulled from the Sea"
+        },
+        {
+          "id": "006-146",
+          "dreamborn_name": "HeiHei",
+          "lorcast_name": "Heihei"
+        },
+        {
+          "id": "006-163",
+          "dreamborn_name": "Sail The Azurite Sea",
+          "lorcast_name": "Sail the Azurite Sea"
+        },
+        {
+          "id": "006-216",
+          "dreamborn_name": "The Islands I Pulled From The Sea",
+          "lorcast_name": "The Islands I Pulled From the Sea"
+        }
+      ]
+    },
+    "007": {
+      "missing_dreamborn": [
+        "007-00N"
+      ],
+      "missing_lorcast": [
+        "007-223",
+        "007-224",
+        "007-00N"
+      ],
+      "missing_justtcg": [
+        "007-223",
+        "007-224"
+      ],
+      "name_mismatches": [
+        {
+          "id": "007-022",
+          "dreamborn_name": "Fix-it Felix, Jr.",
+          "lorcast_name": "Fix-It Felix, Jr."
+        },
+        {
+          "id": "007-038",
+          "dreamborn_name": "So Much To Give",
+          "lorcast_name": "So Much to Give"
+        },
+        {
+          "id": "007-103",
+          "dreamborn_name": "Tweedle Dee & Tweedle Dum",
+          "lorcast_name": "Tweedledee & Tweedledum"
+        },
+        {
+          "id": "007-117",
+          "dreamborn_name": "He's a Tramp",
+          "lorcast_name": "He's A Tramp"
+        },
+        {
+          "id": "007-127",
+          "dreamborn_name": "Cy-bug",
+          "lorcast_name": "Cy-Bug"
+        },
+        {
+          "id": "007-148",
+          "dreamborn_name": "Out Of Order",
+          "lorcast_name": "Out of Order"
+        },
+        {
+          "id": "007-154",
+          "dreamborn_name": "Scrooge McDuck",
+          "lorcast_name": "Scrooge Mcduck"
+        },
+        {
+          "id": "007-163",
+          "dreamborn_name": "HeiHei",
+          "lorcast_name": "Heihei"
+        },
+        {
+          "id": "007-178",
+          "dreamborn_name": "All is Found",
+          "lorcast_name": "All Is Found"
+        },
+        {
+          "id": "007-185",
+          "dreamborn_name": "HeiHei",
+          "lorcast_name": "Heihei"
+        },
+        {
+          "id": "007-220",
+          "dreamborn_name": "All is Found",
+          "lorcast_name": "All Is Found"
+        }
+      ]
+    },
+    "008": {
+      "missing_dreamborn": [
+        "008-01f",
+        "008-02f",
+        "008-03f",
+        "008-65f",
+        "008-125f",
+        "008-00N"
+      ],
+      "missing_lorcast": [
+        "008-223",
+        "008-224",
+        "008-00N"
+      ],
+      "missing_justtcg": [
+        "008-223",
+        "008-224",
+        "008-01f",
+        "008-02f",
+        "008-03f",
+        "008-65f",
+        "008-125f"
+      ],
+      "name_mismatches": []
+    },
+    "009": {
+      "missing_dreamborn": [
+        "009-000"
+      ],
+      "missing_lorcast": [],
+      "missing_justtcg": [
+        "009-229",
+        "009-235",
+        "009-000"
+      ],
+      "name_mismatches": [
+        {
+          "id": "009-033",
+          "dreamborn_name": "Ursula’s Shell Necklace",
+          "lorcast_name": "Ursula's Shell Necklace"
+        },
+        {
+          "id": "009-066",
+          "dreamborn_name": "White Rabbit’s Pocket Watch",
+          "lorcast_name": "White Rabbit's Pocket Watch"
+        },
+        {
+          "id": "009-132",
+          "dreamborn_name": "A Pirate’s Life",
+          "lorcast_name": "A Pirate's Life"
+        },
+        {
+          "id": "009-199",
+          "dreamborn_name": "I Find ’Em, I Flatten ’Em",
+          "lorcast_name": "I Find 'Em, I Flatten 'Em"
+        },
+        {
+          "id": "009-203",
+          "dreamborn_name": "Beast’s Mirror",
+          "lorcast_name": "Beast's Mirror"
+        }
+      ]
+    }
+  },
+  "totalCoreCards": 2051
+}
