@@ -16,10 +16,16 @@ export class SetViewer {
     };
   }
 
-  initialize(cards, priceIndex) {
+  initialize(cards, priceIndex, multiSourcePricing = null) {
     this.allCards = cards;
     this.priceIndex = priceIndex;
+    this.multiSourcePricing = multiSourcePricing;
+    this.currentPricingPriority = null;
     this.setupEventListeners();
+  }
+  
+  setPricingPriority(priority) {
+    this.currentPricingPriority = priority;
   }
 
   setupEventListeners() {
@@ -118,7 +124,7 @@ export class SetViewer {
           return (a.name || '').localeCompare(b.name || '');
           
         case 'rarity':
-          const rarityOrder = ['common', 'uncommon', 'rare', 'super rare', 'legendary', 'enchanted'];
+          const rarityOrder = ['common', 'uncommon', 'rare', 'super rare', 'legendary', 'epic', 'iconic', 'enchanted'];
           const aRarity = rarityOrder.indexOf(a.rarity?.toLowerCase()) ?? 999;
           const bRarity = rarityOrder.indexOf(b.rarity?.toLowerCase()) ?? 999;
           return aRarity - bRarity;
@@ -167,10 +173,16 @@ export class SetViewer {
     ).length;
     
     const pricingPercent = total > 0 ? (withPricing / total * 100).toFixed(1) : '0';
+    
+    // Show current pricing source
+    const pricingSource = this.currentPricingPriority ? 
+      `Priority: ${this.currentPricingPriority.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' → ')}` :
+      'Source: Unified Pricing';
 
     statsEl.innerHTML = `
       <div>Showing ${total} cards</div>
       <div>Pricing coverage: ${pricingPercent}%</div>
+      <div class="pricing-source">${pricingSource}</div>
     `;
   }
 
@@ -279,10 +291,23 @@ export class SetViewer {
   }
 
   getCardPrice(card, variant = 'base') {
-    if (!this.priceIndex || !card.id) return null;
+    if (!card.id) return null;
     
-    const priceData = this.priceIndex.get(`${card.id}-${variant}`);
-    return priceData?.market || priceData?.median || priceData?.low || null;
+    // Use multi-source pricing if available and priority is set
+    if (this.multiSourcePricing && this.currentPricingPriority) {
+      const priceData = this.multiSourcePricing.getPrice(`${card.id}-${variant}`, this.currentPricingPriority);
+      if (priceData) {
+        return priceData.market || priceData.median || priceData.low || null;
+      }
+    }
+    
+    // Fallback to unified pricing
+    if (this.priceIndex) {
+      const priceData = this.priceIndex.get(`${card.id}-${variant}`);
+      return priceData?.market || priceData?.median || priceData?.low || null;
+    }
+    
+    return null;
   }
 
   getCardImageUrl(card) {

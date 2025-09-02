@@ -74,7 +74,8 @@ async function init() {
     updatePricingSourceSelectors();
     
     showLoading('Initializing set viewer...');
-    setViewer.initialize(cards, state.priceIndex);
+    setViewer.initialize(cards, state.priceIndex, state.multiSourcePricing);
+    setViewer.setPricingPriority(state.pricingPriority);
     setViewer.setCurrentSet(state.selectedSet);
     
     // Initialize current scenario display
@@ -183,6 +184,7 @@ function wireUI() {
       // Reset pricing priority to default
       state.pricingPriority = ['justtcg', 'dreamborn', 'lorcast'];
       updatePricingSourceSelectors();
+      setViewer.setPricingPriority(state.pricingPriority);
       applyScenarioAndRender();
       setViewer.setCurrentSet(state.selectedSet); 
     });
@@ -201,6 +203,9 @@ function updatePricingPriority() {
       JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
     state.pricingPriority = newPriority;
     state.multiSourcePricing.setPriority(newPriority);
+    
+    // Update Set Viewer pricing priority
+    setViewer.setPricingPriority(newPriority);
     
     // Recompute with new priority
     recomputeSummaries();
