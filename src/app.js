@@ -39,7 +39,7 @@ let state = {
   baseConfig: null,
   workingConfig: null,
   availableSets: [],
-  selectedSet: '001', // Default to first set
+  selectedSet: '009', // Default to Fabled set
   allBoxPricing: null,
   pricingPriority: ['justtcg', 'dreamborn', 'lorcast'], // Default priority order
   priceComparisons: null
@@ -178,8 +178,8 @@ function wireUI() {
     els.reset.addEventListener('click', () => { 
       if (els.scenario) els.scenario.value = 'base';
       if (els.setSelection) {
-        els.setSelection.value = '001';
-        state.selectedSet = '001';
+        els.setSelection.value = '009';
+        state.selectedSet = '009';
       }
       // Reset pricing priority to default
       state.pricingPriority = ['justtcg', 'dreamborn', 'lorcast'];
@@ -421,7 +421,6 @@ function renderAll() {
             <td>${s.count}</td>
             <td>${fmt(s.mean)}</td>
             <td>${fmt(s.median)}</td>
-            <td class="sources-cell">${formatSources(s.sources)}</td>
           </tr>
         `);
       }
