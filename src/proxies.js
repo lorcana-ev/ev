@@ -361,11 +361,14 @@ class ProxyGenerator {
       const availableWidth = pageWidth - totalMarginX - (cardSpacing * (cols - 1));
       const availableHeight = pageHeight - totalMarginY - (cardSpacing * (rows - 1));
 
-      const cardWidth = availableWidth / cols;
-      const cardHeight = availableHeight / rows;
+      const cardWidth = (availableWidth / cols) * 0.75; // Scale down to 75%
+      const cardHeight = (availableHeight / rows) * 0.75; // Scale down to 75%
 
-      const marginX = totalMarginX / 2;
-      const marginY = totalMarginY / 2;
+      // Recalculate margins to center the smaller cards
+      const totalUsedWidth = (cardWidth * cols) + (cardSpacing * (cols - 1));
+      const totalUsedHeight = (cardHeight * rows) + (cardSpacing * (rows - 1));
+      const marginX = (pageWidth - totalUsedWidth) / 2;
+      const marginY = (pageHeight - totalUsedHeight) / 2;
 
       let pageCardCount = 0;
 
