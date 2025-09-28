@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Make Proxies - Lorcana Card Printer</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+  <style>
+    /* Additional styles specific to proxies page */
+    .proxy-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .input-section {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-input {
+      width: 100%;
+      min-height: 200px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--bg-tertiary);
+      border-radius: 4px;
+      color: var(--text-primary);
+      padding: 12px;
+      font-family: monospace;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    .card-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn:disabled {
+      background: var(--text-tertiary);
+      cursor: not-allowed;
+    }
+
+    .preview-section {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card-previews {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .card-preview {
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .card-preview img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .card-preview .card-name {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .error-message {
+      background: #dc3545;
+      color: white;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    .success-message {
+      background: #28a745;
+      color: white;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    .loading {
+      text-align: center;
+      color: var(--text-secondary);
+      padding: 20px;
+    }
+
+    .instructions {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .instructions h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .instructions ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    .instructions li {
+      margin: 8px 0;
+      color: var(--text-secondary);
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Make Proxies</h1>
+  </header>
+
+  <main class="proxy-container">
+    <a href="index.html" class="back-link">← Back to EV Calculator</a>
+
+    <div class="instructions">
+      <h3>How to Use</h3>
+      <ul>
+        <li>Enter card names or IDs, one per line</li>
+        <li>Card IDs should be in format "001-001" or card names like "Ariel - On Human Legs"</li>
+        <li>Click "Load Cards" to preview your selection</li>
+        <li>Click "Generate PDF" to create a printable sheet with 8 cards</li>
+        <li>Print the PDF and cut out the cards for proxies</li>
+      </ul>
+    </div>
+
+    <div class="input-section">
+      <h3>Card List</h3>
+      <textarea
+        id="cardInput"
+        class="card-input"
+        placeholder="Enter card names or IDs here, one per line:&#10;001-001&#10;Ariel - On Human Legs&#10;Elsa - Snow Queen&#10;Mickey Mouse - True Friend"
+      ></textarea>
+
+      <div class="action-buttons">
+        <button id="loadCards" class="btn">Load Cards</button>
+        <button id="generatePDF" class="btn" disabled>Generate PDF</button>
+        <button id="clearAll" class="btn">Clear All</button>
+      </div>
+
+      <div id="messageArea"></div>
+    </div>
+
+    <div class="preview-section" id="previewSection" style="display: none;">
+      <h3>Card Preview <span id="cardCount"></span></h3>
+      <div id="loadingIndicator" class="loading" style="display: none;">
+        Loading card images...
+      </div>
+      <div id="cardPreviews" class="card-previews"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="index.html">EV Calculator</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2024 Lorcana EV Calculator</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script type="module" src="./src/proxies.js"></script>
+</body>
+</html>
