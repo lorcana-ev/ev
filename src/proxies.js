@@ -170,18 +170,32 @@ class ProxyGenerator {
     try {
       const { jsPDF } = window.jspdf;
       const pdf = new jsPDF({
-        orientation: 'portrait',
+        orientation: 'landscape',
         unit: 'mm',
         format: 'a4'
       });
 
-      // A4 dimensions: 210x297mm
-      // Card dimensions for standard trading cards: ~63x88mm
-      // With some margin, we can fit 8 cards: 2 columns x 4 rows
-      const cardWidth = 63;
-      const cardHeight = 88;
-      const marginX = (210 - (2 * cardWidth)) / 3; // Space between cards and margins
-      const marginY = (297 - (4 * cardHeight)) / 5; // Space between cards and margins
+      // A4 landscape dimensions: 297x210mm
+      // 8 cards per page: 4 columns x 2 rows
+      // Standard card aspect ratio is approximately 63:88 (about 0.716)
+      const pageWidth = 297;
+      const pageHeight = 210;
+      const cols = 4;
+      const rows = 2;
+
+      // Calculate card dimensions to fit 8 cards with margins
+      const totalMarginX = 20; // Total horizontal margin
+      const totalMarginY = 20; // Total vertical margin
+      const cardSpacing = 5; // Space between cards
+
+      const availableWidth = pageWidth - totalMarginX - (cardSpacing * (cols - 1));
+      const availableHeight = pageHeight - totalMarginY - (cardSpacing * (rows - 1));
+
+      const cardWidth = availableWidth / cols;
+      const cardHeight = availableHeight / rows;
+
+      const marginX = totalMarginX / 2;
+      const marginY = totalMarginY / 2;
 
       let pageCardCount = 0;
 
@@ -194,11 +208,11 @@ class ProxyGenerator {
           pageCardCount = 0;
         }
 
-        // Calculate position
-        const col = pageCardCount % 2;
-        const row = Math.floor(pageCardCount / 2);
-        const x = marginX + col * (cardWidth + marginX);
-        const y = marginY + row * (cardHeight + marginY);
+        // Calculate position (4 columns x 2 rows)
+        const col = pageCardCount % cols;
+        const row = Math.floor(pageCardCount / cols);
+        const x = marginX + col * (cardWidth + cardSpacing);
+        const y = marginY + row * (cardHeight + cardSpacing);
 
         // Add card image if available
         const imageUrl = this.getCardImageUrl(card);
