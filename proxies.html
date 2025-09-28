@@ -42,6 +42,33 @@
       display: flex;
       gap: 12px;
       margin-top: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .pdf-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pdf-controls label {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .pdf-controls select {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--bg-tertiary);
+      border-radius: 4px;
+      color: var(--text-primary);
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .pdf-controls select:focus {
+      outline: none;
+      border-color: var(--accent);
     }
 
     .btn {
@@ -195,7 +222,17 @@
 
       <div class="action-buttons">
         <button id="loadCards" class="btn">Load Cards</button>
-        <button id="generatePDF" class="btn" disabled>Generate PDF</button>
+        <div class="pdf-controls">
+          <label for="cardScale">Card Scale:</label>
+          <select id="cardScale">
+            <option value="0.6">60%</option>
+            <option value="0.7">70%</option>
+            <option value="0.8" selected>80%</option>
+            <option value="0.9">90%</option>
+            <option value="1.0">100%</option>
+          </select>
+          <button id="generatePDF" class="btn" disabled>Generate PDF</button>
+        </div>
         <button id="clearAll" class="btn">Clear All</button>
       </div>
 

@@ -15,6 +15,7 @@ class ProxyGenerator {
     this.loadCardsBtn = document.getElementById('loadCards');
     this.generatePDFBtn = document.getElementById('generatePDF');
     this.clearAllBtn = document.getElementById('clearAll');
+    this.cardScale = document.getElementById('cardScale');
     this.messageArea = document.getElementById('messageArea');
     this.previewSection = document.getElementById('previewSection');
     this.cardPreviews = document.getElementById('cardPreviews');
@@ -361,8 +362,10 @@ class ProxyGenerator {
       const availableWidth = pageWidth - totalMarginX - (cardSpacing * (cols - 1));
       const availableHeight = pageHeight - totalMarginY - (cardSpacing * (rows - 1));
 
-      const cardWidth = (availableWidth / cols) * 0.75; // Scale down to 75%
-      const cardHeight = (availableHeight / rows) * 0.75; // Scale down to 75%
+      // Get user-selected scale
+      const scale = parseFloat(this.cardScale.value);
+      const cardWidth = (availableWidth / cols) * scale;
+      const cardHeight = (availableHeight / rows) * scale;
 
       // Recalculate margins to center the smaller cards
       const totalUsedWidth = (cardWidth * cols) + (cardSpacing * (cols - 1));
