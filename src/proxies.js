@@ -50,21 +50,93 @@ class ProxyGenerator {
     const lines = input.split('\n').map(line => line.trim()).filter(line => line);
     const cards = [];
     const notFound = [];
+    const fuzzyMatches = [];
 
     for (const line of lines) {
-      const card = this.findCard(line);
-      if (card) {
-        cards.push(card);
+      const parsed = this.parseCardLine(line);
+      const result = this.findCardWithInfo(parsed.cardName);
+
+      if (result.card) {
+        // Add the card multiple times based on quantity
+        for (let i = 0; i < parsed.quantity; i++) {
+          cards.push(result.card);
+        }
+
+        if (result.isFuzzy) {
+          const quantityText = parsed.quantity > 1 ? `${parsed.quantity}x ` : '';
+          fuzzyMatches.push(`"${line}" → "${quantityText}${result.card.name}${result.card.title ? ` - ${result.card.title}` : ''}"`);
+        }
       } else {
         notFound.push(line);
       }
     }
 
+    // Show feedback messages
+    const messages = [];
+    if (fuzzyMatches.length > 0) {
+      messages.push(`Fuzzy matches found: ${fuzzyMatches.join(', ')}`);
+    }
     if (notFound.length > 0) {
-      this.showMessage(`Cards not found: ${notFound.join(', ')}`, 'error');
+      messages.push(`Cards not found: ${notFound.join(', ')}`);
+    }
+
+    if (messages.length > 0) {
+      this.showMessage(messages.join('<br>'), notFound.length > 0 ? 'error' : 'info');
     }
 
     return cards;
+  }
+
+  parseCardLine(line) {
+    const trimmed = line.trim();
+
+    // Check for quantity notation (4x, 2x, etc.)
+    const quantityMatch = trimmed.match(/^(\d+)x?\s+(.+)$/i);
+
+    if (quantityMatch) {
+      const quantity = parseInt(quantityMatch[1], 10);
+      const cardName = quantityMatch[2].trim();
+      return { quantity: Math.max(1, Math.min(quantity, 20)), cardName }; // Limit to reasonable range
+    }
+
+    // No quantity specified, default to 1
+    return { quantity: 1, cardName: trimmed };
+  }
+
+  findCardWithInfo(query) {
+    const normalizedQuery = query.toLowerCase().trim();
+
+    // Try to match by ID first (format: "001-001")
+    if (/^\d{3}-\d{3}$/.test(normalizedQuery)) {
+      const card = this.allCards.find(card => card.id === normalizedQuery);
+      return { card, isFuzzy: false };
+    }
+
+    // Try to match by name and title (format: "Ariel - On Human Legs")
+    if (normalizedQuery.includes(' - ')) {
+      const [name, title] = normalizedQuery.split(' - ').map(s => s.trim());
+
+      // Exact match first
+      let exactMatch = this.allCards.find(card =>
+        card.name?.toLowerCase() === name &&
+        card.title?.toLowerCase() === title
+      );
+      if (exactMatch) return { card: exactMatch, isFuzzy: false };
+
+      // Fuzzy match for name and title
+      const fuzzyMatch = this.findBestMatch(name, title);
+      return { card: fuzzyMatch, isFuzzy: !!fuzzyMatch };
+    }
+
+    // Try exact name match first
+    let exactMatch = this.allCards.find(card =>
+      card.name?.toLowerCase() === normalizedQuery
+    );
+    if (exactMatch) return { card: exactMatch, isFuzzy: false };
+
+    // Fuzzy match for name only
+    const fuzzyMatch = this.findBestMatch(normalizedQuery);
+    return { card: fuzzyMatch, isFuzzy: !!fuzzyMatch };
   }
 
   findCard(query) {
@@ -78,16 +150,114 @@ class ProxyGenerator {
     // Try to match by name and title (format: "Ariel - On Human Legs")
     if (normalizedQuery.includes(' - ')) {
       const [name, title] = normalizedQuery.split(' - ').map(s => s.trim());
-      return this.allCards.find(card =>
+
+      // Exact match first
+      let exactMatch = this.allCards.find(card =>
         card.name?.toLowerCase() === name &&
         card.title?.toLowerCase() === title
       );
+      if (exactMatch) return exactMatch;
+
+      // Fuzzy match for name and title
+      return this.findBestMatch(name, title);
     }
 
-    // Try to match by name only
-    return this.allCards.find(card =>
+    // Try exact name match first
+    let exactMatch = this.allCards.find(card =>
       card.name?.toLowerCase() === normalizedQuery
     );
+    if (exactMatch) return exactMatch;
+
+    // Fuzzy match for name only
+    return this.findBestMatch(normalizedQuery);
+  }
+
+  findBestMatch(name, title = null) {
+    let bestMatch = null;
+    let bestScore = 0;
+
+    for (const card of this.allCards) {
+      let score = 0;
+
+      // Calculate name similarity
+      const nameScore = this.calculateSimilarity(name, card.name?.toLowerCase() || '');
+      score += nameScore * 2; // Weight name heavily
+
+      // Calculate title similarity if provided
+      if (title && card.title) {
+        const titleScore = this.calculateSimilarity(title, card.title.toLowerCase());
+        score += titleScore;
+      } else if (title && !card.title) {
+        // Penalty for having a title when card doesn't
+        score -= 0.5;
+      } else if (!title && card.title) {
+        // Small bonus for not specifying title when card has one
+        score += 0.1;
+      }
+
+      // Bonus for exact name match
+      if (card.name?.toLowerCase() === name) {
+        score += 1;
+      }
+
+      // Bonus for partial name match
+      if (card.name?.toLowerCase().includes(name) || name.includes(card.name?.toLowerCase() || '')) {
+        score += 0.5;
+      }
+
+      if (score > bestScore && score > 0.6) { // Minimum threshold
+        bestScore = score;
+        bestMatch = card;
+      }
+    }
+
+    return bestMatch;
+  }
+
+  calculateSimilarity(str1, str2) {
+    if (!str1 || !str2) return 0;
+
+    // Exact match
+    if (str1 === str2) return 1;
+
+    // Contains match
+    if (str1.includes(str2) || str2.includes(str1)) {
+      return 0.8;
+    }
+
+    // Levenshtein distance based similarity
+    const distance = this.levenshteinDistance(str1, str2);
+    const maxLength = Math.max(str1.length, str2.length);
+    return Math.max(0, (maxLength - distance) / maxLength);
+  }
+
+  levenshteinDistance(str1, str2) {
+    const matrix = [];
+
+    // Initialize matrix
+    for (let i = 0; i <= str2.length; i++) {
+      matrix[i] = [i];
+    }
+    for (let j = 0; j <= str1.length; j++) {
+      matrix[0][j] = j;
+    }
+
+    // Fill matrix
+    for (let i = 1; i <= str2.length; i++) {
+      for (let j = 1; j <= str1.length; j++) {
+        if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(
+            matrix[i - 1][j - 1] + 1, // substitution
+            matrix[i][j - 1] + 1,     // insertion
+            matrix[i - 1][j] + 1      // deletion
+          );
+        }
+      }
+    }
+
+    return matrix[str2.length][str1.length];
   }
 
   async loadCards() {
@@ -317,7 +487,7 @@ class ProxyGenerator {
 
     const messageDiv = document.createElement('div');
     messageDiv.className = `${type}-message`;
-    messageDiv.textContent = message;
+    messageDiv.innerHTML = message; // Allow HTML for better formatting
     this.messageArea.appendChild(messageDiv);
   }
 }
