@@ -44,6 +44,28 @@ php -S localhost:3000
 
 This application is designed to work on GitHub Pages. Simply push to a GitHub repository and enable Pages in the repository settings.
 
+## Data Updates
+
+### Quick Start - Update Everything
+
+```bash
+node scripts/update-all.js
+```
+
+This single command updates all pricing and card data:
+- ✓ **JustTCG API** - Real-time pricing with variants and trends
+- ✓ **Lorcast API** - Card metadata and rarity analysis
+- ✓ **Dreamborn** - TCGPlayer pricing + complete card database
+- ✓ **Unified Pricing** - Weighted average of all sources
+- ✓ **Box Pricing** - Sealed product prices with realistic EV
+
+**Duration**: ~2-3 minutes | **Output**: 6 data files updated
+
+📖 **Documentation**:
+- [Quick Reference](README_DATA_UPDATES.md) - Commands and common issues
+- [Complete Guide](docs/DATA_UPDATE_PIPELINE.md) - Full pipeline documentation
+- [Recent Updates](docs/UPDATES_2025-10-20.md) - What changed today
+
 ## Data Verification
 
 Before using the application, you can verify the integrity of your data:
@@ -143,111 +165,33 @@ npm run verify
 npm run dev
 ```
 
-### Updating Pricing Data
+### Individual Data Source Updates
+
+If you need to update only specific sources (see [docs](docs/DATA_UPDATE_PIPELINE.md) for details):
+
 ```bash
-# Update all pricing sources
-npm run update-dreamborn    # Fetch latest from Dreamborn/TCGPlayer
-npm run update-justtcg      # Fetch from JustTCG (with resume & retry)
-npm run update-lorcast      # Fetch from Lorcast
+# Update individual sources
+node scripts/fetch-dreamborn-pricing.js  # Dreamborn pricing + cards
+node scripts/fetch-all-justtcg-sets.js   # JustTCG pricing
+node scripts/fetch-lorcast-data.js       # Lorcast metadata
 
-# Rebuild unified pricing after updates
-npm run rebuild-pricing
+# After updating sources, rebuild unified pricing
+node scripts/rebuild-unified-pricing.js
 
-# Verify everything is working
-npm run verify
+# Recalculate EV
+node scripts/calculate-realistic-ev.js
 ```
 
-### Updating Data
+### Data Files Overview
 
-The application uses three separate pricing data files that you can update independently:
-
-#### Updating Dreamborn Pricing
-Dreamborn pricing comes from TCGPlayer via dreamborn.ink's API.
-
-**Recommended method (automated):**
-```bash
-npm run update-dreamborn
-# or: node scripts/fetch-dreamborn-pricing.js
-```
-
-This script:
-- Fetches latest pricing from `https://dreamborn.ink/cache/prices/USD.json`
-- Backs up existing `USD.json` to `USD.json.backup`
-- Shows download progress and coverage statistics
-- Suggests next steps (rebuild unified pricing, verify data)
-
-**Manual method:**
-1. Download from https://dreamborn.ink/cache/prices/USD.json
-2. Save as `data/USD.json`
-3. Rebuild unified pricing: `node scripts/rebuild-unified-pricing.js`
-4. Verify data: `npm run verify`
-
-**Note**: The `USD.json` file is also referenced as `DREAMBORN.json` in some scripts. This is the TCGPlayer pricing data in Dreamborn's format.
-
-#### Updating JustTCG Pricing
-JustTCG pricing is fetched via the JustTCG API:
-
-**Recommended method (most recent):**
-```bash
-npm run update-justtcg
-# or: node scripts/fetch-core-sets-justtcg.js
-```
-
-This script:
-- **Fetches only core sets** (001-009), excluding promos and special products
-- **Resumes where it left off** - won't refetch cards already in the database
-- **Automatic retry logic** - waits 30s, 60s, 90s when rate limited (up to 3 retries)
-- **Smart completion tracking** - only refetches incomplete sets (< 90%)
-- **Rate limiting** - 2 seconds between requests to respect API limits
-
-**Usage tips:**
-- Run multiple times if rate limited - it will resume automatically
-- The script shows progress like "Resuming from offset 140 (127 cards already fetched)"
-- Sets with 90%+ completion are considered done and won't be refetched within 7 days
-- Check progress with: `node -e "const d=require('./data/JUSTTCG.json'); console.log('Total:',Object.keys(d.cards).length,'cards')"`
-
-**Alternative scripts (older, not recommended):**
-- `fetch-all-justtcg-sets.js` - Fetches ALL sets including promos (may hit rate limits)
-- `batch-justtcg-pricing.js` - Older batch fetching script (superseded by core-sets version)
-- `fetch-justtcg-prices.js` - Original test script, searches card-by-card (very slow)
-
-**Rate Limiting**: The JustTCG API has daily limits. The recommended script respects these limits and won't refetch recent data.
-
-#### Updating Lorcast Pricing
-Lorcast pricing is fetched via the Lorcast API:
-
-**Recommended method:**
-```bash
-npm run update-lorcast
-# or: node scripts/fetch-lorcast-data.js
-```
-
-This script:
-- Fetches all sets and cards from Lorcast API
-- Creates/updates `data/LORCAST.json`
-- Includes comprehensive card metadata
-- Uses 1-second delays to respect rate limits
-
-#### Price Source Priority
-The application uses this fallback hierarchy:
-1. **JustTCG** - Primary source (most current market data)
-2. **Dreamborn** - Secondary source (TCGPlayer pricing)
-3. **Lorcast** - Tertiary source (additional coverage)
-
-If a card's price isn't found in JustTCG, the app automatically falls back to Dreamborn, then Lorcast.
-
-#### Data File Summary
-```
-data/
-├── USD.json              # Dreamborn/TCGPlayer pricing (from dreamborn.ink)
-├── DREAMBORN.json        # Same data as USD.json (some scripts use this name)
-├── JUSTTCG.json          # JustTCG API pricing data
-├── LORCAST.json          # Lorcast API pricing and card data
-├── UNIFIED_PRICING.json  # Combined pricing from all sources
-├── cards.json            # Card database from dreamborn.ink
-├── filters.json          # Filter options
-└── sorts.json            # Sort options
-```
+| File | Source | Purpose | Updated By |
+|------|--------|---------|------------|
+| `USD.json` | Dreamborn | TCGPlayer pricing | fetch-dreamborn-pricing.js |
+| `cards.json` | Dreamborn | Card database | fetch-dreamborn-pricing.js |
+| `JUSTTCG.json` | JustTCG API | Real-time pricing | fetch-all-justtcg-sets.js |
+| `LORCAST.json` | Lorcast API | Card metadata | fetch-lorcast-data.js |
+| `UNIFIED_PRICING.json` | Combined | Weighted average pricing | rebuild-unified-pricing.js |
+| `BOX_PRICING.json` | JustTCG + Calc | Box/case prices + EV | extract-box-pricing.js + calculate-realistic-ev.js |
 
 ### Customizing Pack Odds
 Edit `config/pack_model.json` to adjust:

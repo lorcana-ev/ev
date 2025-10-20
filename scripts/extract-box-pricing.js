@@ -112,83 +112,8 @@ function determineProductType(productName) {
   return 'unknown';
 }
 
-function calculateEstimatedValues(boxPricing, unifiedPricing) {
-  // Load unified pricing data to calculate pack EV
-  let unifiedData = {};
-  
-  try {
-    const unifiedFile = path.join(process.cwd(), 'data', 'UNIFIED_PRICING.json');
-    unifiedData = JSON.parse(fs.readFileSync(unifiedFile, 'utf8'));
-  } catch (error) {
-    console.log('⚠️  Could not load unified pricing for EV calculation');
-    return boxPricing;
-  }
-  
-  // Calculate Set 9 (Fabled) pack EV
-  const set9Cards = Object.entries(unifiedData.cards || {})
-    .filter(([cardId, cardData]) => cardId.startsWith('009-'))
-    .filter(([cardId, cardData]) => cardData.unified_pricing.base || cardData.unified_pricing.foil);
-  
-  if (set9Cards.length === 0) {
-    console.log('⚠️  No Set 9 cards with pricing found for EV calculation');
-    return boxPricing;
-  }
-  
-  console.log(`📊 Calculating EV from ${set9Cards.length} Set 9 cards with pricing...`);
-  
-  // Simple EV calculation (would need proper rarity odds for accuracy)
-  let totalValue = 0;
-  let cardCount = 0;
-  
-  for (const [cardId, cardData] of set9Cards) {
-    const basePrice = cardData.unified_pricing.base || 0;
-    const foilPrice = cardData.unified_pricing.foil || basePrice;
-    
-    // Simple average (in reality, foil probability is much lower)
-    totalValue += basePrice + (foilPrice * 0.1); // Assume 10% chance of foil
-    cardCount++;
-  }
-  
-  const avgCardValue = totalValue / cardCount;
-  const estimatedPackEV = avgCardValue * 12; // 12 cards per pack
-  const estimatedBoxEV = estimatedPackEV * 24; // 24 packs per box
-  const estimatedCaseEV = estimatedBoxEV * 6; // 6 boxes per case
-  
-  // Add estimated values to box products
-  for (const [productKey, product] of Object.entries(boxPricing.products)) {
-    let estimatedEV = 0;
-    
-    if (product.product_type === 'booster_box') {
-      estimatedEV = estimatedBoxEV;
-    } else if (product.product_type === 'case') {
-      estimatedEV = estimatedCaseEV;
-    }
-    
-    if (estimatedEV > 0) {
-      product.estimated_value = {
-        ev: Math.round(estimatedEV * 100) / 100,
-        calculation_method: 'simple_average',
-        based_on_cards: cardCount,
-        pack_ev: Math.round(estimatedPackEV * 100) / 100,
-        calculated_at: new Date().toISOString()
-      };
-      
-      // Calculate value ratio (market price vs estimated value)
-      if (product.best_price && product.best_price.price > 0) {
-        const valueRatio = estimatedEV / product.best_price.price;
-        product.estimated_value.value_ratio = Math.round(valueRatio * 100) / 100;
-        product.estimated_value.value_assessment = valueRatio > 1.1 ? 'good_value' :
-                                                   valueRatio > 0.9 ? 'fair_value' : 'poor_value';
-      }
-    }
-  }
-  
-  console.log(`💰 Estimated pack EV: $${Math.round(estimatedPackEV * 100) / 100}`);
-  console.log(`📦 Estimated box EV: $${Math.round(estimatedBoxEV * 100) / 100}`);
-  console.log(`📦 Estimated case EV: $${Math.round(estimatedCaseEV * 100) / 100}`);
-  
-  return boxPricing;
-}
+// Note: EV calculation is handled by calculate-realistic-ev.js
+// This script only extracts pricing data from JustTCG
 
 async function extractBoxPricing() {
   console.log('📦 Extracting box pricing from JustTCG data...\n');
@@ -200,33 +125,25 @@ async function extractBoxPricing() {
   }
   
   // Extract box products
-  let boxPricing = extractBoxProducts(justTcgData);
+  const boxPricing = extractBoxProducts(justTcgData);
   console.log(`\n📊 Found ${boxPricing.metadata.total_products} box/case products`);
-  
+
   if (boxPricing.metadata.total_products === 0) {
     console.log('⚠️  No box/case products found in JustTCG data');
     return boxPricing;
   }
-  
-  // Calculate estimated values
-  console.log('\n📊 Calculating estimated values...');
-  boxPricing = calculateEstimatedValues(boxPricing);
-  
+
   // Display results
   console.log('\n📦 Box Pricing Summary:');
   for (const [productKey, product] of Object.entries(boxPricing.products)) {
     console.log(`\n🎯 ${product.name}`);
     console.log(`   Type: ${product.product_type}`);
     console.log(`   Best Price: $${product.best_price?.price || 'N/A'} (${product.best_price?.condition || 'N/A'})`);
-    
-    if (product.estimated_value) {
-      console.log(`   Estimated Value: $${product.estimated_value.ev}`);
-      console.log(`   Value Ratio: ${product.estimated_value.value_ratio || 'N/A'} (${product.estimated_value.value_assessment || 'unknown'})`);
-    }
-    
     console.log(`   Variants: ${Object.keys(product.variants).length}`);
     console.log(`   TCGPlayer ID: ${product.tcgplayerId || 'N/A'}`);
   }
+
+  console.log('\n💡 Note: For EV calculations, use scripts/calculate-realistic-ev.js');
   
   // Save box pricing data
   fs.writeFileSync(BOX_PRICING_FILE, JSON.stringify(boxPricing, null, 2));

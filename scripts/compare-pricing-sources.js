@@ -1,217 +1,300 @@
 #!/usr/bin/env node
-// Compare pricing between JustTCG and TCGPlayer for Set 9 cards
+// Compare pricing data across JustTCG, Lorcast, and Dreamborn sources
+// Find major discrepancies for spot checking
 
 import fs from 'fs';
 import path from 'path';
 
+const DATA_DIR = path.join(process.cwd(), 'data');
+
+// Load all pricing sources
 function loadPricingData() {
-  const usdPath = path.join(process.cwd(), 'data', 'USD.json');
-  const justTcgPath = path.join(process.cwd(), 'data', 'JUSTTCG.json');
-  const cardsPath = path.join(process.cwd(), 'data', 'cards-formatted.json');
-  
-  let usdData = {}, justTcgData = {}, cardsData = [];
-  
+  console.log('📂 Loading pricing data from all sources...\n');
+
+  const sources = {
+    dreamborn: null,
+    justtcg: null,
+    lorcast: null
+  };
+
+  // Load Dreamborn (USD.json)
   try {
-    usdData = JSON.parse(fs.readFileSync(usdPath, 'utf8'));
+    const dreambornPath = path.join(DATA_DIR, 'USD.json');
+    sources.dreamborn = JSON.parse(fs.readFileSync(dreambornPath, 'utf8'));
+    console.log(`✅ Dreamborn: ${Object.keys(sources.dreamborn).length} cards`);
   } catch (error) {
-    console.log('⚠️  No USD.json found');
+    console.log(`⚠️  Dreamborn: Not available (${error.message})`);
   }
-  
+
+  // Load JustTCG
   try {
-    const justTcgFile = JSON.parse(fs.readFileSync(justTcgPath, 'utf8'));
-    justTcgData = justTcgFile.cards || {};
+    const justtcgPath = path.join(DATA_DIR, 'JUSTTCG.json');
+    const data = JSON.parse(fs.readFileSync(justtcgPath, 'utf8'));
+    sources.justtcg = data.cards || {};
+    console.log(`✅ JustTCG: ${Object.keys(sources.justtcg).length} cards`);
   } catch (error) {
-    console.log('⚠️  No JUSTTCG.json found');
+    console.log(`⚠️  JustTCG: Not available (${error.message})`);
   }
-  
+
+  // Load Lorcast
   try {
-    cardsData = JSON.parse(fs.readFileSync(cardsPath, 'utf8'));
+    const lorcastPath = path.join(DATA_DIR, 'LORCAST.json');
+    const data = JSON.parse(fs.readFileSync(lorcastPath, 'utf8'));
+    sources.lorcast = data.cards || {};
+    console.log(`✅ Lorcast: ${Object.keys(sources.lorcast).length} cards`);
   } catch (error) {
-    console.log('❌ No cards-formatted.json found');
-    return null;
+    console.log(`⚠️  Lorcast: Not available (${error.message})`);
   }
-  
-  return { usdData, justTcgData, cardsData };
+
+  return sources;
 }
 
-function getBestPrice(variants, preferredCondition = 'Near Mint', preferredPrinting = 'Normal') {
-  if (!variants || Object.keys(variants).length === 0) {
-    return null;
+// Extract price from JustTCG card data
+function getJustTcgPrice(card, variant = 'base') {
+  if (!card || !card.variants) return null;
+
+  // Look for Near Mint Normal (base) or Near Mint Foil/Holofoil
+  const printing = variant === 'foil' ? ['Foil', 'Holofoil', 'Cold Foil'] : ['Normal'];
+
+  // Try exact match first
+  for (const printType of printing) {
+    const key = `Near_Mint_${printType}`;
+    if (card.variants[key]) {
+      return card.variants[key].price || null;
+    }
   }
-  
-  // Try to find preferred combination first
-  const preferredKey = `${preferredCondition}_${preferredPrinting}`.replace(/\s+/g, '_');
-  if (variants[preferredKey]) {
-    return variants[preferredKey];
+
+  // Fallback: find any variant matching the printing type
+  for (const [variantKey, variantData] of Object.entries(card.variants)) {
+    if (variantData.condition === 'Near Mint') {
+      if (variant === 'foil' && printing.includes(variantData.printing)) {
+        return variantData.price || null;
+      }
+      if (variant === 'base' && variantData.printing === 'Normal') {
+        return variantData.price || null;
+      }
+    }
   }
-  
-  // Fallback to any Near Mint variant
-  const nearMintVariant = Object.values(variants).find(v => v.condition === preferredCondition);
-  if (nearMintVariant) {
-    return nearMintVariant;
-  }
-  
-  // Fallback to any variant
-  return Object.values(variants)[0];
+
+  return null;
 }
 
-function compareCardPricing(cardId, usdPricing, justTcgPricing, cardInfo) {
+// Extract price from Dreamborn data
+function getDreambornPrice(cardData, variant = 'base') {
+  if (!cardData || !cardData[variant]) return null;
+  return cardData[variant]?.TP?.price || null;
+}
+
+// Compare prices for a single card
+function compareCardPrices(cardId, sources) {
   const comparison = {
     cardId,
-    cardName: cardInfo ? `${cardInfo.name} - ${cardInfo.title}` : cardId,
-    rarity: cardInfo?.rarity,
-    tcgPlayer: {},
-    justTcg: {},
-    comparison: {}
+    name: null,
+    rarity: null,
+    base: {
+      dreamborn: null,
+      justtcg: null
+    },
+    foil: {
+      dreamborn: null,
+      justtcg: null
+    }
   };
-  
-  // Extract TCGPlayer pricing
-  if (usdPricing) {
-    comparison.tcgPlayer.base = usdPricing.base?.TP?.price || null;
-    comparison.tcgPlayer.foil = usdPricing.foil?.TP?.price || null;
-    comparison.tcgPlayer.source = 'Manual TCGPlayer Integration';
+
+  // Get Dreamborn prices
+  if (sources.dreamborn && sources.dreamborn[cardId]) {
+    comparison.base.dreamborn = getDreambornPrice(sources.dreamborn[cardId], 'base');
+    comparison.foil.dreamborn = getDreambornPrice(sources.dreamborn[cardId], 'foil');
   }
-  
-  // Extract JustTCG pricing
-  if (justTcgPricing && justTcgPricing.variants) {
-    const bestNormal = getBestPrice(justTcgPricing.variants, 'Near Mint', 'Normal');
-    const bestFoil = getBestPrice(justTcgPricing.variants, 'Near Mint', 'Holofoil') ||
-                    getBestPrice(justTcgPricing.variants, 'Near Mint', 'Cold Foil');
-    
-    comparison.justTcg.base = bestNormal?.price || null;
-    comparison.justTcg.foil = bestFoil?.price || null;
-    comparison.justTcg.variantCount = Object.keys(justTcgPricing.variants).length;
-    comparison.justTcg.fetchedAt = justTcgPricing.fetched_at;
+
+  // Get JustTCG prices
+  if (sources.justtcg && sources.justtcg[cardId]) {
+    const card = sources.justtcg[cardId];
+    comparison.name = card.name;
+    comparison.rarity = card.rarity;
+    comparison.base.justtcg = getJustTcgPrice(card, 'base');
+    comparison.foil.justtcg = getJustTcgPrice(card, 'foil');
   }
-  
-  // Calculate comparisons
-  if (comparison.tcgPlayer.base && comparison.justTcg.base) {
-    const diff = comparison.justTcg.base - comparison.tcgPlayer.base;
-    comparison.comparison.baseDiff = diff;
-    comparison.comparison.basePercentDiff = ((diff / comparison.tcgPlayer.base) * 100).toFixed(1);
+
+  // Get card name from Lorcast if not found
+  if (!comparison.name && sources.lorcast && sources.lorcast[cardId]) {
+    comparison.name = sources.lorcast[cardId].name;
+    comparison.rarity = sources.lorcast[cardId].rarity;
   }
-  
-  if (comparison.tcgPlayer.foil && comparison.justTcg.foil) {
-    const diff = comparison.justTcg.foil - comparison.tcgPlayer.foil;
-    comparison.comparison.foilDiff = diff;
-    comparison.comparison.foilPercentDiff = ((diff / comparison.tcgPlayer.foil) * 100).toFixed(1);
-  }
-  
+
   return comparison;
 }
 
-function analyzePricingComparison() {
-  console.log('📊 Pricing Source Comparison: TCGPlayer vs JustTCG\n');
-  
-  const data = loadPricingData();
-  if (!data) return;
-  
-  const { usdData, justTcgData, cardsData } = data;
-  
-  // Find Set 9 cards that have pricing in both sources
-  const set9Cards = cardsData.filter(card => card.setId === '009');
-  const commonCards = [];
-  const tcgPlayerOnly = [];
-  const justTcgOnly = [];
-  
-  for (const card of set9Cards) {
-    const hasTcgPlayer = usdData[card.id];
-    const hasJustTcg = justTcgData[card.id];
-    
-    if (hasTcgPlayer && hasJustTcg) {
-      const comparison = compareCardPricing(card.id, usdData[card.id], justTcgData[card.id], card);
-      commonCards.push(comparison);
-    } else if (hasTcgPlayer && !hasJustTcg) {
-      tcgPlayerOnly.push({
-        cardId: card.id,
-        cardName: `${card.name} - ${card.title}`,
-        rarity: card.rarity,
-        basePrice: usdData[card.id].base?.TP?.price,
-        foilPrice: usdData[card.id].foil?.TP?.price
-      });
-    } else if (!hasTcgPlayer && hasJustTcg) {
-      justTcgOnly.push({
-        cardId: card.id,
-        cardName: `${card.name} - ${card.title}`,
-        rarity: card.rarity,
-        variantCount: Object.keys(justTcgData[card.id].variants || {}).length
-      });
-    }
-  }
-  
-  // Summary
-  console.log('📈 Coverage Summary:');
-  console.log(`   Total Set 9 cards: ${set9Cards.length}`);
-  console.log(`   TCGPlayer pricing: ${Object.keys(usdData).filter(id => id.startsWith('009-')).length} cards`);
-  console.log(`   JustTCG pricing: ${Object.keys(justTcgData).length} cards`);
-  console.log(`   Both sources: ${commonCards.length} cards`);
-  console.log(`   TCGPlayer only: ${tcgPlayerOnly.length} cards`);
-  console.log(`   JustTCG only: ${justTcgOnly.length} cards\n`);
-  
-  // Price comparison for cards in both sources
-  if (commonCards.length > 0) {
-    console.log('💰 Price Comparisons (cards available in both sources):');
-    
-    let baseDiffs = [];
-    let foilDiffs = [];
-    
-    for (const comp of commonCards) {
-      console.log(`\n🃏 ${comp.cardName} (${comp.rarity})`);
-      
-      if (comp.tcgPlayer.base && comp.justTcg.base) {
-        console.log(`   Base: TCGPlayer $${comp.tcgPlayer.base} vs JustTCG $${comp.justTcg.base} (${comp.comparison.basePercentDiff > 0 ? '+' : ''}${comp.comparison.basePercentDiff}%)`);
-        baseDiffs.push(parseFloat(comp.comparison.basePercentDiff));
-      }
-      
-      if (comp.tcgPlayer.foil && comp.justTcg.foil) {
-        console.log(`   Foil: TCGPlayer $${comp.tcgPlayer.foil} vs JustTCG $${comp.justTcg.foil} (${comp.comparison.foilPercentDiff > 0 ? '+' : ''}${comp.comparison.foilPercentDiff}%)`);
-        foilDiffs.push(parseFloat(comp.comparison.foilPercentDiff));
-      }
-      
-      console.log(`   JustTCG variants: ${comp.justTcg.variantCount}`);
-    }
-    
-    // Statistical summary
-    if (baseDiffs.length > 0) {
-      const avgBaseDiff = (baseDiffs.reduce((a, b) => a + b, 0) / baseDiffs.length).toFixed(1);
-      const baseRange = `${Math.min(...baseDiffs).toFixed(1)}% to ${Math.max(...baseDiffs).toFixed(1)}%`;
-      console.log(`\n📊 Base Price Differences: Average ${avgBaseDiff > 0 ? '+' : ''}${avgBaseDiff}% (Range: ${baseRange})`);
-    }
-    
-    if (foilDiffs.length > 0) {
-      const avgFoilDiff = (foilDiffs.reduce((a, b) => a + b, 0) / foilDiffs.length).toFixed(1);
-      const foilRange = `${Math.min(...foilDiffs).toFixed(1)}% to ${Math.max(...foilDiffs).toFixed(1)}%`;
-      console.log(`📊 Foil Price Differences: Average ${avgFoilDiff > 0 ? '+' : ''}${avgFoilDiff}% (Range: ${foilRange})`);
-    }
-  }
-  
-  // Show JustTCG-only cards (our new discoveries)
-  if (justTcgOnly.length > 0) {
-    console.log(`\n🆕 New cards discovered via JustTCG (${justTcgOnly.length}):`);
-    justTcgOnly.slice(0, 10).forEach(card => {
-      console.log(`   ${card.cardId}: ${card.cardName} (${card.rarity})`);
-    });
-    if (justTcgOnly.length > 10) {
-      console.log(`   ... and ${justTcgOnly.length - 10} more cards`);
-    }
-  }
-  
+// Calculate discrepancy metrics
+function calculateDiscrepancy(price1, price2) {
+  if (!price1 || !price2) return null;
+
+  const diff = Math.abs(price1 - price2);
+  const avg = (price1 + price2) / 2;
+  const percentDiff = (diff / avg) * 100;
+
   return {
-    summary: {
-      totalCards: set9Cards.length,
-      tcgPlayerCards: Object.keys(usdData).filter(id => id.startsWith('009-')).length,
-      justTcgCards: Object.keys(justTcgData).length,
-      commonCards: commonCards.length,
-      tcgPlayerOnly: tcgPlayerOnly.length,
-      justTcgOnly: justTcgOnly.length
-    },
-    comparisons: commonCards
+    diff,
+    percentDiff,
+    higher: price1 > price2 ? 'dreamborn' : 'justtcg',
+    ratio: Math.max(price1, price2) / Math.min(price1, price2)
   };
 }
 
-// Run analysis if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  analyzePricingComparison();
+// Analyze all cards and find discrepancies
+function findDiscrepancies(sources) {
+  console.log('\n🔍 Analyzing price discrepancies...\n');
+
+  // Get all unique card IDs
+  const allCardIds = new Set();
+  if (sources.dreamborn) Object.keys(sources.dreamborn).forEach(id => allCardIds.add(id));
+  if (sources.justtcg) Object.keys(sources.justtcg).forEach(id => allCardIds.add(id));
+
+  const discrepancies = [];
+
+  for (const cardId of allCardIds) {
+    const comparison = compareCardPrices(cardId, sources);
+
+    // Check base variant discrepancy
+    if (comparison.base.dreamborn && comparison.base.justtcg) {
+      const baseDisc = calculateDiscrepancy(
+        comparison.base.dreamborn,
+        comparison.base.justtcg
+      );
+
+      if (baseDisc && (baseDisc.percentDiff > 20 || baseDisc.diff > 5)) {
+        discrepancies.push({
+          cardId,
+          name: comparison.name,
+          rarity: comparison.rarity,
+          variant: 'base',
+          dreamborn: comparison.base.dreamborn,
+          justtcg: comparison.base.justtcg,
+          ...baseDisc
+        });
+      }
+    }
+
+    // Check foil variant discrepancy
+    if (comparison.foil.dreamborn && comparison.foil.justtcg) {
+      const foilDisc = calculateDiscrepancy(
+        comparison.foil.dreamborn,
+        comparison.foil.justtcg
+      );
+
+      if (foilDisc && (foilDisc.percentDiff > 20 || foilDisc.diff > 5)) {
+        discrepancies.push({
+          cardId,
+          name: comparison.name,
+          rarity: comparison.rarity,
+          variant: 'foil',
+          dreamborn: comparison.foil.dreamborn,
+          justtcg: comparison.foil.justtcg,
+          ...foilDisc
+        });
+      }
+    }
+  }
+
+  // Sort by percent difference (highest first)
+  discrepancies.sort((a, b) => b.percentDiff - a.percentDiff);
+
+  return discrepancies;
 }
 
-export { analyzePricingComparison };
+// Display discrepancies report
+function displayReport(discrepancies) {
+  console.log('═'.repeat(100));
+  console.log('📊 MAJOR PRICE DISCREPANCIES REPORT');
+  console.log('═'.repeat(100));
+  console.log(`Found ${discrepancies.length} cards with significant price differences (>20% or >$5 difference)\n`);
+
+  if (discrepancies.length === 0) {
+    console.log('✅ No major discrepancies found!');
+    return;
+  }
+
+  // Top 20 discrepancies
+  const topDiscrepancies = discrepancies.slice(0, 20);
+
+  console.log('🔴 TOP 20 LARGEST DISCREPANCIES:\n');
+  console.log('─'.repeat(100));
+  console.log(`${'#'.padEnd(4)} ${'Card ID'.padEnd(12)} ${'Variant'.padEnd(8)} ${'Card Name'.padEnd(35)} ${'Dreamborn'.padEnd(12)} ${'JustTCG'.padEnd(12)} ${'Diff %'.padEnd(10)}`);
+  console.log('─'.repeat(100));
+
+  topDiscrepancies.forEach((disc, idx) => {
+    const rank = (idx + 1).toString().padEnd(4);
+    const cardId = disc.cardId.padEnd(12);
+    const variant = disc.variant.padEnd(8);
+    const name = (disc.name || 'Unknown').substring(0, 35).padEnd(35);
+    const dreamborn = `$${disc.dreamborn.toFixed(2)}`.padEnd(12);
+    const justtcg = `$${disc.justtcg.toFixed(2)}`.padEnd(12);
+    const percentDiff = `${disc.percentDiff.toFixed(1)}%`.padEnd(10);
+
+    console.log(`${rank} ${cardId} ${variant} ${name} ${dreamborn} ${justtcg} ${percentDiff}`);
+  });
+
+  // Statistics
+  console.log('\n' + '═'.repeat(100));
+  console.log('📈 STATISTICS:\n');
+
+  const baseDiscrepancies = discrepancies.filter(d => d.variant === 'base');
+  const foilDiscrepancies = discrepancies.filter(d => d.variant === 'foil');
+
+  console.log(`Base variant discrepancies: ${baseDiscrepancies.length}`);
+  console.log(`Foil variant discrepancies: ${foilDiscrepancies.length}`);
+
+  if (discrepancies.length > 0) {
+    const avgPercentDiff = discrepancies.reduce((sum, d) => sum + d.percentDiff, 0) / discrepancies.length;
+    const maxPercentDiff = Math.max(...discrepancies.map(d => d.percentDiff));
+    const avgDollarDiff = discrepancies.reduce((sum, d) => sum + d.diff, 0) / discrepancies.length;
+
+    console.log(`\nAverage percent difference: ${avgPercentDiff.toFixed(1)}%`);
+    console.log(`Maximum percent difference: ${maxPercentDiff.toFixed(1)}%`);
+    console.log(`Average dollar difference: $${avgDollarDiff.toFixed(2)}`);
+  }
+
+  // Save detailed report
+  const reportPath = path.join(DATA_DIR, 'PRICE_DISCREPANCIES.json');
+  fs.writeFileSync(reportPath, JSON.stringify(discrepancies, null, 2));
+  console.log(`\n💾 Full report saved to: ${reportPath}`);
+
+  // Show some spot check suggestions
+  console.log('\n🎯 SUGGESTED SPOT CHECKS:');
+  console.log('─'.repeat(100));
+  console.log('Check these cards manually on both sources:\n');
+
+  topDiscrepancies.slice(0, 5).forEach((disc, idx) => {
+    console.log(`${idx + 1}. ${disc.name || disc.cardId} (${disc.variant}) - ${disc.rarity || 'unknown rarity'}`);
+    console.log(`   Dreamborn: $${disc.dreamborn.toFixed(2)}`);
+    console.log(`   JustTCG: $${disc.justtcg.toFixed(2)}`);
+    console.log(`   Difference: ${disc.percentDiff.toFixed(1)}% ($${disc.diff.toFixed(2)}) - ${disc.higher} is higher`);
+    console.log('');
+  });
+}
+
+// Main function
+async function main() {
+  console.log('╔════════════════════════════════════════════════════════════════╗');
+  console.log('║     Price Discrepancy Analysis - JustTCG vs Dreamborn         ║');
+  console.log('╚════════════════════════════════════════════════════════════════╝\n');
+
+  const sources = loadPricingData();
+
+  if (!sources.dreamborn || !sources.justtcg) {
+    console.error('\n❌ Error: Need both Dreamborn and JustTCG data to compare.');
+    console.error('Run: node scripts/update-all.js');
+    process.exit(1);
+  }
+
+  const discrepancies = findDiscrepancies(sources);
+  displayReport(discrepancies);
+
+  console.log('\n' + '═'.repeat(100) + '\n');
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}
+
+export { loadPricingData, findDiscrepancies };
