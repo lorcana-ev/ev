@@ -7,13 +7,11 @@ import fs from 'fs';
 import path from 'path';
 import zlib from 'zlib';
 
-const API_KEY = 'tcg_0ecc60ebe3854a369313b16a95737637';
 const BASE_URL = 'https://api.justtcg.com/v1';
-const DELAY_MS = 2000; // 2 seconds between requests (more conservative)
+const DELAY_MS = 6500; // 6.5 seconds between requests (10 req/min = 6s minimum, add buffer)
 const CARDS_PER_BATCH = 20;
 const REFETCH_THRESHOLD_DAYS = 7; // Don't refetch if updated within 7 days
-const MAX_RETRIES = 3; // Max retries on rate limit
-const RETRY_DELAY_MS = 30000; // 30 seconds wait on rate limit before retry
+const API_KEYS_FILE = path.join(process.cwd(), 'config', 'justtcg-keys.json');
 
 // Core sets only - no promos, special sets, etc.
 const CORE_SETS = {
@@ -32,11 +30,128 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function makeApiRequest(url) {
+function loadApiKeys() {
+  try {
+    const data = fs.readFileSync(API_KEYS_FILE, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('❌ Error loading API keys:', error.message);
+    console.error('   Make sure config/justtcg-keys.json exists');
+    process.exit(1);
+  }
+}
+
+function saveApiKeys(keysData) {
+  keysData.metadata.last_updated = new Date().toISOString();
+  fs.writeFileSync(API_KEYS_FILE, JSON.stringify(keysData, null, 2));
+}
+
+function cleanOldMinuteRequests(key) {
+  const now = Date.now();
+  const oneMinuteAgo = now - 60 * 1000;
+  // Keep only requests from the last minute
+  key.minute_requests = (key.minute_requests || []).filter(timestamp => timestamp > oneMinuteAgo);
+}
+
+function isKeyAvailable(key, metadata) {
+  const now = Date.now();
+
+  if (key.status !== 'active') return false;
+
+  // Check daily limit
+  if (key.daily_limit_reset) {
+    const resetTime = new Date(key.daily_limit_reset).getTime();
+    if (now < resetTime) {
+      // Still within the daily reset period
+      if (key.daily_requests >= metadata.daily_limit) {
+        return false; // Hit daily limit
+      }
+    } else {
+      // Reset period has passed, clear the daily counter
+      key.daily_requests = 0;
+      key.daily_limit_reset = null;
+    }
+  }
+
+  // Check burst limit (requests in last minute)
+  cleanOldMinuteRequests(key);
+  if (key.minute_requests.length >= metadata.burst_limit_per_minute) {
+    // Check if we should try again (if oldest request was >1 min ago after cleaning)
+    const oldestRequest = Math.min(...key.minute_requests);
+    const timeSinceOldest = now - oldestRequest;
+    if (timeSinceOldest < 60 * 1000) {
+      return false; // Still burst limited
+    }
+  }
+
+  return true;
+}
+
+function getActiveApiKey(keysData) {
+  const availableKeys = keysData.keys.filter(k => isKeyAvailable(k, keysData.metadata));
+
+  if (availableKeys.length === 0) {
+    return null; // All keys are rate limited
+  }
+
+  // Return the key with the fewest daily requests
+  availableKeys.sort((a, b) => a.daily_requests - b.daily_requests);
+  return availableKeys[0];
+}
+
+function getNextMidnightUTC() {
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+  return tomorrow;
+}
+
+function markKeyRateLimited(keysData, apiKey, limitType = 'daily') {
+  const key = keysData.keys.find(k => k.key === apiKey);
+  if (!key) return;
+
+  const now = new Date();
+
+  if (limitType === 'daily') {
+    // Mark as daily rate limited - resets at midnight UTC
+    const resetTime = getNextMidnightUTC();
+    key.daily_limit_reset = resetTime.toISOString();
+    // Set daily_requests to the limit so isKeyAvailable() knows it's exhausted
+    key.daily_requests = keysData.metadata.daily_limit;
+    saveApiKeys(keysData);
+    const hoursUntilReset = ((resetTime - now) / (1000 * 60 * 60)).toFixed(1);
+    console.log(`   🔒 ${key.name} hit daily limit - resets at midnight UTC (${hoursUntilReset}h from now)`);
+  } else if (limitType === 'burst') {
+    // Mark as burst rate limited - should be available in ~1 minute
+    key.last_burst_limited = now.toISOString();
+    saveApiKeys(keysData);
+    console.log(`   ⏱️  ${key.name} hit burst limit - wait ~60 seconds`);
+  }
+}
+
+function incrementKeyRequests(keysData, apiKey) {
+  const key = keysData.keys.find(k => k.key === apiKey);
+  if (!key) return;
+
+  const now = Date.now();
+
+  // Increment daily counter
+  key.daily_requests++;
+
+  // Add timestamp to minute_requests for burst tracking
+  if (!key.minute_requests) key.minute_requests = [];
+  key.minute_requests.push(now);
+
+  // Clean old requests periodically
+  cleanOldMinuteRequests(key);
+}
+
+function makeApiRequest(url, apiKey) {
   return new Promise((resolve, reject) => {
     const options = {
       headers: {
-        'x-api-key': API_KEY,
+        'x-api-key': apiKey,
         'Accept': 'application/json',
         'Accept-Encoding': 'gzip, deflate, br'
       },
@@ -132,7 +247,6 @@ function loadExistingData() {
         created_at: new Date().toISOString(),
         last_updated: new Date().toISOString(),
         total_cards: 0,
-        api_key_used: API_KEY.substring(0, 10) + '...',
         fetch_method: 'core_sets_optimized'
       },
       set_metadata: {},
@@ -142,13 +256,80 @@ function loadExistingData() {
   }
 }
 
-async function getCoreSetsFromAPI() {
+async function getCoreSetsFromAPI(keysData) {
   console.log('🔍 Getting core sets from JustTCG API...');
-  
-  const response = await makeApiRequest(`${BASE_URL}/sets?game=disney-lorcana`);
+
+  let currentApiKey = null;
+  let response = null;
+
+  // Try all available keys
+  while (!response) {
+    const keyObj = getActiveApiKey(keysData);
+    if (!keyObj) {
+      throw new Error('All API keys are rate limited. Please wait until midnight UTC or until burst limits reset.');
+    }
+
+    currentApiKey = keyObj.key;
+    console.log(`   🔑 Using ${keyObj.name} (${keyObj.daily_requests} daily requests)`);
+
+    // Wait if this key was used recently
+    const key = keysData.keys.find(k => k.key === currentApiKey);
+    if (key && key.minute_requests && key.minute_requests.length > 0) {
+      const lastRequest = Math.max(...key.minute_requests);
+      const timeSinceLastRequest = Date.now() - lastRequest;
+      const minDelay = DELAY_MS;
+
+      if (timeSinceLastRequest < minDelay) {
+        const waitTime = minDelay - timeSinceLastRequest;
+        console.log(`   ⏳ Waiting ${(waitTime / 1000).toFixed(1)}s since last request on this key...`);
+        await delay(waitTime);
+      }
+    }
+
+    response = await makeApiRequest(`${BASE_URL}/sets?game=disney-lorcana`, currentApiKey);
+    incrementKeyRequests(keysData, currentApiKey);
+
+    // Handle 429 rate limit
+    if (response.statusCode === 429) {
+      const limitType = response.data?.code === 'DAILY_LIMIT_EXCEEDED' ? 'daily' : 'burst';
+      console.log(`   ⚠️  ${limitType === 'daily' ? '🔒 Daily' : '⏱️  Burst'} limit hit on ${keyObj.name}`);
+
+      markKeyRateLimited(keysData, currentApiKey, limitType);
+
+      if (limitType === 'burst') {
+        // Try another key or wait
+        const nextKey = getActiveApiKey(keysData);
+        if (nextKey && nextKey.key !== currentApiKey) {
+          console.log(`   🔄 Switching to another key...`);
+          response = null; // Retry with new key
+          continue;
+        } else {
+          console.log(`   ⏳ Waiting 60 seconds for burst limit to reset...`);
+          await delay(60000);
+          response = null; // Retry after wait
+          continue;
+        }
+      } else {
+        // Daily limit - try another key
+        const nextKey = getActiveApiKey(keysData);
+        if (nextKey && nextKey.key !== currentApiKey) {
+          console.log(`   🔄 Switching to ${nextKey.name}...`);
+          response = null; // Retry with new key
+          continue;
+        } else {
+          throw new Error('All API keys have hit their daily limit. Please try again after midnight UTC.');
+        }
+      }
+    }
+
+    if (response.statusCode !== 200) {
+      throw new Error(`API returned status ${response.statusCode}: ${JSON.stringify(response.data)}`);
+    }
+  }
+
   const allSets = response.data.data || response.data || [];
-  
-  console.log('📋 Raw sets response:', JSON.stringify(allSets, null, 2).substring(0, 500));
+
+  console.log('📋 Found sets from API:', allSets.length);
   
   // Filter to core sets only
   const coreSets = allSets.filter(set => {
@@ -215,7 +396,7 @@ function shouldFetchSet(setCode, existingData, expectedCardCount) {
   return { shouldFetch: true, reason: 'stale_data' };
 }
 
-async function fetchSetData(set, existingData) {
+async function fetchSetData(set, existingData, keysData) {
   console.log(`\\n📦 Fetching ${set.name} (${set.code})...`);
 
   // Calculate where to resume from based on existing cards
@@ -230,37 +411,113 @@ async function fetchSetData(set, existingData) {
   let offset = startOffset;
   let hasMore = true;
   let totalFetched = 0;
-  let retryCount = 0;
+  let currentApiKey = null;
 
   while (hasMore) {
     try {
-      // Use set.id instead of set.name for the API query
-      const url = `${BASE_URL}/cards?game=disney-lorcana&set=${encodeURIComponent(set.id)}&limit=${CARDS_PER_BATCH}&offset=${offset}`;
-      const response = await makeApiRequest(url);
-
-      if (response.statusCode === 429) {
-        retryCount++;
-        if (retryCount <= MAX_RETRIES) {
-          const waitTime = RETRY_DELAY_MS * retryCount; // Exponential backoff
-          console.log(`   ⚠️  Rate limited at offset ${offset} - retry ${retryCount}/${MAX_RETRIES} after ${waitTime/1000}s...`);
-          await delay(waitTime);
-          continue; // Retry the same offset
-        } else {
-          console.log(`   ❌ Rate limited after ${MAX_RETRIES} retries - stopping for now`);
-          console.log(`   💡 Progress saved: ${totalFetched} cards fetched this run`);
-          console.log(`   🔄 Run this script again later to continue from offset ${offset}`);
+      // Get an active API key
+      if (!currentApiKey) {
+        const keyObj = getActiveApiKey(keysData);
+        if (!keyObj) {
+          console.log(`   ❌ All API keys are rate limited. Please wait 24 hours.`);
           break;
+        }
+        currentApiKey = keyObj.key;
+        console.log(`   🔑 Using ${keyObj.name} (${keyObj.daily_requests} daily requests so far)`);
+
+        // Wait if this key was used recently
+        const key = keysData.keys.find(k => k.key === currentApiKey);
+        if (key && key.minute_requests && key.minute_requests.length > 0) {
+          const lastRequest = Math.max(...key.minute_requests);
+          const timeSinceLastRequest = Date.now() - lastRequest;
+          const minDelay = DELAY_MS;
+
+          if (timeSinceLastRequest < minDelay) {
+            const waitTime = minDelay - timeSinceLastRequest;
+            console.log(`   ⏳ Waiting ${(waitTime / 1000).toFixed(1)}s since last request on this key...`);
+            await delay(waitTime);
+          }
         }
       }
 
-      // Reset retry count on successful request
-      retryCount = 0;
-      
+      // Use set.id instead of set.name for the API query
+      const url = `${BASE_URL}/cards?game=disney-lorcana&set=${encodeURIComponent(set.id)}&limit=${CARDS_PER_BATCH}&offset=${offset}`;
+      const response = await makeApiRequest(url, currentApiKey);
+
+      // Increment request counter
+      incrementKeyRequests(keysData, currentApiKey);
+
+      if (response.statusCode === 429) {
+        const key = keysData.keys.find(k => k.key === currentApiKey);
+        const minuteRequestCount = (key?.minute_requests || []).length;
+        const dailyRequestCount = key?.daily_requests || 0;
+
+        // Detect limit type from API response code
+        let limitType;
+        if (response.data?.code === 'DAILY_LIMIT_EXCEEDED') {
+          limitType = 'daily';
+          console.log(`   🔒 Daily limit exceeded (${dailyRequestCount} requests today)`);
+        } else {
+          // Assume burst/rate limit
+          limitType = 'burst';
+          console.log(`   ⏱️  Rate limit hit (${minuteRequestCount} requests in last minute)`);
+        }
+
+        // Mark this key as rate limited
+        markKeyRateLimited(keysData, currentApiKey, limitType);
+
+        if (limitType === 'burst') {
+          // For burst limits, try another key or wait briefly
+          const nextKey = getActiveApiKey(keysData);
+          if (nextKey && nextKey.key !== currentApiKey) {
+            console.log(`   🔄 Switching to ${nextKey.name}...`);
+            currentApiKey = nextKey.key;
+            await delay(2000); // Short delay before retry
+            continue; // Retry with new key
+          } else {
+            // All keys are burst limited, wait 60 seconds for the limit to reset
+            console.log(`   ⏳ All keys burst limited - waiting 60 seconds for reset...`);
+            await delay(60000); // Wait 1 minute
+            currentApiKey = null; // Try to get a fresh key after wait
+            continue;
+          }
+        } else {
+          // Daily limit hit - try another key
+          const nextKey = getActiveApiKey(keysData);
+          if (nextKey && nextKey.key !== currentApiKey) {
+            console.log(`   🔄 Switching to ${nextKey.name}...`);
+            currentApiKey = nextKey.key;
+            await delay(2000); // Short delay before retry
+            continue; // Retry with new key
+          } else {
+            // All keys hit daily limit
+            console.log(`   ❌ All API keys have hit their daily limit`);
+            console.log(`   💡 Progress saved: ${totalFetched} cards fetched this run`);
+            console.log(`   🔄 Run this script again after midnight UTC when limits reset`);
+            break;
+          }
+        }
+      }
+
       if (response.statusCode !== 200) {
         console.log(`   ❌ API returned status ${response.statusCode}`);
         break;
       }
-      
+
+      // Sync our tracking with API's _metadata if available
+      if (response.data?._metadata?.apiDailyRequestsUsed) {
+        const key = keysData.keys.find(k => k.key === currentApiKey);
+        if (key) {
+          const apiCount = response.data._metadata.apiDailyRequestsUsed;
+          // Only sync if:
+          // 1. API reports more (our tracking might be behind due to crashes/restarts)
+          // 2. OR if the key isn't marked as daily-limited (don't overwrite our 100 marker)
+          if (apiCount > key.daily_requests || !key.daily_limit_reset) {
+            key.daily_requests = apiCount;
+          }
+        }
+      }
+
       const batch = response.data;
       const cards = batch.data || [];
       
@@ -367,12 +624,16 @@ async function fetchSetData(set, existingData) {
 
 async function fetchCoreSetsJustTcg() {
   console.log('🚀 Fetching JustTCG core sets (001-009) with optimization...\\n');
-  
+
+  // Load API keys
+  const keysData = loadApiKeys();
+  console.log(`🔑 Loaded ${keysData.keys.length} API keys from config`);
+
   // Load existing data
   const existingData = loadExistingData();
-  
+
   // Get available core sets from API
-  const coreSets = await getCoreSetsFromAPI();
+  const coreSets = await getCoreSetsFromAPI(keysData);
   
   // Determine which sets need fetching
   console.log('\\n🔍 Checking which sets need fetching...');
@@ -401,7 +662,7 @@ async function fetchCoreSetsJustTcg() {
     const set = setsToFetch[i];
     
     try {
-      const cardsFetched = await fetchSetData(set, existingData);
+      const cardsFetched = await fetchSetData(set, existingData, keysData);
       totalNewCards += cardsFetched;
       
       // Delay between sets
@@ -418,7 +679,10 @@ async function fetchCoreSetsJustTcg() {
   // Final save and summary
   existingData.metadata.last_updated = new Date().toISOString();
   existingData.metadata.total_cards = Object.keys(existingData.cards).length;
-  
+
+  // Save API keys state (includes updated request counts)
+  saveApiKeys(keysData);
+
   fs.writeFileSync('./data/JUSTTCG.json', JSON.stringify(existingData, null, 2));
   
   console.log('\\n💾 Final save completed');
