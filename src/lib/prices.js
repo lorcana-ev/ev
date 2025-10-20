@@ -369,39 +369,54 @@ export function buildRaritySummaries(printings, priceIndex, priceType = 'market'
 }
 
 /** Build detailed price comparisons across all sources */
-export function buildPriceComparisons(printings, multiSourcePricing, selectedSet = null) {
+export function buildPriceComparisons(printings, multiSourcePricing, selectedSet = null, cardsById = null) {
   const comparisons = [];
-  
+
   for (const p of printings) {
     if (selectedSet && p.set_code !== selectedSet) continue;
-    
+
     const allPrices = multiSourcePricing.getAllPrices(p.printing_id);
     if (Object.keys(allPrices).length < 2) continue; // Need at least 2 sources
-    
+
     const prices = {};
     Object.entries(allPrices).forEach(([source, priceData]) => {
       prices[source] = priceData.market;
     });
-    
+
     const priceValues = Object.values(prices);
     const minPrice = Math.min(...priceValues);
     const maxPrice = Math.max(...priceValues);
     const variance = maxPrice - minPrice;
     const percentDiff = minPrice > 0 ? ((maxPrice - minPrice) / minPrice) * 100 : 0;
-    
+
+    // Get full card details if cardsById is provided
+    let fullName = p.name;
+    let setName = p.set_code;
+    if (cardsById) {
+      const cardId = p.printing_id.split('-').slice(0, 2).join('-'); // Extract card ID (e.g., "009-001" from "009-001-base")
+      const card = cardsById.get(cardId);
+      if (card) {
+        fullName = card.title ? `${card.name} - ${card.title}` : card.name;
+        setName = card.setId || p.set_code;
+      }
+    }
+
     comparisons.push({
       printing_id: p.printing_id,
+      card_id: p.printing_id.split('-').slice(0, 2).join('-'),
       card_name: p.name,
+      full_name: fullName,
       rarity: p.rarity,
       finish: p.finish,
       set_code: p.set_code,
+      set_name: setName,
       prices,
       variance,
       percentDiff,
       sourceCount: Object.keys(prices).length
     });
   }
-  
+
   return comparisons.sort((a, b) => b.variance - a.variance);
 }
 

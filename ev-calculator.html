@@ -133,30 +133,26 @@
           <div class="card">
             <h3>Pricing Source Comparisons</h3>
             <p class="comparison-info">
-              Cards with pricing from multiple sources, sorted by highest variance. 
+              Cards with pricing from multiple sources. Click column headers to sort.
               Shows differences between <strong>Dreamborn</strong>, <strong>Lorcast</strong>, and <strong>JustTCG</strong> pricing.
             </p>
             <div class="comparison-controls">
               <label>
-                <input type="checkbox" id="showOnlyHighVariance" checked> 
-                Show only high variance cards (>50% difference)
-              </label>
-              <label>
-                Minimum variance: $<input type="number" id="minVariance" value="1" step="0.50" min="0" style="width: 80px;">
+                Minimum variance: $<input type="number" id="minVariance" value="0" step="0.50" min="0" style="width: 80px;">
               </label>
             </div>
             <div class="table-container">
               <table id="comparisonsTable">
                 <thead>
                   <tr>
-                    <th>Card</th>
-                    <th>Rarity</th>
-                    <th>Finish</th>
-                    <th>Dreamborn</th>
-                    <th>Lorcast</th>
-                    <th>JustTCG</th>
-                    <th>Variance</th>
-                    <th>% Diff</th>
+                    <th class="sortable" data-sort="full_name">Card <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="rarity">Rarity <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="finish">Finish <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="dreamborn">Dreamborn <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="lorcast">Lorcast <span class="sort-indicator"></span></th>
+                    <th class="sortable" data-sort="justtcg">JustTCG <span class="sort-indicator"></span></th>
+                    <th class="sortable active desc" data-sort="variance">Variance <span class="sort-indicator">▼</span></th>
+                    <th class="sortable" data-sort="percentDiff">% Diff <span class="sort-indicator"></span></th>
                   </tr>
                 </thead>
                 <tbody id="comparisonsTableBody">

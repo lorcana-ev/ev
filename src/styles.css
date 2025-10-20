@@ -651,6 +651,30 @@ th {
   background: rgba(255, 255, 255, 0.02);
 }
 
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background 0.2s;
+}
+
+th.sortable:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+th.sortable .sort-indicator {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  opacity: 0.5;
+}
+
+th.sortable.active .sort-indicator {
+  opacity: 1;
+  color: var(--accent);
+}
+
 td {
   color: var(--text-secondary);
 }

@@ -27,7 +27,6 @@ const els = {
   boxMarketPrice: document.getElementById('boxMarketPrice'),
   caseMarketPrice: document.getElementById('caseMarketPrice'),
   comparisonsTableBody: document.querySelector('#comparisonsTable tbody'),
-  showOnlyHighVariance: document.getElementById('showOnlyHighVariance'),
   minVariance: document.getElementById('minVariance'),
 };
 
@@ -42,7 +41,9 @@ let state = {
   selectedSet: '009', // Default to Fabled set
   allBoxPricing: null,
   pricingPriority: ['justtcg', 'dreamborn', 'lorcast'], // Default priority order
-  priceComparisons: null
+  priceComparisons: null,
+  cardsById: new Map(), // Card ID -> full card data
+  sortState: { column: 'variance', direction: 'desc' } // Price comparisons sort state
 };
 
 init();
@@ -54,6 +55,11 @@ async function init() {
     const { printings, prices, packModel, cards, allPricingSources } = await loadAll();
     state.printings = printings;
     state.baseConfig = packModel;
+
+    // Build card lookup map
+    for (const card of cards) {
+      state.cardsById.set(card.id, card);
+    }
 
     showLoading('Processing price data...');
     state.priceIndex = indexPrices(prices);
@@ -137,6 +143,42 @@ function setupSetSelection() {
   els.setSelection.value = state.selectedSet;
 }
 
+function setupComparisonsTableSorting() {
+  const comparisonsTable = document.querySelector('#comparisonsTable');
+  if (!comparisonsTable) return;
+
+  comparisonsTable.addEventListener('click', (e) => {
+    const th = e.target.closest('th.sortable');
+    if (!th) return;
+
+    const column = th.dataset.sort;
+    if (!column) return;
+
+    // Toggle direction if same column, otherwise default to desc
+    if (state.sortState.column === column) {
+      state.sortState.direction = state.sortState.direction === 'asc' ? 'desc' : 'asc';
+    } else {
+      state.sortState.column = column;
+      state.sortState.direction = 'desc';
+    }
+
+    // Update header indicators
+    comparisonsTable.querySelectorAll('th.sortable').forEach(header => {
+      header.classList.remove('active', 'asc', 'desc');
+      const indicator = header.querySelector('.sort-indicator');
+      if (indicator) indicator.textContent = '';
+    });
+
+    th.classList.add('active', state.sortState.direction);
+    const indicator = th.querySelector('.sort-indicator');
+    if (indicator) {
+      indicator.textContent = state.sortState.direction === 'asc' ? '▲' : '▼';
+    }
+
+    renderComparisonsTable();
+  });
+}
+
 function wireUI() {
   if (els.setSelection) {
     els.setSelection.addEventListener('change', () => {
@@ -164,13 +206,13 @@ function wireUI() {
   });
   
   // Wire comparison filter controls
-  if (els.showOnlyHighVariance) {
-    els.showOnlyHighVariance.addEventListener('change', renderComparisonsTable);
-  }
   if (els.minVariance) {
     els.minVariance.addEventListener('input', renderComparisonsTable);
   }
-  
+
+  // Wire table sorting for Price Comparisons
+  setupComparisonsTableSorting();
+
   // Setup tab switching
   setupTabs();
   
@@ -256,9 +298,10 @@ function recomputeSummaries() {
   
   // Build price comparisons for display
   state.priceComparisons = buildPriceComparisons(
-    state.printings, 
-    state.multiSourcePricing, 
-    state.selectedSet
+    state.printings,
+    state.multiSourcePricing,
+    state.selectedSet,
+    state.cardsById
   );
 }
 
@@ -441,24 +484,48 @@ function renderAll() {
 
 function renderComparisonsTable() {
   if (!els.comparisonsTableBody || !state.priceComparisons) return;
-  
-  const showOnlyHighVariance = els.showOnlyHighVariance?.checked ?? true;
-  const minVariance = parseFloat(els.minVariance?.value ?? 1);
-  
-  let filteredComparisons = state.priceComparisons;
-  
-  // Apply filters
-  if (showOnlyHighVariance) {
-    filteredComparisons = filteredComparisons.filter(c => c.percentDiff > 50);
-  }
-  
+
+  const minVariance = parseFloat(els.minVariance?.value ?? 0);
+
+  let filteredComparisons = [...state.priceComparisons];
+
+  // Apply minimum variance filter
   if (minVariance > 0) {
     filteredComparisons = filteredComparisons.filter(c => c.variance >= minVariance);
   }
-  
-  // Limit to top 50 for performance
-  const displayComparisons = filteredComparisons.slice(0, 50);
-  
+
+  // Apply sorting
+  const { column, direction } = state.sortState;
+  filteredComparisons.sort((a, b) => {
+    let aVal, bVal;
+
+    // Handle nested price values
+    if (['dreamborn', 'lorcast', 'justtcg'].includes(column)) {
+      aVal = a.prices[column] ?? -Infinity;
+      bVal = b.prices[column] ?? -Infinity;
+    } else {
+      aVal = a[column];
+      bVal = b[column];
+    }
+
+    // Handle null/undefined
+    if (aVal == null) aVal = direction === 'asc' ? Infinity : -Infinity;
+    if (bVal == null) bVal = direction === 'asc' ? Infinity : -Infinity;
+
+    // String comparison
+    if (typeof aVal === 'string') {
+      return direction === 'asc'
+        ? aVal.localeCompare(bVal)
+        : bVal.localeCompare(aVal);
+    }
+
+    // Numeric comparison
+    return direction === 'asc' ? aVal - bVal : bVal - aVal;
+  });
+
+  // Show all cards (no limit)
+  const displayComparisons = filteredComparisons;
+
   if (displayComparisons.length === 0) {
     els.comparisonsTableBody.innerHTML = `
       <tr>
@@ -469,15 +536,15 @@ function renderComparisonsTable() {
     `;
     return;
   }
-  
+
   const rows = displayComparisons.map(comp => {
     const dreambornPrice = comp.prices.dreamborn ?? null;
     const lorcastPrice = comp.prices.lorcast ?? null;
     const justTcgPrice = comp.prices.justtcg ?? null;
-    
+
     return `
       <tr>
-        <td class="card-name">${comp.card_name}</td>
+        <td class="card-name">${comp.full_name}</td>
         <td>${comp.rarity}</td>
         <td>${comp.finish}</td>
         <td class="price-cell">${dreambornPrice ? fmt(dreambornPrice) : '—'}</td>
@@ -488,7 +555,7 @@ function renderComparisonsTable() {
       </tr>
     `;
   });
-  
+
   els.comparisonsTableBody.innerHTML = rows.join('');
 }
 
