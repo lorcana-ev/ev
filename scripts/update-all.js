@@ -81,6 +81,12 @@ async function updateAll() {
       'Dreamborn Data Update'
     );
 
+    // 4. Rebuild unified pricing (required by web app)
+    await runScript(
+      path.join(__dirname, 'rebuild-unified-pricing.js'),
+      'Rebuild Unified Pricing'
+    );
+
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
     console.log('\n' + '═'.repeat(60));
@@ -92,8 +98,9 @@ async function updateAll() {
     console.log('   ✓ Lorcast card data (data/LORCAST.json)');
     console.log('   ✓ Dreamborn pricing (data/USD.json)');
     console.log('   ✓ Dreamborn cards (data/cards.json, data/cards-formatted.json)');
+    console.log('   ✓ Unified pricing (data/UNIFIED_PRICING.json)');
     console.log('\n💡 Next steps:');
-    console.log('   • Start the website to view results');
+    console.log('   • Start the website to view updated prices');
     console.log('   • Run scripts/compare-pricing-sources.js to spot check prices');
     console.log('\n📖 Documentation:');
     console.log('   • See docs/DATA_UPDATE_PIPELINE.md for details\n');
