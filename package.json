@@ -11,7 +11,11 @@
     "test": "node scripts/test-app.js",
     "test-sets": "node scripts/test-sets.js",
     "test-no-pricing": "node scripts/test-no-pricing.js",
-    "test-setviewer": "node scripts/test-setviewer.js"
+    "test-setviewer": "node scripts/test-setviewer.js",
+    "update-dreamborn": "node scripts/fetch-dreamborn-pricing.js",
+    "update-justtcg": "node scripts/fetch-core-sets-justtcg.js",
+    "update-lorcast": "node scripts/fetch-lorcast-data.js",
+    "rebuild-pricing": "node scripts/rebuild-unified-pricing.js"
   },
   "keywords": ["lorcana", "tcg", "trading-cards", "expected-value", "ev"],
   "author": "",

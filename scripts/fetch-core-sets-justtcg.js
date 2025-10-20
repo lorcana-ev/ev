@@ -9,9 +9,11 @@ import zlib from 'zlib';
 
 const API_KEY = 'tcg_0ecc60ebe3854a369313b16a95737637';
 const BASE_URL = 'https://api.justtcg.com/v1';
-const DELAY_MS = 1000; // 1 second between requests
+const DELAY_MS = 2000; // 2 seconds between requests (more conservative)
 const CARDS_PER_BATCH = 20;
 const REFETCH_THRESHOLD_DAYS = 7; // Don't refetch if updated within 7 days
+const MAX_RETRIES = 3; // Max retries on rate limit
+const RETRY_DELAY_MS = 30000; // 30 seconds wait on rate limit before retry
 
 // Core sets only - no promos, special sets, etc.
 const CORE_SETS = {
@@ -108,7 +110,12 @@ function loadExistingData() {
       }
     });
     
-    // Count cards by set for existing metadata
+    // Fix card counts in metadata (recalculate from actual cards, don't increment)
+    // This ensures metadata is accurate even if corrupted
+    Object.keys(existingData.set_metadata || {}).forEach(setCode => {
+      existingData.set_metadata[setCode].card_count = 0;
+    });
+
     Object.keys(existingData.cards || {}).forEach(cardId => {
       const setCode = cardId.substring(0, 3);
       if (existingData.set_metadata[setCode]) {
@@ -176,49 +183,78 @@ async function getCoreSetsFromAPI() {
 
 function shouldFetchSet(setCode, existingData, expectedCardCount) {
   const setMeta = existingData.set_metadata[setCode];
-  
+
   if (!setMeta) {
     console.log(`   📌 ${setCode}: No previous fetch data - will fetch`);
     return { shouldFetch: true, reason: 'never_fetched' };
   }
-  
-  // Check if last fetched within threshold
-  const lastFetched = new Date(setMeta.last_fetched);
-  const daysSinceLastFetch = (new Date() - lastFetched) / (1000 * 60 * 60 * 24);
-  
-  if (daysSinceLastFetch < REFETCH_THRESHOLD_DAYS) {
-    console.log(`   ✅ ${setCode}: Fetched ${daysSinceLastFetch.toFixed(1)} days ago - skipping`);
-    return { shouldFetch: false, reason: 'recently_fetched' };
+
+  // Always refetch if we have 0 cards (something went wrong)
+  if (setMeta.card_count === 0) {
+    console.log(`   📌 ${setCode}: Has 0 cards - will refetch`);
+    return { shouldFetch: true, reason: 'zero_cards' };
   }
-  
-  // Check if we have significantly fewer cards than expected
+
+  // Check if we have significantly fewer cards than expected (incomplete set)
   const completionRatio = setMeta.card_count / expectedCardCount;
-  if (completionRatio < 0.9) {
-    console.log(`   📌 ${setCode}: Only ${completionRatio.toFixed(1)}% complete (${setMeta.card_count}/${expectedCardCount}) - will fetch`);
+  if (completionRatio < 0.95) {
+    console.log(`   📌 ${setCode}: Only ${(completionRatio * 100).toFixed(1)}% complete (${setMeta.card_count}/${expectedCardCount}) - will fetch`);
     return { shouldFetch: true, reason: 'incomplete' };
   }
-  
+
+  // Set is complete - check age for refresh
+  const lastFetched = new Date(setMeta.last_fetched);
+  const daysSinceLastFetch = (new Date() - lastFetched) / (1000 * 60 * 60 * 24);
+
+  if (daysSinceLastFetch < REFETCH_THRESHOLD_DAYS) {
+    console.log(`   ✅ ${setCode}: ${setMeta.card_count}/${expectedCardCount} cards (${(completionRatio * 100).toFixed(1)}%), fetched ${daysSinceLastFetch.toFixed(1)} days ago - skipping`);
+    return { shouldFetch: false, reason: 'recently_fetched' };
+  }
+
   console.log(`   ⏳ ${setCode}: Last fetched ${daysSinceLastFetch.toFixed(1)} days ago but complete - will refetch`);
   return { shouldFetch: true, reason: 'stale_data' };
 }
 
 async function fetchSetData(set, existingData) {
   console.log(`\\n📦 Fetching ${set.name} (${set.code})...`);
-  
+
+  // Calculate where to resume from based on existing cards
+  const existingCards = Object.keys(existingData.cards || {}).filter(id => id.startsWith(`${set.code}-`));
+  const startOffset = Math.floor(existingCards.length / CARDS_PER_BATCH) * CARDS_PER_BATCH;
+
+  if (startOffset > 0) {
+    console.log(`   🔄 Resuming from offset ${startOffset} (${existingCards.length} cards already fetched)`);
+  }
+
   const setCards = {};
-  let offset = 0;
+  let offset = startOffset;
   let hasMore = true;
   let totalFetched = 0;
-  
+  let retryCount = 0;
+
   while (hasMore) {
     try {
-      const url = `${BASE_URL}/cards?game=disney-lorcana&set=${encodeURIComponent(set.name)}&limit=${CARDS_PER_BATCH}&offset=${offset}`;
+      // Use set.id instead of set.name for the API query
+      const url = `${BASE_URL}/cards?game=disney-lorcana&set=${encodeURIComponent(set.id)}&limit=${CARDS_PER_BATCH}&offset=${offset}`;
       const response = await makeApiRequest(url);
-      
+
       if (response.statusCode === 429) {
-        console.log(`   ⚠️  Rate limited at offset ${offset} - stopping for now`);
-        break;
+        retryCount++;
+        if (retryCount <= MAX_RETRIES) {
+          const waitTime = RETRY_DELAY_MS * retryCount; // Exponential backoff
+          console.log(`   ⚠️  Rate limited at offset ${offset} - retry ${retryCount}/${MAX_RETRIES} after ${waitTime/1000}s...`);
+          await delay(waitTime);
+          continue; // Retry the same offset
+        } else {
+          console.log(`   ❌ Rate limited after ${MAX_RETRIES} retries - stopping for now`);
+          console.log(`   💡 Progress saved: ${totalFetched} cards fetched this run`);
+          console.log(`   🔄 Run this script again later to continue from offset ${offset}`);
+          break;
+        }
       }
+
+      // Reset retry count on successful request
+      retryCount = 0;
       
       if (response.statusCode !== 200) {
         console.log(`   ❌ API returned status ${response.statusCode}`);
@@ -231,10 +267,17 @@ async function fetchSetData(set, existingData) {
       console.log(`   📋 Batch at offset ${offset}: ${cards.length} cards`);
       
       // Process cards
+      let actualCardsCount = 0;
       cards.forEach(rawCard => {
+        // Skip sealed products (boxes, cases, etc.)
+        if (rawCard.number === 'N/A' || rawCard.rarity === 'None' || !rawCard.number) {
+          return; // Skip this card
+        }
+
+        actualCardsCount++;
         const cardNumber = rawCard.number?.split('/')[0] || '000';
         const cardId = `${set.code}-${String(cardNumber).padStart(3, '0')}`;
-        
+
         // Extract pricing variants
         const variants = {};
         if (rawCard.variants && Array.isArray(rawCard.variants)) {
@@ -250,7 +293,7 @@ async function fetchSetData(set, existingData) {
             };
           });
         }
-        
+
         setCards[cardId] = {
           card_id: cardId,
           justtcg_id: rawCard.id,
@@ -263,8 +306,12 @@ async function fetchSetData(set, existingData) {
           fetched_at: new Date().toISOString()
         };
       });
-      
-      totalFetched += cards.length;
+
+      if (actualCardsCount < cards.length) {
+        console.log(`   ⚠️  Filtered out ${cards.length - actualCardsCount} sealed products`);
+      }
+
+      totalFetched += actualCardsCount;
       hasMore = batch.meta?.hasMore === true && cards.length > 0;
       offset += CARDS_PER_BATCH;
       
@@ -278,26 +325,25 @@ async function fetchSetData(set, existingData) {
     }
   }
   
-  console.log(`   ✅ Complete: ${totalFetched} cards fetched`);
-  
-  // Remove old cards for this set
-  Object.keys(existingData.cards).forEach(cardId => {
-    if (cardId.startsWith(`${set.code}-`)) {
-      delete existingData.cards[cardId];
-    }
-  });
-  
-  // Add new cards
+  console.log(`   ✅ Complete: ${totalFetched} cards fetched this run`);
+
+  // Merge new cards (don't delete existing ones since we're resuming)
   Object.assign(existingData.cards, setCards);
   
+  // Count actual cards we have for this set
+  const actualCardCount = Object.keys(existingData.cards).filter(id => id.startsWith(`${set.code}-`)).length;
+  const isComplete = actualCardCount >= set.cards_count * 0.95;
+
   // Update set metadata
   existingData.set_metadata[set.code] = {
     set_code: set.code,
     set_name: set.name,
     last_fetched: new Date().toISOString(),
-    card_count: totalFetched,
+    card_count: actualCardCount,
     expected_count: set.cards_count,
-    status: totalFetched >= set.cards_count * 0.9 ? 'complete' : 'partial'
+    status: isComplete ? 'complete' : 'partial',
+    last_fetch_added: totalFetched,
+    completion_percentage: ((actualCardCount / set.cards_count) * 100).toFixed(1)
   };
   
   // Update sets info
