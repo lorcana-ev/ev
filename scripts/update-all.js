@@ -1,16 +1,13 @@
 #!/usr/bin/env node
 /**
- * Lorcana EV - Complete Data Update Pipeline
+ * Lorcana EV - Data Update Pipeline
  *
- * This script runs the complete data update process:
- * 1. Fetches JustTCG pricing data (API)
- * 2. Fetches Lorcast card metadata (API)
- * 3. Fetches Dreamborn pricing + card database (CDN)
- * 4. Rebuilds unified pricing (weighted average of sources)
- * 5. Extracts box/case pricing from JustTCG
- * 6. Calculates realistic EV using pack model
+ * This script fetches all pricing and card data from external sources:
+ * 1. JustTCG API - Real-time pricing with variants
+ * 2. Lorcast API - Card metadata and analysis
+ * 3. Dreamborn CDN - TCGPlayer pricing + card database
  *
- * Duration: ~2-3 minutes
+ * Duration: ~1-2 minutes
  *
  * Output Files:
  * - data/JUSTTCG.json (JustTCG pricing)
@@ -18,8 +15,9 @@
  * - data/USD.json (Dreamborn pricing)
  * - data/cards.json (Dreamborn cards)
  * - data/cards-formatted.json (alias)
- * - data/UNIFIED_PRICING.json (combined pricing)
- * - data/BOX_PRICING.json (boxes/cases with EV)
+ *
+ * The web application uses these sources directly with automatic fallback:
+ * JustTCG (primary) → Dreamborn (secondary) → Lorcast (tertiary)
  *
  * See docs/DATA_UPDATE_PIPELINE.md for details
  */
@@ -77,28 +75,10 @@ async function updateAll() {
       'Lorcast Card Data Update'
     );
 
-    // 3. Fetch Dreamborn pricing
+    // 3. Fetch Dreamborn pricing + cards
     await runScript(
       path.join(__dirname, 'fetch-dreamborn-pricing.js'),
-      'Dreamborn Pricing Update'
-    );
-
-    // 4. Rebuild unified pricing from all sources
-    await runScript(
-      path.join(__dirname, 'rebuild-unified-pricing.js'),
-      'Rebuild Unified Pricing'
-    );
-
-    // 5. Extract box/case pricing from JustTCG
-    await runScript(
-      path.join(__dirname, 'extract-box-pricing.js'),
-      'Extract Box Pricing'
-    );
-
-    // 6. Calculate realistic EV for sealed products
-    await runScript(
-      path.join(__dirname, 'calculate-realistic-ev.js'),
-      'Calculate Realistic EV'
+      'Dreamborn Data Update'
     );
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
@@ -112,11 +92,9 @@ async function updateAll() {
     console.log('   ✓ Lorcast card data (data/LORCAST.json)');
     console.log('   ✓ Dreamborn pricing (data/USD.json)');
     console.log('   ✓ Dreamborn cards (data/cards.json, data/cards-formatted.json)');
-    console.log('   ✓ Unified pricing (data/UNIFIED_PRICING.json)');
-    console.log('   ✓ Box pricing with EV (data/BOX_PRICING.json)');
-    console.log('\n💡 Optional:');
-    console.log('   • Run scripts/compare-pricing-sources.js to check discrepancies');
+    console.log('\n💡 Next steps:');
     console.log('   • Start the website to view results');
+    console.log('   • Run scripts/compare-pricing-sources.js to spot check prices');
     console.log('\n📖 Documentation:');
     console.log('   • See docs/DATA_UPDATE_PIPELINE.md for details\n');
 

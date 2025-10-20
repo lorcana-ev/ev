@@ -52,19 +52,18 @@ This application is designed to work on GitHub Pages. Simply push to a GitHub re
 node scripts/update-all.js
 ```
 
-This single command updates all pricing and card data:
+This single command fetches all pricing and card data:
 - ✓ **JustTCG API** - Real-time pricing with variants and trends
 - ✓ **Lorcast API** - Card metadata and rarity analysis
 - ✓ **Dreamborn** - TCGPlayer pricing + complete card database
-- ✓ **Unified Pricing** - Weighted average of all sources
-- ✓ **Box Pricing** - Sealed product prices with realistic EV
 
-**Duration**: ~2-3 minutes | **Output**: 6 data files updated
+**Duration**: ~1-2 minutes | **Output**: 5 data files updated
+
+The web application uses these sources directly with automatic fallback (JustTCG → Dreamborn → Lorcast).
 
 📖 **Documentation**:
 - [Quick Reference](README_DATA_UPDATES.md) - Commands and common issues
 - [Complete Guide](docs/DATA_UPDATE_PIPELINE.md) - Full pipeline documentation
-- [Recent Updates](docs/UPDATES_2025-10-20.md) - What changed today
 
 ## Data Verification
 
@@ -167,31 +166,23 @@ npm run dev
 
 ### Individual Data Source Updates
 
-If you need to update only specific sources (see [docs](docs/DATA_UPDATE_PIPELINE.md) for details):
+If you need to update only specific sources:
 
 ```bash
 # Update individual sources
 node scripts/fetch-dreamborn-pricing.js  # Dreamborn pricing + cards
 node scripts/fetch-all-justtcg-sets.js   # JustTCG pricing
 node scripts/fetch-lorcast-data.js       # Lorcast metadata
-
-# After updating sources, rebuild unified pricing
-node scripts/rebuild-unified-pricing.js
-
-# Recalculate EV
-node scripts/calculate-realistic-ev.js
 ```
 
 ### Data Files Overview
 
-| File | Source | Purpose | Updated By |
-|------|--------|---------|------------|
-| `USD.json` | Dreamborn | TCGPlayer pricing | fetch-dreamborn-pricing.js |
-| `cards.json` | Dreamborn | Card database | fetch-dreamborn-pricing.js |
-| `JUSTTCG.json` | JustTCG API | Real-time pricing | fetch-all-justtcg-sets.js |
-| `LORCAST.json` | Lorcast API | Card metadata | fetch-lorcast-data.js |
-| `UNIFIED_PRICING.json` | Combined | Weighted average pricing | rebuild-unified-pricing.js |
-| `BOX_PRICING.json` | JustTCG + Calc | Box/case prices + EV | extract-box-pricing.js + calculate-realistic-ev.js |
+| File | Source | Purpose |
+|------|--------|---------|
+| `USD.json` | Dreamborn | TCGPlayer pricing |
+| `cards.json` | Dreamborn | Card database |
+| `JUSTTCG.json` | JustTCG API | Real-time pricing with variants |
+| `LORCAST.json` | Lorcast API | Card metadata |
 
 ### Customizing Pack Odds
 Edit `config/pack_model.json` to adjust:

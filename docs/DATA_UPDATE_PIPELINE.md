@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document explains the complete data update pipeline for the Lorcana Expected Value (EV) calculator. The pipeline fetches pricing and card data from multiple sources, unifies them, and calculates realistic EV for sealed products.
+This document explains the data update pipeline for the Lorcana Expected Value (EV) calculator. The pipeline fetches pricing and card data from multiple external sources that the web application uses directly.
 
 ## Data Sources
 
@@ -52,62 +52,35 @@ This document explains the complete data update pipeline for the Lorcana Expecte
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    RAW DATA SOURCES                              │
+│                    EXTERNAL DATA SOURCES                         │
 ├─────────────────────────────────────────────────────────────────┤
-│  JustTCG API          Lorcast API         Dreamborn             │
+│  JustTCG API          Lorcast API         Dreamborn CDN         │
 │  ↓                    ↓                    ↓                     │
 │  JUSTTCG.json         LORCAST.json         USD.json             │
-│  (pricing)            (cards)              (pricing)            │
-│                                             cards.json           │
-│                                             (cards)              │
+│  (pricing)            (cards)              (pricing + cards)     │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│                    DATA UNIFICATION                              │
+│                    WEB APPLICATION                               │
 ├─────────────────────────────────────────────────────────────────┤
-│  rebuild-unified-pricing.js                                      │
-│  ↓                                                               │
-│  UNIFIED_PRICING.json                                            │
-│  (weighted average of Dreamborn + JustTCG)                       │
-│  • JustTCG weighted 2x (more reliable)                           │
-│  • Dreamborn weighted 1x                                         │
-│  • Confidence scores: high/medium/low                            │
-└─────────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────────┐
-│                    ANALYSIS & CALCULATIONS                       │
-├─────────────────────────────────────────────────────────────────┤
-│  extract-box-pricing.js        calculate-realistic-ev.js         │
-│  ↓                              ↓                                │
-│  BOX_PRICING.json              BOX_PRICING.json (updated)        │
-│  (raw prices)                  (+ realistic EV calculations)     │
-│                                                                  │
-│  compare-pricing-sources.js                                      │
-│  ↓                                                               │
-│  PRICE_DISCREPANCIES.json                                        │
-│  (quality control)                                               │
+│  • Loads all three sources                                       │
+│  • Automatic fallback: JustTCG → Dreamborn → Lorcast            │
+│  • EV calculated in browser using config/pack_model.json        │
+│  • Real-time recalculation based on user settings               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 ## File Descriptions
 
-### Input Files
+### Data Files
 
 | File | Source | Description | Size | Update Frequency |
 |------|--------|-------------|------|------------------|
-| `JUSTTCG.json` | JustTCG API | Pricing with variants and trends | ~5MB | Run update script |
-| `LORCAST.json` | Lorcast API | Card metadata and analysis | - | Run update script |
-| `USD.json` | Dreamborn | TCGPlayer pricing | ~900KB | Run update script |
-| `cards.json` | Dreamborn | Card database | ~1.6MB | Run update script |
+| `JUSTTCG.json` | JustTCG API | Pricing with variants and trends | ~5MB | Daily/Weekly |
+| `LORCAST.json` | Lorcast API | Card metadata and analysis | Variable | Weekly |
+| `USD.json` | Dreamborn | TCGPlayer pricing | ~900KB | Daily/Weekly |
+| `cards.json` | Dreamborn | Card database | ~1.6MB | When sets release |
 | `cards-formatted.json` | Dreamborn | Alias of cards.json | ~1.6MB | Auto-created |
-
-### Processed Files
-
-| File | Creator | Description | Dependencies |
-|------|---------|-------------|--------------|
-| `UNIFIED_PRICING.json` | rebuild-unified-pricing.js | Weighted pricing from all sources | USD.json, JUSTTCG.json |
-| `BOX_PRICING.json` | extract-box-pricing.js | Box/case market prices + EV | JUSTTCG.json |
-| `PRICE_DISCREPANCIES.json` | compare-pricing-sources.js | Quality control report | USD.json, JUSTTCG.json, LORCAST.json |
 
 ### Configuration Files
 
@@ -117,10 +90,10 @@ This document explains the complete data update pipeline for the Lorcana Expecte
 
 ## Scripts
 
-### Core Update Scripts
+### Main Update Script
 
 #### `scripts/update-all.js`
-**Main entry point** - Runs the complete update pipeline.
+**Main entry point** - Fetches all data from external sources.
 
 ```bash
 node scripts/update-all.js
@@ -130,13 +103,10 @@ node scripts/update-all.js
 1. Fetches JustTCG pricing data
 2. Fetches Lorcast card data
 3. Fetches Dreamborn pricing + cards
-4. Rebuilds unified pricing
-5. Extracts box pricing
-6. Calculates realistic EV
 
-**Duration**: ~2-3 minutes
+**Duration**: ~1-2 minutes
 **Rate limits**: Respects all API rate limits
-**Output**: Updates all data files
+**Output**: Updates 5 data files
 
 #### `scripts/fetch-all-justtcg-sets.js`
 Fetches pricing from JustTCG API for all available sets.
@@ -172,86 +142,7 @@ Fetches both pricing and card database from Dreamborn.
 - Progress indicators
 - Summary statistics
 
-#### `scripts/rebuild-unified-pricing.js`
-Combines pricing from Dreamborn and JustTCG into a unified dataset.
-
-**Input**: `USD.json`, `JUSTTCG.json`
-**Output**: `UNIFIED_PRICING.json`
-
-**Algorithm**:
-- Single source: Use that price
-- Multiple sources: Weighted average
-  - JustTCG weight: 2.0 (higher reliability)
-  - Dreamborn weight: 1.0
-- Confidence scoring:
-  - `high`: Multiple sources or JustTCG only
-  - `medium`: Single Dreamborn source
-  - `low`: No data
-
 ### Analysis Scripts
-
-#### `scripts/extract-box-pricing.js`
-Extracts sealed product pricing from JustTCG data.
-
-**Input**: `JUSTTCG.json`
-**Output**: `BOX_PRICING.json`
-
-**What it extracts**:
-- Booster box prices
-- Case prices
-- Product types
-- TCGPlayer IDs
-
-**Note**: Does NOT calculate EV (that's done by calculate-realistic-ev.js)
-
-#### `scripts/calculate-realistic-ev.js`
-Calculates Expected Value for sealed products using proper rarity odds.
-
-**Input**:
-- `UNIFIED_PRICING.json`
-- `cards-formatted.json`
-- `config/pack_model.json`
-- `BOX_PRICING.json`
-
-**Output**: Updates `BOX_PRICING.json` with EV calculations
-
-**Algorithm**:
-1. Categorize cards by rarity
-2. Calculate trimmed mean prices (removes outliers)
-3. Apply rarity odds from pack model
-4. Calculate contributions:
-   - 2 rare-or-higher slots
-   - 1 foil slot
-   - 6 common slots
-   - 3 uncommon slots
-5. Compute pack EV
-6. Scale to box (24 packs) and case (4 boxes)
-
-**Pack Model** (from `config/pack_model.json`):
-```json
-{
-  "cards_per_pack": 12,
-  "packs_per_box": 24,
-  "boxes_per_case": 4,
-  "rare_slot_odds": {
-    "rare": 0.6765,
-    "super rare": 0.1977,
-    "legendary": 0.0833,
-    "epic": 0.041667,
-    "iconic": 0.000833
-  },
-  "foil_odds": {
-    "common": 0.65,
-    "uncommon": 0.18,
-    "rare": 0.065,
-    "super rare": 0.018,
-    "legendary": 0.001,
-    "epic": 0.006,
-    "iconic": 0.001,
-    "enchanted": 0.009
-  }
-}
-```
 
 #### `scripts/compare-pricing-sources.js`
 Quality control - finds major discrepancies between pricing sources.
@@ -294,18 +185,16 @@ This is the recommended way to update all data.
 **Update only pricing data:**
 ```bash
 node scripts/fetch-dreamborn-pricing.js
-node scripts/rebuild-unified-pricing.js
 ```
 
 **Update only JustTCG:**
 ```bash
 node scripts/fetch-all-justtcg-sets.js
-node scripts/rebuild-unified-pricing.js
 ```
 
-**Recalculate EV only:**
+**Update only Lorcast:**
 ```bash
-node scripts/calculate-realistic-ev.js
+node scripts/fetch-lorcast-data.js
 ```
 
 ### Quality Checks
@@ -317,6 +206,40 @@ node scripts/compare-pricing-sources.js
 
 Check the output in `data/PRICE_DISCREPANCIES.json` for cards that need manual verification.
 
+## How the Web App Uses the Data
+
+### Price Lookup with Fallback
+
+The web application (src/lib/prices.js) implements a **multi-source pricing system**:
+
+1. **Load all sources** - JustTCG, Dreamborn, Lorcast
+2. **Index each source** - Create fast lookup maps
+3. **Fallback chain** - JustTCG → Dreamborn → Lorcast
+4. **Return first available** - Use the first source that has the card
+
+### EV Calculation (src/lib/model.js)
+
+The web app calculates EV **in the browser** using:
+
+```javascript
+Pack EV = Rare-or-higher slots + Foil slot + Bulk floor
+
+Rare-or-higher (2 slots):
+  = 2 × Σ(rarity_probability × average_price)
+
+Foil slot (1 slot):
+  = Σ(rarity_probability × average_foil_price)
+
+Bulk (6 commons + 3 uncommons):
+  = 6 × floor_price + 3 × floor_price
+```
+
+**Key features**:
+- Uses **mean prices** for each rarity
+- Configurable scenarios (Conservative/Base/Optimistic)
+- Real-time recalculation
+- No preprocessing required
+
 ## Data Freshness
 
 | Data Type | Recommended Update Frequency |
@@ -324,25 +247,16 @@ Check the output in `data/PRICE_DISCREPANCIES.json` for cards that need manual v
 | Pricing (new sets) | Daily |
 | Pricing (older sets) | Weekly |
 | Card database | When new sets release |
-| EV calculations | After each pricing update |
 
 ## Troubleshooting
 
 ### "No JustTCG data found"
 - Run `fetch-all-justtcg-sets.js` first
-- Check API key in script if rate limited
+- Check API access
 
-### "Cannot find UNIFIED_PRICING.json"
-- Run `rebuild-unified-pricing.js`
-- Ensure USD.json and JUSTTCG.json exist
-
-### "Set 9 cards with pricing: 0"
-- Update UNIFIED_PRICING.json
-- Ensure latest data was fetched
-
-### Box prices only for Fabled (Set 9)
-- This is expected - JustTCG only tracks current sealed products
-- Older sets may not have box pricing available
+### Missing card data
+- Run `fetch-dreamborn-pricing.js`
+- Verify cards.json was created
 
 ### High price discrepancies
 - Common for promo cards (P1, D23)
@@ -366,17 +280,13 @@ After running `update-all.js`, you should see:
 ✓ Lorcast card data (data/LORCAST.json)
 ✓ Dreamborn pricing (data/USD.json)
 ✓ Dreamborn cards (data/cards.json, data/cards-formatted.json)
-✓ Unified pricing (data/UNIFIED_PRICING.json)
-✓ Box pricing (data/BOX_PRICING.json)
-✓ Realistic EV calculations (BOX_PRICING.json updated)
 ```
 
 ## Next Steps After Update
 
-1. **Review discrepancies**: Check `PRICE_DISCREPANCIES.json`
-2. **Verify EV calculations**: Run `calculate-realistic-ev.js`
-3. **Start the website**: `npm run dev` or serve static files
-4. **Monitor for errors**: Check console output for warnings
+1. **Start the website**: `npm run dev`
+2. **Review discrepancies** (optional): `node scripts/compare-pricing-sources.js`
+3. **Verify data**: Check console for any errors
 
 ## Maintenance
 
@@ -384,15 +294,13 @@ After running `update-all.js`, you should see:
 
 1. Create fetch script in `scripts/`
 2. Add to `update-all.js` pipeline
-3. Update `rebuild-unified-pricing.js` to include new source
-4. Document in this file
+3. Update `src/lib/prices.js` to index the new source
+4. Add to fallback chain
+5. Document in this file
 
 ### Modifying Pack Model
 
-Edit `config/pack_model.json` with new odds, then run:
-```bash
-node scripts/calculate-realistic-ev.js
-```
+Edit `config/pack_model.json` with new odds. The web app will use them automatically.
 
 ### Archive Old Data
 
@@ -404,37 +312,26 @@ cp data/*.json backups/$(date +%Y%m%d)/
 
 ## Architecture Decisions
 
-### Why Weighted Average?
-- JustTCG has more real-time data and better variant tracking
-- Dreamborn provides good baseline but may lag
-- 2:1 weighting balances reliability vs coverage
-
-### Why Trimmed Mean for EV?
-- Removes extreme outliers (chase cards)
-- More realistic for typical pack opening
-- Still accounts for high-value cards in distribution
-
-### Why Not TCGPlayer Direct?
-- No public API available
-- Dreamborn already aggregates TCGPlayer data
-- JustTCG provides better historical tracking
-
 ### Why Multiple Sources?
-- Cross-validation of pricing
-- Better coverage (some cards only in one source)
-- Resilience if one source is down
+- **Cross-validation** of pricing
+- **Better coverage** (some cards only in one source)
+- **Resilience** if one source is down
+- **Market comparison** between different platforms
 
-## Contact & Support
+### Why Client-Side EV Calculation?
+- **No preprocessing** needed
+- **Real-time recalculation** as user changes settings
+- **Transparent** - user can see how it's calculated
+- **Flexible** - easy to adjust scenarios
 
-For issues with this pipeline:
-1. Check this documentation
-2. Review script output for errors
-3. Verify API endpoints are accessible
-4. Check data file timestamps
+### Why Direct Source Usage (No Unified Pricing)?
+- **Simpler pipeline** - fewer intermediate files
+- **Transparency** - clear which source provided each price
+- **Flexibility** - users can choose priority
+- **Performance** - browser handles fallback efficiently
 
 ## Version History
 
-- **2025-10-20**: Complete pipeline documentation created
+- **2025-10-20**: Simplified pipeline - removed unused unified pricing and EV calculation
 - **2025-10-20**: Added cards.json fetching from Dreamborn
-- **2025-10-20**: Integrated EV calculations into update-all.js
-- **2025-10-20**: Fixed unified pricing rebuild process
+- **2025-10-20**: Created comprehensive documentation
