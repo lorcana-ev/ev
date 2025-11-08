@@ -4,50 +4,69 @@
       "key": "tcg_f58ce535a4d24f67ac3434fe143bd8a3",
       "name": "Key 1",
       "status": "active",
-      "daily_requests": 55,
+      "daily_requests": 66,
       "daily_limit_reset": null,
       "minute_requests": [
-        1762638170943
+        1762638445445,
+        1762638452975,
+        1762638460577,
+        1762638468092,
+        1762638475470,
+        1762638482639,
+        1762638490213,
+        1762638497996
       ],
-      "last_burst_limited": "2025-11-08T21:42:50.943Z"
+      "last_burst_limited": "2025-11-08T21:44:52.678Z"
     },
     {
       "key": "tcg_0ecc60ebe3854a369313b16a95737637",
       "name": "Key 2",
       "status": "active",
-      "daily_requests": 55,
+      "daily_requests": 56,
       "daily_limit_reset": null,
-      "minute_requests": [
-        1762638171346
-      ],
-      "last_burst_limited": "2025-11-08T21:42:51.347Z"
+      "minute_requests": [],
+      "last_burst_limited": "2025-11-08T21:44:53.115Z"
     },
     {
       "key": "tcg_d9656d9c265142939d9cd9edcceb5915",
       "name": "Key 3",
       "status": "active",
-      "daily_requests": 53,
+      "daily_requests": 55,
       "daily_limit_reset": null,
-      "minute_requests": [
-        1762638138340
-      ],
-      "last_burst_limited": "2025-11-08T21:42:18.340Z"
+      "minute_requests": [],
+      "last_burst_limited": "2025-11-08T21:45:46.983Z"
     },
     {
       "key": "tcg_abb14a95cf194056a6e1df05127dc959",
       "name": "Key 4",
       "status": "active",
-      "daily_requests": 54,
+      "daily_requests": 56,
+      "daily_limit_reset": null,
+      "minute_requests": [],
+      "last_burst_limited": "2025-11-08T21:44:52.306Z"
+    },
+    {
+      "key": "tcg_eb1f95b2cf574ac0bf83824cb9fbd605",
+      "name": "Key 5",
+      "status": "active",
+      "daily_requests": 12,
       "daily_limit_reset": null,
       "minute_requests": [
-        1762638170526
+        1762638535303,
+        1762638542969,
+        1762638550216,
+        1762638558002,
+        1762638565826,
+        1762638572974,
+        1762638580165,
+        1762638589696
       ],
-      "last_burst_limited": "2025-11-08T21:42:50.527Z"
+      "last_burst_limited": "2025-11-08T21:45:46.686Z"
     }
   ],
   "metadata": {
     "created_at": "2025-10-19T19:15:00.000Z",
-    "last_updated": "2025-11-08T21:42:51.347Z",
+    "last_updated": "2025-11-08T21:49:49.738Z",
     "burst_limit_per_minute": 10,
     "daily_limit": 100,
     "daily_reset_hours": 24
