@@ -103,9 +103,8 @@ lorcana-ev/
 ├── scripts/
 │   ├── fetch-dreamborn-pricing.js     # Fetch Dreamborn/TCGPlayer pricing (RECOMMENDED)
 │   ├── fetch-lorcast-data.js          # Fetch Lorcast pricing
-│   ├── fetch-core-sets-justtcg.js     # Fetch JustTCG pricing (RECOMMENDED)
+│   ├── fetch-core-sets-justtcg.js     # Fetch JustTCG pricing for sets 001-010 (RECOMMENDED)
 │   ├── rebuild-unified-pricing.js     # Rebuild unified pricing from all sources
-│   ├── fetch-all-justtcg-sets.js      # Fetch all JustTCG sets including promos
 │   ├── batch-justtcg-pricing.js       # Legacy batch fetching script
 │   ├── fetch-justtcg-prices.js        # Legacy card-by-card fetching
 │   ├── verify-data.js                 # Data verification (Node.js)
@@ -171,7 +170,7 @@ If you need to update only specific sources:
 ```bash
 # Update individual sources
 node scripts/fetch-dreamborn-pricing.js  # Dreamborn pricing + cards
-node scripts/fetch-all-justtcg-sets.js   # JustTCG pricing
+node scripts/fetch-core-sets-justtcg.js  # JustTCG pricing (sets 001-010)
 node scripts/fetch-lorcast-data.js       # Lorcast metadata
 ```
 

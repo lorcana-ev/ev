@@ -1,135 +1,135 @@
 {
   "metadata": {
     "source": "justtcg_api_comprehensive",
-    "fetched_at": "2025-10-20T06:52:35.336Z",
+    "fetched_at": "2025-11-08T20:26:27.323Z",
     "total_sets": 15,
     "total_cards": 0,
     "api_key_used": "tcg_d9656d...",
     "batch_size": 20
   },
   "sets": {
-    "UNK-d23-promos-disney-lorcana": {
-      "name": "D23 Promos",
-      "code": "UNK-d23-promos-disney-lorcana",
+    "007": {
+      "name": "Archazia's Island",
+      "code": "007",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:35.336Z",
-      "batches": 1
-    },
-    "UNK-disney-lorcana-promo-cards-disney-lorcana": {
-      "name": "Disney Lorcana Promo Cards",
-      "code": "UNK-disney-lorcana-promo-cards-disney-lorcana",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:36.221Z",
-      "batches": 1
-    },
-    "001": {
-      "name": "The First Chapter",
-      "code": "001",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:36.913Z",
-      "batches": 1
-    },
-    "002": {
-      "name": "Rise of the Floodborn",
-      "code": "002",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:38.187Z",
-      "batches": 1
-    },
-    "UNK-disney100-promos-disney-lorcana": {
-      "name": "Disney100 Promos",
-      "code": "UNK-disney100-promos-disney-lorcana",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:38.881Z",
-      "batches": 1
-    },
-    "003": {
-      "name": "Into the Inklands",
-      "code": "003",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:39.727Z",
-      "batches": 1
-    },
-    "UNK-illumineer-s-quest-deep-trouble-disney-lorcana": {
-      "name": "Illumineer's Quest: Deep Trouble",
-      "code": "UNK-illumineer-s-quest-deep-trouble-disney-lorcana",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:40.560Z",
-      "batches": 1
-    },
-    "004": {
-      "name": "Ursula's Return",
-      "code": "004",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:41.030Z",
-      "batches": 1
-    },
-    "005": {
-      "name": "Shimmering Skies",
-      "code": "005",
-      "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:41.838Z",
+      "fetched_at": "2025-11-08T20:26:27.333Z",
       "batches": 1
     },
     "006": {
       "name": "Azurite Sea",
       "code": "006",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:42.252Z",
-      "batches": 0
+      "fetched_at": "2025-11-08T20:26:28.486Z",
+      "batches": 1
     },
-    "007": {
-      "name": "Archazia's Island",
-      "code": "007",
+    "UNK-d23-promos-disney-lorcana": {
+      "name": "D23 Promos",
+      "code": "UNK-d23-promos-disney-lorcana",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:42.718Z",
-      "batches": 0
+      "fetched_at": "2025-11-08T20:26:29.495Z",
+      "batches": 1
     },
-    "008": {
-      "name": "Reign of Jafar",
-      "code": "008",
+    "UNK-disney100-promos-disney-lorcana": {
+      "name": "Disney100 Promos",
+      "code": "UNK-disney100-promos-disney-lorcana",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:43.107Z",
-      "batches": 0
+      "fetched_at": "2025-11-08T20:26:30.483Z",
+      "batches": 1
     },
-    "UNK-illumineer-s-quest-palace-heist-disney-lorcana": {
-      "name": "Illumineer's Quest: Palace Heist",
-      "code": "UNK-illumineer-s-quest-palace-heist-disney-lorcana",
+    "UNK-disney-lorcana-promo-cards-disney-lorcana": {
+      "name": "Disney Lorcana Promo Cards",
+      "code": "UNK-disney-lorcana-promo-cards-disney-lorcana",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:43.502Z",
-      "batches": 0
+      "fetched_at": "2025-11-08T20:26:31.366Z",
+      "batches": 1
     },
     "009": {
       "name": "Fabled",
       "code": "009",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:43.818Z",
+      "fetched_at": "2025-11-08T20:26:32.147Z",
+      "batches": 1
+    },
+    "UNK-illumineer-s-quest-deep-trouble-disney-lorcana": {
+      "name": "Illumineer's Quest: Deep Trouble",
+      "code": "UNK-illumineer-s-quest-deep-trouble-disney-lorcana",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:32.997Z",
+      "batches": 1
+    },
+    "UNK-illumineer-s-quest-palace-heist-disney-lorcana": {
+      "name": "Illumineer's Quest: Palace Heist",
+      "code": "UNK-illumineer-s-quest-palace-heist-disney-lorcana",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:34.039Z",
+      "batches": 1
+    },
+    "003": {
+      "name": "Into the Inklands",
+      "code": "003",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:34.846Z",
+      "batches": 1
+    },
+    "008": {
+      "name": "Reign of Jafar",
+      "code": "008",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:35.613Z",
+      "batches": 0
+    },
+    "002": {
+      "name": "Rise of the Floodborn",
+      "code": "002",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:36.090Z",
+      "batches": 0
+    },
+    "005": {
+      "name": "Shimmering Skies",
+      "code": "005",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:36.250Z",
+      "batches": 0
+    },
+    "001": {
+      "name": "The First Chapter",
+      "code": "001",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:36.795Z",
+      "batches": 0
+    },
+    "004": {
+      "name": "Ursula's Return",
+      "code": "004",
+      "total_cards": 0,
+      "fetched_at": "2025-11-08T20:26:37.096Z",
       "batches": 0
     },
     "UNK-whispers-in-the-well-disney-lorcana": {
       "name": "Whispers in the Well",
       "code": "UNK-whispers-in-the-well-disney-lorcana",
       "total_cards": 0,
-      "fetched_at": "2025-10-20T06:52:44.020Z",
+      "fetched_at": "2025-11-08T20:26:37.462Z",
       "batches": 0
     }
   },
   "all_cards": {},
   "pricing_by_set": {
-    "UNK-d23-promos-disney-lorcana": {},
-    "UNK-disney-lorcana-promo-cards-disney-lorcana": {},
-    "001": {},
-    "002": {},
-    "UNK-disney100-promos-disney-lorcana": {},
-    "003": {},
-    "UNK-illumineer-s-quest-deep-trouble-disney-lorcana": {},
-    "004": {},
-    "005": {},
-    "006": {},
     "007": {},
-    "008": {},
-    "UNK-illumineer-s-quest-palace-heist-disney-lorcana": {},
+    "006": {},
+    "UNK-d23-promos-disney-lorcana": {},
+    "UNK-disney100-promos-disney-lorcana": {},
+    "UNK-disney-lorcana-promo-cards-disney-lorcana": {},
     "009": {},
+    "UNK-illumineer-s-quest-deep-trouble-disney-lorcana": {},
+    "UNK-illumineer-s-quest-palace-heist-disney-lorcana": {},
+    "003": {},
+    "008": {},
+    "002": {},
+    "005": {},
+    "001": {},
+    "004": {},
     "UNK-whispers-in-the-well-disney-lorcana": {}
   }
 }

@@ -65,7 +65,7 @@ async function updateAll() {
   try {
     // 1. Fetch JustTCG data
     await runScript(
-      path.join(__dirname, 'fetch-all-justtcg-sets.js'),
+      path.join(__dirname, 'fetch-core-sets-justtcg.js'),
       'JustTCG Pricing Update'
     );
 

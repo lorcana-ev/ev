@@ -3,14 +3,15 @@
 
 export const SET_NAMES = {
   '001': 'The First Chapter',
-  '002': 'Rise of the Floodborn', 
+  '002': 'Rise of the Floodborn',
   '003': 'Into the Inklands',
   '004': 'Ursula\'s Return',
   '005': 'Shimmering Skies',
   '006': 'Azurite Sea',
-  '007': 'Archazia\'s Island', 
-  '008': 'Reign of Jafar', 
-  '009': 'Fabled', 
+  '007': 'Archazia\'s Island',
+  '008': 'Reign of Jafar',
+  '009': 'Fabled',
+  '010': 'Whispers in the Well',
   'C1': 'Convention Exclusives',
   'D23': 'D23 Expo Exclusives',
   'P1': 'Promos Series 1',
@@ -18,7 +19,7 @@ export const SET_NAMES = {
 };
 
 export const SET_RELEASE_ORDER = [
-  '001', '002', '003', '004', '005', '006', '007', '008', '009'
+  '001', '002', '003', '004', '005', '006', '007', '008', '009', '010'
 ];
 
 export const SPECIAL_SETS = ['C1', 'D23', 'P1', 'P2'];

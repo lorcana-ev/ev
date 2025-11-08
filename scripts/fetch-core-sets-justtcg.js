@@ -1,6 +1,12 @@
 #!/usr/bin/env node
-// Optimized JustTCG fetching for core sets only (001-009)
+// Optimized JustTCG fetching for core sets only (001-010)
 // Track fetch dates and avoid refetching recent data
+//
+// Usage:
+//   node scripts/fetch-core-sets-justtcg.js                    # Normal update
+//   node scripts/fetch-core-sets-justtcg.js --force            # Force refetch all sets
+//   node scripts/fetch-core-sets-justtcg.js --exclude=010      # Exclude Set 10
+//   node scripts/fetch-core-sets-justtcg.js --force --exclude=010,009  # Combine flags
 
 import https from 'https';
 import fs from 'fs';
@@ -23,11 +29,70 @@ const CORE_SETS = {
   'Azurite Sea': '006',
   'Archazia\'s Island': '007',
   'Reign of Jafar': '008',
-  'Fabled': '009'
+  'Fabled': '009',
+  'Whispers in the Well': '010'
 };
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function parseCliArgs() {
+  const args = process.argv.slice(2);
+  const options = {
+    force: false,
+    exclude: [],
+    help: false
+  };
+
+  for (const arg of args) {
+    if (arg === '--force' || arg === '-f') {
+      options.force = true;
+    } else if (arg === '--help' || arg === '-h') {
+      options.help = true;
+    } else if (arg.startsWith('--exclude=')) {
+      const sets = arg.split('=')[1].split(',').map(s => s.trim());
+      options.exclude.push(...sets);
+    } else if (arg.startsWith('--skip=')) {
+      const sets = arg.split('=')[1].split(',').map(s => s.trim());
+      options.exclude.push(...sets);
+    }
+  }
+
+  return options;
+}
+
+function showHelp() {
+  console.log(`
+🔧 JustTCG Core Sets Fetcher
+
+Usage:
+  node scripts/fetch-core-sets-justtcg.js [options]
+
+Options:
+  --force, -f              Force refetch all sets (ignore age threshold)
+  --exclude=001,002,...    Exclude specific sets from update
+  --skip=001,002,...       Alias for --exclude
+  --help, -h               Show this help message
+
+Examples:
+  # Normal update (only stale/incomplete sets)
+  node scripts/fetch-core-sets-justtcg.js
+
+  # Force update all sets with fresh prices
+  node scripts/fetch-core-sets-justtcg.js --force
+
+  # Update all except Set 10 (already fresh)
+  node scripts/fetch-core-sets-justtcg.js --exclude=010
+
+  # Force update all except Sets 9 and 10
+  node scripts/fetch-core-sets-justtcg.js --force --exclude=009,010
+
+Notes:
+  - Force mode refetches ALL cards to update prices
+  - Normal mode only updates sets older than ${REFETCH_THRESHOLD_DAYS} days or incomplete sets
+  - Excluded sets are completely skipped
+`);
 }
 
 function loadApiKeys() {
@@ -362,8 +427,19 @@ async function getCoreSetsFromAPI(keysData) {
   return coreSets;
 }
 
-function shouldFetchSet(setCode, existingData, expectedCardCount) {
+function shouldFetchSet(setCode, existingData, expectedCardCount, forceRefresh = false) {
   const setMeta = existingData.set_metadata[setCode];
+
+  // Force mode: always refetch
+  if (forceRefresh) {
+    if (setMeta) {
+      const daysSinceLastFetch = (new Date() - new Date(setMeta.last_fetched)) / (1000 * 60 * 60 * 24);
+      console.log(`   🔄 ${setCode}: Force refresh (last fetched ${daysSinceLastFetch.toFixed(1)} days ago)`);
+    } else {
+      console.log(`   🔄 ${setCode}: Force refresh (never fetched)`);
+    }
+    return { shouldFetch: true, reason: 'forced' };
+  }
 
   if (!setMeta) {
     console.log(`   📌 ${setCode}: No previous fetch data - will fetch`);
@@ -399,12 +475,24 @@ function shouldFetchSet(setCode, existingData, expectedCardCount) {
 async function fetchSetData(set, existingData, keysData) {
   console.log(`\\n📦 Fetching ${set.name} (${set.code})...`);
 
-  // Calculate where to resume from based on existing cards
-  const existingCards = Object.keys(existingData.cards || {}).filter(id => id.startsWith(`${set.code}-`));
-  const startOffset = Math.floor(existingCards.length / CARDS_PER_BATCH) * CARDS_PER_BATCH;
+  // For stale data or forced refresh, refetch from beginning to update prices
+  // For incomplete/never_fetched, resume from where we left off
+  let startOffset = 0;
 
-  if (startOffset > 0) {
-    console.log(`   🔄 Resuming from offset ${startOffset} (${existingCards.length} cards already fetched)`);
+  if (set.reason === 'stale_data' || set.reason === 'forced') {
+    if (set.reason === 'forced') {
+      console.log(`   🔄 Force refetching all cards to update prices`);
+    } else {
+      console.log(`   🔄 Refetching all cards to update prices (data is ${Math.round((new Date() - new Date(existingData.set_metadata[set.code]?.last_fetched)) / (1000 * 60 * 60 * 24))} days old)`);
+    }
+  } else {
+    // Calculate where to resume from based on existing cards
+    const existingCards = Object.keys(existingData.cards || {}).filter(id => id.startsWith(`${set.code}-`));
+    startOffset = Math.floor(existingCards.length / CARDS_PER_BATCH) * CARDS_PER_BATCH;
+
+    if (startOffset > 0) {
+      console.log(`   🔄 Resuming from offset ${startOffset} (${existingCards.length} cards already fetched)`);
+    }
   }
 
   const setCards = {};
@@ -622,8 +710,18 @@ async function fetchSetData(set, existingData, keysData) {
   return totalFetched;
 }
 
-async function fetchCoreSetsJustTcg() {
-  console.log('🚀 Fetching JustTCG core sets (001-009) with optimization...\\n');
+async function fetchCoreSetsJustTcg(options = {}) {
+  const { force = false, exclude = [] } = options;
+
+  console.log('🚀 Fetching JustTCG core sets (001-010) with optimization...\\n');
+
+  if (force) {
+    console.log('⚡ Force mode enabled - will refetch all sets from beginning\\n');
+  }
+
+  if (exclude.length > 0) {
+    console.log(`⏭️  Excluding sets: ${exclude.join(', ')}\\n`);
+  }
 
   // Load API keys
   const keysData = loadApiKeys();
@@ -634,13 +732,20 @@ async function fetchCoreSetsJustTcg() {
 
   // Get available core sets from API
   const coreSets = await getCoreSetsFromAPI(keysData);
-  
+
+  // Filter out excluded sets
+  const filteredSets = coreSets.filter(set => !exclude.includes(set.code));
+
+  if (filteredSets.length < coreSets.length) {
+    console.log(`\\n📋 ${coreSets.length - filteredSets.length} set(s) excluded, checking ${filteredSets.length} sets`);
+  }
+
   // Determine which sets need fetching
   console.log('\\n🔍 Checking which sets need fetching...');
   const setsToFetch = [];
-  
-  for (const set of coreSets) {
-    const decision = shouldFetchSet(set.code, existingData, set.cards_count);
+
+  for (const set of filteredSets) {
+    const decision = shouldFetchSet(set.code, existingData, set.cards_count, force);
     if (decision.shouldFetch) {
       setsToFetch.push({ ...set, reason: decision.reason });
     }
@@ -710,5 +815,12 @@ export { fetchCoreSetsJustTcg };
 
 // Run if called directly
 if (import.meta.url === `file://${process.argv[1]}`) {
-  fetchCoreSetsJustTcg().catch(console.error);
+  const options = parseCliArgs();
+
+  if (options.help) {
+    showHelp();
+    process.exit(0);
+  }
+
+  fetchCoreSetsJustTcg(options).catch(console.error);
 }

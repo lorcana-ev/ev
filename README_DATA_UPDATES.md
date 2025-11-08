@@ -32,8 +32,8 @@ If you only need to update specific data:
 # Dreamborn (pricing + cards)
 node scripts/fetch-dreamborn-pricing.js
 
-# JustTCG (pricing)
-node scripts/fetch-all-justtcg-sets.js
+# JustTCG (pricing for sets 001-010)
+node scripts/fetch-core-sets-justtcg.js
 
 # Lorcast (metadata)
 node scripts/fetch-lorcast-data.js

@@ -10,14 +10,17 @@ This document explains the data update pipeline for the Lorcana Expected Value (
 - **URL**: `https://api.justtcg.com/v1/cards`
 - **What it provides**: Real-time pricing data with historical trends
 - **Output**: `data/JUSTTCG.json`
-- **Script**: `scripts/fetch-all-justtcg-sets.js`
-- **Coverage**: ~2,112 cards with Near Mint pricing for base and foil variants
-- **Rate limiting**: 500ms delay between requests
+- **Script**: `scripts/fetch-core-sets-justtcg.js`
+- **Coverage**: Core sets 001-010 with Near Mint pricing for base and foil variants
+- **Rate limiting**: 6.5 second delay between requests (10 req/min limit)
+- **API Keys**: Uses multiple keys from `config/justtcg-keys.json` for rate limit management
 - **Features**:
   - Multiple condition/printing variants
   - Price history (7d, 30d)
   - Price change trends
   - Statistical analysis (std dev, IQR, trend slopes)
+  - Smart refetch logic (only fetches stale or incomplete sets)
+  - Automatic API key rotation on rate limits
 
 ### 2. **Lorcast API**
 - **URL**: `https://api.lorcast.com/v0`
@@ -108,16 +111,19 @@ node scripts/update-all.js
 **Rate limits**: Respects all API rate limits
 **Output**: Updates 5 data files
 
-#### `scripts/fetch-all-justtcg-sets.js`
-Fetches pricing from JustTCG API for all available sets.
+#### `scripts/fetch-core-sets-justtcg.js`
+Fetches pricing from JustTCG API for core sets (001-010).
 
 **Output**: `data/JUSTTCG.json`
 
 **Features**:
 - Batch fetching (20 cards per request)
-- Rate limiting (500ms between requests)
+- Rate limiting (6.5s between requests, 10 req/min)
+- Multiple API key management with automatic rotation
+- Smart refetch logic (only updates stale or incomplete sets)
 - Variant extraction (Near Mint Normal/Foil)
-- Set discovery and mapping
+- Set discovery and mapping using set IDs
+- Resume capability (can continue from where it left off)
 
 #### `scripts/fetch-lorcast-data.js`
 Fetches card data and metadata from Lorcast API.
@@ -189,7 +195,7 @@ node scripts/fetch-dreamborn-pricing.js
 
 **Update only JustTCG:**
 ```bash
-node scripts/fetch-all-justtcg-sets.js
+node scripts/fetch-core-sets-justtcg.js
 ```
 
 **Update only Lorcast:**
@@ -251,8 +257,9 @@ Bulk (6 commons + 3 uncommons):
 ## Troubleshooting
 
 ### "No JustTCG data found"
-- Run `fetch-all-justtcg-sets.js` first
-- Check API access
+- Run `fetch-core-sets-justtcg.js` first
+- Check API key configuration in `config/justtcg-keys.json`
+- Verify API keys are valid and not rate-limited
 
 ### Missing card data
 - Run `fetch-dreamborn-pricing.js`
@@ -267,7 +274,7 @@ Bulk (6 commons + 3 uncommons):
 
 | API | Limit | Our Delay | Notes |
 |-----|-------|-----------|-------|
-| JustTCG | Unknown | 500ms | Conservative approach |
+| JustTCG | 10 req/min, 100 req/day | 6.5s | Multi-key rotation system |
 | Lorcast | Unknown | 1000ms | Conservative approach |
 | Dreamborn | None (CDN) | None | Cached static files |
 
