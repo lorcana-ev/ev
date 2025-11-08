@@ -138,6 +138,15 @@ function isKeyAvailable(key, metadata) {
     }
   }
 
+  // Check if recently burst-limited (wait 90 seconds after a burst limit before retrying)
+  if (key.last_burst_limited) {
+    const burstLimitTime = new Date(key.last_burst_limited).getTime();
+    const timeSinceBurstLimit = now - burstLimitTime;
+    if (timeSinceBurstLimit < 90 * 1000) {
+      return false; // Still in cooldown from burst limit
+    }
+  }
+
   // Check burst limit (requests in last minute)
   cleanOldMinuteRequests(key);
   if (key.minute_requests.length >= metadata.burst_limit_per_minute) {
@@ -452,10 +461,11 @@ function shouldFetchSet(setCode, existingData, expectedCardCount, forceRefresh =
     return { shouldFetch: true, reason: 'zero_cards' };
   }
 
-  // Check if we have significantly fewer cards than expected (incomplete set)
-  const completionRatio = setMeta.card_count / expectedCardCount;
-  if (completionRatio < 0.95) {
-    console.log(`   📌 ${setCode}: Only ${(completionRatio * 100).toFixed(1)}% complete (${setMeta.card_count}/${expectedCardCount}) - will fetch`);
+  // Check if last fetch still had more data available (incomplete set)
+  // This is more reliable than card count comparison since API count includes sealed products
+  if (setMeta.last_had_more === true || setMeta.status === 'partial') {
+    const completionRatio = setMeta.card_count / expectedCardCount;
+    console.log(`   📌 ${setCode}: Incomplete - API has more data (${setMeta.card_count} cards, ${(completionRatio * 100).toFixed(1)}%) - will fetch`);
     return { shouldFetch: true, reason: 'incomplete' };
   }
 
@@ -464,11 +474,11 @@ function shouldFetchSet(setCode, existingData, expectedCardCount, forceRefresh =
   const daysSinceLastFetch = (new Date() - lastFetched) / (1000 * 60 * 60 * 24);
 
   if (daysSinceLastFetch < REFETCH_THRESHOLD_DAYS) {
-    console.log(`   ✅ ${setCode}: ${setMeta.card_count}/${expectedCardCount} cards (${(completionRatio * 100).toFixed(1)}%), fetched ${daysSinceLastFetch.toFixed(1)} days ago - skipping`);
+    console.log(`   ✅ ${setCode}: ${setMeta.card_count} cards (complete), fetched ${daysSinceLastFetch.toFixed(1)} days ago - skipping`);
     return { shouldFetch: false, reason: 'recently_fetched' };
   }
 
-  console.log(`   ⏳ ${setCode}: Last fetched ${daysSinceLastFetch.toFixed(1)} days ago but complete - will refetch`);
+  console.log(`   ⏳ ${setCode}: ${setMeta.card_count} cards (complete), last fetched ${daysSinceLastFetch.toFixed(1)} days ago - will refetch`);
   return { shouldFetch: true, reason: 'stale_data' };
 }
 
@@ -556,30 +566,34 @@ async function fetchSetData(set, existingData, keysData) {
 
         if (limitType === 'burst') {
           // For burst limits, try another key or wait briefly
+          const currentKeyName = key?.name || 'Unknown';
           const nextKey = getActiveApiKey(keysData);
           if (nextKey && nextKey.key !== currentApiKey) {
-            console.log(`   🔄 Switching to ${nextKey.name}...`);
+            console.log(`   🔄 Switching from ${currentKeyName} to ${nextKey.name}...`);
             currentApiKey = nextKey.key;
             await delay(2000); // Short delay before retry
             continue; // Retry with new key
           } else {
-            // All keys are burst limited, wait 60 seconds for the limit to reset
-            console.log(`   ⏳ All keys burst limited - waiting 60 seconds for reset...`);
-            await delay(60000); // Wait 1 minute
+            // All keys are burst limited, wait for cooldown period
+            const availableCount = keysData.keys.filter(k => isKeyAvailable(k, keysData.metadata)).length;
+            console.log(`   ⏳ All keys burst limited (${availableCount}/4 available) - waiting 95 seconds for cooldown...`);
+            await delay(95000); // Wait 95 seconds (90s cooldown + 5s buffer)
             currentApiKey = null; // Try to get a fresh key after wait
             continue;
           }
         } else {
           // Daily limit hit - try another key
+          const currentKeyName = key?.name || 'Unknown';
           const nextKey = getActiveApiKey(keysData);
           if (nextKey && nextKey.key !== currentApiKey) {
-            console.log(`   🔄 Switching to ${nextKey.name}...`);
+            console.log(`   🔄 Switching from ${currentKeyName} to ${nextKey.name}...`);
             currentApiKey = nextKey.key;
             await delay(2000); // Short delay before retry
             continue; // Retry with new key
           } else {
             // All keys hit daily limit
-            console.log(`   ❌ All API keys have hit their daily limit`);
+            const availableCount = keysData.keys.filter(k => isKeyAvailable(k, keysData.metadata)).length;
+            console.log(`   ❌ All API keys have hit their daily limit (${availableCount}/4 available)`);
             console.log(`   💡 Progress saved: ${totalFetched} cards fetched this run`);
             console.log(`   🔄 Run this script again after midnight UTC when limits reset`);
             break;
@@ -674,10 +688,13 @@ async function fetchSetData(set, existingData, keysData) {
 
   // Merge new cards (don't delete existing ones since we're resuming)
   Object.assign(existingData.cards, setCards);
-  
+
   // Count actual cards we have for this set
   const actualCardCount = Object.keys(existingData.cards).filter(id => id.startsWith(`${set.code}-`)).length;
-  const isComplete = actualCardCount >= set.cards_count * 0.95;
+
+  // Set is complete when API says hasMore=false (meaning we've fetched everything available)
+  // Don't rely on card count comparison since API count includes sealed products
+  const isComplete = !hasMore;
 
   // Update set metadata
   existingData.set_metadata[set.code] = {
@@ -688,6 +705,7 @@ async function fetchSetData(set, existingData, keysData) {
     expected_count: set.cards_count,
     status: isComplete ? 'complete' : 'partial',
     last_fetch_added: totalFetched,
+    last_had_more: hasMore,
     completion_percentage: ((actualCardCount / set.cards_count) * 100).toFixed(1)
   };
   

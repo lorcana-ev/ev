@@ -4,29 +4,23 @@
       "key": "tcg_f58ce535a4d24f67ac3434fe143bd8a3",
       "name": "Key 1",
       "status": "active",
-      "daily_requests": 53,
+      "daily_requests": 55,
       "daily_limit_reset": null,
       "minute_requests": [
-        1762636614007,
-        1762636628333,
-        1762636635420
+        1762638170943
       ],
-      "last_burst_limited": "2025-10-20T02:55:23.529Z"
+      "last_burst_limited": "2025-11-08T21:42:50.943Z"
     },
     {
       "key": "tcg_0ecc60ebe3854a369313b16a95737637",
       "name": "Key 2",
       "status": "active",
-      "daily_requests": 54,
+      "daily_requests": 55,
       "daily_limit_reset": null,
       "minute_requests": [
-        1762636606831,
-        1762636621071,
-        1762636642546,
-        1762636649674,
-        1762636656817
+        1762638171346
       ],
-      "last_burst_limited": null
+      "last_burst_limited": "2025-11-08T21:42:51.347Z"
     },
     {
       "key": "tcg_d9656d9c265142939d9cd9edcceb5915",
@@ -34,24 +28,26 @@
       "status": "active",
       "daily_requests": 53,
       "daily_limit_reset": null,
-      "minute_requests": [],
-      "last_burst_limited": "2025-10-20T02:55:24.247Z"
+      "minute_requests": [
+        1762638138340
+      ],
+      "last_burst_limited": "2025-11-08T21:42:18.340Z"
     },
     {
       "key": "tcg_abb14a95cf194056a6e1df05127dc959",
       "name": "Key 4",
       "status": "active",
-      "daily_requests": 53,
+      "daily_requests": 54,
       "daily_limit_reset": null,
       "minute_requests": [
-        1762636663914
+        1762638170526
       ],
-      "last_burst_limited": "2025-10-20T02:58:49.857Z"
+      "last_burst_limited": "2025-11-08T21:42:50.527Z"
     }
   ],
   "metadata": {
     "created_at": "2025-10-19T19:15:00.000Z",
-    "last_updated": "2025-11-08T21:17:43.959Z",
+    "last_updated": "2025-11-08T21:42:51.347Z",
     "burst_limit_per_minute": 10,
     "daily_limit": 100,
     "daily_reset_hours": 24

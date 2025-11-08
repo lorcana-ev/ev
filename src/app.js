@@ -38,7 +38,7 @@ let state = {
   baseConfig: null,
   workingConfig: null,
   availableSets: [],
-  selectedSet: '009', // Default to Fabled set
+  selectedSet: '010', // Default to Whispers in the Well (latest set)
   allBoxPricing: null,
   pricingPriority: ['justtcg', 'dreamborn', 'lorcast'], // Default priority order
   priceComparisons: null,
@@ -217,11 +217,11 @@ function wireUI() {
   setupTabs();
   
   if (els.reset) {
-    els.reset.addEventListener('click', () => { 
+    els.reset.addEventListener('click', () => {
       if (els.scenario) els.scenario.value = 'base';
       if (els.setSelection) {
-        els.setSelection.value = '009';
-        state.selectedSet = '009';
+        els.setSelection.value = '010';
+        state.selectedSet = '010';
       }
       // Reset pricing priority to default
       state.pricingPriority = ['justtcg', 'dreamborn', 'lorcast'];
