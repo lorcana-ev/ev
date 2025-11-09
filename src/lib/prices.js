@@ -16,15 +16,19 @@ export class MultiSourcePricing {
     // Index each source in priority order
     if (allSources.manual_tcgplayer) {
       this.sources.manual_tcgplayer = this.indexManualTcgPlayerPricing(allSources.manual_tcgplayer);
+      console.log('Indexed manual_tcgplayer:', this.sources.manual_tcgplayer.size, 'entries');
     }
     if (allSources.justtcg) {
       this.sources.justtcg = this.indexJustTcgPricing(allSources.justtcg);
+      console.log('Indexed justtcg:', this.sources.justtcg.size, 'entries');
     }
     if (allSources.dreamborn) {
       this.sources.dreamborn = this.indexDreambornPricing(allSources.dreamborn);
+      console.log('Indexed dreamborn:', this.sources.dreamborn.size, 'entries');
     }
     if (allSources.lorcast) {
       this.sources.lorcast = this.indexLorcastPricing(allSources.lorcast);
+      console.log('Indexed lorcast:', this.sources.lorcast.size, 'entries');
     }
   }
 
@@ -171,65 +175,61 @@ export class MultiSourcePricing {
   
   indexJustTcgPricing(justTcgData) {
     const idx = new Map();
-    if (!justTcgData?.batches) return idx;
-    
-    // Process all batch data
-    for (const [batchKey, batch] of Object.entries(justTcgData.batches)) {
-      if (!batch?.raw_cards || !Array.isArray(batch.raw_cards)) continue;
-      
-      for (const card of batch.raw_cards) {
-        if (!card?.variants || !Array.isArray(card.variants)) continue;
-        
-        // Extract card ID from the card data
-        let cardId = null;
-        
-        // Try to extract from card number and set
-        if (card.set === 'Fabled' && card.number) {
-          // Convert card number like "242/204" to "009-242"
-          const cardNum = card.number.split('/')[0];
-          cardId = `009-${cardNum.padStart(3, '0')}`;
-        } else if (card.id && card.set) {
-          // Extract from other patterns if needed
-          console.log('Unknown card ID pattern:', card.id, card.set);
-          continue;
-        }
-        
-        if (!cardId) continue;
-      
-        // Index base variants
-        const baseVariants = card.variants.filter(v => 
-          v.condition === 'Near Mint' && 
-          (!v.printing || v.printing === 'Regular' || v.printing === 'Normal')
-        );
-        
-        if (baseVariants.length > 0) {
-          const price = parseFloat(baseVariants[0].price);
-          idx.set(`${cardId}-base`, {
-            market: price,
-            low: price,
-            median: price,
-            ts: baseVariants[0].lastUpdated
-          });
-        }
-        
-        // Index foil variants
-        const foilVariants = card.variants.filter(v => 
-          v.condition === 'Near Mint' && 
-          (v.printing === 'Holofoil' || v.printing === 'Cold Foil')
-        );
-      
-        if (foilVariants.length > 0) {
-          const price = parseFloat(foilVariants[0].price);
-          idx.set(`${cardId}-foil`, {
-            market: price,
-            low: price,
-            median: price,
-            ts: foilVariants[0].lastUpdated
-          });
+    if (!justTcgData?.cards) return idx;
+
+    // Process cards indexed by card ID
+    for (const [cardId, cardData] of Object.entries(justTcgData.cards)) {
+      if (!cardData?.variants) continue;
+
+      const variants = cardData.variants;
+
+      // Index base variants (Normal printing)
+      const baseVariant = variants['Near Mint_Normal'] ||
+                         Object.values(variants).find(v =>
+                           v.condition === 'Near Mint' &&
+                           (!v.printing || v.printing === 'Normal')
+                         );
+
+      if (baseVariant && baseVariant.price > 0) {
+        idx.set(`${cardId}-base`, {
+          market: baseVariant.price,
+          low: baseVariant.price,
+          median: baseVariant.price,
+          ts: baseVariant.lastUpdated
+        });
+      }
+
+      // Index foil variants (Cold Foil or Holofoil)
+      const foilVariant = variants['Near Mint_Cold Foil'] ||
+                         variants['Near Mint_Holofoil'] ||
+                         Object.values(variants).find(v =>
+                           v.condition === 'Near Mint' &&
+                           (v.printing === 'Cold Foil' || v.printing === 'Holofoil')
+                         );
+
+      if (foilVariant && foilVariant.price > 0) {
+        const foilPriceData = {
+          market: foilVariant.price,
+          low: foilVariant.price,
+          median: foilVariant.price,
+          ts: foilVariant.lastUpdated
+        };
+
+        idx.set(`${cardId}-foil`, foilPriceData);
+
+        // Check if this might be an enchanted card
+        const cardNumber = parseInt(cardId.split('-')[1] || '0');
+        const hasOnlyFoil = !baseVariant;
+        const isHighValue = foilVariant.price > 20;
+        const isPotentiallyEnchanted = hasOnlyFoil && isHighValue && cardNumber > 204;
+
+        if (isPotentiallyEnchanted) {
+          idx.set(`${cardId}-foil-enchanted`, foilPriceData);
+          idx.set(`${cardId}-special-enchanted`, foilPriceData);
         }
       }
     }
-    
+
     return idx;
   }
   
