@@ -234,15 +234,24 @@ function wireUI() {
 }
 
 function updatePricingPriority() {
-  const newPriority = [
+  const selectedSources = [
     els.pricingSource1?.value,
     els.pricingSource2?.value,
     els.pricingSource3?.value
   ].filter(Boolean);
 
-  // Only update if we have valid selections and they're different
-  if (newPriority.length === 3 &&
-      JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
+  // Remove duplicates while preserving order
+  const uniqueSelected = [...new Set(selectedSources)];
+  
+  // Always include all available sources as fallbacks
+  const allSources = ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'];
+  const remainingSources = allSources.filter(s => !uniqueSelected.includes(s));
+  
+  // Combine: user's priority first, then remaining sources as fallbacks
+  const newPriority = [...uniqueSelected, ...remainingSources];
+
+  // Only update if priorities are different
+  if (JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
     console.log('Pricing priority changed:', state.pricingPriority, '→', newPriority);
     state.pricingPriority = newPriority;
     state.multiSourcePricing.setPriority(newPriority);
