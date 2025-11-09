@@ -210,37 +210,41 @@ export function indexPrices(pricesBlob) {
   
   // Check if this is unified pricing format
   if (pricesBlob?.metadata?.version && pricesBlob?.cards) {
-    // Handle simplified UNIFIED_PRICING.json format (v3.0.0+)
+    // Handle UNIFIED_PRICING.json format (v3.0.0+)
+    // New structure has unified_pricing nested object
     for (const [cardId, cardData] of Object.entries(pricesBlob.cards)) {
       if (!cardData) continue;
-      
+
+      // v3.0.0+ uses nested unified_pricing object
+      const pricing = cardData.unified_pricing || cardData;
+
       // Handle base variant
-      if (cardData.base !== null && cardData.base > 0) {
+      if (pricing.base !== null && pricing.base !== undefined && pricing.base > 0) {
         idx.set(`${cardId}-base`, {
-          market: num(cardData.base),
-          low: num(cardData.base),
-          median: num(cardData.base),
-          ts: pricesBlob.metadata.created_at
+          market: num(pricing.base),
+          low: num(pricing.base),
+          median: num(pricing.base),
+          ts: pricesBlob.metadata.created_at || pricesBlob.metadata.last_updated
         });
       }
-      
+
       // Handle foil variant
-      if (cardData.foil !== null && cardData.foil > 0) {
+      if (pricing.foil !== null && pricing.foil !== undefined && pricing.foil > 0) {
         const foilPriceData = {
-          market: num(cardData.foil),
-          low: num(cardData.foil),
-          median: num(cardData.foil),
-          ts: pricesBlob.metadata.created_at
+          market: num(pricing.foil),
+          low: num(pricing.foil),
+          median: num(pricing.foil),
+          ts: pricesBlob.metadata.created_at || pricesBlob.metadata.last_updated
         };
-        
+
         idx.set(`${cardId}-foil`, foilPriceData);
-        
+
         // Check if this might be an enchanted card
         const cardNumber = parseInt(cardId.split('-')[1] || '0');
-        const hasOnlyBase = cardData.base === null;
+        const hasOnlyBase = pricing.base === null || pricing.base === undefined;
         const isHighValue = foilPriceData.market > 20;
         const isPotentiallyEnchanted = hasOnlyBase && isHighValue && cardNumber > 204;
-        
+
         // Also create enchanted variant pricing for potential enchanted cards
         if (isPotentiallyEnchanted) {
           idx.set(`${cardId}-foil-enchanted`, foilPriceData);
