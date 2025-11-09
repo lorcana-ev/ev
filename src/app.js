@@ -5,6 +5,25 @@ import { applyScenario, evPack, evBox, evCase, summarizeHitOdds, simulateEV, fmt
 import { getAllSets, getSetName } from './lib/sets.js';
 import { setViewer } from './lib/setviewer.js';
 
+/**
+ * Load card ID mapping for the set viewer
+ */
+async function loadCardIdMappingForSetViewer() {
+  try {
+    const lookup = await fetch('./data/CARD_ID_LOOKUP.json').then(r => r.json());
+    const mapping = new Map();
+    
+    for (const [hashId, canonicalId] of Object.entries(lookup.hash_to_canonical)) {
+      mapping.set(hashId, canonicalId);
+    }
+    
+    return mapping;
+  } catch (error) {
+    console.warn('Card ID lookup not available for set viewer:', error.message);
+    return new Map();
+  }
+}
+
 const els = {
   setSelection: document.getElementById('setSelection'),
   scenario: document.getElementById('scenario'),
@@ -80,7 +99,9 @@ async function init() {
     updatePricingSourceSelectors();
     
     showLoading('Initializing set viewer...');
-    setViewer.initialize(cards, state.priceIndex, state.multiSourcePricing);
+    // Load card ID mapping for set viewer
+    const cardIdMapping = await loadCardIdMappingForSetViewer();
+    setViewer.initialize(cards, state.priceIndex, state.multiSourcePricing, cardIdMapping);
     setViewer.setPricingPriority(state.pricingPriority);
     setViewer.setCurrentSet(state.selectedSet);
     
@@ -234,24 +255,15 @@ function wireUI() {
 }
 
 function updatePricingPriority() {
-  const selectedSources = [
+  const newPriority = [
     els.pricingSource1?.value,
     els.pricingSource2?.value,
     els.pricingSource3?.value
   ].filter(Boolean);
 
-  // Remove duplicates while preserving order
-  const uniqueSelected = [...new Set(selectedSources)];
-  
-  // Always include all available sources as fallbacks
-  const allSources = ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'];
-  const remainingSources = allSources.filter(s => !uniqueSelected.includes(s));
-  
-  // Combine: user's priority first, then remaining sources as fallbacks
-  const newPriority = [...uniqueSelected, ...remainingSources];
-
-  // Only update if priorities are different
-  if (JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
+  // Only update if we have valid selections and they're different
+  if (newPriority.length === 3 &&
+      JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
     console.log('Pricing priority changed:', state.pricingPriority, '→', newPriority);
     state.pricingPriority = newPriority;
     state.multiSourcePricing.setPriority(newPriority);

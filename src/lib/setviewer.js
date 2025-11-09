@@ -16,10 +16,11 @@ export class SetViewer {
     };
   }
 
-  initialize(cards, priceIndex, multiSourcePricing = null) {
+  initialize(cards, priceIndex, multiSourcePricing = null, cardIdMapping = null) {
     this.allCards = cards;
     this.priceIndex = priceIndex;
     this.multiSourcePricing = multiSourcePricing;
+    this.cardIdMapping = cardIdMapping;
     this.currentPricingPriority = null;
     this.setupEventListeners();
   }
@@ -307,9 +308,30 @@ export class SetViewer {
   getCardPrice(card, variant = 'base') {
     if (!card.id) return null;
 
+    // Determine the canonical ID for pricing lookups
+    let pricingId = card.id;
+    
+    // If we have a card ID mapping and this is a hash ID, convert it
+    if (this.cardIdMapping && card.id.includes('/')) {
+      const canonicalId = this.cardIdMapping.get(card.id);
+      if (canonicalId) {
+        pricingId = canonicalId;
+      }
+    } else if (!card.id.includes('/')) {
+      // Already in canonical format, use as-is
+      pricingId = card.id;
+    } else {
+      // Fallback: construct from set and number
+      const setId = card.setId || card.set?.code || card.setCode;
+      const number = String(card.number || card.nr || '').padStart(3, '0');
+      if (setId && number) {
+        pricingId = `${setId}-${number}`;
+      }
+    }
+
     // Use multi-source pricing with current priority
     if (this.multiSourcePricing && this.currentPricingPriority) {
-      const priceData = this.multiSourcePricing.getPrice(`${card.id}-${variant}`, this.currentPricingPriority);
+      const priceData = this.multiSourcePricing.getPrice(`${pricingId}-${variant}`, this.currentPricingPriority);
       if (priceData) {
         return priceData.market || priceData.median || priceData.low || null;
       }
@@ -320,7 +342,7 @@ export class SetViewer {
 
     // Fallback to legacy single-source pricing (only if multiSourcePricing not available)
     if (this.priceIndex) {
-      const priceData = this.priceIndex.get(`${card.id}-${variant}`);
+      const priceData = this.priceIndex.get(`${pricingId}-${variant}`);
       return priceData?.market || priceData?.median || priceData?.low || null;
     }
 

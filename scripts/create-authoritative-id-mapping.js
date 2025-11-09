@@ -177,6 +177,14 @@ function createAuthoritativeMapping(sources) {
         justtcg: false,
         lorcast: false,
         manual_tcgplayer: false
+      },
+      finish_mappings: {
+        // Map canonical finish names to source-specific representations
+        // Canonical: base, foil, special (for enchanted)
+        // This tells us what finishes are available from which sources
+        base: [],
+        foil: [],
+        special: []
       }
     };
     
@@ -227,32 +235,79 @@ function createAuthoritativeMapping(sources) {
       }
     }
     
-    // Check pricing availability
+    // Check pricing availability and finish mappings
     
-    // Dreamborn pricing (check both canonical ID and hash ID)
-    if (sources.dreamborn_prices[canonicalId] || 
-        (cardEntry.identifiers.dreamborn_hash && sources.dreamborn_prices[cardEntry.identifiers.dreamborn_hash])) {
+    // Dreamborn pricing (already loaded above for TCGPlayer ID extraction)
+    if (dreambornPrice) {
       cardEntry.pricing_availability.dreamborn = true;
       mapping.statistics.cards_with_dreamborn_pricing++;
+      
+      // Track which finishes Dreamborn has for this card
+      if (dreambornPrice.base?.TP?.price) cardEntry.finish_mappings.base.push('dreamborn');
+      if (dreambornPrice.foil?.TP?.price) {
+        // For enchanted cards, map foil to special
+        if (card.rarity === 'enchanted') {
+          cardEntry.finish_mappings.special.push('dreamborn');
+        } else {
+          cardEntry.finish_mappings.foil.push('dreamborn');
+        }
+      }
     }
     
     // JustTCG pricing
-    if (sources.justtcg.cards[canonicalId]) {
+    const justTcgCard = sources.justtcg.cards[canonicalId];
+    if (justTcgCard) {
       cardEntry.identifiers.justtcg_available = true;
       cardEntry.pricing_availability.justtcg = true;
       mapping.statistics.cards_with_justtcg_pricing++;
+      
+      // Track which finishes JustTCG has
+      if (justTcgCard.variants) {
+        const hasNormal = Object.keys(justTcgCard.variants).some(k => k.includes('Normal'));
+        const hasFoil = Object.keys(justTcgCard.variants).some(k => k.includes('Cold Foil') || k.includes('Holofoil'));
+        
+        if (hasNormal) cardEntry.finish_mappings.base.push('justtcg');
+        if (hasFoil) {
+          if (card.rarity === 'enchanted') {
+            cardEntry.finish_mappings.special.push('justtcg');
+          } else {
+            cardEntry.finish_mappings.foil.push('justtcg');
+          }
+        }
+      }
     }
     
     // Lorcast pricing
     if (lorcastCard && lorcastCard.raw_data?.prices) {
       cardEntry.pricing_availability.lorcast = true;
+      
+      // Track which finishes Lorcast has
+      if (lorcastCard.raw_data.prices.usd) cardEntry.finish_mappings.base.push('lorcast');
+      if (lorcastCard.raw_data.prices.usd_foil) {
+        if (card.rarity === 'enchanted') {
+          cardEntry.finish_mappings.special.push('lorcast');
+        } else {
+          cardEntry.finish_mappings.foil.push('lorcast');
+        }
+      }
     }
     
     // Manual TCGPlayer pricing
-    if (sources.manual_tcgplayer.cards && sources.manual_tcgplayer.cards[canonicalId]) {
+    const manualCard = sources.manual_tcgplayer.cards?.[canonicalId];
+    if (manualCard) {
       cardEntry.identifiers.manual_tcgplayer_available = true;
       cardEntry.pricing_availability.manual_tcgplayer = true;
       mapping.statistics.cards_with_manual_pricing++;
+      
+      // Track which finishes Manual TCGPlayer has
+      if (manualCard.base_price) cardEntry.finish_mappings.base.push('manual_tcgplayer');
+      if (manualCard.foil_price) {
+        if (card.rarity === 'enchanted') {
+          cardEntry.finish_mappings.special.push('manual_tcgplayer');
+        } else {
+          cardEntry.finish_mappings.foil.push('manual_tcgplayer');
+        }
+      }
     }
     
     // Track TCGPlayer ID availability
