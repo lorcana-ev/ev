@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "created_at": "2025-11-09T02:57:26.079Z",
+    "created_at": "2025-11-09T03:08:01.558Z",
     "version": "1.0.0",
-    "description": "Authoritative mapping between card ID formats from different sources",
+    "description": "Authoritative mapping between card ID formats from different sources (Sets 1-10 only, no promo cards)",
     "sources": {
       "cards_json": 2382,
       "lorcast": 2352,
@@ -14,849 +14,21 @@
       "canonical": "set-number format (e.g., \"010-001\") - used for all pricing lookups",
       "dreamborn_hash": "hash format (e.g., \"010/8384b543c69...\") - used in cards.json",
       "tcgplayer_id": "TCGPlayer product ID (numeric) - authoritative bridge between sources"
-    }
+    },
+    "included_sets": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "007",
+      "008",
+      "009",
+      "010"
+    ]
   },
   "cards": {
-    "P1-001": {
-      "canonical_id": "P1-001",
-      "set_id": "P1",
-      "number": "1",
-      "name": "Mickey Mouse",
-      "title": "Brave Little Tailor",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454233,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-002": {
-      "canonical_id": "P1-002",
-      "set_id": "P1",
-      "number": "2",
-      "name": "Stitch",
-      "title": "Rock Star",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454245,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-003": {
-      "canonical_id": "P1-003",
-      "set_id": "P1",
-      "number": "3",
-      "name": "Elsa",
-      "title": "Snow Queen",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454230,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-004": {
-      "canonical_id": "P1-004",
-      "set_id": "P1",
-      "number": "4",
-      "name": "Cruella de Vil",
-      "title": "Miserable As Usual",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454229,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-005": {
-      "canonical_id": "P1-005",
-      "set_id": "P1",
-      "number": "5",
-      "name": "Maleficent",
-      "title": "Monstrous Dragon",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454232,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-006": {
-      "canonical_id": "P1-006",
-      "set_id": "P1",
-      "number": "6",
-      "name": "Robin Hood",
-      "title": "Unrivaled Archer",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454234,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-007": {
-      "canonical_id": "P1-007",
-      "set_id": "P1",
-      "number": "7",
-      "name": "Captain Hook",
-      "title": "Forceful Duelist",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 454231,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-008": {
-      "canonical_id": "P1-008",
-      "set_id": "P1",
-      "number": "8",
-      "name": "Mickey Mouse",
-      "title": "Detective",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 501773,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-009": {
-      "canonical_id": "P1-009",
-      "set_id": "P1",
-      "number": "9",
-      "name": "Heihei",
-      "title": "Boat Snack",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 502012,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-010": {
-      "canonical_id": "P1-010",
-      "set_id": "P1",
-      "number": "10",
-      "name": "Yzma",
-      "title": "Alchemist",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 502013,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-011": {
-      "canonical_id": "P1-011",
-      "set_id": "P1",
-      "number": "11",
-      "name": "Mickey Mouse",
-      "title": "Musketeer",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 510149,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-012": {
-      "canonical_id": "P1-012",
-      "set_id": "P1",
-      "number": "12",
-      "name": "Goofy",
-      "title": "Musketeer",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 501777,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-013": {
-      "canonical_id": "P1-013",
-      "set_id": "P1",
-      "number": "13",
-      "name": "Donald Duck",
-      "title": "Musketeer",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 518895,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": false,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-014": {
-      "canonical_id": "P1-014",
-      "set_id": "P1",
-      "number": "14",
-      "name": "Cinderella",
-      "title": "Knight in Training",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 518408,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-015": {
-      "canonical_id": "P1-015",
-      "set_id": "P1",
-      "number": "15",
-      "name": "Bucky",
-      "title": "Squirrel Squeak Tutor",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 518411,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-016": {
-      "canonical_id": "P1-016",
-      "set_id": "P1",
-      "number": "16",
-      "name": "Minnie Mouse",
-      "title": "Wide-Eyed Diver",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 518412,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-017": {
-      "canonical_id": "P1-017",
-      "set_id": "P1",
-      "number": "17",
-      "name": "Robin Hood",
-      "title": "Capable Fighter",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 518413,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-018": {
-      "canonical_id": "P1-018",
-      "set_id": "P1",
-      "number": "18",
-      "name": "Mickey Mouse",
-      "title": "Friendly Face",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516448,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-019": {
-      "canonical_id": "P1-019",
-      "set_id": "P1",
-      "number": "19",
-      "name": "Elsa",
-      "title": "Gloves Off",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516452,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-020": {
-      "canonical_id": "P1-020",
-      "set_id": "P1",
-      "number": "20",
-      "name": "Genie",
-      "title": "Powers Unleashed",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516454,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-021": {
-      "canonical_id": "P1-021",
-      "set_id": "P1",
-      "number": "21",
-      "name": "Stitch",
-      "title": "Abomination",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516456,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-022": {
-      "canonical_id": "P1-022",
-      "set_id": "P1",
-      "number": "22",
-      "name": "Maleficent",
-      "title": "Uninvited",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516459,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-023": {
-      "canonical_id": "P1-023",
-      "set_id": "P1",
-      "number": "23",
-      "name": "Maui",
-      "title": "Demigod",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 516460,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-024": {
-      "canonical_id": "P1-024",
-      "set_id": "P1",
-      "number": "24",
-      "name": "Gaston",
-      "title": "Arrogant Hunter",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 520857,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-025": {
-      "canonical_id": "P1-025",
-      "set_id": "P1",
-      "number": "25",
-      "name": "Mickey Mouse",
-      "title": "True Friend",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": true,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-026": {
-      "canonical_id": "P1-026",
-      "set_id": "P1",
-      "number": "026",
-      "name": "Kit Cloudkicker",
-      "title": "Tough Guy",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 538265,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-027": {
-      "canonical_id": "P1-027",
-      "set_id": "P1",
-      "number": "027",
-      "name": "Jolly Roger",
-      "title": "Hook's Ship",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 538275,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-028": {
-      "canonical_id": "P1-028",
-      "set_id": "P1",
-      "number": "028",
-      "name": "How Far I'll Go",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 538249,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-029": {
-      "canonical_id": "P1-029",
-      "set_id": "P1",
-      "number": "029",
-      "name": "John Silver",
-      "title": "Greedy Treasure Seeker",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 538264,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-030": {
-      "canonical_id": "P1-030",
-      "set_id": "P1",
-      "number": "30",
-      "name": "Stitch",
-      "title": "Rock Star",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 533447,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-031": {
-      "canonical_id": "P1-031",
-      "set_id": "P1",
-      "number": "31",
-      "name": "Rapunzel",
-      "title": "Gifted Artist",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 525095,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-032": {
-      "canonical_id": "P1-032",
-      "set_id": "P1",
-      "number": "32",
-      "name": "Pinocchio",
-      "title": "Talkative Puppet",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 525093,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-033": {
-      "canonical_id": "P1-033",
-      "set_id": "P1",
-      "number": "33",
-      "name": "Four Dozen Eggs",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 525096,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-034": {
-      "canonical_id": "P1-034",
-      "set_id": "P1",
-      "number": "034",
-      "name": "Mickey Mouse",
-      "title": "Leader of the Band",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551695,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-035": {
-      "canonical_id": "P1-035",
-      "set_id": "P1",
-      "number": "035",
-      "name": "Ursula's Lair",
-      "title": "Eye of the Storm",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551696,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-036": {
-      "canonical_id": "P1-036",
-      "set_id": "P1",
-      "number": "036",
-      "name": "Hidden Inkcaster",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551697,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-037": {
-      "canonical_id": "P1-037",
-      "set_id": "P1",
-      "number": "037",
-      "name": "Mulan",
-      "title": "Enemy of Entanglement",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551698,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-038": {
-      "canonical_id": "P1-038",
-      "set_id": "P1",
-      "number": "038",
-      "name": "Ursula",
-      "title": "Sea Witch Queen",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551699,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-039": {
-      "canonical_id": "P1-039",
-      "set_id": "P1",
-      "number": "039",
-      "name": "Scrooge McDuck",
-      "title": "Uncle Moneybags",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 538247,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "P1-040": {
-      "canonical_id": "P1-040",
-      "set_id": "P1",
-      "number": "040",
-      "name": "Flotsam & Jetsam",
-      "title": "Entangling Eels",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 551693,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
     "001-001": {
       "canonical_id": "001-001",
       "set_id": "001",
@@ -5402,7 +4574,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 616373,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -12437,7 +11609,7 @@
       "rarity": "common",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": 536282,
+        "tcgplayer_id": 536280,
         "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": false
@@ -14705,7 +13877,7 @@
       "rarity": "super rare",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 544487,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -19484,363 +18656,6 @@
         "manual_tcgplayer": false
       }
     },
-    "C1-001": {
-      "canonical_id": "C1-001",
-      "set_id": "C1",
-      "number": "001",
-      "name": "Dragon Fire",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-002": {
-      "canonical_id": "C1-002",
-      "set_id": "C1",
-      "number": "002",
-      "name": "Let It Go",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-003": {
-      "canonical_id": "C1-003",
-      "set_id": "C1",
-      "number": "003",
-      "name": "Cinderella",
-      "title": "Stouthearted",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-004": {
-      "canonical_id": "C1-004",
-      "set_id": "C1",
-      "number": "004",
-      "name": "Rapunzel",
-      "title": "Gifted with Healing",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-006": {
-      "canonical_id": "C1-006",
-      "set_id": "C1",
-      "number": "006",
-      "name": "Invited to the Ball",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-007": {
-      "canonical_id": "C1-007",
-      "set_id": "C1",
-      "number": "007",
-      "name": "Elsa's Ice Palace",
-      "title": "Place of Solitude",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-008": {
-      "canonical_id": "C1-008",
-      "set_id": "C1",
-      "number": "008",
-      "name": "Kuzco",
-      "title": "Temperamental Emperor",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-009": {
-      "canonical_id": "C1-009",
-      "set_id": "C1",
-      "number": "009",
-      "name": "Baymax",
-      "title": "Armored Companion",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "C1-010": {
-      "canonical_id": "C1-010",
-      "set_id": "C1",
-      "number": "010",
-      "name": "A Whole New World",
-      "title": null,
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-001": {
-      "canonical_id": "D23-001",
-      "set_id": "D23",
-      "number": "001",
-      "name": "Mickey Mouse",
-      "title": "Brave Little Tailor",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559532,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-002": {
-      "canonical_id": "D23-002",
-      "set_id": "D23",
-      "number": "002",
-      "name": "Cinderella",
-      "title": "Stouthearted",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559533,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-003": {
-      "canonical_id": "D23-003",
-      "set_id": "D23",
-      "number": "003",
-      "name": "Ursula",
-      "title": "Deceiver",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559534,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-004": {
-      "canonical_id": "D23-004",
-      "set_id": "D23",
-      "number": "004",
-      "name": "Bruno Madrigal",
-      "title": "Undetected Uncle",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559535,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-005": {
-      "canonical_id": "D23-005",
-      "set_id": "D23",
-      "number": "005",
-      "name": "Vanellope von Schweetz",
-      "title": "Sugar Rush Princess",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559537,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-006": {
-      "canonical_id": "D23-006",
-      "set_id": "D23",
-      "number": "006",
-      "name": "Oswald",
-      "title": "The Lucky Rabbit",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 559538,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-007": {
-      "canonical_id": "D23-007",
-      "set_id": "D23",
-      "number": "007",
-      "name": "Mickey Mouse",
-      "title": "Playful Sorcerer",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": true,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
-    "D23-008": {
-      "canonical_id": "D23-008",
-      "set_id": "D23",
-      "number": "008",
-      "name": "Iago",
-      "title": "Out of Reach",
-      "rarity": "promo",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": null,
-        "justtcg_available": false,
-        "lorcast_available": false,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": false,
-        "lorcast": false,
-        "manual_tcgplayer": false
-      }
-    },
     "005-001": {
       "canonical_id": "005-001",
       "set_id": "005",
@@ -24533,7 +23348,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 556435,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24554,7 +23369,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 555689,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24575,7 +23390,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 561996,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24596,7 +23411,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 561997,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24617,7 +23432,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 561998,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24638,7 +23453,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 561999,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -24680,7 +23495,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 561210,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29363,7 +28178,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 578236,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29384,7 +28199,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 588076,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29405,7 +28220,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 593836,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29426,7 +28241,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 593833,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29447,7 +28262,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 593834,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29468,7 +28283,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 593835,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29510,7 +28325,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 593837,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29594,7 +28409,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 614149,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -29615,7 +28430,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 619355,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34340,7 +33155,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 622945,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34361,7 +33176,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620242,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34382,7 +33197,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620243,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34403,7 +33218,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620272,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34424,7 +33239,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620274,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34445,7 +33260,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620277,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34466,7 +33281,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 620276,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -34487,7 +33302,7 @@
       "rarity": "promo",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 601112,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -35201,7 +34016,7 @@
       "rarity": "enchanted",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 634261,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -39212,7 +38027,7 @@
       "rarity": "legendary",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 634263,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -39233,7 +38048,7 @@
       "rarity": "legendary",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 634264,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -50020,14 +48835,15 @@
     }
   },
   "statistics": {
-    "total_cards": 2382,
-    "cards_with_tcgplayer_id": 2317,
+    "total_cards": 2325,
+    "cards_with_tcgplayer_id": 2301,
     "cards_with_hash_id": 272,
-    "cards_with_dreamborn_pricing": 2331,
-    "cards_with_justtcg_pricing": 2286,
-    "cards_with_lorcast_data": 2303,
+    "cards_with_dreamborn_pricing": 2287,
+    "cards_with_justtcg_pricing": 2239,
+    "cards_with_lorcast_data": 2258,
     "cards_with_manual_pricing": 37,
-    "hash_ids_mapped": 229,
-    "hash_ids_unmapped": 43
+    "hash_ids_mapped": 230,
+    "hash_ids_unmapped": 42,
+    "promo_cards_skipped": 57
   }
 }

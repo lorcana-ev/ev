@@ -95,13 +95,13 @@ function extractTcgPlayerIdFromLink(link) {
 }
 
 function createAuthoritativeMapping(sources) {
-  console.log('\n🔨 Building authoritative card ID mapping...\n');
+  console.log('\n🔨 Building authoritative card ID mapping (Sets 1-10 only)...\n');
   
   const mapping = {
     metadata: {
       created_at: new Date().toISOString(),
       version: '1.0.0',
-      description: 'Authoritative mapping between card ID formats from different sources',
+      description: 'Authoritative mapping between card ID formats from different sources (Sets 1-10 only, no promo cards)',
       sources: {
         cards_json: sources.cards.length,
         lorcast: Object.keys(sources.lorcast.cards).length,
@@ -113,7 +113,8 @@ function createAuthoritativeMapping(sources) {
         canonical: 'set-number format (e.g., "010-001") - used for all pricing lookups',
         dreamborn_hash: 'hash format (e.g., "010/8384b543c69...") - used in cards.json',
         tcgplayer_id: 'TCGPlayer product ID (numeric) - authoritative bridge between sources'
-      }
+      },
+      included_sets: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010']
     },
     cards: {},
     statistics: {
@@ -125,13 +126,17 @@ function createAuthoritativeMapping(sources) {
       cards_with_lorcast_data: 0,
       cards_with_manual_pricing: 0,
       hash_ids_mapped: 0,
-      hash_ids_unmapped: 0
+      hash_ids_unmapped: 0,
+      promo_cards_skipped: 0
     }
   };
   
   // Build TCGPlayer ID mapping from Lorcast
   const tcgPlayerMapping = buildTcgPlayerIdMapping(sources.lorcast);
   console.log(`📋 Built TCGPlayer ID mapping: ${Object.keys(tcgPlayerMapping).length} IDs`);
+  
+  // Define valid set codes (Sets 1-10 only)
+  const validSets = new Set(['001', '002', '003', '004', '005', '006', '007', '008', '009', '010']);
   
   // Process all cards from cards.json
   for (const card of sources.cards) {
@@ -140,6 +145,12 @@ function createAuthoritativeMapping(sources) {
     
     if (!setId || !number) {
       continue; // Skip cards without proper identification
+    }
+    
+    // Skip promo cards and non-standard sets
+    if (!validSets.has(setId)) {
+      mapping.statistics.promo_cards_skipped++;
+      continue;
     }
     
     // Create canonical ID (set-number format with zero-padded number)
@@ -173,28 +184,34 @@ function createAuthoritativeMapping(sources) {
     if (card.id && card.id.includes('/')) {
       cardEntry.identifiers.dreamborn_hash = card.id;
       mapping.statistics.cards_with_hash_id++;
+    }
+    
+    // Try to extract TCGPlayer ID from Dreamborn pricing data
+    // Check both canonical ID and hash ID (for promo cards, card.id might be the canonical ID like "P2-015")
+    const dreambornPrice = sources.dreamborn_prices[canonicalId] || 
+                           sources.dreamborn_prices[card.id] ||
+                           (cardEntry.identifiers.dreamborn_hash ? sources.dreamborn_prices[cardEntry.identifiers.dreamborn_hash] : null);
+    
+    if (dreambornPrice) {
+      let tcgPlayerId = dreambornPrice.base?.TP?.productId || dreambornPrice.foil?.TP?.productId;
       
-      // Try to extract TCGPlayer ID from Dreamborn pricing data using the hash
-      const dreambornPrice = sources.dreamborn_prices[card.id];
-      if (dreambornPrice) {
-        let tcgPlayerId = dreambornPrice.base?.TP?.productId || dreambornPrice.foil?.TP?.productId;
-        
-        if (!tcgPlayerId) {
-          // Try extracting from links
-          const baseLink = dreambornPrice.base?.TP?.link;
-          const foilLink = dreambornPrice.foil?.TP?.link;
-          tcgPlayerId = extractTcgPlayerIdFromLink(baseLink) || extractTcgPlayerIdFromLink(foilLink);
-        }
-        
-        if (tcgPlayerId) {
-          cardEntry.identifiers.tcgplayer_id = tcgPlayerId;
-        }
+      if (!tcgPlayerId) {
+        // Try extracting from links
+        const baseLink = dreambornPrice.base?.TP?.link;
+        const foilLink = dreambornPrice.foil?.TP?.link;
+        tcgPlayerId = extractTcgPlayerIdFromLink(baseLink) || extractTcgPlayerIdFromLink(foilLink);
       }
       
-      // Verify mapping worked
+      if (tcgPlayerId) {
+        cardEntry.identifiers.tcgplayer_id = tcgPlayerId;
+      }
+    }
+    
+    // Verify hash ID mapping worked (if applicable)
+    if (cardEntry.identifiers.dreamborn_hash) {
       if (cardEntry.identifiers.tcgplayer_id && tcgPlayerMapping[cardEntry.identifiers.tcgplayer_id] === canonicalId) {
         mapping.statistics.hash_ids_mapped++;
-      } else if (cardEntry.identifiers.dreamborn_hash) {
+      } else {
         mapping.statistics.hash_ids_unmapped++;
       }
     }
@@ -252,8 +269,9 @@ function createAuthoritativeMapping(sources) {
 }
 
 function generateReport(mapping) {
-  console.log('\n📊 Mapping Statistics:\n');
+  console.log('\n📊 Mapping Statistics (Sets 1-10 only):\n');
   console.log(`   Total cards: ${mapping.statistics.total_cards}`);
+  console.log(`   Promo cards skipped: ${mapping.statistics.promo_cards_skipped}`);
   console.log(`   Cards with TCGPlayer ID: ${mapping.statistics.cards_with_tcgplayer_id} (${(mapping.statistics.cards_with_tcgplayer_id / mapping.statistics.total_cards * 100).toFixed(1)}%)`);
   console.log(`   Cards with hash ID: ${mapping.statistics.cards_with_hash_id}`);
   console.log(`   Hash IDs successfully mapped: ${mapping.statistics.hash_ids_mapped}`);
