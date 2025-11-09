@@ -152,11 +152,21 @@ export class SetViewer {
     if (!rarityFilter) return;
 
     const rarities = [...new Set(cards.map(card => card.rarity).filter(Boolean))];
-    rarities.sort();
+
+    // Sort by rarity (rarest first)
+    const rarityOrder = ['enchanted', 'iconic', 'legendary', 'epic', 'super rare', 'rare', 'uncommon', 'common'];
+    rarities.sort((a, b) => {
+      const aIndex = rarityOrder.indexOf(a.toLowerCase());
+      const bIndex = rarityOrder.indexOf(b.toLowerCase());
+      // If not found, put at end
+      const aPos = aIndex === -1 ? 999 : aIndex;
+      const bPos = bIndex === -1 ? 999 : bIndex;
+      return aPos - bPos;
+    });
 
     // Clear existing options (except "All Rarities")
     rarityFilter.innerHTML = '<option value="">All Rarities</option>';
-    
+
     rarities.forEach(rarity => {
       const option = document.createElement('option');
       option.value = rarity;

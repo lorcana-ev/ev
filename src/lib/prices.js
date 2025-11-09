@@ -5,28 +5,72 @@ import { median, mean, trimOutliers } from './util.js';
 export class MultiSourcePricing {
   constructor(allSources) {
     this.sources = {};
-    this.defaultPriority = ['justtcg', 'dreamborn', 'lorcast'];
+    this.defaultPriority = ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'];
     this.sourceLabels = {
+      manual_tcgplayer: 'TCGPlayer',
+      justtcg: 'JustTCG',
       dreamborn: 'Dreamborn',
-      lorcast: 'Lorcast', 
-      justtcg: 'JustTCG'
+      lorcast: 'Lorcast'
     };
-    
-    // Index each source
+
+    // Index each source in priority order
+    if (allSources.manual_tcgplayer) {
+      this.sources.manual_tcgplayer = this.indexManualTcgPlayerPricing(allSources.manual_tcgplayer);
+    }
+    if (allSources.justtcg) {
+      this.sources.justtcg = this.indexJustTcgPricing(allSources.justtcg);
+    }
     if (allSources.dreamborn) {
       this.sources.dreamborn = this.indexDreambornPricing(allSources.dreamborn);
     }
     if (allSources.lorcast) {
       this.sources.lorcast = this.indexLorcastPricing(allSources.lorcast);
     }
-    if (allSources.justtcg) {
-      this.sources.justtcg = this.indexJustTcgPricing(allSources.justtcg);
-    }
-    if (allSources.unified) {
-      this.sources.unified = indexPrices(allSources.unified);
-    }
   }
-  
+
+  indexManualTcgPlayerPricing(manualData) {
+    const idx = new Map();
+    if (!manualData?.cards) return idx;
+
+    for (const [cardId, cardPricing] of Object.entries(manualData.cards)) {
+      // Handle base variant
+      if (cardPricing.base_price !== null && cardPricing.base_price !== undefined && cardPricing.base_price > 0) {
+        idx.set(`${cardId}-base`, {
+          market: cardPricing.base_price,
+          low: cardPricing.base_price,
+          median: cardPricing.base_price,
+          ts: cardPricing.last_updated
+        });
+      }
+
+      // Handle foil variant
+      if (cardPricing.foil_price !== null && cardPricing.foil_price !== undefined && cardPricing.foil_price > 0) {
+        const foilPriceData = {
+          market: cardPricing.foil_price,
+          low: cardPricing.foil_price,
+          median: cardPricing.foil_price,
+          ts: cardPricing.last_updated
+        };
+
+        idx.set(`${cardId}-foil`, foilPriceData);
+
+        // Check if this might be an enchanted card (high value, high card number)
+        const cardNumber = parseInt(cardId.split('-')[1] || '0');
+        const hasOnlyFoil = !cardPricing.base_price;
+        const isHighValue = cardPricing.foil_price > 20;
+        const isPotentiallyEnchanted = hasOnlyFoil && isHighValue && cardNumber > 204;
+
+        // Also create enchanted variant pricing for potential enchanted cards
+        if (isPotentiallyEnchanted) {
+          idx.set(`${cardId}-foil-enchanted`, foilPriceData);
+          idx.set(`${cardId}-special-enchanted`, foilPriceData);
+        }
+      }
+    }
+
+    return idx;
+  }
+
   indexDreambornPricing(dreambornData) {
     const idx = new Map();
     if (!dreambornData || typeof dreambornData !== 'object') return idx;
@@ -81,29 +125,47 @@ export class MultiSourcePricing {
   indexLorcastPricing(lorcastData) {
     const idx = new Map();
     if (!lorcastData?.cards) return idx;
-    
+
     for (const [cardId, card] of Object.entries(lorcastData.cards)) {
-      if (!card?.raw_data?.prices?.usd) continue;
-      
-      const price = parseFloat(card.raw_data.prices.usd);
-      if (price >= 999) continue; // Skip placeholder prices
-      
-      const priceData = {
-        market: price,
-        low: price,
-        median: price,
-        ts: null
-      };
-      
-      // Base variant (assume all Lorcast prices are base)
-      idx.set(`${cardId}-base`, priceData);
-      
-      // If foil is available, use same pricing (Lorcast doesn't separate foil pricing)
-      if (card.foil_available) {
-        idx.set(`${cardId}-foil`, priceData);
+      if (!card?.raw_data?.prices) continue;
+
+      const basePrice = card.raw_data.prices.usd ? parseFloat(card.raw_data.prices.usd) : null;
+      const foilPrice = card.raw_data.prices.usd_foil ? parseFloat(card.raw_data.prices.usd_foil) : null;
+
+      // Base variant
+      if (basePrice && basePrice < 999) { // Skip placeholder prices
+        idx.set(`${cardId}-base`, {
+          market: basePrice,
+          low: basePrice,
+          median: basePrice,
+          ts: null
+        });
+      }
+
+      // Foil variant - use separate usd_foil price if available
+      if (foilPrice && foilPrice < 999) {
+        const foilPriceData = {
+          market: foilPrice,
+          low: foilPrice,
+          median: foilPrice,
+          ts: null
+        };
+
+        idx.set(`${cardId}-foil`, foilPriceData);
+
+        // Check if this might be an enchanted card
+        const cardNumber = parseInt(cardId.split('-')[1] || '0');
+        const hasOnlyFoil = !basePrice;
+        const isHighValue = foilPrice > 20;
+        const isPotentiallyEnchanted = hasOnlyFoil && isHighValue && cardNumber > 204;
+
+        if (isPotentiallyEnchanted) {
+          idx.set(`${cardId}-foil-enchanted`, foilPriceData);
+          idx.set(`${cardId}-special-enchanted`, foilPriceData);
+        }
       }
     }
-    
+
     return idx;
   }
   

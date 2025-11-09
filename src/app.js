@@ -40,7 +40,7 @@ let state = {
   availableSets: [],
   selectedSet: '010', // Default to Whispers in the Well (latest set)
   allBoxPricing: null,
-  pricingPriority: ['justtcg', 'dreamborn', 'lorcast'], // Default priority order
+  pricingPriority: ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'], // Default priority order
   priceComparisons: null,
   cardsById: new Map(), // Card ID -> full card data
   sortState: { column: 'variance', direction: 'desc' } // Price comparisons sort state
@@ -224,7 +224,7 @@ function wireUI() {
         state.selectedSet = '010';
       }
       // Reset pricing priority to default
-      state.pricingPriority = ['justtcg', 'dreamborn', 'lorcast'];
+      state.pricingPriority = ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'];
       updatePricingSourceSelectors();
       setViewer.setPricingPriority(state.pricingPriority);
       applyScenarioAndRender();
@@ -256,11 +256,12 @@ function updatePricingPriority() {
 }
 
 function updatePricingSourceSelectors() {
-  const sources = ['dreamborn', 'lorcast', 'justtcg'];
+  const sources = ['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'];
   const labels = {
+    manual_tcgplayer: 'TCGPlayer',
+    justtcg: 'JustTCG',
     dreamborn: 'Dreamborn',
-    lorcast: 'Lorcast',
-    justtcg: 'JustTCG'
+    lorcast: 'Lorcast'
   };
   
   [els.pricingSource1, els.pricingSource2, els.pricingSource3].forEach((el, index) => {
@@ -500,7 +501,7 @@ function renderComparisonsTable() {
     let aVal, bVal;
 
     // Handle nested price values
-    if (['dreamborn', 'lorcast', 'justtcg'].includes(column)) {
+    if (['manual_tcgplayer', 'justtcg', 'dreamborn', 'lorcast'].includes(column)) {
       aVal = a.prices[column] ?? -Infinity;
       bVal = b.prices[column] ?? -Infinity;
     } else {
@@ -538,18 +539,20 @@ function renderComparisonsTable() {
   }
 
   const rows = displayComparisons.map(comp => {
+    const manualPrice = comp.prices.manual_tcgplayer ?? null;
+    const justTcgPrice = comp.prices.justtcg ?? null;
     const dreambornPrice = comp.prices.dreamborn ?? null;
     const lorcastPrice = comp.prices.lorcast ?? null;
-    const justTcgPrice = comp.prices.justtcg ?? null;
 
     return `
       <tr>
         <td class="card-name">${comp.full_name}</td>
         <td>${comp.rarity}</td>
         <td>${comp.finish}</td>
+        <td class="price-cell">${manualPrice ? fmt(manualPrice) : '—'}</td>
+        <td class="price-cell">${justTcgPrice ? fmt(justTcgPrice) : '—'}</td>
         <td class="price-cell">${dreambornPrice ? fmt(dreambornPrice) : '—'}</td>
         <td class="price-cell">${lorcastPrice ? fmt(lorcastPrice) : '—'}</td>
-        <td class="price-cell">${justTcgPrice ? fmt(justTcgPrice) : '—'}</td>
         <td class="variance-cell">${fmt(comp.variance)}</td>
         <td class="percent-cell">${comp.percentDiff.toFixed(1)}%</td>
       </tr>

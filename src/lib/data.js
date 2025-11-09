@@ -2,27 +2,29 @@
 import { mapRarity } from './util.js';
 
 export async function loadAll() {
-  const [filters, sorts, cards, unifiedPrices, dreambornPrices, lorcastData, justTcgData, packModel] = await Promise.all([
+  const [filters, sorts, cards, manualTcgPlayerData, dreambornPrices, lorcastData, justTcgData, packModel] = await Promise.all([
     fetch('./data/filters.json').then(r => r.json()),
     fetch('./data/sorts.json').then(r => r.json()),
     fetch('./data/cards.json').then(r => r.json()),
-    fetch('./data/UNIFIED_PRICING.json').then(r => r.json()),
+    fetch('./data/MANUAL_TCGPLAYER.json').then(r => r.json()).catch(() => null),
     fetch('./data/USD.json').then(r => r.json()).catch(() => null),
     fetch('./data/LORCAST.json').then(r => r.json()).catch(() => null),
     fetch('./data/JUSTTCG.json').then(r => r.json()).catch(() => null),
     fetch('./config/pack_model.json').then(r => r.json()),
   ]);
   const printings = buildPrintings(cards);
-  
-  // Bundle all pricing sources - three main sources: Dreamborn (USD.json), Lorcast, JustTCG
+
+  // Bundle all pricing sources - four sources with priority: Manual TCGPlayer > JustTCG > Dreamborn > Lorcast
   const allPricingSources = {
-    dreamborn: dreambornPrices,
-    lorcast: lorcastData,
+    manual_tcgplayer: manualTcgPlayerData,
     justtcg: justTcgData,
-    unified: unifiedPrices  // Keep unified as fallback/reference
+    dreamborn: dreambornPrices,
+    lorcast: lorcastData
   };
-  
-  return { filters, sorts, cards, printings, prices: unifiedPrices, allPricingSources, packModel };
+
+  // For backward compatibility, use manual pricing as the default price index
+  // This will be used by the primary price index (state.priceIndex in app.js)
+  return { filters, sorts, cards, printings, prices: manualTcgPlayerData, allPricingSources, packModel };
 }
 
 /**

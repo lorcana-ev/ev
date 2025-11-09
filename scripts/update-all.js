@@ -16,8 +16,11 @@
  * - data/cards.json (Dreamborn cards)
  * - data/cards-formatted.json (alias)
  *
- * The web application uses these sources directly with automatic fallback:
- * JustTCG (primary) → Dreamborn (secondary) → Lorcast (tertiary)
+ * The web application uses these sources with priority:
+ * Manual TCGPlayer → JustTCG → Dreamborn → Lorcast
+ *
+ * Note: Manual pricing (data/MANUAL_TCGPLAYER.json) is updated separately
+ * using scripts/manual-price-entry.js or scripts/manual-price-entry-set10.js
  *
  * See docs/DATA_UPDATE_PIPELINE.md for details
  */
@@ -81,12 +84,6 @@ async function updateAll() {
       'Dreamborn Data Update'
     );
 
-    // 4. Rebuild unified pricing (required by web app)
-    await runScript(
-      path.join(__dirname, 'rebuild-unified-pricing.js'),
-      'Rebuild Unified Pricing'
-    );
-
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
     console.log('\n' + '═'.repeat(60));
@@ -98,12 +95,12 @@ async function updateAll() {
     console.log('   ✓ Lorcast card data (data/LORCAST.json)');
     console.log('   ✓ Dreamborn pricing (data/USD.json)');
     console.log('   ✓ Dreamborn cards (data/cards.json, data/cards-formatted.json)');
-    console.log('   ✓ Unified pricing (data/UNIFIED_PRICING.json)');
     console.log('\n💡 Next steps:');
     console.log('   • Start the website to view updated prices');
+    console.log('   • Update manual pricing: node scripts/manual-price-entry-set10.js');
     console.log('   • Run scripts/compare-pricing-sources.js to spot check prices');
     console.log('\n📖 Documentation:');
-    console.log('   • See docs/DATA_UPDATE_PIPELINE.md for details\n');
+    console.log('   • See docs/MANUAL_PRICE_ENTRY.md for manual pricing workflow\n');
 
   } catch (error) {
     console.error('\n❌ Update failed:', error.message);
