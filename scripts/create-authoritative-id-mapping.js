@@ -153,6 +153,16 @@ function createAuthoritativeMapping(sources) {
       continue;
     }
     
+    // Skip promo variants with non-numeric card numbers (e.g., "13/P3", "27/P2")
+    // or cards explicitly marked as promo rarity
+    const hasPromoNumber = number.includes('P2') || number.includes('P3') || number.includes('/');
+    const isPromoRarity = card.rarity === 'promo';
+    
+    if (hasPromoNumber || isPromoRarity) {
+      mapping.statistics.promo_cards_skipped++;
+      continue;
+    }
+    
     // Create canonical ID (set-number format with zero-padded number)
     const paddedNumber = number.padStart(3, '0');
     const canonicalId = `${setId}-${paddedNumber}`;

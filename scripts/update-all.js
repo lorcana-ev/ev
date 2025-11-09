@@ -4,17 +4,20 @@
  *
  * This script fetches all pricing and card data from external sources:
  * 1. JustTCG API - Real-time pricing with variants
- * 2. Lorcast API - Card metadata and analysis
+ * 2. Lorcast API - Card metadata and TCGPlayer IDs
  * 3. Dreamborn CDN - TCGPlayer pricing + card database
+ * 4. Authoritative Mapping - Card ID and finish mappings
  *
  * Duration: ~1-2 minutes
  *
  * Output Files:
  * - data/JUSTTCG.json (JustTCG pricing)
- * - data/LORCAST.json (Lorcast metadata)
+ * - data/LORCAST.json (Lorcast metadata with TCGPlayer IDs)
  * - data/USD.json (Dreamborn pricing)
  * - data/cards.json (Dreamborn cards)
  * - data/cards-formatted.json (alias)
+ * - data/AUTHORITATIVE_CARD_ID_MAPPING.json (comprehensive mapping)
+ * - data/CARD_ID_LOOKUP.json (simplified hash→canonical lookup)
  *
  * The web application uses these sources with priority:
  * Manual TCGPlayer → JustTCG → Dreamborn → Lorcast
@@ -22,7 +25,7 @@
  * Note: Manual pricing (data/MANUAL_TCGPLAYER.json) is updated separately
  * using scripts/manual-price-entry.js or scripts/manual-price-entry-set10.js
  *
- * See docs/DATA_UPDATE_PIPELINE.md for details
+ * See docs/DATA_UPDATE_PIPELINE.md and docs/CARD_ID_MAPPING.md for details
  */
 
 import { spawn } from 'child_process';
@@ -84,6 +87,12 @@ async function updateAll() {
       'Dreamborn Data Update'
     );
 
+    // 4. Rebuild authoritative card ID mapping
+    await runScript(
+      path.join(__dirname, 'create-authoritative-id-mapping.js'),
+      'Rebuild Authoritative Card ID Mapping'
+    );
+
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
     console.log('\n' + '═'.repeat(60));
@@ -95,12 +104,14 @@ async function updateAll() {
     console.log('   ✓ Lorcast card data (data/LORCAST.json)');
     console.log('   ✓ Dreamborn pricing (data/USD.json)');
     console.log('   ✓ Dreamborn cards (data/cards.json, data/cards-formatted.json)');
+    console.log('   ✓ Card ID mappings (data/AUTHORITATIVE_CARD_ID_MAPPING.json, data/CARD_ID_LOOKUP.json)');
     console.log('\n💡 Next steps:');
     console.log('   • Start the website to view updated prices');
     console.log('   • Update manual pricing: node scripts/manual-price-entry-set10.js');
     console.log('   • Run scripts/compare-pricing-sources.js to spot check prices');
     console.log('\n📖 Documentation:');
-    console.log('   • See docs/MANUAL_PRICE_ENTRY.md for manual pricing workflow\n');
+    console.log('   • See docs/MANUAL_PRICE_ENTRY.md for manual pricing workflow');
+    console.log('   • See docs/CARD_ID_MAPPING.md for card ID mapping details\n');
 
   } catch (error) {
     console.error('\n❌ Update failed:', error.message);
