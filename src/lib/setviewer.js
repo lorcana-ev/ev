@@ -152,7 +152,8 @@ export class SetViewer {
     const rarityFilter = document.getElementById('rarityFilter');
     if (!rarityFilter) return;
 
-    const rarities = [...new Set(cards.map(card => card.rarity).filter(Boolean))];
+    // Get unique rarities, excluding 'promo'
+    const rarities = [...new Set(cards.map(card => card.rarity).filter(r => r && r.toLowerCase() !== 'promo'))];
 
     // Sort by rarity (rarest first)
     const rarityOrder = ['enchanted', 'iconic', 'legendary', 'epic', 'super rare', 'rare', 'uncommon', 'common'];
@@ -165,7 +166,10 @@ export class SetViewer {
       return aPos - bPos;
     });
 
-    // Clear existing options (except "All Rarities")
+    // Store current selection
+    const currentSelection = rarityFilter.value;
+
+    // Clear and rebuild options
     rarityFilter.innerHTML = '<option value="">All Rarities</option>';
 
     rarities.forEach(rarity => {
@@ -175,7 +179,13 @@ export class SetViewer {
       rarityFilter.appendChild(option);
     });
 
-    rarityFilter.value = this.currentFilters.rarity;
+    // Restore selection if it still exists in the list, otherwise reset to "All Rarities"
+    if (currentSelection && rarities.some(r => r === currentSelection)) {
+      rarityFilter.value = currentSelection;
+    } else {
+      rarityFilter.value = '';
+      this.currentFilters.rarity = '';
+    }
   }
 
   updateStats(cards) {
