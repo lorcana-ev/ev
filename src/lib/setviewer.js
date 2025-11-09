@@ -95,10 +95,18 @@ export class SetViewer {
   updateCards() {
     if (!this.currentSet || !this.allCards.length) return;
 
-    // Filter cards by current set
+    // Filter cards by current set and exclude promo cards
     let cards = this.allCards.filter(card => {
       const cardSet = card.setId || card.id?.split('-')[0];
-      return cardSet === this.currentSet;
+      const isCurrentSet = cardSet === this.currentSet;
+      
+      // Exclude promo cards (rarity === 'promo' or card numbers with P2/P3/slashes)
+      const isPromo = card.rarity === 'promo' || 
+                      String(card.number || '').includes('P2') ||
+                      String(card.number || '').includes('P3') ||
+                      String(card.number || '').includes('/');
+      
+      return isCurrentSet && !isPromo;
     });
 
     // Apply rarity filter
