@@ -35,6 +35,19 @@ function loadLorcastData() {
   }
 }
 
+function loadManualTcgPlayerData() {
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'MANUAL_TCGPLAYER.json');
+    if (fs.existsSync(filePath)) {
+      const data = fs.readFileSync(filePath, 'utf8');
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.error('⚠️  Error loading MANUAL_TCGPLAYER.json:', error.message);
+  }
+  return null;
+}
+
 function buildTcgPlayerMapping(lorcastData) {
   // Build a mapping of TCGPlayer ID → card ID using Lorcast data
   const mapping = {};
@@ -209,11 +222,14 @@ function extractJustTcgPricing(justTcgData) {
 }
 
 function buildUnifiedPricing() {
-  console.log('🔧 Rebuilding unified pricing from Dreamborn + JustTCG sources...\n');
+  console.log('🔧 Rebuilding unified pricing from 3 pricing sources...\n');
 
-  const dreambornDataRaw = loadDreambornPricing();
-  const justTcgData = loadJustTcgData();
-  const lorcastData = loadLorcastData();
+  // Load all data files
+  // NOTE: We have 3 PRICING sources (Dreamborn, JustTCG, Manual) + Lorcast for metadata
+  const dreambornDataRaw = loadDreambornPricing();    // PRICING SOURCE 1
+  const justTcgData = loadJustTcgData();              // PRICING SOURCE 2
+  const manualTcgPlayerData = loadManualTcgPlayerData(); // PRICING SOURCE 3
+  const lorcastData = loadLorcastData();              // METADATA ONLY (for TCGPlayer ID mapping)
 
   if (!dreambornDataRaw) {
     console.error('❌ Cannot proceed without Dreamborn pricing data');
@@ -221,23 +237,35 @@ function buildUnifiedPricing() {
   }
 
   // Build TCGPlayer ID mapping and remap Dreamborn hash-based entries
-  console.log('🔗 Building TCGPlayer ID mapping from Lorcast...');
+  // Lorcast provides card metadata including TCGPlayer IDs (not used for pricing)
+  console.log('🔗 Building TCGPlayer ID mapping from Lorcast (metadata only)...');
   const tcgPlayerMapping = buildTcgPlayerMapping(lorcastData);
   console.log(`   Found ${Object.keys(tcgPlayerMapping).length} TCGPlayer ID mappings`);
 
   console.log('\n🔄 Remapping Dreamborn hash-based card IDs...');
   const dreambornData = remapDreambornHashes(dreambornDataRaw, tcgPlayerMapping);
-  
+
   const unifiedData = {
     metadata: {
       created_at: new Date().toISOString(),
       last_updated: new Date().toISOString(),
-      sources: {
+      pricing_sources: {
+        // We have 3 pricing sources (Lorcast is metadata-only, not used for pricing)
         dreamborn: 0,
-        justtcg_api: 0
+        justtcg_api: 0,
+        manual_tcgplayer: 0
       },
-      version: '2.0.0',
-      note: 'Rebuilt with Dreamborn + JustTCG sources only'
+      source_priority: [
+        'manual_tcgplayer',  // 1st choice (most accurate)
+        'justtcg_api',       // 2nd choice
+        'dreamborn'          // 3rd choice
+      ],
+      data_files_used: {
+        pricing: ['MANUAL_TCGPLAYER.json', 'JUSTTCG.json', 'USD.json'],
+        metadata: ['LORCAST.json']  // Used for TCGPlayer ID mapping only
+      },
+      version: '3.0.0',
+      note: 'Simple preference: Manual TCGPlayer > JustTCG > Dreamborn. First available source is used. Lorcast is metadata-only.'
     },
     cards: {}
   };
@@ -251,26 +279,37 @@ function buildUnifiedPricing() {
   } else {
     console.log('⚠️  No JustTCG data found, using Dreamborn only');
   }
-  
+
+  // Load manual TCGPlayer pricing
+  let manualTcgPlayerPricing = {};
+  if (manualTcgPlayerData && manualTcgPlayerData.cards) {
+    console.log('📊 Loading Manual TCGPlayer pricing data...');
+    manualTcgPlayerPricing = manualTcgPlayerData.cards;
+    console.log(`   Found pricing for ${Object.keys(manualTcgPlayerPricing).length} cards`);
+  }
+
   console.log('\n🔄 Processing all cards...\n');
-  
-  // Get all unique card IDs from both sources
+
+  // Get all unique card IDs from all sources
   const allCardIds = new Set([
     ...Object.keys(dreambornData),
-    ...Object.keys(justTcgPricing)
+    ...Object.keys(justTcgPricing),
+    ...Object.keys(manualTcgPlayerPricing)
   ]);
   
   let cardsWithBothSources = 0;
   let cardsWithOnlyDreamborn = 0;
   let cardsWithOnlyJustTcg = 0;
+  let cardsWithOnlyManualTcgPlayer = 0;
   let cardsSkippedNoPricing = 0;
   const skippedCards = [];
 
   for (const cardId of allCardIds) {
     const dreambornPrice = dreambornData[cardId];
     const justTcgPrice = justTcgPricing[cardId];
-    
-    if (!dreambornPrice && !justTcgPrice) continue;
+    const manualTcgPlayerPrice = manualTcgPlayerPricing[cardId];
+
+    if (!dreambornPrice && !justTcgPrice && !manualTcgPlayerPrice) continue;
     
     const cardData = {
       cardId: cardId,
@@ -278,7 +317,7 @@ function buildUnifiedPricing() {
       unified_pricing: {}
     };
     
-    // Add Dreamborn data
+    // Add Dreamborn data (PRICING SOURCE 1)
     if (dreambornPrice && (dreambornPrice.base?.TP?.price > 0 || dreambornPrice.foil?.TP?.price > 0)) {
       cardData.sources.dreamborn = {
         base_price: dreambornPrice.base?.TP?.price || null,
@@ -286,76 +325,72 @@ function buildUnifiedPricing() {
         source: 'dreamborn_original',
         reliability: 'medium'
       };
-      unifiedData.metadata.sources.dreamborn++;
+      unifiedData.metadata.pricing_sources.dreamborn++;
     }
-    
-    // Add JustTCG data
+
+    // Add JustTCG data (PRICING SOURCE 2)
     if (justTcgPrice) {
       cardData.sources.justtcg_api = justTcgPrice;
-      unifiedData.metadata.sources.justtcg_api++;
+      unifiedData.metadata.pricing_sources.justtcg_api++;
+    }
+
+    // Add Manual TCGPlayer data (PRICING SOURCE 3 - HIGHEST PRIORITY)
+    // Manual pricing is always included when available and takes precedence
+    if (manualTcgPlayerPrice) {
+      cardData.sources.manual_tcgplayer = manualTcgPlayerPrice;
+      unifiedData.metadata.pricing_sources.manual_tcgplayer++;
     }
     
-    // Calculate unified pricing
-    const sourcesWithBase = Object.values(cardData.sources).filter(s => s.base_price && s.base_price > 0);
-    const sourcesWithFoil = Object.values(cardData.sources).filter(s => s.foil_price && s.foil_price > 0);
-    
+    // Calculate unified pricing using simple preference: Manual > JustTCG > Dreamborn
     let basePrice = null;
     let foilPrice = null;
     let baseMethod = 'no_data';
     let foilMethod = 'no_data';
     let confidence = 'no_data';
-    
-    // Calculate base price
-    if (sourcesWithBase.length === 1) {
-      basePrice = sourcesWithBase[0].base_price;
-      baseMethod = 'single_source';
-    } else if (sourcesWithBase.length > 1) {
-      // Weighted average (JustTCG gets 2x weight)
-      let totalWeight = 0;
-      let weightedSum = 0;
-      
-      sourcesWithBase.forEach(source => {
-        const weight = source.source === 'justtcg_api' ? 2.0 : 1.0;
-        weightedSum += source.base_price * weight;
-        totalWeight += weight;
-      });
-      
-      basePrice = Math.round((weightedSum / totalWeight) * 100) / 100;
-      baseMethod = 'weighted_average';
+    let baseSource = null;
+    let foilSource = null;
+
+    // Priority order for base price
+    if (cardData.sources.manual_tcgplayer?.base_price > 0) {
+      basePrice = cardData.sources.manual_tcgplayer.base_price;
+      baseMethod = 'manual';
+      baseSource = 'manual_tcgplayer';
+    } else if (cardData.sources.justtcg_api?.base_price > 0) {
+      basePrice = cardData.sources.justtcg_api.base_price;
+      baseMethod = 'justtcg';
+      baseSource = 'justtcg_api';
+    } else if (cardData.sources.dreamborn?.base_price > 0) {
+      basePrice = cardData.sources.dreamborn.base_price;
+      baseMethod = 'dreamborn';
+      baseSource = 'dreamborn';
+    }
+
+    // Priority order for foil price
+    if (cardData.sources.manual_tcgplayer?.foil_price > 0) {
+      foilPrice = cardData.sources.manual_tcgplayer.foil_price;
+      foilMethod = 'manual';
+      foilSource = 'manual_tcgplayer';
+    } else if (cardData.sources.justtcg_api?.foil_price > 0) {
+      foilPrice = cardData.sources.justtcg_api.foil_price;
+      foilMethod = 'justtcg';
+      foilSource = 'justtcg_api';
+    } else if (cardData.sources.dreamborn?.foil_price > 0) {
+      foilPrice = cardData.sources.dreamborn.foil_price;
+      foilMethod = 'dreamborn';
+      foilSource = 'dreamborn';
     }
     
-    // Calculate foil price (similar logic)
-    if (sourcesWithFoil.length === 1) {
-      foilPrice = sourcesWithFoil[0].foil_price;
-      foilMethod = 'single_source';
-    } else if (sourcesWithFoil.length > 1) {
-      let totalWeight = 0;
-      let weightedSum = 0;
-      
-      sourcesWithFoil.forEach(source => {
-        const weight = source.source === 'justtcg_api' ? 2.0 : 1.0;
-        weightedSum += source.foil_price * weight;
-        totalWeight += weight;
-      });
-      
-      foilPrice = Math.round((weightedSum / totalWeight) * 100) / 100;
-      foilMethod = 'weighted_average';
-    }
-    
-    // Determine confidence
-    const hasBothSources = Object.keys(cardData.sources).length > 1;
-    const hasJustTcg = !!cardData.sources.justtcg_api;
-    
-    if (baseMethod === 'weighted_average' || foilMethod === 'weighted_average') {
-      confidence = 'high';
-    } else if (hasJustTcg) {
-      confidence = 'high';
-    } else if (baseMethod !== 'no_data' || foilMethod !== 'no_data') {
-      confidence = 'medium';
+    // Determine confidence based on source quality
+    if (baseMethod === 'manual' || foilMethod === 'manual') {
+      confidence = 'high'; // Manual pricing is most reliable
+    } else if (baseMethod === 'justtcg' || foilMethod === 'justtcg') {
+      confidence = 'high'; // JustTCG is reliable
+    } else if (baseMethod === 'dreamborn' || foilMethod === 'dreamborn') {
+      confidence = 'medium'; // Dreamborn is less reliable
     } else {
-      confidence = 'low';
+      confidence = 'low'; // No valid pricing
     }
-    
+
     cardData.unified_pricing = {
       base: basePrice,
       foil: foilPrice,
@@ -363,8 +398,8 @@ function buildUnifiedPricing() {
       last_calculated: new Date().toISOString(),
       base_method: baseMethod,
       foil_method: foilMethod,
-      base_sources: sourcesWithBase.map(s => s.source),
-      foil_sources: sourcesWithFoil.map(s => s.source)
+      base_source: baseSource,
+      foil_source: foilSource
     };
 
     // Skip cards with no actual pricing sources
@@ -374,10 +409,13 @@ function buildUnifiedPricing() {
         cardId: cardId,
         inDreamborn: !!dreambornPrice,
         inJustTcg: !!justTcgPrice,
+        inManualTcgPlayer: !!manualTcgPlayerPrice,
         dreambornHasBase: dreambornPrice?.base?.TP?.price > 0,
         dreambornHasFoil: dreambornPrice?.foil?.TP?.price > 0,
         justTcgHasBase: !!justTcgPrice?.base_price,
-        justTcgHasFoil: !!justTcgPrice?.foil_price
+        justTcgHasFoil: !!justTcgPrice?.foil_price,
+        manualTcgPlayerHasBase: !!manualTcgPlayerPrice?.base_price,
+        manualTcgPlayerHasFoil: !!manualTcgPlayerPrice?.foil_price
       });
       continue; // Card exists in source data but has no valid pricing
     }
@@ -385,12 +423,15 @@ function buildUnifiedPricing() {
     unifiedData.cards[cardId] = cardData;
 
     // Count source combinations
-    if (hasBothSources) {
+    const sourceCount = Object.keys(cardData.sources).length;
+    if (sourceCount > 1) {
       cardsWithBothSources++;
     } else if (cardData.sources.dreamborn) {
       cardsWithOnlyDreamborn++;
     } else if (cardData.sources.justtcg_api) {
       cardsWithOnlyJustTcg++;
+    } else if (cardData.sources.manual_tcgplayer) {
+      cardsWithOnlyManualTcgPlayer++;
     }
   }
   
@@ -402,14 +443,16 @@ function buildUnifiedPricing() {
   
   console.log('📊 Rebuilt Unified Pricing Summary:');
   console.log(`   Total cards with pricing: ${Object.keys(unifiedData.cards).length}`);
-  console.log(`   Cards with both sources: ${cardsWithBothSources}`);
+  console.log(`   Cards with multiple sources: ${cardsWithBothSources}`);
   console.log(`   Cards with only Dreamborn: ${cardsWithOnlyDreamborn}`);
   console.log(`   Cards with only JustTCG: ${cardsWithOnlyJustTcg}`);
+  console.log(`   Cards with only Manual TCGPlayer: ${cardsWithOnlyManualTcgPlayer}`);
   if (cardsSkippedNoPricing > 0) {
     console.log(`   ⚠️  Cards skipped (no valid pricing): ${cardsSkippedNoPricing}`);
   }
-  console.log(`   Dreamborn coverage: ${unifiedData.metadata.sources.dreamborn} cards`);
-  console.log(`   JustTCG coverage: ${unifiedData.metadata.sources.justtcg_api} cards`);
+  console.log(`   Dreamborn coverage: ${unifiedData.metadata.pricing_sources.dreamborn} cards`);
+  console.log(`   JustTCG coverage: ${unifiedData.metadata.pricing_sources.justtcg_api} cards`);
+  console.log(`   Manual TCGPlayer coverage: ${unifiedData.metadata.pricing_sources.manual_tcgplayer} cards`);
 
   // Show details about skipped cards
   if (skippedCards.length > 0) {
@@ -429,7 +472,8 @@ function buildUnifiedPricing() {
         const reasons = [];
         if (card.inDreamborn && !card.dreambornHasBase && !card.dreambornHasFoil) reasons.push('Dreamborn: $0');
         if (card.inJustTcg && !card.justTcgHasBase && !card.justTcgHasFoil) reasons.push('JustTCG: $0');
-        if (!card.inDreamborn && !card.inJustTcg) reasons.push('Not in any source');
+        if (card.inManualTcgPlayer && !card.manualTcgPlayerHasBase && !card.manualTcgPlayerHasFoil) reasons.push('Manual TCGPlayer: $0');
+        if (!card.inDreamborn && !card.inJustTcg && !card.inManualTcgPlayer) reasons.push('Not in any source');
         console.log(`      ${card.cardId}: ${reasons.join(', ')}`);
       });
     });
@@ -439,24 +483,32 @@ function buildUnifiedPricing() {
   const set9Cards = Object.keys(unifiedData.cards).filter(cardId => cardId.startsWith('009-'));
   const set9WithJustTcg = set9Cards.filter(cardId => unifiedData.cards[cardId].sources.justtcg_api);
   const set9WithDreamborn = set9Cards.filter(cardId => unifiedData.cards[cardId].sources.dreamborn);
+  const set9WithManualTcgPlayer = set9Cards.filter(cardId => unifiedData.cards[cardId].sources.manual_tcgplayer);
 
   const set10Cards = Object.keys(unifiedData.cards).filter(cardId => cardId.startsWith('010-'));
   const set10WithJustTcg = set10Cards.filter(cardId => unifiedData.cards[cardId].sources.justtcg_api);
   const set10WithDreamborn = set10Cards.filter(cardId => unifiedData.cards[cardId].sources.dreamborn);
-  const set10WithBothSources = set10Cards.filter(cardId =>
-    unifiedData.cards[cardId].sources.justtcg_api && unifiedData.cards[cardId].sources.dreamborn
+  const set10WithManualTcgPlayer = set10Cards.filter(cardId => unifiedData.cards[cardId].sources.manual_tcgplayer);
+  const set10WithMultipleSources = set10Cards.filter(cardId =>
+    Object.keys(unifiedData.cards[cardId].sources).length > 1
   );
 
   console.log(`\\n🎯 Set 9 (Fabled) Coverage:`);
   console.log(`   Total cards with pricing: ${set9Cards.length}`);
   console.log(`   Cards with JustTCG data: ${set9WithJustTcg.length}`);
   console.log(`   Cards with Dreamborn data: ${set9WithDreamborn.length}`);
+  if (set9WithManualTcgPlayer.length > 0) {
+    console.log(`   Cards with Manual TCGPlayer data: ${set9WithManualTcgPlayer.length}`);
+  }
 
   console.log(`\\n🎯 Set 10 (Whispers in the Well) Coverage:`);
   console.log(`   Total cards with pricing: ${set10Cards.length}`);
   console.log(`   Cards with JustTCG data: ${set10WithJustTcg.length}`);
   console.log(`   Cards with Dreamborn data: ${set10WithDreamborn.length}`);
-  console.log(`   Cards with both sources: ${set10WithBothSources.length}`);
+  if (set10WithManualTcgPlayer.length > 0) {
+    console.log(`   Cards with Manual TCGPlayer data: ${set10WithManualTcgPlayer.length}`);
+  }
+  console.log(`   Cards with multiple sources: ${set10WithMultipleSources.length}`);
 
   // Show some examples from Set 10
   if (set10Cards.length > 0) {
