@@ -6,13 +6,23 @@ export async function loadAll() {
     fetch('./data/filters.json').then(r => r.json()),
     fetch('./data/sorts.json').then(r => r.json()),
     fetch('./data/cards.json').then(r => r.json()),
-    fetch('./data/MANUAL_TCGPLAYER.json').then(r => r.json()).catch(() => null),
+    fetch('./data/MANUAL_TCGPLAYER.json').then(r => r.json()).catch(err => {
+      console.warn('Manual TCGPlayer pricing not available:', err.message);
+      return null;
+    }),
     fetch('./data/USD.json').then(r => r.json()).catch(() => null),
     fetch('./data/LORCAST.json').then(r => r.json()).catch(() => null),
     fetch('./data/JUSTTCG.json').then(r => r.json()).catch(() => null),
     fetch('./config/pack_model.json').then(r => r.json()),
   ]);
   const printings = buildPrintings(cards);
+
+  console.log('Loaded pricing sources:', {
+    manual_tcgplayer: manualTcgPlayerData ? Object.keys(manualTcgPlayerData.cards || {}).length + ' cards' : 'not available',
+    justtcg: justTcgData ? 'loaded' : 'not available',
+    dreamborn: dreambornPrices ? Object.keys(dreambornPrices).length + ' entries' : 'not available',
+    lorcast: lorcastData ? 'loaded' : 'not available'
+  });
 
   // Bundle all pricing sources - four sources with priority: Manual TCGPlayer > JustTCG > Dreamborn > Lorcast
   const allPricingSources = {
@@ -22,9 +32,10 @@ export async function loadAll() {
     lorcast: lorcastData
   };
 
-  // For backward compatibility, use manual pricing as the default price index
-  // This will be used by the primary price index (state.priceIndex in app.js)
-  return { filters, sorts, cards, printings, prices: manualTcgPlayerData, allPricingSources, packModel };
+  // For backward compatibility with code that uses state.priceIndex,
+  // return Dreamborn as the fallback (it has the most complete data structure)
+  // The primary pricing now comes from multiSourcePricing which handles all 4 sources
+  return { filters, sorts, cards, printings, prices: dreambornPrices, allPricingSources, packModel };
 }
 
 /**
