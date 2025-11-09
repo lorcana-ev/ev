@@ -236,19 +236,20 @@ function wireUI() {
 function updatePricingPriority() {
   const newPriority = [
     els.pricingSource1?.value,
-    els.pricingSource2?.value, 
+    els.pricingSource2?.value,
     els.pricingSource3?.value
   ].filter(Boolean);
-  
+
   // Only update if we have valid selections and they're different
-  if (newPriority.length === 3 && 
+  if (newPriority.length === 3 &&
       JSON.stringify(newPriority) !== JSON.stringify(state.pricingPriority)) {
+    console.log('Pricing priority changed:', state.pricingPriority, '→', newPriority);
     state.pricingPriority = newPriority;
     state.multiSourcePricing.setPriority(newPriority);
-    
+
     // Update Set Viewer pricing priority
     setViewer.setPricingPriority(newPriority);
-    
+
     // Recompute with new priority
     recomputeSummaries();
     renderAll();
@@ -287,16 +288,20 @@ function updatePricingSourceSelectors() {
 
 function recomputeSummaries() {
   const priceType = 'market';
-  
+
+  console.log('Recomputing summaries with priority:', state.pricingPriority);
+
   // Use multi-source pricing with current priority
   state.summaries = buildRaritySummaries(
-    state.printings, 
-    state.multiSourcePricing, 
-    priceType, 
-    state.selectedSet, 
+    state.printings,
+    state.multiSourcePricing,
+    priceType,
+    state.selectedSet,
     state.pricingPriority
   );
-  
+
+  console.log('Summaries computed:', Object.keys(state.summaries).length, 'rarity/finish combinations');
+
   // Build price comparisons for display
   state.priceComparisons = buildPriceComparisons(
     state.printings,

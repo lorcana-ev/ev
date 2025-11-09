@@ -306,21 +306,24 @@ export class SetViewer {
 
   getCardPrice(card, variant = 'base') {
     if (!card.id) return null;
-    
-    // Use multi-source pricing if available and priority is set
+
+    // Use multi-source pricing with current priority
     if (this.multiSourcePricing && this.currentPricingPriority) {
       const priceData = this.multiSourcePricing.getPrice(`${card.id}-${variant}`, this.currentPricingPriority);
       if (priceData) {
         return priceData.market || priceData.median || priceData.low || null;
       }
+      // If multiSourcePricing is being used but returns null, respect that
+      // (don't fall back to priceIndex - user selected specific sources)
+      return null;
     }
-    
-    // Fallback to unified pricing
+
+    // Fallback to legacy single-source pricing (only if multiSourcePricing not available)
     if (this.priceIndex) {
       const priceData = this.priceIndex.get(`${card.id}-${variant}`);
       return priceData?.market || priceData?.median || priceData?.low || null;
     }
-    
+
     return null;
   }
 

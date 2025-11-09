@@ -235,7 +235,7 @@ export class MultiSourcePricing {
   
   getPrice(printingId, sourcePriority = null) {
     const priority = sourcePriority || this.defaultPriority;
-    
+
     for (const source of priority) {
       if (this.sources[source]?.has(printingId)) {
         const priceData = this.sources[source].get(printingId);
@@ -245,7 +245,7 @@ export class MultiSourcePricing {
         };
       }
     }
-    
+
     return null;
   }
   
