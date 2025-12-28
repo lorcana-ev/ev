@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "created_at": "2025-11-09T03:27:46.332Z",
+    "created_at": "2025-12-28T18:37:04.452Z",
     "version": "1.0.0",
     "description": "Authoritative mapping between card ID formats from different sources (Sets 1-10 only, no promo cards)",
     "sources": {
-      "cards_json": 2382,
+      "cards_json": 2390,
       "lorcast": 2352,
-      "justtcg": 2344,
-      "dreamborn_prices": 2382,
+      "justtcg": 2359,
+      "dreamborn_prices": 2390,
       "manual_tcgplayer": 42
     },
     "id_formats": {
@@ -14658,7 +14658,7 @@
     "003-002": {
       "canonical_id": "003-002",
       "set_id": "003",
-      "number": "002",
+      "number": "2",
       "name": "Bernard",
       "title": "Brand-New Agent",
       "rarity": "rare",
@@ -14692,47 +14692,13 @@
     "003-003": {
       "canonical_id": "003-003",
       "set_id": "003",
-      "number": "003",
+      "number": "3",
       "name": "Chernabog",
       "title": "Evildoer",
       "rarity": "super rare",
       "identifiers": {
         "dreamborn_hash": null,
         "tcgplayer_id": 539061,
-        "justtcg_available": true,
-        "lorcast_available": true,
-        "manual_tcgplayer_available": false
-      },
-      "pricing_availability": {
-        "dreamborn": true,
-        "justtcg": true,
-        "lorcast": true,
-        "manual_tcgplayer": false
-      },
-      "finish_mappings": {
-        "base": [
-          "dreamborn",
-          "justtcg",
-          "lorcast"
-        ],
-        "foil": [
-          "dreamborn",
-          "justtcg",
-          "lorcast"
-        ],
-        "special": []
-      }
-    },
-    "003-04c": {
-      "canonical_id": "003-04c",
-      "set_id": "003",
-      "number": "4c",
-      "name": "Dalmatian Puppy",
-      "title": "Tail Wagger",
-      "rarity": "common",
-      "identifiers": {
-        "dreamborn_hash": null,
-        "tcgplayer_id": 532869,
         "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": false
@@ -14791,16 +14757,16 @@
         "special": []
       }
     },
-    "003-04e": {
-      "canonical_id": "003-04e",
+    "003-04b": {
+      "canonical_id": "003-04b",
       "set_id": "003",
-      "number": "4e",
+      "number": "4b",
       "name": "Dalmatian Puppy",
       "title": "Tail Wagger",
       "rarity": "common",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": 532871,
+        "tcgplayer_id": 532868,
         "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": false
@@ -14825,16 +14791,16 @@
         "special": []
       }
     },
-    "003-04b": {
-      "canonical_id": "003-04b",
+    "003-04c": {
+      "canonical_id": "003-04c",
       "set_id": "003",
-      "number": "4b",
+      "number": "4c",
       "name": "Dalmatian Puppy",
       "title": "Tail Wagger",
       "rarity": "common",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": 532868,
+        "tcgplayer_id": 532869,
         "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": false
@@ -14893,10 +14859,44 @@
         "special": []
       }
     },
+    "003-04e": {
+      "canonical_id": "003-04e",
+      "set_id": "003",
+      "number": "4e",
+      "name": "Dalmatian Puppy",
+      "title": "Tail Wagger",
+      "rarity": "common",
+      "identifiers": {
+        "dreamborn_hash": null,
+        "tcgplayer_id": 532871,
+        "justtcg_available": true,
+        "lorcast_available": true,
+        "manual_tcgplayer_available": false
+      },
+      "pricing_availability": {
+        "dreamborn": true,
+        "justtcg": true,
+        "lorcast": true,
+        "manual_tcgplayer": false
+      },
+      "finish_mappings": {
+        "base": [
+          "dreamborn",
+          "justtcg",
+          "lorcast"
+        ],
+        "foil": [
+          "dreamborn",
+          "justtcg",
+          "lorcast"
+        ],
+        "special": []
+      }
+    },
     "003-005": {
       "canonical_id": "003-005",
       "set_id": "003",
-      "number": "005",
+      "number": "5",
       "name": "Joshua Sweet",
       "title": "The Doctor",
       "rarity": "common",
@@ -14930,7 +14930,7 @@
     "003-006": {
       "canonical_id": "003-006",
       "set_id": "003",
-      "number": "006",
+      "number": "6",
       "name": "Kida",
       "title": "Atlantean",
       "rarity": "common",
@@ -14964,7 +14964,7 @@
     "003-007": {
       "canonical_id": "003-007",
       "set_id": "003",
-      "number": "007",
+      "number": "7",
       "name": "Kida",
       "title": "Protector of Atlantis",
       "rarity": "legendary",
@@ -14998,7 +14998,7 @@
     "003-008": {
       "canonical_id": "003-008",
       "set_id": "003",
-      "number": "008",
+      "number": "8",
       "name": "Lucky",
       "title": "The 15th Puppy",
       "rarity": "rare",
@@ -15032,7 +15032,7 @@
     "003-009": {
       "canonical_id": "003-009",
       "set_id": "003",
-      "number": "009",
+      "number": "9",
       "name": "Minnie Mouse",
       "title": "Musical Artist",
       "rarity": "rare",
@@ -15066,7 +15066,7 @@
     "003-010": {
       "canonical_id": "003-010",
       "set_id": "003",
-      "number": "010",
+      "number": "10",
       "name": "Miss Bianca",
       "title": "Rescue Aid Society Agent",
       "rarity": "common",
@@ -15100,7 +15100,7 @@
     "003-011": {
       "canonical_id": "003-011",
       "set_id": "003",
-      "number": "011",
+      "number": "11",
       "name": "Mr. Snoops",
       "title": "Inept Businessman",
       "rarity": "common",
@@ -15134,7 +15134,7 @@
     "003-012": {
       "canonical_id": "003-012",
       "set_id": "003",
-      "number": "012",
+      "number": "12",
       "name": "Nani",
       "title": "Protective Sister",
       "rarity": "uncommon",
@@ -15168,7 +15168,7 @@
     "003-013": {
       "canonical_id": "003-013",
       "set_id": "003",
-      "number": "013",
+      "number": "13",
       "name": "Orville",
       "title": "Ace Pilot",
       "rarity": "common",
@@ -15202,7 +15202,7 @@
     "003-014": {
       "canonical_id": "003-014",
       "set_id": "003",
-      "number": "014",
+      "number": "14",
       "name": "Patch",
       "title": "Intimidating Pup",
       "rarity": "common",
@@ -15236,7 +15236,7 @@
     "003-015": {
       "canonical_id": "003-015",
       "set_id": "003",
-      "number": "015",
+      "number": "15",
       "name": "Perdita",
       "title": "Devoted Mother",
       "rarity": "legendary",
@@ -15270,7 +15270,7 @@
     "003-016": {
       "canonical_id": "003-016",
       "set_id": "003",
-      "number": "016",
+      "number": "16",
       "name": "Piglet",
       "title": "Pooh Pirate Captain",
       "rarity": "super rare",
@@ -15304,7 +15304,7 @@
     "003-017": {
       "canonical_id": "003-017",
       "set_id": "003",
-      "number": "017",
+      "number": "17",
       "name": "Pluto",
       "title": "Determined Defender",
       "rarity": "rare",
@@ -15338,7 +15338,7 @@
     "003-018": {
       "canonical_id": "003-018",
       "set_id": "003",
-      "number": "018",
+      "number": "18",
       "name": "Pluto",
       "title": "Friendly Pooch",
       "rarity": "uncommon",
@@ -15406,7 +15406,7 @@
     "003-020": {
       "canonical_id": "003-020",
       "set_id": "003",
-      "number": "020",
+      "number": "20",
       "name": "Queen of Hearts",
       "title": "Wonderland Empress",
       "rarity": "uncommon",
@@ -15440,7 +15440,7 @@
     "003-021": {
       "canonical_id": "003-021",
       "set_id": "003",
-      "number": "021",
+      "number": "21",
       "name": "Rolly",
       "title": "Hungry Pup",
       "rarity": "uncommon",
@@ -15474,7 +15474,7 @@
     "003-022": {
       "canonical_id": "003-022",
       "set_id": "003",
-      "number": "022",
+      "number": "22",
       "name": "Tinker Bell",
       "title": "Generous Fairy",
       "rarity": "uncommon",
@@ -15508,7 +15508,7 @@
     "003-023": {
       "canonical_id": "003-023",
       "set_id": "003",
-      "number": "023",
+      "number": "23",
       "name": "Wendy Darling",
       "title": "Talented Sailor",
       "rarity": "uncommon",
@@ -15542,7 +15542,7 @@
     "003-024": {
       "canonical_id": "003-024",
       "set_id": "003",
-      "number": "024",
+      "number": "24",
       "name": "99 Puppies",
       "title": null,
       "rarity": "uncommon",
@@ -15576,7 +15576,7 @@
     "003-025": {
       "canonical_id": "003-025",
       "set_id": "003",
-      "number": "025",
+      "number": "25",
       "name": "Boss's Orders",
       "title": null,
       "rarity": "common",
@@ -15644,7 +15644,7 @@
     "003-027": {
       "canonical_id": "003-027",
       "set_id": "003",
-      "number": "027",
+      "number": "27",
       "name": "Quick Patch",
       "title": null,
       "rarity": "common",
@@ -15678,7 +15678,7 @@
     "003-028": {
       "canonical_id": "003-028",
       "set_id": "003",
-      "number": "028",
+      "number": "28",
       "name": "The Bare Necessities",
       "title": null,
       "rarity": "rare",
@@ -15712,7 +15712,7 @@
     "003-029": {
       "canonical_id": "003-029",
       "set_id": "003",
-      "number": "029",
+      "number": "29",
       "name": "Cleansing Rainwater",
       "title": null,
       "rarity": "common",
@@ -15746,7 +15746,7 @@
     "003-030": {
       "canonical_id": "003-030",
       "set_id": "003",
-      "number": "030",
+      "number": "30",
       "name": "Heart of Atlantis",
       "title": null,
       "rarity": "rare",
@@ -15780,7 +15780,7 @@
     "003-031": {
       "canonical_id": "003-031",
       "set_id": "003",
-      "number": "031",
+      "number": "31",
       "name": "Wildcat's Wrench",
       "title": null,
       "rarity": "uncommon",
@@ -15814,7 +15814,7 @@
     "003-032": {
       "canonical_id": "003-032",
       "set_id": "003",
-      "number": "032",
+      "number": "32",
       "name": "Never Land",
       "title": "Mermaid Lagoon",
       "rarity": "common",
@@ -15848,7 +15848,7 @@
     "003-033": {
       "canonical_id": "003-033",
       "set_id": "003",
-      "number": "033",
+      "number": "33",
       "name": "Pride Lands",
       "title": "Pride Rock",
       "rarity": "rare",
@@ -15882,7 +15882,7 @@
     "003-034": {
       "canonical_id": "003-034",
       "set_id": "003",
-      "number": "034",
+      "number": "34",
       "name": "Tiana's Palace",
       "title": "Jazz Restaurant",
       "rarity": "uncommon",
@@ -15916,7 +15916,7 @@
     "003-035": {
       "canonical_id": "003-035",
       "set_id": "003",
-      "number": "035",
+      "number": "35",
       "name": "Alice",
       "title": "Tea Alchemist",
       "rarity": "super rare",
@@ -15950,7 +15950,7 @@
     "003-036": {
       "canonical_id": "003-036",
       "set_id": "003",
-      "number": "036",
+      "number": "36",
       "name": "Chernabog's Followers",
       "title": "Creatures of Evil",
       "rarity": "uncommon",
@@ -15984,7 +15984,7 @@
     "003-037": {
       "canonical_id": "003-037",
       "set_id": "003",
-      "number": "037",
+      "number": "37",
       "name": "Diablo",
       "title": "Faithful Pet",
       "rarity": "common",
@@ -16018,7 +16018,7 @@
     "003-038": {
       "canonical_id": "003-038",
       "set_id": "003",
-      "number": "038",
+      "number": "38",
       "name": "Genie",
       "title": "Supportive Friend",
       "rarity": "super rare",
@@ -16052,7 +16052,7 @@
     "003-039": {
       "canonical_id": "003-039",
       "set_id": "003",
-      "number": "039",
+      "number": "39",
       "name": "Hydros",
       "title": "Ice Titan",
       "rarity": "uncommon",
@@ -16086,7 +16086,7 @@
     "003-040": {
       "canonical_id": "003-040",
       "set_id": "003",
-      "number": "040",
+      "number": "40",
       "name": "Iago",
       "title": "Pretty Polly",
       "rarity": "common",
@@ -16120,7 +16120,7 @@
     "003-041": {
       "canonical_id": "003-041",
       "set_id": "003",
-      "number": "041",
+      "number": "41",
       "name": "Jafar",
       "title": "Lamp Thief",
       "rarity": "uncommon",
@@ -16154,7 +16154,7 @@
     "003-042": {
       "canonical_id": "003-042",
       "set_id": "003",
-      "number": "042",
+      "number": "42",
       "name": "Jafar",
       "title": "Striking Illusionist",
       "rarity": "legendary",
@@ -16188,7 +16188,7 @@
     "003-043": {
       "canonical_id": "003-043",
       "set_id": "003",
-      "number": "043",
+      "number": "43",
       "name": "Lena Sabrewing",
       "title": "Rebellious Teenager",
       "rarity": "common",
@@ -16222,7 +16222,7 @@
     "003-044": {
       "canonical_id": "003-044",
       "set_id": "003",
-      "number": "044",
+      "number": "44",
       "name": "Magic Broom",
       "title": "Dancing Duster",
       "rarity": "uncommon",
@@ -16256,7 +16256,7 @@
     "003-045": {
       "canonical_id": "003-045",
       "set_id": "003",
-      "number": "045",
+      "number": "45",
       "name": "Magic Broom",
       "title": "Swift Cleaner",
       "rarity": "common",
@@ -16290,7 +16290,7 @@
     "003-046": {
       "canonical_id": "003-046",
       "set_id": "003",
-      "number": "046",
+      "number": "46",
       "name": "Magic Broom",
       "title": "The Big Sweeper",
       "rarity": "common",
@@ -16324,7 +16324,7 @@
     "003-047": {
       "canonical_id": "003-047",
       "set_id": "003",
-      "number": "047",
+      "number": "47",
       "name": "Magic Carpet",
       "title": "Flying Rug",
       "rarity": "common",
@@ -16358,7 +16358,7 @@
     "003-048": {
       "canonical_id": "003-048",
       "set_id": "003",
-      "number": "048",
+      "number": "48",
       "name": "Magica De Spell",
       "title": "Ambitious Witch",
       "rarity": "common",
@@ -16392,7 +16392,7 @@
     "003-049": {
       "canonical_id": "003-049",
       "set_id": "003",
-      "number": "049",
+      "number": "49",
       "name": "Magica De Spell",
       "title": "The Midas Touch",
       "rarity": "super rare",
@@ -16426,7 +16426,7 @@
     "003-050": {
       "canonical_id": "003-050",
       "set_id": "003",
-      "number": "050",
+      "number": "50",
       "name": "Magica De Spell",
       "title": "Thieving Sorceress",
       "rarity": "uncommon",
@@ -16460,7 +16460,7 @@
     "003-051": {
       "canonical_id": "003-051",
       "set_id": "003",
-      "number": "051",
+      "number": "51",
       "name": "Maleficent",
       "title": "Mistress of All Evil",
       "rarity": "legendary",
@@ -16494,7 +16494,7 @@
     "003-052": {
       "canonical_id": "003-052",
       "set_id": "003",
-      "number": "052",
+      "number": "52",
       "name": "Mama Odie",
       "title": "Voice of Wisdom",
       "rarity": "uncommon",
@@ -16528,7 +16528,7 @@
     "003-053": {
       "canonical_id": "003-053",
       "set_id": "003",
-      "number": "053",
+      "number": "53",
       "name": "Pua",
       "title": "Potbellied Buddy",
       "rarity": "common",
@@ -16562,7 +16562,7 @@
     "003-054": {
       "canonical_id": "003-054",
       "set_id": "003",
-      "number": "054",
+      "number": "54",
       "name": "Rafiki",
       "title": "Mystical Fighter",
       "rarity": "rare",
@@ -16596,7 +16596,7 @@
     "003-055": {
       "canonical_id": "003-055",
       "set_id": "003",
-      "number": "055",
+      "number": "55",
       "name": "Stratos",
       "title": "Tornado Titan",
       "rarity": "rare",
@@ -16630,7 +16630,7 @@
     "003-056": {
       "canonical_id": "003-056",
       "set_id": "003",
-      "number": "056",
+      "number": "56",
       "name": "The Firebird",
       "title": "Force of Destruction",
       "rarity": "common",
@@ -16664,7 +16664,7 @@
     "003-057": {
       "canonical_id": "003-057",
       "set_id": "003",
-      "number": "057",
+      "number": "57",
       "name": "The Queen",
       "title": "Hateful Rival",
       "rarity": "common",
@@ -16698,7 +16698,7 @@
     "003-058": {
       "canonical_id": "003-058",
       "set_id": "003",
-      "number": "058",
+      "number": "58",
       "name": "Treasure Guardian",
       "title": "Protector of the Cave",
       "rarity": "rare",
@@ -16732,7 +16732,7 @@
     "003-059": {
       "canonical_id": "003-059",
       "set_id": "003",
-      "number": "059",
+      "number": "59",
       "name": "Ursula",
       "title": "Sea Witch",
       "rarity": "rare",
@@ -16766,7 +16766,7 @@
     "003-060": {
       "canonical_id": "003-060",
       "set_id": "003",
-      "number": "060",
+      "number": "60",
       "name": "Bestow a Gift",
       "title": null,
       "rarity": "common",
@@ -16800,7 +16800,7 @@
     "003-061": {
       "canonical_id": "003-061",
       "set_id": "003",
-      "number": "061",
+      "number": "61",
       "name": "It Calls Me",
       "title": null,
       "rarity": "uncommon",
@@ -16834,7 +16834,7 @@
     "003-062": {
       "canonical_id": "003-062",
       "set_id": "003",
-      "number": "062",
+      "number": "62",
       "name": "Last-Ditch Effort",
       "title": null,
       "rarity": "uncommon",
@@ -16868,7 +16868,7 @@
     "003-063": {
       "canonical_id": "003-063",
       "set_id": "003",
-      "number": "063",
+      "number": "63",
       "name": "The Boss Is On A Roll",
       "title": null,
       "rarity": "rare",
@@ -16902,7 +16902,7 @@
     "003-064": {
       "canonical_id": "003-064",
       "set_id": "003",
-      "number": "064",
+      "number": "64",
       "name": "The Lamp",
       "title": null,
       "rarity": "rare",
@@ -17004,7 +17004,7 @@
     "003-067": {
       "canonical_id": "003-067",
       "set_id": "003",
-      "number": "067",
+      "number": "67",
       "name": "The Queen's Castle",
       "title": "Mirror Chamber",
       "rarity": "rare",
@@ -17038,7 +17038,7 @@
     "003-068": {
       "canonical_id": "003-068",
       "set_id": "003",
-      "number": "068",
+      "number": "68",
       "name": "The Sorcerer's Tower",
       "title": "Wondrous Workspace",
       "rarity": "uncommon",
@@ -17072,7 +17072,7 @@
     "003-069": {
       "canonical_id": "003-069",
       "set_id": "003",
-      "number": "069",
+      "number": "69",
       "name": "Cubby",
       "title": "Mighty Lost Boy",
       "rarity": "common",
@@ -17106,7 +17106,7 @@
     "003-070": {
       "canonical_id": "003-070",
       "set_id": "003",
-      "number": "070",
+      "number": "70",
       "name": "Cursed Merfolk",
       "title": "Ursula's Handiwork",
       "rarity": "rare",
@@ -17140,7 +17140,7 @@
     "003-071": {
       "canonical_id": "003-071",
       "set_id": "003",
-      "number": "071",
+      "number": "71",
       "name": "Don Karnage",
       "title": "Prince of Pirates",
       "rarity": "common",
@@ -17208,7 +17208,7 @@
     "003-073": {
       "canonical_id": "003-073",
       "set_id": "003",
-      "number": "073",
+      "number": "73",
       "name": "Friar Tuck",
       "title": "Priest Of Nottingham",
       "rarity": "uncommon",
@@ -17242,7 +17242,7 @@
     "003-074": {
       "canonical_id": "003-074",
       "set_id": "003",
-      "number": "074",
+      "number": "74",
       "name": "Helga Sinclair",
       "title": "Femme Fatale",
       "rarity": "super rare",
@@ -17276,7 +17276,7 @@
     "003-075": {
       "canonical_id": "003-075",
       "set_id": "003",
-      "number": "075",
+      "number": "75",
       "name": "Helga Sinclair",
       "title": "Vengeful Partner",
       "rarity": "rare",
@@ -17344,7 +17344,7 @@
     "003-077": {
       "canonical_id": "003-077",
       "set_id": "003",
-      "number": "077",
+      "number": "77",
       "name": "Kit Cloudkicker",
       "title": "Tough Guy",
       "rarity": "uncommon",
@@ -17378,7 +17378,7 @@
     "003-078": {
       "canonical_id": "003-078",
       "set_id": "003",
-      "number": "078",
+      "number": "78",
       "name": "Lyle Tiberius Rourke",
       "title": "Cunning Mercenary",
       "rarity": "super rare",
@@ -17412,7 +17412,7 @@
     "003-079": {
       "canonical_id": "003-079",
       "set_id": "003",
-      "number": "079",
+      "number": "79",
       "name": "Milo Thatch",
       "title": "Clever Cartographer",
       "rarity": "common",
@@ -17444,7 +17444,7 @@
     "003-080": {
       "canonical_id": "003-080",
       "set_id": "003",
-      "number": "080",
+      "number": "80",
       "name": "Milo Thatch",
       "title": "King of Atlantis",
       "rarity": "legendary",
@@ -17478,7 +17478,7 @@
     "003-081": {
       "canonical_id": "003-081",
       "set_id": "003",
-      "number": "081",
+      "number": "81",
       "name": "Morph",
       "title": "Space Goo",
       "rarity": "rare",
@@ -17546,7 +17546,7 @@
     "003-083": {
       "canonical_id": "003-083",
       "set_id": "003",
-      "number": "083",
+      "number": "83",
       "name": "Prince John",
       "title": "Phony King",
       "rarity": "uncommon",
@@ -17580,7 +17580,7 @@
     "003-084": {
       "canonical_id": "003-084",
       "set_id": "003",
-      "number": "084",
+      "number": "84",
       "name": "Robin Hood",
       "title": "Daydreamer",
       "rarity": "rare",
@@ -17614,7 +17614,7 @@
     "003-085": {
       "canonical_id": "003-085",
       "set_id": "003",
-      "number": "085",
+      "number": "85",
       "name": "Shenzi",
       "title": "Hyena Pack Leader",
       "rarity": "super rare",
@@ -17648,7 +17648,7 @@
     "003-086": {
       "canonical_id": "003-086",
       "set_id": "003",
-      "number": "086",
+      "number": "86",
       "name": "Sir Hiss",
       "title": "Aggravating Asp",
       "rarity": "common",
@@ -17682,7 +17682,7 @@
     "003-087": {
       "canonical_id": "003-087",
       "set_id": "003",
-      "number": "087",
+      "number": "87",
       "name": "Skippy",
       "title": "Energetic Rabbit",
       "rarity": "common",
@@ -17716,7 +17716,7 @@
     "003-088": {
       "canonical_id": "003-088",
       "set_id": "003",
-      "number": "088",
+      "number": "88",
       "name": "Starkey",
       "title": "Devious Pirate",
       "rarity": "uncommon",
@@ -17750,7 +17750,7 @@
     "003-089": {
       "canonical_id": "003-089",
       "set_id": "003",
-      "number": "089",
+      "number": "89",
       "name": "Stitch",
       "title": "Covert Agent",
       "rarity": "rare",
@@ -17818,7 +17818,7 @@
     "003-091": {
       "canonical_id": "003-091",
       "set_id": "003",
-      "number": "091",
+      "number": "91",
       "name": "Ursula",
       "title": "Deceiver of All",
       "rarity": "legendary",
@@ -17852,7 +17852,7 @@
     "003-092": {
       "canonical_id": "003-092",
       "set_id": "003",
-      "number": "092",
+      "number": "92",
       "name": "Wildcat",
       "title": "Mechanic",
       "rarity": "uncommon",
@@ -17886,7 +17886,7 @@
     "003-093": {
       "canonical_id": "003-093",
       "set_id": "003",
-      "number": "093",
+      "number": "93",
       "name": "Zazu",
       "title": "Steward of the Pride Lands",
       "rarity": "common",
@@ -17920,7 +17920,7 @@
     "003-094": {
       "canonical_id": "003-094",
       "set_id": "003",
-      "number": "094",
+      "number": "94",
       "name": "Has Set My Heaaaaaaart . . .",
       "title": null,
       "rarity": "uncommon",
@@ -17954,7 +17954,7 @@
     "003-095": {
       "canonical_id": "003-095",
       "set_id": "003",
-      "number": "095",
+      "number": "95",
       "name": "I Will Find My Way",
       "title": null,
       "rarity": "common",
@@ -17988,7 +17988,7 @@
     "003-096": {
       "canonical_id": "003-096",
       "set_id": "003",
-      "number": "096",
+      "number": "96",
       "name": "Strike A Good Match",
       "title": null,
       "rarity": "common",
@@ -18022,7 +18022,7 @@
     "003-097": {
       "canonical_id": "003-097",
       "set_id": "003",
-      "number": "097",
+      "number": "97",
       "name": "Airfoil",
       "title": null,
       "rarity": "common",
@@ -18056,7 +18056,7 @@
     "003-098": {
       "canonical_id": "003-098",
       "set_id": "003",
-      "number": "098",
+      "number": "98",
       "name": "Robin's Bow",
       "title": null,
       "rarity": "uncommon",
@@ -18090,7 +18090,7 @@
     "003-099": {
       "canonical_id": "003-099",
       "set_id": "003",
-      "number": "099",
+      "number": "99",
       "name": "Starlight Vial",
       "title": null,
       "rarity": "rare",
@@ -22262,7 +22262,7 @@
     "004-001": {
       "canonical_id": "004-001",
       "set_id": "004",
-      "number": "001",
+      "number": "1",
       "name": "Agustin Madrigal",
       "title": "Clumsy Dad",
       "rarity": "common",
@@ -22296,7 +22296,7 @@
     "004-002": {
       "canonical_id": "004-002",
       "set_id": "004",
-      "number": "002",
+      "number": "2",
       "name": "Alma Madrigal",
       "title": "Family Matriarch",
       "rarity": "rare",
@@ -22330,7 +22330,7 @@
     "004-003": {
       "canonical_id": "004-003",
       "set_id": "004",
-      "number": "003",
+      "number": "3",
       "name": "Ariel",
       "title": "Singing Mermaid",
       "rarity": "rare",
@@ -22364,7 +22364,7 @@
     "004-004": {
       "canonical_id": "004-004",
       "set_id": "004",
-      "number": "004",
+      "number": "4",
       "name": "Cinderella",
       "title": "Melody Weaver",
       "rarity": "legendary",
@@ -22398,7 +22398,7 @@
     "004-005": {
       "canonical_id": "004-005",
       "set_id": "004",
-      "number": "005",
+      "number": "5",
       "name": "Cogsworth",
       "title": "Majordomo",
       "rarity": "common",
@@ -22432,7 +22432,7 @@
     "004-006": {
       "canonical_id": "004-006",
       "set_id": "004",
-      "number": "006",
+      "number": "6",
       "name": "Daisy Duck",
       "title": "Lovely Lady",
       "rarity": "uncommon",
@@ -22466,7 +22466,7 @@
     "004-007": {
       "canonical_id": "004-007",
       "set_id": "004",
-      "number": "007",
+      "number": "7",
       "name": "Daisy Duck",
       "title": "Musketeer Spy",
       "rarity": "common",
@@ -22500,7 +22500,7 @@
     "004-008": {
       "canonical_id": "004-008",
       "set_id": "004",
-      "number": "008",
+      "number": "8",
       "name": "Donald Duck",
       "title": "Musketeer Soldier",
       "rarity": "uncommon",
@@ -22534,7 +22534,7 @@
     "004-009": {
       "canonical_id": "004-009",
       "set_id": "004",
-      "number": "009",
+      "number": "9",
       "name": "Félix Madrigal",
       "title": "Fun-Loving Family Man",
       "rarity": "uncommon",
@@ -22568,7 +22568,7 @@
     "004-010": {
       "canonical_id": "004-010",
       "set_id": "004",
-      "number": "010",
+      "number": "10",
       "name": "Gaston",
       "title": "Despicable Dealer",
       "rarity": "super rare",
@@ -22602,7 +22602,7 @@
     "004-011": {
       "canonical_id": "004-011",
       "set_id": "004",
-      "number": "011",
+      "number": "11",
       "name": "Golden Harp",
       "title": "Enchanter of the Land",
       "rarity": "rare",
@@ -22636,7 +22636,7 @@
     "004-012": {
       "canonical_id": "004-012",
       "set_id": "004",
-      "number": "012",
+      "number": "12",
       "name": "Goofy",
       "title": "Musketeer Swordsman",
       "rarity": "rare",
@@ -22670,7 +22670,7 @@
     "004-013": {
       "canonical_id": "004-013",
       "set_id": "004",
-      "number": "013",
+      "number": "13",
       "name": "Julieta Madrigal",
       "title": "Excellent Cook",
       "rarity": "uncommon",
@@ -22704,7 +22704,7 @@
     "004-014": {
       "canonical_id": "004-014",
       "set_id": "004",
-      "number": "014",
+      "number": "14",
       "name": "Max",
       "title": "Loyal Sheepdog",
       "rarity": "common",
@@ -22738,7 +22738,7 @@
     "004-015": {
       "canonical_id": "004-015",
       "set_id": "004",
-      "number": "015",
+      "number": "15",
       "name": "Mickey Mouse",
       "title": "Leader of the Band",
       "rarity": "uncommon",
@@ -22772,7 +22772,7 @@
     "004-016": {
       "canonical_id": "004-016",
       "set_id": "004",
-      "number": "016",
+      "number": "16",
       "name": "Mickey Mouse",
       "title": "Musketeer Captain",
       "rarity": "legendary",
@@ -22806,7 +22806,7 @@
     "004-017": {
       "canonical_id": "004-017",
       "set_id": "004",
-      "number": "017",
+      "number": "17",
       "name": "Minnie Mouse",
       "title": "Musketeer Champion",
       "rarity": "super rare",
@@ -22840,7 +22840,7 @@
     "004-018": {
       "canonical_id": "004-018",
       "set_id": "004",
-      "number": "018",
+      "number": "18",
       "name": "Mirabel Madrigal",
       "title": "Gift of the Family",
       "rarity": "super rare",
@@ -22874,7 +22874,7 @@
     "004-019": {
       "canonical_id": "004-019",
       "set_id": "004",
-      "number": "019",
+      "number": "19",
       "name": "Mirabel Madrigal",
       "title": "Prophecy Finder",
       "rarity": "common",
@@ -22908,7 +22908,7 @@
     "004-020": {
       "canonical_id": "004-020",
       "set_id": "004",
-      "number": "020",
+      "number": "20",
       "name": "Pluto",
       "title": "Rescue Dog",
       "rarity": "common",
@@ -22942,7 +22942,7 @@
     "004-021": {
       "canonical_id": "004-021",
       "set_id": "004",
-      "number": "021",
+      "number": "21",
       "name": "Prince Eric",
       "title": "Seafaring Prince",
       "rarity": "common",
@@ -22976,7 +22976,7 @@
     "004-022": {
       "canonical_id": "004-022",
       "set_id": "004",
-      "number": "022",
+      "number": "22",
       "name": "Prince Eric",
       "title": "Ursula's Groom",
       "rarity": "uncommon",
@@ -23010,7 +23010,7 @@
     "004-023": {
       "canonical_id": "004-023",
       "set_id": "004",
-      "number": "023",
+      "number": "23",
       "name": "Stitch",
       "title": "Alien Dancer",
       "rarity": "common",
@@ -23044,7 +23044,7 @@
     "004-024": {
       "canonical_id": "004-024",
       "set_id": "004",
-      "number": "024",
+      "number": "24",
       "name": "Ursula",
       "title": "Eric's Bride",
       "rarity": "rare",
@@ -23078,7 +23078,7 @@
     "004-025": {
       "canonical_id": "004-025",
       "set_id": "004",
-      "number": "025",
+      "number": "25",
       "name": "Ursula",
       "title": "Vanessa",
       "rarity": "common",
@@ -23112,7 +23112,7 @@
     "004-026": {
       "canonical_id": "004-026",
       "set_id": "004",
-      "number": "026",
+      "number": "26",
       "name": "Bruno's Return",
       "title": null,
       "rarity": "uncommon",
@@ -23146,7 +23146,7 @@
     "004-027": {
       "canonical_id": "004-027",
       "set_id": "004",
-      "number": "027",
+      "number": "27",
       "name": "First Aid",
       "title": null,
       "rarity": "common",
@@ -23180,7 +23180,7 @@
     "004-028": {
       "canonical_id": "004-028",
       "set_id": "004",
-      "number": "028",
+      "number": "28",
       "name": "Look At This Family",
       "title": null,
       "rarity": "rare",
@@ -23214,7 +23214,7 @@
     "004-029": {
       "canonical_id": "004-029",
       "set_id": "004",
-      "number": "029",
+      "number": "29",
       "name": "Lost In The Woods",
       "title": null,
       "rarity": "uncommon",
@@ -23248,7 +23248,7 @@
     "004-030": {
       "canonical_id": "004-030",
       "set_id": "004",
-      "number": "030",
+      "number": "30",
       "name": "Sign The Scroll",
       "title": null,
       "rarity": "uncommon",
@@ -23282,7 +23282,7 @@
     "004-031": {
       "canonical_id": "004-031",
       "set_id": "004",
-      "number": "031",
+      "number": "31",
       "name": "Miracle Candle",
       "title": null,
       "rarity": "rare",
@@ -23316,7 +23316,7 @@
     "004-032": {
       "canonical_id": "004-032",
       "set_id": "004",
-      "number": "032",
+      "number": "32",
       "name": "Record Player",
       "title": null,
       "rarity": "common",
@@ -23350,7 +23350,7 @@
     "004-033": {
       "canonical_id": "004-033",
       "set_id": "004",
-      "number": "033",
+      "number": "33",
       "name": "Atlantica",
       "title": "Concert Hall",
       "rarity": "common",
@@ -23384,7 +23384,7 @@
     "004-034": {
       "canonical_id": "004-034",
       "set_id": "004",
-      "number": "034",
+      "number": "34",
       "name": "The Underworld",
       "title": "River Styx",
       "rarity": "rare",
@@ -23418,7 +23418,7 @@
     "004-035": {
       "canonical_id": "004-035",
       "set_id": "004",
-      "number": "035",
+      "number": "35",
       "name": "Antonio Madrigal",
       "title": "Animal Expert",
       "rarity": "uncommon",
@@ -23452,7 +23452,7 @@
     "004-036": {
       "canonical_id": "004-036",
       "set_id": "004",
-      "number": "036",
+      "number": "36",
       "name": "Belle",
       "title": "Accomplished Mystic",
       "rarity": "super rare",
@@ -23486,7 +23486,7 @@
     "004-037": {
       "canonical_id": "004-037",
       "set_id": "004",
-      "number": "037",
+      "number": "37",
       "name": "Belle",
       "title": "Untrained Mystic",
       "rarity": "common",
@@ -23520,7 +23520,7 @@
     "004-038": {
       "canonical_id": "004-038",
       "set_id": "004",
-      "number": "038",
+      "number": "38",
       "name": "Bruno Madrigal",
       "title": "Out of the Shadows",
       "rarity": "rare",
@@ -23554,7 +23554,7 @@
     "004-039": {
       "canonical_id": "004-039",
       "set_id": "004",
-      "number": "039",
+      "number": "39",
       "name": "Bruno Madrigal",
       "title": "Undetected Uncle",
       "rarity": "super rare",
@@ -23588,7 +23588,7 @@
     "004-040": {
       "canonical_id": "004-040",
       "set_id": "004",
-      "number": "040",
+      "number": "40",
       "name": "Camilo Madrigal",
       "title": "Prankster",
       "rarity": "uncommon",
@@ -23622,7 +23622,7 @@
     "004-041": {
       "canonical_id": "004-041",
       "set_id": "004",
-      "number": "041",
+      "number": "41",
       "name": "Dolores Madrigal",
       "title": "Easy Listener",
       "rarity": "common",
@@ -23656,7 +23656,7 @@
     "004-042": {
       "canonical_id": "004-042",
       "set_id": "004",
-      "number": "042",
+      "number": "42",
       "name": "Elsa",
       "title": "Storm Chaser",
       "rarity": "rare",
@@ -23690,7 +23690,7 @@
     "004-043": {
       "canonical_id": "004-043",
       "set_id": "004",
-      "number": "043",
+      "number": "43",
       "name": "Flotsam",
       "title": "Ursula's \"Baby\"",
       "rarity": "uncommon",
@@ -23724,7 +23724,7 @@
     "004-044": {
       "canonical_id": "004-044",
       "set_id": "004",
-      "number": "044",
+      "number": "44",
       "name": "Flotsam & Jetsam",
       "title": "Entangling Eels",
       "rarity": "uncommon",
@@ -23758,7 +23758,7 @@
     "004-045": {
       "canonical_id": "004-045",
       "set_id": "004",
-      "number": "045",
+      "number": "45",
       "name": "Isabela Madrigal",
       "title": "Golden Child",
       "rarity": "rare",
@@ -23792,7 +23792,7 @@
     "004-046": {
       "canonical_id": "004-046",
       "set_id": "004",
-      "number": "046",
+      "number": "46",
       "name": "Jetsam",
       "title": "Ursula's \"Baby\"",
       "rarity": "common",
@@ -23826,7 +23826,7 @@
     "004-047": {
       "canonical_id": "004-047",
       "set_id": "004",
-      "number": "047",
+      "number": "47",
       "name": "Luisa Madrigal",
       "title": "Magically Strong One",
       "rarity": "common",
@@ -23860,7 +23860,7 @@
     "004-048": {
       "canonical_id": "004-048",
       "set_id": "004",
-      "number": "048",
+      "number": "48",
       "name": "Magic Broom",
       "title": "Illuminary Keeper",
       "rarity": "common",
@@ -23894,7 +23894,7 @@
     "004-049": {
       "canonical_id": "004-049",
       "set_id": "004",
-      "number": "049",
+      "number": "49",
       "name": "Magic Broom",
       "title": "Lively Sweeper",
       "rarity": "common",
@@ -23928,7 +23928,7 @@
     "004-050": {
       "canonical_id": "004-050",
       "set_id": "004",
-      "number": "050",
+      "number": "50",
       "name": "Magical Maid",
       "title": "Feather Duster",
       "rarity": "uncommon",
@@ -23962,7 +23962,7 @@
     "004-051": {
       "canonical_id": "004-051",
       "set_id": "004",
-      "number": "051",
+      "number": "51",
       "name": "Marshmallow",
       "title": "Terrifying Snowman",
       "rarity": "uncommon",
@@ -23996,7 +23996,7 @@
     "004-052": {
       "canonical_id": "004-052",
       "set_id": "004",
-      "number": "052",
+      "number": "52",
       "name": "Mrs. Potts",
       "title": "Enchanted Teapot",
       "rarity": "rare",
@@ -24030,7 +24030,7 @@
     "004-053": {
       "canonical_id": "004-053",
       "set_id": "004",
-      "number": "053",
+      "number": "53",
       "name": "Pepa Madrigal",
       "title": "Weather Maker",
       "rarity": "rare",
@@ -24064,7 +24064,7 @@
     "004-054": {
       "canonical_id": "004-054",
       "set_id": "004",
-      "number": "054",
+      "number": "54",
       "name": "Peter Pan",
       "title": "Shadow Finder",
       "rarity": "super rare",
@@ -24098,7 +24098,7 @@
     "004-055": {
       "canonical_id": "004-055",
       "set_id": "004",
-      "number": "055",
+      "number": "55",
       "name": "Pico",
       "title": "Helpful Toucan",
       "rarity": "common",
@@ -24132,7 +24132,7 @@
     "004-056": {
       "canonical_id": "004-056",
       "set_id": "004",
-      "number": "056",
+      "number": "56",
       "name": "Tick-Tock",
       "title": "Ever-Present Pursuer",
       "rarity": "common",
@@ -24166,7 +24166,7 @@
     "004-057": {
       "canonical_id": "004-057",
       "set_id": "004",
-      "number": "057",
+      "number": "57",
       "name": "Ursula",
       "title": "Mad Sea Witch",
       "rarity": "uncommon",
@@ -24200,7 +24200,7 @@
     "004-058": {
       "canonical_id": "004-058",
       "set_id": "004",
-      "number": "058",
+      "number": "58",
       "name": "Ursula",
       "title": "Sea Witch Queen",
       "rarity": "legendary",
@@ -24234,7 +24234,7 @@
     "004-059": {
       "canonical_id": "004-059",
       "set_id": "004",
-      "number": "059",
+      "number": "59",
       "name": "Yen Sid",
       "title": "Powerful Sorcerer",
       "rarity": "legendary",
@@ -24268,7 +24268,7 @@
     "004-060": {
       "canonical_id": "004-060",
       "set_id": "004",
-      "number": "060",
+      "number": "60",
       "name": "Poor Unfortunate Souls",
       "title": null,
       "rarity": "common",
@@ -24302,7 +24302,7 @@
     "004-061": {
       "canonical_id": "004-061",
       "set_id": "004",
-      "number": "061",
+      "number": "61",
       "name": "Second Star To The Right",
       "title": null,
       "rarity": "rare",
@@ -24336,7 +24336,7 @@
     "004-062": {
       "canonical_id": "004-062",
       "set_id": "004",
-      "number": "062",
+      "number": "62",
       "name": "Swing Into Action",
       "title": null,
       "rarity": "common",
@@ -24370,7 +24370,7 @@
     "004-063": {
       "canonical_id": "004-063",
       "set_id": "004",
-      "number": "063",
+      "number": "63",
       "name": "Ursula's Plan",
       "title": null,
       "rarity": "uncommon",
@@ -24404,7 +24404,7 @@
     "004-064": {
       "canonical_id": "004-064",
       "set_id": "004",
-      "number": "064",
+      "number": "64",
       "name": "Mystical Rose",
       "title": null,
       "rarity": "rare",
@@ -24438,7 +24438,7 @@
     "004-065": {
       "canonical_id": "004-065",
       "set_id": "004",
-      "number": "065",
+      "number": "65",
       "name": "Rose Lantern",
       "title": null,
       "rarity": "common",
@@ -24472,7 +24472,7 @@
     "004-066": {
       "canonical_id": "004-066",
       "set_id": "004",
-      "number": "066",
+      "number": "66",
       "name": "Triton's Trident",
       "title": null,
       "rarity": "uncommon",
@@ -24506,7 +24506,7 @@
     "004-067": {
       "canonical_id": "004-067",
       "set_id": "004",
-      "number": "067",
+      "number": "67",
       "name": "Casa Madrigal",
       "title": "Casita",
       "rarity": "common",
@@ -24540,7 +24540,7 @@
     "004-068": {
       "canonical_id": "004-068",
       "set_id": "004",
-      "number": "068",
+      "number": "68",
       "name": "Ursula's Lair",
       "title": "Eye of the Storm",
       "rarity": "rare",
@@ -24574,7 +24574,7 @@
     "004-069": {
       "canonical_id": "004-069",
       "set_id": "004",
-      "number": "069",
+      "number": "69",
       "name": "Cri-Kee",
       "title": "Lucky Cricket",
       "rarity": "rare",
@@ -24608,7 +24608,7 @@
     "004-070": {
       "canonical_id": "004-070",
       "set_id": "004",
-      "number": "070",
+      "number": "70",
       "name": "Diablo",
       "title": "Devoted Herald",
       "rarity": "legendary",
@@ -24642,7 +24642,7 @@
     "004-071": {
       "canonical_id": "004-071",
       "set_id": "004",
-      "number": "071",
+      "number": "71",
       "name": "Diablo",
       "title": "Maleficent's Spy",
       "rarity": "common",
@@ -24676,7 +24676,7 @@
     "004-072": {
       "canonical_id": "004-072",
       "set_id": "004",
-      "number": "072",
+      "number": "72",
       "name": "Gunther",
       "title": "Interior Designer",
       "rarity": "common",
@@ -24710,7 +24710,7 @@
     "004-073": {
       "canonical_id": "004-073",
       "set_id": "004",
-      "number": "073",
+      "number": "73",
       "name": "Gus",
       "title": "Champion of Cheese",
       "rarity": "common",
@@ -24744,7 +24744,7 @@
     "004-074": {
       "canonical_id": "004-074",
       "set_id": "004",
-      "number": "074",
+      "number": "74",
       "name": "Hades",
       "title": "Double Dealer",
       "rarity": "legendary",
@@ -24778,7 +24778,7 @@
     "004-075": {
       "canonical_id": "004-075",
       "set_id": "004",
-      "number": "075",
+      "number": "75",
       "name": "HeiHei",
       "title": "Bumbling Rooster",
       "rarity": "uncommon",
@@ -24812,7 +24812,7 @@
     "004-076": {
       "canonical_id": "004-076",
       "set_id": "004",
-      "number": "076",
+      "number": "76",
       "name": "Hera",
       "title": "Queen of the Gods",
       "rarity": "rare",
@@ -24846,7 +24846,7 @@
     "004-077": {
       "canonical_id": "004-077",
       "set_id": "004",
-      "number": "077",
+      "number": "77",
       "name": "Jaq",
       "title": "Connoisseur of Climbing",
       "rarity": "common",
@@ -24880,7 +24880,7 @@
     "004-078": {
       "canonical_id": "004-078",
       "set_id": "004",
-      "number": "078",
+      "number": "78",
       "name": "Jasmine",
       "title": "Desert Warrior",
       "rarity": "rare",
@@ -24914,7 +24914,7 @@
     "004-079": {
       "canonical_id": "004-079",
       "set_id": "004",
-      "number": "079",
+      "number": "79",
       "name": "Megara",
       "title": "Captivating Cynic",
       "rarity": "common",
@@ -24948,7 +24948,7 @@
     "004-080": {
       "canonical_id": "004-080",
       "set_id": "004",
-      "number": "080",
+      "number": "80",
       "name": "Megara",
       "title": "Liberated One",
       "rarity": "uncommon",
@@ -24982,7 +24982,7 @@
     "004-081": {
       "canonical_id": "004-081",
       "set_id": "004",
-      "number": "081",
+      "number": "81",
       "name": "Pain",
       "title": "Immortal Sidekick",
       "rarity": "uncommon",
@@ -25016,7 +25016,7 @@
     "004-082": {
       "canonical_id": "004-082",
       "set_id": "004",
-      "number": "082",
+      "number": "82",
       "name": "Panic",
       "title": "Immortal Sidekick",
       "rarity": "uncommon",
@@ -25050,7 +25050,7 @@
     "004-083": {
       "canonical_id": "004-083",
       "set_id": "004",
-      "number": "083",
+      "number": "83",
       "name": "Pegasus",
       "title": "Cloud Racer",
       "rarity": "uncommon",
@@ -25084,7 +25084,7 @@
     "004-084": {
       "canonical_id": "004-084",
       "set_id": "004",
-      "number": "084",
+      "number": "84",
       "name": "Pegasus",
       "title": "Gift for Hercules",
       "rarity": "common",
@@ -25118,7 +25118,7 @@
     "004-085": {
       "canonical_id": "004-085",
       "set_id": "004",
-      "number": "085",
+      "number": "85",
       "name": "Pete",
       "title": "Born to Cheat",
       "rarity": "super rare",
@@ -25152,7 +25152,7 @@
     "004-086": {
       "canonical_id": "004-086",
       "set_id": "004",
-      "number": "086",
+      "number": "86",
       "name": "Pete",
       "title": "Rotten Guy",
       "rarity": "uncommon",
@@ -25186,7 +25186,7 @@
     "004-087": {
       "canonical_id": "004-087",
       "set_id": "004",
-      "number": "087",
+      "number": "87",
       "name": "Prince Phillip",
       "title": "Vanquisher of Foes",
       "rarity": "super rare",
@@ -25220,7 +25220,7 @@
     "004-088": {
       "canonical_id": "004-088",
       "set_id": "004",
-      "number": "088",
+      "number": "88",
       "name": "Prince Phillip",
       "title": "Warden of the Woods",
       "rarity": "rare",
@@ -25254,7 +25254,7 @@
     "004-089": {
       "canonical_id": "004-089",
       "set_id": "004",
-      "number": "089",
+      "number": "89",
       "name": "The Fates",
       "title": "Only One Eye",
       "rarity": "common",
@@ -25288,7 +25288,7 @@
     "004-090": {
       "canonical_id": "004-090",
       "set_id": "004",
-      "number": "090",
+      "number": "90",
       "name": "The Muses",
       "title": "Proclaimers of Heroes",
       "rarity": "rare",
@@ -25322,7 +25322,7 @@
     "004-091": {
       "canonical_id": "004-091",
       "set_id": "004",
-      "number": "091",
+      "number": "91",
       "name": "Tor",
       "title": "Florist",
       "rarity": "common",
@@ -25356,7 +25356,7 @@
     "004-092": {
       "canonical_id": "004-092",
       "set_id": "004",
-      "number": "092",
+      "number": "92",
       "name": "Zeus",
       "title": "Mr. Lightning Bolts",
       "rarity": "super rare",
@@ -25390,7 +25390,7 @@
     "004-093": {
       "canonical_id": "004-093",
       "set_id": "004",
-      "number": "093",
+      "number": "93",
       "name": "Dodge!",
       "title": null,
       "rarity": "common",
@@ -25424,7 +25424,7 @@
     "004-094": {
       "canonical_id": "004-094",
       "set_id": "004",
-      "number": "094",
+      "number": "94",
       "name": "Make The Potion",
       "title": null,
       "rarity": "common",
@@ -25458,7 +25458,7 @@
     "004-095": {
       "canonical_id": "004-095",
       "set_id": "004",
-      "number": "095",
+      "number": "95",
       "name": "Under The Sea",
       "title": null,
       "rarity": "rare",
@@ -25492,7 +25492,7 @@
     "004-096": {
       "canonical_id": "004-096",
       "set_id": "004",
-      "number": "096",
+      "number": "96",
       "name": "Ursula's Trickery",
       "title": null,
       "rarity": "uncommon",
@@ -25526,7 +25526,7 @@
     "004-097": {
       "canonical_id": "004-097",
       "set_id": "004",
-      "number": "097",
+      "number": "97",
       "name": "We Don't Talk About Bruno",
       "title": null,
       "rarity": "rare",
@@ -25560,7 +25560,7 @@
     "004-098": {
       "canonical_id": "004-098",
       "set_id": "004",
-      "number": "098",
+      "number": "98",
       "name": "Hidden Inkcaster",
       "title": null,
       "rarity": "common",
@@ -25594,7 +25594,7 @@
     "004-099": {
       "canonical_id": "004-099",
       "set_id": "004",
-      "number": "099",
+      "number": "99",
       "name": "Signed Contract",
       "title": null,
       "rarity": "uncommon",
@@ -29828,7 +29828,7 @@
     "005-001": {
       "canonical_id": "005-001",
       "set_id": "005",
-      "number": "001",
+      "number": "1",
       "name": "Koda",
       "title": "Talkative Cub",
       "rarity": "rare",
@@ -29862,7 +29862,7 @@
     "005-002": {
       "canonical_id": "005-002",
       "set_id": "005",
-      "number": "002",
+      "number": "2",
       "name": "Nala",
       "title": "Mischievous Cub",
       "rarity": "uncommon",
@@ -29896,7 +29896,7 @@
     "005-003": {
       "canonical_id": "005-003",
       "set_id": "005",
-      "number": "003",
+      "number": "3",
       "name": "Prince Naveen",
       "title": "Ukulele Player",
       "rarity": "legendary",
@@ -29930,7 +29930,7 @@
     "005-004": {
       "canonical_id": "005-004",
       "set_id": "005",
-      "number": "004",
+      "number": "4",
       "name": "Rutt",
       "title": "Northern Moose",
       "rarity": "common",
@@ -29964,7 +29964,7 @@
     "005-005": {
       "canonical_id": "005-005",
       "set_id": "005",
-      "number": "005",
+      "number": "5",
       "name": "Kenai",
       "title": "Big Brother",
       "rarity": "common",
@@ -29998,7 +29998,7 @@
     "005-006": {
       "canonical_id": "005-006",
       "set_id": "005",
-      "number": "006",
+      "number": "6",
       "name": "Vanellope von Schweetz",
       "title": "Sugar Rush Champ",
       "rarity": "common",
@@ -30032,7 +30032,7 @@
     "005-007": {
       "canonical_id": "005-007",
       "set_id": "005",
-      "number": "007",
+      "number": "7",
       "name": "Tuke",
       "title": "Northern Moose",
       "rarity": "common",
@@ -30066,7 +30066,7 @@
     "005-008": {
       "canonical_id": "005-008",
       "set_id": "005",
-      "number": "008",
+      "number": "8",
       "name": "Lilo",
       "title": "Junior Cake Decorator",
       "rarity": "common",
@@ -30100,7 +30100,7 @@
     "005-009": {
       "canonical_id": "005-009",
       "set_id": "005",
-      "number": "009",
+      "number": "9",
       "name": "Vanellope von Schweetz",
       "title": "Candy Mechanic",
       "rarity": "common",
@@ -30134,7 +30134,7 @@
     "005-010": {
       "canonical_id": "005-010",
       "set_id": "005",
-      "number": "010",
+      "number": "10",
       "name": "Fix-It Felix, Jr.",
       "title": "Trusty Builder",
       "rarity": "common",
@@ -30168,7 +30168,7 @@
     "005-011": {
       "canonical_id": "005-011",
       "set_id": "005",
-      "number": "011",
+      "number": "11",
       "name": "Gazelle",
       "title": "Pop Star",
       "rarity": "common",
@@ -30202,7 +30202,7 @@
     "005-012": {
       "canonical_id": "005-012",
       "set_id": "005",
-      "number": "012",
+      "number": "12",
       "name": "Fix-It Felix, Jr.",
       "title": "Niceland Steward",
       "rarity": "uncommon",
@@ -30236,7 +30236,7 @@
     "005-013": {
       "canonical_id": "005-013",
       "set_id": "005",
-      "number": "013",
+      "number": "13",
       "name": "Kristoff",
       "title": "Reindeer Keeper",
       "rarity": "rare",
@@ -30270,7 +30270,7 @@
     "005-014": {
       "canonical_id": "005-014",
       "set_id": "005",
-      "number": "014",
+      "number": "14",
       "name": "Mirabel Madrigal",
       "title": "Family Gatherer",
       "rarity": "legendary",
@@ -30304,7 +30304,7 @@
     "005-015": {
       "canonical_id": "005-015",
       "set_id": "005",
-      "number": "015",
+      "number": "15",
       "name": "Minnie Mouse",
       "title": "Drum Major",
       "rarity": "super rare",
@@ -30338,7 +30338,7 @@
     "005-016": {
       "canonical_id": "005-016",
       "set_id": "005",
-      "number": "016",
+      "number": "16",
       "name": "Daisy Duck",
       "title": "Donald's Date",
       "rarity": "super rare",
@@ -30372,7 +30372,7 @@
     "005-017": {
       "canonical_id": "005-017",
       "set_id": "005",
-      "number": "017",
+      "number": "17",
       "name": "Fix-It Felix, Jr.",
       "title": "Delighted Sightseer",
       "rarity": "common",
@@ -30406,7 +30406,7 @@
     "005-018": {
       "canonical_id": "005-018",
       "set_id": "005",
-      "number": "018",
+      "number": "18",
       "name": "Moana",
       "title": "Determined Explorer",
       "rarity": "rare",
@@ -30440,7 +30440,7 @@
     "005-019": {
       "canonical_id": "005-019",
       "set_id": "005",
-      "number": "019",
+      "number": "19",
       "name": "Vanellope von Schweetz",
       "title": "Sugar Rush Princess",
       "rarity": "rare",
@@ -30474,7 +30474,7 @@
     "005-020": {
       "canonical_id": "005-020",
       "set_id": "005",
-      "number": "020",
+      "number": "20",
       "name": "Alan-a-Dale",
       "title": "Rockin' Rooster",
       "rarity": "uncommon",
@@ -30508,7 +30508,7 @@
     "005-021": {
       "canonical_id": "005-021",
       "set_id": "005",
-      "number": "021",
+      "number": "21",
       "name": "Wreck-It Ralph",
       "title": "Admiral Underpants",
       "rarity": "rare",
@@ -30542,7 +30542,7 @@
     "005-022": {
       "canonical_id": "005-022",
       "set_id": "005",
-      "number": "022",
+      "number": "22",
       "name": "Maid Marian",
       "title": "Lady of the Lists",
       "rarity": "uncommon",
@@ -30576,7 +30576,7 @@
     "005-023": {
       "canonical_id": "005-023",
       "set_id": "005",
-      "number": "023",
+      "number": "23",
       "name": "Sven",
       "title": "Reindeer Steed",
       "rarity": "uncommon",
@@ -30610,7 +30610,7 @@
     "005-024": {
       "canonical_id": "005-024",
       "set_id": "005",
-      "number": "024",
+      "number": "24",
       "name": "Minnie Mouse",
       "title": "Compassionate Friend",
       "rarity": "common",
@@ -30644,7 +30644,7 @@
     "005-025": {
       "canonical_id": "005-025",
       "set_id": "005",
-      "number": "025",
+      "number": "25",
       "name": "Try Everything",
       "title": null,
       "rarity": "uncommon",
@@ -30678,7 +30678,7 @@
     "005-026": {
       "canonical_id": "005-026",
       "set_id": "005",
-      "number": "026",
+      "number": "26",
       "name": "Healing Touch",
       "title": null,
       "rarity": "common",
@@ -30712,7 +30712,7 @@
     "005-027": {
       "canonical_id": "005-027",
       "set_id": "005",
-      "number": "027",
+      "number": "27",
       "name": "Revive",
       "title": null,
       "rarity": "rare",
@@ -30746,7 +30746,7 @@
     "005-028": {
       "canonical_id": "005-028",
       "set_id": "005",
-      "number": "028",
+      "number": "28",
       "name": "Blast From Your Past",
       "title": null,
       "rarity": "super rare",
@@ -30780,7 +30780,7 @@
     "005-029": {
       "canonical_id": "005-029",
       "set_id": "005",
-      "number": "029",
+      "number": "29",
       "name": "Invited to the Ball",
       "title": null,
       "rarity": "uncommon",
@@ -30814,7 +30814,7 @@
     "005-030": {
       "canonical_id": "005-030",
       "set_id": "005",
-      "number": "030",
+      "number": "30",
       "name": "Healing Decanter",
       "title": null,
       "rarity": "common",
@@ -30848,7 +30848,7 @@
     "005-031": {
       "canonical_id": "005-031",
       "set_id": "005",
-      "number": "031",
+      "number": "31",
       "name": "Queen's Sensor Core",
       "title": null,
       "rarity": "rare",
@@ -30882,7 +30882,7 @@
     "005-032": {
       "canonical_id": "005-032",
       "set_id": "005",
-      "number": "032",
+      "number": "32",
       "name": "Amber Chromicon",
       "title": null,
       "rarity": "uncommon",
@@ -30916,7 +30916,7 @@
     "005-033": {
       "canonical_id": "005-033",
       "set_id": "005",
-      "number": "033",
+      "number": "33",
       "name": "Rapunzel's Tower",
       "title": "Secluded Prison",
       "rarity": "uncommon",
@@ -30950,7 +30950,7 @@
     "005-034": {
       "canonical_id": "005-034",
       "set_id": "005",
-      "number": "034",
+      "number": "34",
       "name": "Pride Lands",
       "title": "Jungle Oasis",
       "rarity": "rare",
@@ -30984,7 +30984,7 @@
     "005-035": {
       "canonical_id": "005-035",
       "set_id": "005",
-      "number": "035",
+      "number": "35",
       "name": "Maleficent",
       "title": "Formidable Queen",
       "rarity": "super rare",
@@ -31018,7 +31018,7 @@
     "005-036": {
       "canonical_id": "005-036",
       "set_id": "005",
-      "number": "036",
+      "number": "36",
       "name": "The Nokk",
       "title": "Mythical Spirit",
       "rarity": "common",
@@ -31052,7 +31052,7 @@
     "005-037": {
       "canonical_id": "005-037",
       "set_id": "005",
-      "number": "037",
+      "number": "37",
       "name": "Cogsworth",
       "title": "Illuminary Watchman",
       "rarity": "common",
@@ -31086,7 +31086,7 @@
     "005-038": {
       "canonical_id": "005-038",
       "set_id": "005",
-      "number": "038",
+      "number": "38",
       "name": "Merlin",
       "title": "Turtle",
       "rarity": "common",
@@ -31120,7 +31120,7 @@
     "005-039": {
       "canonical_id": "005-039",
       "set_id": "005",
-      "number": "039",
+      "number": "39",
       "name": "Archimedes",
       "title": "Exasperated Owl",
       "rarity": "common",
@@ -31154,7 +31154,7 @@
     "005-040": {
       "canonical_id": "005-040",
       "set_id": "005",
-      "number": "040",
+      "number": "40",
       "name": "Bruni",
       "title": "Fire Salamander",
       "rarity": "uncommon",
@@ -31188,7 +31188,7 @@
     "005-041": {
       "canonical_id": "005-041",
       "set_id": "005",
-      "number": "041",
+      "number": "41",
       "name": "Earth Giant",
       "title": "Living Mountain",
       "rarity": "common",
@@ -31222,7 +31222,7 @@
     "005-042": {
       "canonical_id": "005-042",
       "set_id": "005",
-      "number": "042",
+      "number": "42",
       "name": "Gale",
       "title": "Wind Spirit",
       "rarity": "common",
@@ -31256,7 +31256,7 @@
     "005-043": {
       "canonical_id": "005-043",
       "set_id": "005",
-      "number": "043",
+      "number": "43",
       "name": "White Rabbit",
       "title": "Royal Herald",
       "rarity": "common",
@@ -31290,7 +31290,7 @@
     "005-044": {
       "canonical_id": "005-044",
       "set_id": "005",
-      "number": "044",
+      "number": "44",
       "name": "Madam Mim",
       "title": "Elephant",
       "rarity": "super rare",
@@ -31324,7 +31324,7 @@
     "005-045": {
       "canonical_id": "005-045",
       "set_id": "005",
-      "number": "045",
+      "number": "45",
       "name": "Luisa Madrigal",
       "title": "Entertaining Muscle",
       "rarity": "rare",
@@ -31358,7 +31358,7 @@
     "005-046": {
       "canonical_id": "005-046",
       "set_id": "005",
-      "number": "046",
+      "number": "46",
       "name": "Anna",
       "title": "Mystical Majesty",
       "rarity": "rare",
@@ -31392,7 +31392,7 @@
     "005-047": {
       "canonical_id": "005-047",
       "set_id": "005",
-      "number": "047",
+      "number": "47",
       "name": "Archimedes",
       "title": "Electrified Owl",
       "rarity": "uncommon",
@@ -31426,7 +31426,7 @@
     "005-048": {
       "canonical_id": "005-048",
       "set_id": "005",
-      "number": "048",
+      "number": "48",
       "name": "Elsa",
       "title": "The Fifth Spirit",
       "rarity": "super rare",
@@ -31460,7 +31460,7 @@
     "005-049": {
       "canonical_id": "005-049",
       "set_id": "005",
-      "number": "049",
+      "number": "49",
       "name": "Genie",
       "title": "Main Attraction",
       "rarity": "legendary",
@@ -31494,7 +31494,7 @@
     "005-050": {
       "canonical_id": "005-050",
       "set_id": "005",
-      "number": "050",
+      "number": "50",
       "name": "Olaf",
       "title": "Happy Passenger",
       "rarity": "rare",
@@ -31528,7 +31528,7 @@
     "005-051": {
       "canonical_id": "005-051",
       "set_id": "005",
-      "number": "051",
+      "number": "51",
       "name": "Maleficent",
       "title": "Vexed Partygoer",
       "rarity": "uncommon",
@@ -31562,7 +31562,7 @@
     "005-052": {
       "canonical_id": "005-052",
       "set_id": "005",
-      "number": "052",
+      "number": "52",
       "name": "Monstro",
       "title": "Whale of a Whale",
       "rarity": "uncommon",
@@ -31596,7 +31596,7 @@
     "005-053": {
       "canonical_id": "005-053",
       "set_id": "005",
-      "number": "053",
+      "number": "53",
       "name": "Magica De Spell",
       "title": "Cruel Sorceress",
       "rarity": "rare",
@@ -31630,7 +31630,7 @@
     "005-054": {
       "canonical_id": "005-054",
       "set_id": "005",
-      "number": "054",
+      "number": "54",
       "name": "Maleficent",
       "title": "Vengeful Sorceress",
       "rarity": "common",
@@ -31664,7 +31664,7 @@
     "005-055": {
       "canonical_id": "005-055",
       "set_id": "005",
-      "number": "055",
+      "number": "55",
       "name": "Rafiki",
       "title": "Shaman Duelist",
       "rarity": "rare",
@@ -31698,7 +31698,7 @@
     "005-056": {
       "canonical_id": "005-056",
       "set_id": "005",
-      "number": "056",
+      "number": "56",
       "name": "Anna",
       "title": "Eager Acolyte",
       "rarity": "common",
@@ -31732,7 +31732,7 @@
     "005-057": {
       "canonical_id": "005-057",
       "set_id": "005",
-      "number": "057",
+      "number": "57",
       "name": "King of Hearts",
       "title": "Monarch of Wonderland",
       "rarity": "uncommon",
@@ -31766,7 +31766,7 @@
     "005-058": {
       "canonical_id": "005-058",
       "set_id": "005",
-      "number": "058",
+      "number": "58",
       "name": "Camilo Madrigal",
       "title": "Family Copycat",
       "rarity": "legendary",
@@ -31800,7 +31800,7 @@
     "005-059": {
       "canonical_id": "005-059",
       "set_id": "005",
-      "number": "059",
+      "number": "59",
       "name": "Hypnotic Strength",
       "title": null,
       "rarity": "common",
@@ -31834,7 +31834,7 @@
     "005-060": {
       "canonical_id": "005-060",
       "set_id": "005",
-      "number": "060",
+      "number": "60",
       "name": "Finders Keepers",
       "title": null,
       "rarity": "uncommon",
@@ -31868,7 +31868,7 @@
     "005-061": {
       "canonical_id": "005-061",
       "set_id": "005",
-      "number": "061",
+      "number": "61",
       "name": "We Know The Way",
       "title": null,
       "rarity": "rare",
@@ -31902,7 +31902,7 @@
     "005-062": {
       "canonical_id": "005-062",
       "set_id": "005",
-      "number": "062",
+      "number": "62",
       "name": "Gathering Knowledge And Wisdom",
       "title": null,
       "rarity": "common",
@@ -31936,7 +31936,7 @@
     "005-063": {
       "canonical_id": "005-063",
       "set_id": "005",
-      "number": "063",
+      "number": "63",
       "name": "Magical Aid",
       "title": null,
       "rarity": "uncommon",
@@ -31970,7 +31970,7 @@
     "005-064": {
       "canonical_id": "005-064",
       "set_id": "005",
-      "number": "064",
+      "number": "64",
       "name": "Retrosphere",
       "title": null,
       "rarity": "common",
@@ -32004,7 +32004,7 @@
     "005-065": {
       "canonical_id": "005-065",
       "set_id": "005",
-      "number": "065",
+      "number": "65",
       "name": "Half Hexwell Crown",
       "title": null,
       "rarity": "rare",
@@ -32038,7 +32038,7 @@
     "005-066": {
       "canonical_id": "005-066",
       "set_id": "005",
-      "number": "066",
+      "number": "66",
       "name": "Amethyst Chromicon",
       "title": null,
       "rarity": "uncommon",
@@ -32072,7 +32072,7 @@
     "005-067": {
       "canonical_id": "005-067",
       "set_id": "005",
-      "number": "067",
+      "number": "67",
       "name": "Elsa's Ice Palace",
       "title": "Place of Solitude",
       "rarity": "rare",
@@ -32106,7 +32106,7 @@
     "005-068": {
       "canonical_id": "005-068",
       "set_id": "005",
-      "number": "068",
+      "number": "68",
       "name": "The Library",
       "title": "A Gift for Belle",
       "rarity": "uncommon",
@@ -32140,7 +32140,7 @@
     "005-069": {
       "canonical_id": "005-069",
       "set_id": "005",
-      "number": "069",
+      "number": "69",
       "name": "Robin Hood",
       "title": "Timely Contestant",
       "rarity": "rare",
@@ -32174,7 +32174,7 @@
     "005-070": {
       "canonical_id": "005-070",
       "set_id": "005",
-      "number": "070",
+      "number": "70",
       "name": "Shenzi",
       "title": "Scar's Accomplice",
       "rarity": "uncommon",
@@ -32208,7 +32208,7 @@
     "005-071": {
       "canonical_id": "005-071",
       "set_id": "005",
-      "number": "071",
+      "number": "71",
       "name": "Little John",
       "title": "Camp Cook",
       "rarity": "uncommon",
@@ -32242,7 +32242,7 @@
     "005-072": {
       "canonical_id": "005-072",
       "set_id": "005",
-      "number": "072",
+      "number": "72",
       "name": "Zazu",
       "title": "Advisor to Mufasa",
       "rarity": "common",
@@ -32276,7 +32276,7 @@
     "005-073": {
       "canonical_id": "005-073",
       "set_id": "005",
-      "number": "073",
+      "number": "73",
       "name": "Ulf",
       "title": "Mime",
       "rarity": "common",
@@ -32310,7 +32310,7 @@
     "005-074": {
       "canonical_id": "005-074",
       "set_id": "005",
-      "number": "074",
+      "number": "74",
       "name": "Ed",
       "title": "Laughing Hyena",
       "rarity": "common",
@@ -32344,7 +32344,7 @@
     "005-075": {
       "canonical_id": "005-075",
       "set_id": "005",
-      "number": "075",
+      "number": "75",
       "name": "Flora",
       "title": "Good Fairy",
       "rarity": "common",
@@ -32378,7 +32378,7 @@
     "005-076": {
       "canonical_id": "005-076",
       "set_id": "005",
-      "number": "076",
+      "number": "76",
       "name": "Merryweather",
       "title": "Good Fairy",
       "rarity": "common",
@@ -32412,7 +32412,7 @@
     "005-077": {
       "canonical_id": "005-077",
       "set_id": "005",
-      "number": "077",
+      "number": "77",
       "name": "Robin Hood",
       "title": "Archery Contestant",
       "rarity": "common",
@@ -32446,7 +32446,7 @@
     "005-078": {
       "canonical_id": "005-078",
       "set_id": "005",
-      "number": "078",
+      "number": "78",
       "name": "Fauna",
       "title": "Good Fairy",
       "rarity": "common",
@@ -32480,7 +32480,7 @@
     "005-079": {
       "canonical_id": "005-079",
       "set_id": "005",
-      "number": "079",
+      "number": "79",
       "name": "Iago",
       "title": "Fake Flamingo",
       "rarity": "rare",
@@ -32514,7 +32514,7 @@
     "005-080": {
       "canonical_id": "005-080",
       "set_id": "005",
-      "number": "080",
+      "number": "80",
       "name": "Banzai",
       "title": "Gluttonous Predator",
       "rarity": "rare",
@@ -32548,7 +32548,7 @@
     "005-081": {
       "canonical_id": "005-081",
       "set_id": "005",
-      "number": "081",
+      "number": "81",
       "name": "Ed",
       "title": "Hysterical Partygoer",
       "rarity": "uncommon",
@@ -32582,7 +32582,7 @@
     "005-082": {
       "canonical_id": "005-082",
       "set_id": "005",
-      "number": "082",
+      "number": "82",
       "name": "Scroop",
       "title": "Odious Mutineer",
       "rarity": "super rare",
@@ -32616,7 +32616,7 @@
     "005-083": {
       "canonical_id": "005-083",
       "set_id": "005",
-      "number": "083",
+      "number": "83",
       "name": "Prince Phillip",
       "title": "Swordsman of the Realm",
       "rarity": "super rare",
@@ -32650,7 +32650,7 @@
     "005-084": {
       "canonical_id": "005-084",
       "set_id": "005",
-      "number": "084",
+      "number": "84",
       "name": "Clarabelle",
       "title": "Light on Her Hooves",
       "rarity": "legendary",
@@ -32684,7 +32684,7 @@
     "005-085": {
       "canonical_id": "005-085",
       "set_id": "005",
-      "number": "085",
+      "number": "85",
       "name": "Anna",
       "title": "Diplomatic Queen",
       "rarity": "legendary",
@@ -32718,7 +32718,7 @@
     "005-086": {
       "canonical_id": "005-086",
       "set_id": "005",
-      "number": "086",
+      "number": "86",
       "name": "Clarabelle",
       "title": "Clumsy Guest",
       "rarity": "common",
@@ -32752,7 +32752,7 @@
     "005-087": {
       "canonical_id": "005-087",
       "set_id": "005",
-      "number": "087",
+      "number": "87",
       "name": "Banzai",
       "title": "Taunting Hyena",
       "rarity": "common",
@@ -32786,7 +32786,7 @@
     "005-088": {
       "canonical_id": "005-088",
       "set_id": "005",
-      "number": "088",
+      "number": "88",
       "name": "Robin Hood",
       "title": "Sneaky Sleuth",
       "rarity": "uncommon",
@@ -32820,7 +32820,7 @@
     "005-089": {
       "canonical_id": "005-089",
       "set_id": "005",
-      "number": "089",
+      "number": "89",
       "name": "Mother Gothel",
       "title": "Conceited Manipulator",
       "rarity": "uncommon",
@@ -32854,7 +32854,7 @@
     "005-090": {
       "canonical_id": "005-090",
       "set_id": "005",
-      "number": "090",
+      "number": "90",
       "name": "Clarabelle",
       "title": "Contented Wallflower",
       "rarity": "uncommon",
@@ -32888,7 +32888,7 @@
     "005-091": {
       "canonical_id": "005-091",
       "set_id": "005",
-      "number": "091",
+      "number": "91",
       "name": "Shenzi",
       "title": "Head Hyena",
       "rarity": "rare",
@@ -32922,7 +32922,7 @@
     "005-092": {
       "canonical_id": "005-092",
       "set_id": "005",
-      "number": "092",
+      "number": "92",
       "name": "Mother Gothel",
       "title": "Unwavering Schemer",
       "rarity": "super rare",
@@ -32956,7 +32956,7 @@
     "005-093": {
       "canonical_id": "005-093",
       "set_id": "005",
-      "number": "093",
+      "number": "93",
       "name": "Scar",
       "title": "Vengeful Lion",
       "rarity": "rare",
@@ -32990,7 +32990,7 @@
     "005-094": {
       "canonical_id": "005-094",
       "set_id": "005",
-      "number": "094",
+      "number": "94",
       "name": "Hypnotic Deduction",
       "title": null,
       "rarity": "common",
@@ -33024,7 +33024,7 @@
     "005-095": {
       "canonical_id": "005-095",
       "set_id": "005",
-      "number": "095",
+      "number": "95",
       "name": "Night Howler Rage",
       "title": null,
       "rarity": "common",
@@ -33058,7 +33058,7 @@
     "005-096": {
       "canonical_id": "005-096",
       "set_id": "005",
-      "number": "096",
+      "number": "96",
       "name": "You're Welcome",
       "title": null,
       "rarity": "uncommon",
@@ -33092,7 +33092,7 @@
     "005-097": {
       "canonical_id": "005-097",
       "set_id": "005",
-      "number": "097",
+      "number": "97",
       "name": "Remember Who You Are",
       "title": null,
       "rarity": "rare",
@@ -33126,7 +33126,7 @@
     "005-098": {
       "canonical_id": "005-098",
       "set_id": "005",
-      "number": "098",
+      "number": "98",
       "name": "Prince John's Mirror",
       "title": null,
       "rarity": "rare",
@@ -33160,7 +33160,7 @@
     "005-099": {
       "canonical_id": "005-099",
       "set_id": "005",
-      "number": "099",
+      "number": "99",
       "name": "Obscurosphere",
       "title": null,
       "rarity": "common",
@@ -37334,7 +37334,7 @@
     "006-001": {
       "canonical_id": "006-001",
       "set_id": "006",
-      "number": "001",
+      "number": "1",
       "name": "Owl",
       "title": "Pirate Lookout",
       "rarity": "uncommon",
@@ -37368,7 +37368,7 @@
     "006-002": {
       "canonical_id": "006-002",
       "set_id": "006",
-      "number": "002",
+      "number": "2",
       "name": "Lilo",
       "title": "Escape Artist",
       "rarity": "super rare",
@@ -37402,7 +37402,7 @@
     "006-003": {
       "canonical_id": "006-003",
       "set_id": "006",
-      "number": "003",
+      "number": "3",
       "name": "Winnie The Pooh",
       "title": "Hunny Pirate",
       "rarity": "rare",
@@ -37436,7 +37436,7 @@
     "006-004": {
       "canonical_id": "006-004",
       "set_id": "006",
-      "number": "004",
+      "number": "4",
       "name": "Gopher",
       "title": "Ship's Carpenter",
       "rarity": "uncommon",
@@ -37470,7 +37470,7 @@
     "006-005": {
       "canonical_id": "006-005",
       "set_id": "006",
-      "number": "005",
+      "number": "5",
       "name": "Simba",
       "title": "Happy-Go-Lucky",
       "rarity": "common",
@@ -37504,7 +37504,7 @@
     "006-006": {
       "canonical_id": "006-006",
       "set_id": "006",
-      "number": "006",
+      "number": "6",
       "name": "Chip",
       "title": "Friend Indeed",
       "rarity": "common",
@@ -37538,7 +37538,7 @@
     "006-007": {
       "canonical_id": "006-007",
       "set_id": "006",
-      "number": "007",
+      "number": "7",
       "name": "Dale",
       "title": "Friend in Need",
       "rarity": "common",
@@ -37572,7 +37572,7 @@
     "006-008": {
       "canonical_id": "006-008",
       "set_id": "006",
-      "number": "008",
+      "number": "8",
       "name": "David",
       "title": "Impressive Surfer",
       "rarity": "uncommon",
@@ -37606,7 +37606,7 @@
     "006-009": {
       "canonical_id": "006-009",
       "set_id": "006",
-      "number": "009",
+      "number": "9",
       "name": "Prince Naveen",
       "title": "Vigilant First Mate",
       "rarity": "uncommon",
@@ -37640,7 +37640,7 @@
     "006-010": {
       "canonical_id": "006-010",
       "set_id": "006",
-      "number": "010",
+      "number": "10",
       "name": "Prince Naveen",
       "title": "Carefree Explorer",
       "rarity": "common",
@@ -37674,7 +37674,7 @@
     "006-011": {
       "canonical_id": "006-011",
       "set_id": "006",
-      "number": "011",
+      "number": "11",
       "name": "Chief Bogo",
       "title": "Gazelle Fan",
       "rarity": "common",
@@ -37708,7 +37708,7 @@
     "006-012": {
       "canonical_id": "006-012",
       "set_id": "006",
-      "number": "012",
+      "number": "12",
       "name": "Chip",
       "title": "Ranger Leader",
       "rarity": "uncommon",
@@ -37742,7 +37742,7 @@
     "006-013": {
       "canonical_id": "006-013",
       "set_id": "006",
-      "number": "013",
+      "number": "13",
       "name": "Monterey Jack",
       "title": "Good-hearted Ranger",
       "rarity": "rare",
@@ -37776,7 +37776,7 @@
     "006-014": {
       "canonical_id": "006-014",
       "set_id": "006",
-      "number": "014",
+      "number": "14",
       "name": "Chip 'n' Dale",
       "title": "Recovery Rangers",
       "rarity": "rare",
@@ -37810,7 +37810,7 @@
     "006-015": {
       "canonical_id": "006-015",
       "set_id": "006",
-      "number": "015",
+      "number": "15",
       "name": "Judy Hopps",
       "title": "Resourceful Rabbit",
       "rarity": "rare",
@@ -37844,7 +37844,7 @@
     "006-016": {
       "canonical_id": "006-016",
       "set_id": "006",
-      "number": "016",
+      "number": "16",
       "name": "Tiana",
       "title": "Restaurant Owner",
       "rarity": "legendary",
@@ -37878,7 +37878,7 @@
     "006-017": {
       "canonical_id": "006-017",
       "set_id": "006",
-      "number": "017",
+      "number": "17",
       "name": "Grand Councilwoman",
       "title": "Federation Leader",
       "rarity": "uncommon",
@@ -37912,7 +37912,7 @@
     "006-018": {
       "canonical_id": "006-018",
       "set_id": "006",
-      "number": "018",
+      "number": "18",
       "name": "Dale",
       "title": "Mischievous Ranger",
       "rarity": "uncommon",
@@ -37946,7 +37946,7 @@
     "006-019": {
       "canonical_id": "006-019",
       "set_id": "006",
-      "number": "019",
+      "number": "19",
       "name": "Nani",
       "title": "Caring Sister",
       "rarity": "rare",
@@ -37980,7 +37980,7 @@
     "006-020": {
       "canonical_id": "006-020",
       "set_id": "006",
-      "number": "020",
+      "number": "20",
       "name": "Simba",
       "title": "Pride Protector",
       "rarity": "legendary",
@@ -38014,7 +38014,7 @@
     "006-021": {
       "canonical_id": "006-021",
       "set_id": "006",
-      "number": "021",
+      "number": "21",
       "name": "Kanga",
       "title": "Nurturing Mother",
       "rarity": "rare",
@@ -38048,7 +38048,7 @@
     "006-022": {
       "canonical_id": "006-022",
       "set_id": "006",
-      "number": "022",
+      "number": "22",
       "name": "Rabbit",
       "title": "Indignant Pirate",
       "rarity": "common",
@@ -38082,7 +38082,7 @@
     "006-023": {
       "canonical_id": "006-023",
       "set_id": "006",
-      "number": "023",
+      "number": "23",
       "name": "Roo",
       "title": "Littlest Pirate",
       "rarity": "common",
@@ -38116,7 +38116,7 @@
     "006-024": {
       "canonical_id": "006-024",
       "set_id": "006",
-      "number": "024",
+      "number": "24",
       "name": "Mr. Litwak",
       "title": "Arcade Owner",
       "rarity": "common",
@@ -38150,7 +38150,7 @@
     "006-025": {
       "canonical_id": "006-025",
       "set_id": "006",
-      "number": "025",
+      "number": "25",
       "name": "Jim Hawkins",
       "title": "Honorable Pirate",
       "rarity": "super rare",
@@ -38184,7 +38184,7 @@
     "006-026": {
       "canonical_id": "006-026",
       "set_id": "006",
-      "number": "026",
+      "number": "26",
       "name": "Stitch",
       "title": "Little Trickster",
       "rarity": "common",
@@ -38218,7 +38218,7 @@
     "006-027": {
       "canonical_id": "006-027",
       "set_id": "006",
-      "number": "027",
+      "number": "27",
       "name": "Good Job!",
       "title": null,
       "rarity": "common",
@@ -38252,7 +38252,7 @@
     "006-028": {
       "canonical_id": "006-028",
       "set_id": "006",
-      "number": "028",
+      "number": "28",
       "name": "I Won't Give In",
       "title": null,
       "rarity": "common",
@@ -38286,7 +38286,7 @@
     "006-029": {
       "canonical_id": "006-029",
       "set_id": "006",
-      "number": "029",
+      "number": "29",
       "name": "Rescue Rangers Away!",
       "title": null,
       "rarity": "uncommon",
@@ -38320,7 +38320,7 @@
     "006-030": {
       "canonical_id": "006-030",
       "set_id": "006",
-      "number": "030",
+      "number": "30",
       "name": "Safe and Sound",
       "title": null,
       "rarity": "rare",
@@ -38354,7 +38354,7 @@
     "006-031": {
       "canonical_id": "006-031",
       "set_id": "006",
-      "number": "031",
+      "number": "31",
       "name": "Naveen's Ukulele",
       "title": null,
       "rarity": "common",
@@ -38388,7 +38388,7 @@
     "006-032": {
       "canonical_id": "006-032",
       "set_id": "006",
-      "number": "032",
+      "number": "32",
       "name": "Pooh Pirate Ship",
       "title": null,
       "rarity": "rare",
@@ -38422,7 +38422,7 @@
     "006-033": {
       "canonical_id": "006-033",
       "set_id": "006",
-      "number": "033",
+      "number": "33",
       "name": "Scrump",
       "title": null,
       "rarity": "uncommon",
@@ -38456,7 +38456,7 @@
     "006-034": {
       "canonical_id": "006-034",
       "set_id": "006",
-      "number": "034",
+      "number": "34",
       "name": "Hundred Acre Island",
       "title": "Pooh's Home",
       "rarity": "common",
@@ -38490,7 +38490,7 @@
     "006-035": {
       "canonical_id": "006-035",
       "set_id": "006",
-      "number": "035",
+      "number": "35",
       "name": "Sugar Rush Speedway",
       "title": "Finish Line",
       "rarity": "super rare",
@@ -38524,7 +38524,7 @@
     "006-036": {
       "canonical_id": "006-036",
       "set_id": "006",
-      "number": "036",
+      "number": "36",
       "name": "Hades",
       "title": "Lord of the Dead",
       "rarity": "rare",
@@ -38558,7 +38558,7 @@
     "006-037": {
       "canonical_id": "006-037",
       "set_id": "006",
-      "number": "037",
+      "number": "37",
       "name": "Madam Mim",
       "title": "Tiny Adversary",
       "rarity": "rare",
@@ -38592,7 +38592,7 @@
     "006-038": {
       "canonical_id": "006-038",
       "set_id": "006",
-      "number": "038",
+      "number": "38",
       "name": "Genie",
       "title": "Excited Shipbuilder",
       "rarity": "common",
@@ -38626,7 +38626,7 @@
     "006-039": {
       "canonical_id": "006-039",
       "set_id": "006",
-      "number": "039",
+      "number": "39",
       "name": "Sisu",
       "title": "In Her Element",
       "rarity": "common",
@@ -38660,7 +38660,7 @@
     "006-040": {
       "canonical_id": "006-040",
       "set_id": "006",
-      "number": "040",
+      "number": "40",
       "name": "The White Rose",
       "title": "Jewel of the Garden",
       "rarity": "common",
@@ -38694,7 +38694,7 @@
     "006-041": {
       "canonical_id": "006-041",
       "set_id": "006",
-      "number": "041",
+      "number": "41",
       "name": "Juju",
       "title": "Mama Odie's Companion",
       "rarity": "common",
@@ -38728,7 +38728,7 @@
     "006-042": {
       "canonical_id": "006-042",
       "set_id": "006",
-      "number": "042",
+      "number": "42",
       "name": "Rafiki",
       "title": "Shaman of the Savanna",
       "rarity": "common",
@@ -38762,7 +38762,7 @@
     "006-043": {
       "canonical_id": "006-043",
       "set_id": "006",
-      "number": "043",
+      "number": "43",
       "name": "Tinker Bell",
       "title": "Fast Flier",
       "rarity": "common",
@@ -38796,7 +38796,7 @@
     "006-044": {
       "canonical_id": "006-044",
       "set_id": "006",
-      "number": "044",
+      "number": "44",
       "name": "The Carpenter",
       "title": "Dinner Companion",
       "rarity": "common",
@@ -38830,7 +38830,7 @@
     "006-045": {
       "canonical_id": "006-045",
       "set_id": "006",
-      "number": "045",
+      "number": "45",
       "name": "Iago",
       "title": "Reappearing Parrot",
       "rarity": "common",
@@ -38864,7 +38864,7 @@
     "006-046": {
       "canonical_id": "006-046",
       "set_id": "006",
-      "number": "046",
+      "number": "46",
       "name": "The Walrus",
       "title": "Greedy Gourmand",
       "rarity": "uncommon",
@@ -38898,7 +38898,7 @@
     "006-047": {
       "canonical_id": "006-047",
       "set_id": "006",
-      "number": "047",
+      "number": "47",
       "name": "Scar",
       "title": "Tempestuous Lion",
       "rarity": "uncommon",
@@ -38932,7 +38932,7 @@
     "006-048": {
       "canonical_id": "006-048",
       "set_id": "006",
-      "number": "048",
+      "number": "48",
       "name": "Tinker Bell",
       "title": "Queen of the Azurite Fairies",
       "rarity": "uncommon",
@@ -38966,7 +38966,7 @@
     "006-049": {
       "canonical_id": "006-049",
       "set_id": "006",
-      "number": "049",
+      "number": "49",
       "name": "Diablo",
       "title": "Obedient Raven",
       "rarity": "uncommon",
@@ -39000,7 +39000,7 @@
     "006-050": {
       "canonical_id": "006-050",
       "set_id": "006",
-      "number": "050",
+      "number": "50",
       "name": "March Hare",
       "title": "Absurd Host",
       "rarity": "uncommon",
@@ -39034,7 +39034,7 @@
     "006-051": {
       "canonical_id": "006-051",
       "set_id": "006",
-      "number": "051",
+      "number": "51",
       "name": "Magic Carpet",
       "title": "Amazing Flier",
       "rarity": "uncommon",
@@ -39068,7 +39068,7 @@
     "006-052": {
       "canonical_id": "006-052",
       "set_id": "006",
-      "number": "052",
+      "number": "52",
       "name": "Rafiki",
       "title": "Ethereal Guide",
       "rarity": "rare",
@@ -39102,7 +39102,7 @@
     "006-053": {
       "canonical_id": "006-053",
       "set_id": "006",
-      "number": "053",
+      "number": "53",
       "name": "Genie",
       "title": "Wish Fulfilled",
       "rarity": "rare",
@@ -39136,7 +39136,7 @@
     "006-054": {
       "canonical_id": "006-054",
       "set_id": "006",
-      "number": "054",
+      "number": "54",
       "name": "Sisu",
       "title": "Uniting Dragon",
       "rarity": "super rare",
@@ -39170,7 +39170,7 @@
     "006-055": {
       "canonical_id": "006-055",
       "set_id": "006",
-      "number": "055",
+      "number": "55",
       "name": "Madam Mim",
       "title": "Truly Marvelous",
       "rarity": "super rare",
@@ -39204,7 +39204,7 @@
     "006-056": {
       "canonical_id": "006-056",
       "set_id": "006",
-      "number": "056",
+      "number": "56",
       "name": "Yzma",
       "title": "Conniving Chemist",
       "rarity": "legendary",
@@ -39238,7 +39238,7 @@
     "006-057": {
       "canonical_id": "006-057",
       "set_id": "006",
-      "number": "057",
+      "number": "57",
       "name": "Mama Odie",
       "title": "Solitary Sage",
       "rarity": "rare",
@@ -39272,7 +39272,7 @@
     "006-058": {
       "canonical_id": "006-058",
       "set_id": "006",
-      "number": "058",
+      "number": "58",
       "name": "Peter Pan",
       "title": "Shadow Catcher",
       "rarity": "uncommon",
@@ -39306,7 +39306,7 @@
     "006-059": {
       "canonical_id": "006-059",
       "set_id": "006",
-      "number": "059",
+      "number": "59",
       "name": "Mad Hatter",
       "title": "Eccentric Host",
       "rarity": "super rare",
@@ -39340,7 +39340,7 @@
     "006-060": {
       "canonical_id": "006-060",
       "set_id": "006",
-      "number": "060",
+      "number": "60",
       "name": "A Very Merry Unbirthday",
       "title": null,
       "rarity": "common",
@@ -39374,7 +39374,7 @@
     "006-061": {
       "canonical_id": "006-061",
       "set_id": "006",
-      "number": "061",
+      "number": "61",
       "name": "Genie",
       "title": "Wonderful Trickster",
       "rarity": "legendary",
@@ -39408,7 +39408,7 @@
     "006-062": {
       "canonical_id": "006-062",
       "set_id": "006",
-      "number": "062",
+      "number": "62",
       "name": "Making Magic",
       "title": null,
       "rarity": "common",
@@ -39442,7 +39442,7 @@
     "006-063": {
       "canonical_id": "006-063",
       "set_id": "006",
-      "number": "063",
+      "number": "63",
       "name": "Lose The Way",
       "title": null,
       "rarity": "uncommon",
@@ -39476,7 +39476,7 @@
     "006-064": {
       "canonical_id": "006-064",
       "set_id": "006",
-      "number": "064",
+      "number": "64",
       "name": "Seeking the Half Crown",
       "title": null,
       "rarity": "rare",
@@ -39510,7 +39510,7 @@
     "006-065": {
       "canonical_id": "006-065",
       "set_id": "006",
-      "number": "065",
+      "number": "65",
       "name": "Maleficent's Staff",
       "title": null,
       "rarity": "rare",
@@ -39544,7 +39544,7 @@
     "006-066": {
       "canonical_id": "006-066",
       "set_id": "006",
-      "number": "066",
+      "number": "66",
       "name": "Mad Hatter's Teapot",
       "title": null,
       "rarity": "common",
@@ -39578,7 +39578,7 @@
     "006-067": {
       "canonical_id": "006-067",
       "set_id": "006",
-      "number": "067",
+      "number": "67",
       "name": "Pixie Dust",
       "title": null,
       "rarity": "uncommon",
@@ -39612,7 +39612,7 @@
     "006-068": {
       "canonical_id": "006-068",
       "set_id": "006",
-      "number": "068",
+      "number": "68",
       "name": "Fairy Ship",
       "title": "Royal Vessel",
       "rarity": "common",
@@ -39646,7 +39646,7 @@
     "006-069": {
       "canonical_id": "006-069",
       "set_id": "006",
-      "number": "069",
+      "number": "69",
       "name": "Mystical Tree",
       "title": "Mama Odie's Home",
       "rarity": "rare",
@@ -39680,7 +39680,7 @@
     "006-070": {
       "canonical_id": "006-070",
       "set_id": "006",
-      "number": "070",
+      "number": "70",
       "name": "Jasmine",
       "title": "Royal Seafarer",
       "rarity": "rare",
@@ -39714,7 +39714,7 @@
     "006-071": {
       "canonical_id": "006-071",
       "set_id": "006",
-      "number": "071",
+      "number": "71",
       "name": "Captain Hook",
       "title": "Underhanded",
       "rarity": "rare",
@@ -39748,7 +39748,7 @@
     "006-072": {
       "canonical_id": "006-072",
       "set_id": "006",
-      "number": "072",
+      "number": "72",
       "name": "Stitch",
       "title": "Alien Buccaneer",
       "rarity": "rare",
@@ -39782,7 +39782,7 @@
     "006-073": {
       "canonical_id": "006-073",
       "set_id": "006",
-      "number": "073",
+      "number": "73",
       "name": "Go Go Tomago",
       "title": "Darting Dynamo",
       "rarity": "rare",
@@ -39816,7 +39816,7 @@
     "006-074": {
       "canonical_id": "006-074",
       "set_id": "006",
-      "number": "074",
+      "number": "74",
       "name": "Honey Lemon",
       "title": "Chemical Genius",
       "rarity": "uncommon",
@@ -39850,7 +39850,7 @@
     "006-075": {
       "canonical_id": "006-075",
       "set_id": "006",
-      "number": "075",
+      "number": "75",
       "name": "Fred",
       "title": "Mascot by Day",
       "rarity": "common",
@@ -39884,7 +39884,7 @@
     "006-076": {
       "canonical_id": "006-076",
       "set_id": "006",
-      "number": "076",
+      "number": "76",
       "name": "Tootles",
       "title": "Lost Boy",
       "rarity": "common",
@@ -39918,7 +39918,7 @@
     "006-077": {
       "canonical_id": "006-077",
       "set_id": "006",
-      "number": "077",
+      "number": "77",
       "name": "Dawson",
       "title": "Basil's Assistant",
       "rarity": "common",
@@ -39952,7 +39952,7 @@
     "006-078": {
       "canonical_id": "006-078",
       "set_id": "006",
-      "number": "078",
+      "number": "78",
       "name": "Heathcliff",
       "title": "Stoic Butler",
       "rarity": "common",
@@ -39986,7 +39986,7 @@
     "006-079": {
       "canonical_id": "006-079",
       "set_id": "006",
-      "number": "079",
+      "number": "79",
       "name": "Basil",
       "title": "Hypnotized Mouse",
       "rarity": "common",
@@ -40020,7 +40020,7 @@
     "006-080": {
       "canonical_id": "006-080",
       "set_id": "006",
-      "number": "080",
+      "number": "80",
       "name": "Donald Duck",
       "title": "First Mate",
       "rarity": "uncommon",
@@ -40054,7 +40054,7 @@
     "006-081": {
       "canonical_id": "006-081",
       "set_id": "006",
-      "number": "081",
+      "number": "81",
       "name": "Daisy Duck",
       "title": "Pirate Captain",
       "rarity": "super rare",
@@ -40088,7 +40088,7 @@
     "006-082": {
       "canonical_id": "006-082",
       "set_id": "006",
-      "number": "082",
+      "number": "82",
       "name": "Mertle Edmonds",
       "title": "Lilo's Rival",
       "rarity": "uncommon",
@@ -40122,7 +40122,7 @@
     "006-083": {
       "canonical_id": "006-083",
       "set_id": "006",
-      "number": "083",
+      "number": "83",
       "name": "Prince Phillip",
       "title": "Royal Explorer",
       "rarity": "uncommon",
@@ -40156,7 +40156,7 @@
     "006-084": {
       "canonical_id": "006-084",
       "set_id": "006",
-      "number": "084",
+      "number": "84",
       "name": "Jasmine",
       "title": "Royal Commodore",
       "rarity": "legendary",
@@ -40190,7 +40190,7 @@
     "006-085": {
       "canonical_id": "006-085",
       "set_id": "006",
-      "number": "085",
+      "number": "85",
       "name": "Peter Pan",
       "title": "Never Land Prankster",
       "rarity": "super rare",
@@ -40224,7 +40224,7 @@
     "006-086": {
       "canonical_id": "006-086",
       "set_id": "006",
-      "number": "086",
+      "number": "86",
       "name": "Hercules",
       "title": "Baby Demigod",
       "rarity": "legendary",
@@ -40258,7 +40258,7 @@
     "006-087": {
       "canonical_id": "006-087",
       "set_id": "006",
-      "number": "087",
+      "number": "87",
       "name": "Alistair Krei",
       "title": "Ambitious Entrepreneur",
       "rarity": "common",
@@ -40292,7 +40292,7 @@
     "006-088": {
       "canonical_id": "006-088",
       "set_id": "006",
-      "number": "088",
+      "number": "88",
       "name": "Gazelle",
       "title": "Angel with Horns",
       "rarity": "common",
@@ -40326,7 +40326,7 @@
     "006-089": {
       "canonical_id": "006-089",
       "set_id": "006",
-      "number": "089",
+      "number": "89",
       "name": "Goofy",
       "title": "Expert Shipwright",
       "rarity": "rare",
@@ -40360,7 +40360,7 @@
     "006-090": {
       "canonical_id": "006-090",
       "set_id": "006",
-      "number": "090",
+      "number": "90",
       "name": "Bellwether",
       "title": "Assistant Mayor",
       "rarity": "uncommon",
@@ -40394,7 +40394,7 @@
     "006-091": {
       "canonical_id": "006-091",
       "set_id": "006",
-      "number": "091",
+      "number": "91",
       "name": "Basil",
       "title": "Disguised Detective",
       "rarity": "uncommon",
@@ -40428,7 +40428,7 @@
     "006-092": {
       "canonical_id": "006-092",
       "set_id": "006",
-      "number": "092",
+      "number": "92",
       "name": "Olivia Flaversham",
       "title": "The Toymaker's Daughter",
       "rarity": "rare",
@@ -40462,7 +40462,7 @@
     "006-093": {
       "canonical_id": "006-093",
       "set_id": "006",
-      "number": "093",
+      "number": "93",
       "name": "Bend To My Will",
       "title": null,
       "rarity": "super rare",
@@ -40496,7 +40496,7 @@
     "006-094": {
       "canonical_id": "006-094",
       "set_id": "006",
-      "number": "094",
+      "number": "94",
       "name": "Prepare To Board!",
       "title": null,
       "rarity": "common",
@@ -40530,7 +40530,7 @@
     "006-095": {
       "canonical_id": "006-095",
       "set_id": "006",
-      "number": "095",
+      "number": "95",
       "name": "Heffalumps and Woozles",
       "title": null,
       "rarity": "common",
@@ -40564,7 +40564,7 @@
     "006-096": {
       "canonical_id": "006-096",
       "set_id": "006",
-      "number": "096",
+      "number": "96",
       "name": "Mosquito Bite",
       "title": null,
       "rarity": "uncommon",
@@ -40598,7 +40598,7 @@
     "006-097": {
       "canonical_id": "006-097",
       "set_id": "006",
-      "number": "097",
+      "number": "97",
       "name": "You Came Back",
       "title": null,
       "rarity": "rare",
@@ -40632,7 +40632,7 @@
     "006-098": {
       "canonical_id": "006-098",
       "set_id": "006",
-      "number": "098",
+      "number": "98",
       "name": "Megabot",
       "title": null,
       "rarity": "uncommon",
@@ -40666,7 +40666,7 @@
     "006-099": {
       "canonical_id": "006-099",
       "set_id": "006",
-      "number": "099",
+      "number": "99",
       "name": "Galactic Communicator",
       "title": null,
       "rarity": "common",
@@ -44810,7 +44810,7 @@
     "007-001": {
       "canonical_id": "007-001",
       "set_id": "007",
-      "number": "001",
+      "number": "1",
       "name": "Rhino",
       "title": "Motivational Speaker",
       "rarity": "rare",
@@ -44844,7 +44844,7 @@
     "007-002": {
       "canonical_id": "007-002",
       "set_id": "007",
-      "number": "002",
+      "number": "2",
       "name": "Perdita",
       "title": "Playful Mother",
       "rarity": "rare",
@@ -44878,7 +44878,7 @@
     "007-003": {
       "canonical_id": "007-003",
       "set_id": "007",
-      "number": "003",
+      "number": "3",
       "name": "King Stefan",
       "title": "New Father",
       "rarity": "common",
@@ -44912,7 +44912,7 @@
     "007-004": {
       "canonical_id": "007-004",
       "set_id": "007",
-      "number": "004",
+      "number": "4",
       "name": "Bolt",
       "title": "Superdog",
       "rarity": "super rare",
@@ -44946,7 +44946,7 @@
     "007-005": {
       "canonical_id": "007-005",
       "set_id": "007",
-      "number": "005",
+      "number": "5",
       "name": "Roger Radcliffe",
       "title": "Dog Lover",
       "rarity": "common",
@@ -44980,7 +44980,7 @@
     "007-006": {
       "canonical_id": "007-006",
       "set_id": "007",
-      "number": "006",
+      "number": "6",
       "name": "Trusty",
       "title": "Loyal Bloodhound",
       "rarity": "common",
@@ -45014,7 +45014,7 @@
     "007-007": {
       "canonical_id": "007-007",
       "set_id": "007",
-      "number": "007",
+      "number": "7",
       "name": "Peg",
       "title": "Natural Performer",
       "rarity": "uncommon",
@@ -45048,7 +45048,7 @@
     "007-008": {
       "canonical_id": "007-008",
       "set_id": "007",
-      "number": "008",
+      "number": "8",
       "name": "Suzy",
       "title": "Master Seamstress",
       "rarity": "common",
@@ -45082,7 +45082,7 @@
     "007-009": {
       "canonical_id": "007-009",
       "set_id": "007",
-      "number": "009",
+      "number": "9",
       "name": "Mittens",
       "title": "Sassy Street Cat",
       "rarity": "rare",
@@ -45116,7 +45116,7 @@
     "007-010": {
       "canonical_id": "007-010",
       "set_id": "007",
-      "number": "010",
+      "number": "10",
       "name": "Tramp",
       "title": "Street-Smart Dog",
       "rarity": "rare",
@@ -45150,7 +45150,7 @@
     "007-011": {
       "canonical_id": "007-011",
       "set_id": "007",
-      "number": "011",
+      "number": "11",
       "name": "The Troubadour",
       "title": "Musical Narrator",
       "rarity": "uncommon",
@@ -45184,7 +45184,7 @@
     "007-012": {
       "canonical_id": "007-012",
       "set_id": "007",
-      "number": "012",
+      "number": "12",
       "name": "Wendy Darling",
       "title": "Pirate Queen",
       "rarity": "uncommon",
@@ -45218,7 +45218,7 @@
     "007-013": {
       "canonical_id": "007-013",
       "set_id": "007",
-      "number": "013",
+      "number": "13",
       "name": "Mirabel Madrigal",
       "title": "Hopeful Dreamer",
       "rarity": "uncommon",
@@ -45252,7 +45252,7 @@
     "007-014": {
       "canonical_id": "007-014",
       "set_id": "007",
-      "number": "014",
+      "number": "14",
       "name": "Aurora",
       "title": "Waking Beauty",
       "rarity": "legendary",
@@ -45286,7 +45286,7 @@
     "007-015": {
       "canonical_id": "007-015",
       "set_id": "007",
-      "number": "015",
+      "number": "15",
       "name": "Cinderella",
       "title": "The Right One",
       "rarity": "rare",
@@ -45320,7 +45320,7 @@
     "007-016": {
       "canonical_id": "007-016",
       "set_id": "007",
-      "number": "016",
+      "number": "16",
       "name": "Mariano Guzman",
       "title": "Handsome Suitor",
       "rarity": "common",
@@ -45354,7 +45354,7 @@
     "007-017": {
       "canonical_id": "007-017",
       "set_id": "007",
-      "number": "017",
+      "number": "17",
       "name": "Candlehead",
       "title": "Dedicated Racer",
       "rarity": "common",
@@ -45388,7 +45388,7 @@
     "007-018": {
       "canonical_id": "007-018",
       "set_id": "007",
-      "number": "018",
+      "number": "18",
       "name": "Bolt",
       "title": "Dependable Friend",
       "rarity": "common",
@@ -45422,7 +45422,7 @@
     "007-019": {
       "canonical_id": "007-019",
       "set_id": "007",
-      "number": "019",
+      "number": "19",
       "name": "Pascal",
       "title": "Garden Chameleon",
       "rarity": "uncommon",
@@ -45456,7 +45456,7 @@
     "007-020": {
       "canonical_id": "007-020",
       "set_id": "007",
-      "number": "020",
+      "number": "20",
       "name": "King Candy",
       "title": "Royal Racer",
       "rarity": "super rare",
@@ -45490,7 +45490,7 @@
     "007-021": {
       "canonical_id": "007-021",
       "set_id": "007",
-      "number": "021",
+      "number": "21",
       "name": "Penny",
       "title": "Bolt's Person",
       "rarity": "uncommon",
@@ -45524,7 +45524,7 @@
     "007-022": {
       "canonical_id": "007-022",
       "set_id": "007",
-      "number": "022",
+      "number": "22",
       "name": "Fix-it Felix, Jr.",
       "title": "Pint-Sized Hero",
       "rarity": "uncommon",
@@ -45558,7 +45558,7 @@
     "007-023": {
       "canonical_id": "007-023",
       "set_id": "007",
-      "number": "023",
+      "number": "23",
       "name": "Thunderbolt",
       "title": "Wonder Dog",
       "rarity": "uncommon",
@@ -45592,7 +45592,7 @@
     "007-024": {
       "canonical_id": "007-024",
       "set_id": "007",
-      "number": "024",
+      "number": "24",
       "name": "The Prince",
       "title": "Vigilant Suitor",
       "rarity": "uncommon",
@@ -45626,7 +45626,7 @@
     "007-025": {
       "canonical_id": "007-025",
       "set_id": "007",
-      "number": "025",
+      "number": "25",
       "name": "Isabela Madrigal",
       "title": "In the Moment",
       "rarity": "rare",
@@ -45660,7 +45660,7 @@
     "007-026": {
       "canonical_id": "007-026",
       "set_id": "007",
-      "number": "026",
+      "number": "26",
       "name": "Calhoun",
       "title": "Courageous Rescuer",
       "rarity": "rare",
@@ -45694,7 +45694,7 @@
     "007-027": {
       "canonical_id": "007-027",
       "set_id": "007",
-      "number": "027",
+      "number": "27",
       "name": "Wreck-It Ralph",
       "title": "Hero's Duty",
       "rarity": "rare",
@@ -45728,7 +45728,7 @@
     "007-028": {
       "canonical_id": "007-028",
       "set_id": "007",
-      "number": "028",
+      "number": "28",
       "name": "Lady",
       "title": "Miss Park Avenue",
       "rarity": "super rare",
@@ -45762,7 +45762,7 @@
     "007-029": {
       "canonical_id": "007-029",
       "set_id": "007",
-      "number": "029",
+      "number": "29",
       "name": "Pongo",
       "title": "Dear Old Dad",
       "rarity": "super rare",
@@ -45796,7 +45796,7 @@
     "007-030": {
       "canonical_id": "007-030",
       "set_id": "007",
-      "number": "030",
+      "number": "30",
       "name": "Kenai",
       "title": "Protective Brother",
       "rarity": "rare",
@@ -45830,7 +45830,7 @@
     "007-031": {
       "canonical_id": "007-031",
       "set_id": "007",
-      "number": "031",
+      "number": "31",
       "name": "Minnie Mouse",
       "title": "Storyteller",
       "rarity": "legendary",
@@ -45864,7 +45864,7 @@
     "007-032": {
       "canonical_id": "007-032",
       "set_id": "007",
-      "number": "032",
+      "number": "32",
       "name": "Perla",
       "title": "Nimble Seamstress",
       "rarity": "uncommon",
@@ -45898,7 +45898,7 @@
     "007-033": {
       "canonical_id": "007-033",
       "set_id": "007",
-      "number": "033",
+      "number": "33",
       "name": "Snow White",
       "title": "Fairest in the Land",
       "rarity": "uncommon",
@@ -45932,7 +45932,7 @@
     "007-034": {
       "canonical_id": "007-034",
       "set_id": "007",
-      "number": "034",
+      "number": "34",
       "name": "Koda",
       "title": "Smallish Bear",
       "rarity": "uncommon",
@@ -45966,7 +45966,7 @@
     "007-035": {
       "canonical_id": "007-035",
       "set_id": "007",
-      "number": "035",
+      "number": "35",
       "name": "Mirabel Madrigal",
       "title": "Musically Talented",
       "rarity": "super rare",
@@ -46000,7 +46000,7 @@
     "007-036": {
       "canonical_id": "007-036",
       "set_id": "007",
-      "number": "036",
+      "number": "36",
       "name": "Calhoun",
       "title": "Battle-Tested",
       "rarity": "common",
@@ -46034,7 +46034,7 @@
     "007-037": {
       "canonical_id": "007-037",
       "set_id": "007",
-      "number": "037",
+      "number": "37",
       "name": "Pepa Madrigal",
       "title": "Sensitive Sister",
       "rarity": "common",
@@ -46068,7 +46068,7 @@
     "007-038": {
       "canonical_id": "007-038",
       "set_id": "007",
-      "number": "038",
+      "number": "38",
       "name": "So Much To Give",
       "title": null,
       "rarity": "common",
@@ -46102,7 +46102,7 @@
     "007-039": {
       "canonical_id": "007-039",
       "set_id": "007",
-      "number": "039",
+      "number": "39",
       "name": "Restoring the Heart",
       "title": null,
       "rarity": "uncommon",
@@ -46136,7 +46136,7 @@
     "007-040": {
       "canonical_id": "007-040",
       "set_id": "007",
-      "number": "040",
+      "number": "40",
       "name": "The Family Madrigal",
       "title": null,
       "rarity": "rare",
@@ -46170,7 +46170,7 @@
     "007-041": {
       "canonical_id": "007-041",
       "set_id": "007",
-      "number": "041",
+      "number": "41",
       "name": "Amber Coil",
       "title": null,
       "rarity": "uncommon",
@@ -46204,7 +46204,7 @@
     "007-042": {
       "canonical_id": "007-042",
       "set_id": "007",
-      "number": "042",
+      "number": "42",
       "name": "Spaghetti Dinner",
       "title": null,
       "rarity": "common",
@@ -46238,7 +46238,7 @@
     "007-043": {
       "canonical_id": "007-043",
       "set_id": "007",
-      "number": "043",
+      "number": "43",
       "name": "Kanine Krunchies",
       "title": null,
       "rarity": "common",
@@ -46272,7 +46272,7 @@
     "007-044": {
       "canonical_id": "007-044",
       "set_id": "007",
-      "number": "044",
+      "number": "44",
       "name": "The Glass Slipper",
       "title": null,
       "rarity": "rare",
@@ -46306,7 +46306,7 @@
     "007-045": {
       "canonical_id": "007-045",
       "set_id": "007",
-      "number": "045",
+      "number": "45",
       "name": "Kuzco",
       "title": "Temporary Whale",
       "rarity": "rare",
@@ -46340,7 +46340,7 @@
     "007-046": {
       "canonical_id": "007-046",
       "set_id": "007",
-      "number": "046",
+      "number": "46",
       "name": "Tanana",
       "title": "Tribal Elder",
       "rarity": "common",
@@ -46374,7 +46374,7 @@
     "007-047": {
       "canonical_id": "007-047",
       "set_id": "007",
-      "number": "047",
+      "number": "47",
       "name": "Treasure Guardian",
       "title": "Foreboding Sentry",
       "rarity": "common",
@@ -46408,7 +46408,7 @@
     "007-048": {
       "canonical_id": "007-048",
       "set_id": "007",
-      "number": "048",
+      "number": "48",
       "name": "Honeymaren",
       "title": "Northuldra Guide",
       "rarity": "common",
@@ -46442,7 +46442,7 @@
     "007-049": {
       "canonical_id": "007-049",
       "set_id": "007",
-      "number": "049",
+      "number": "49",
       "name": "Iago",
       "title": "Giant Spectral Parrot",
       "rarity": "rare",
@@ -46476,7 +46476,7 @@
     "007-050": {
       "canonical_id": "007-050",
       "set_id": "007",
-      "number": "050",
+      "number": "50",
       "name": "Chernabog",
       "title": "Creature of the Night",
       "rarity": "rare",
@@ -46510,7 +46510,7 @@
     "007-051": {
       "canonical_id": "007-051",
       "set_id": "007",
-      "number": "051",
+      "number": "51",
       "name": "Jafar",
       "title": "Newly Crowned",
       "rarity": "super rare",
@@ -46544,7 +46544,7 @@
     "007-052": {
       "canonical_id": "007-052",
       "set_id": "007",
-      "number": "052",
+      "number": "52",
       "name": "Hades",
       "title": "Fast Talker",
       "rarity": "rare",
@@ -46578,7 +46578,7 @@
     "007-053": {
       "canonical_id": "007-053",
       "set_id": "007",
-      "number": "053",
+      "number": "53",
       "name": "Madame Medusa",
       "title": "Diamond Lover",
       "rarity": "uncommon",
@@ -46612,7 +46612,7 @@
     "007-054": {
       "canonical_id": "007-054",
       "set_id": "007",
-      "number": "054",
+      "number": "54",
       "name": "Te Kā",
       "title": "Elemental Terror",
       "rarity": "super rare",
@@ -46646,7 +46646,7 @@
     "007-055": {
       "canonical_id": "007-055",
       "set_id": "007",
-      "number": "055",
+      "number": "55",
       "name": "Elsa",
       "title": "Trusted Sister",
       "rarity": "common",
@@ -46680,7 +46680,7 @@
     "007-056": {
       "canonical_id": "007-056",
       "set_id": "007",
-      "number": "056",
+      "number": "56",
       "name": "Madam Mim",
       "title": "Cheating Spellcaster",
       "rarity": "rare",
@@ -46714,7 +46714,7 @@
     "007-057": {
       "canonical_id": "007-057",
       "set_id": "007",
-      "number": "057",
+      "number": "57",
       "name": "Giant Cobra",
       "title": "Ghostly Serpent",
       "rarity": "uncommon",
@@ -46748,7 +46748,7 @@
     "007-058": {
       "canonical_id": "007-058",
       "set_id": "007",
-      "number": "058",
+      "number": "58",
       "name": "Te Kā",
       "title": "Lava Monster",
       "rarity": "common",
@@ -46782,7 +46782,7 @@
     "007-059": {
       "canonical_id": "007-059",
       "set_id": "007",
-      "number": "059",
+      "number": "59",
       "name": "Yzma",
       "title": "Transformed Kitten",
       "rarity": "common",
@@ -46816,7 +46816,7 @@
     "007-060": {
       "canonical_id": "007-060",
       "set_id": "007",
-      "number": "060",
+      "number": "60",
       "name": "Bucky",
       "title": "Nutty Rascal",
       "rarity": "common",
@@ -46850,7 +46850,7 @@
     "007-061": {
       "canonical_id": "007-061",
       "set_id": "007",
-      "number": "061",
+      "number": "61",
       "name": "Pain",
       "title": "Impudent Imp",
       "rarity": "common",
@@ -46884,7 +46884,7 @@
     "007-062": {
       "canonical_id": "007-062",
       "set_id": "007",
-      "number": "062",
+      "number": "62",
       "name": "Rajah",
       "title": "Ghostly Tiger",
       "rarity": "common",
@@ -46918,7 +46918,7 @@
     "007-063": {
       "canonical_id": "007-063",
       "set_id": "007",
-      "number": "063",
+      "number": "63",
       "name": "Kronk",
       "title": "Laid Back",
       "rarity": "rare",
@@ -46952,7 +46952,7 @@
     "007-064": {
       "canonical_id": "007-064",
       "set_id": "007",
-      "number": "064",
+      "number": "64",
       "name": "Mother Gothel",
       "title": "Vain Sorceress",
       "rarity": "uncommon",
@@ -46986,7 +46986,7 @@
     "007-065": {
       "canonical_id": "007-065",
       "set_id": "007",
-      "number": "065",
+      "number": "65",
       "name": "Sven",
       "title": "Keen-Eyed Reindeer",
       "rarity": "uncommon",
@@ -47020,7 +47020,7 @@
     "007-066": {
       "canonical_id": "007-066",
       "set_id": "007",
-      "number": "066",
+      "number": "66",
       "name": "Diablo",
       "title": "Spiteful Raven",
       "rarity": "uncommon",
@@ -47054,7 +47054,7 @@
     "007-067": {
       "canonical_id": "007-067",
       "set_id": "007",
-      "number": "067",
+      "number": "67",
       "name": "Merlin",
       "title": "Clever Clairvoyant",
       "rarity": "rare",
@@ -47088,7 +47088,7 @@
     "007-068": {
       "canonical_id": "007-068",
       "set_id": "007",
-      "number": "068",
+      "number": "68",
       "name": "Yzma",
       "title": "Above It All",
       "rarity": "super rare",
@@ -47122,7 +47122,7 @@
     "007-069": {
       "canonical_id": "007-069",
       "set_id": "007",
-      "number": "069",
+      "number": "69",
       "name": "Elsa",
       "title": "Ice Maker",
       "rarity": "super rare",
@@ -47156,7 +47156,7 @@
     "007-070": {
       "canonical_id": "007-070",
       "set_id": "007",
-      "number": "070",
+      "number": "70",
       "name": "Kenai",
       "title": "Magical Bear",
       "rarity": "rare",
@@ -47190,7 +47190,7 @@
     "007-071": {
       "canonical_id": "007-071",
       "set_id": "007",
-      "number": "071",
+      "number": "71",
       "name": "Kuzco",
       "title": "Panicked Llama",
       "rarity": "uncommon",
@@ -47224,7 +47224,7 @@
     "007-072": {
       "canonical_id": "007-072",
       "set_id": "007",
-      "number": "072",
+      "number": "72",
       "name": "Anna",
       "title": "Ice Breaker",
       "rarity": "uncommon",
@@ -47258,7 +47258,7 @@
     "007-073": {
       "canonical_id": "007-073",
       "set_id": "007",
-      "number": "073",
+      "number": "73",
       "name": "Donald Duck",
       "title": "Flustered Sorcerer",
       "rarity": "legendary",
@@ -47292,7 +47292,7 @@
     "007-074": {
       "canonical_id": "007-074",
       "set_id": "007",
-      "number": "074",
+      "number": "74",
       "name": "The Queen",
       "title": "Jealous Beauty",
       "rarity": "legendary",
@@ -47326,7 +47326,7 @@
     "007-075": {
       "canonical_id": "007-075",
       "set_id": "007",
-      "number": "075",
+      "number": "75",
       "name": "Panic",
       "title": "High-Strung Imp",
       "rarity": "common",
@@ -47360,7 +47360,7 @@
     "007-076": {
       "canonical_id": "007-076",
       "set_id": "007",
-      "number": "076",
+      "number": "76",
       "name": "Archimedes",
       "title": "Exceptional Owl",
       "rarity": "uncommon",
@@ -47394,7 +47394,7 @@
     "007-077": {
       "canonical_id": "007-077",
       "set_id": "007",
-      "number": "077",
+      "number": "77",
       "name": "Kashekim",
       "title": "Ancient Ruler",
       "rarity": "uncommon",
@@ -47428,7 +47428,7 @@
     "007-078": {
       "canonical_id": "007-078",
       "set_id": "007",
-      "number": "078",
+      "number": "78",
       "name": "Dolores Madrigal",
       "title": "Within Earshot",
       "rarity": "common",
@@ -47462,7 +47462,7 @@
     "007-079": {
       "canonical_id": "007-079",
       "set_id": "007",
-      "number": "079",
+      "number": "79",
       "name": "Mufasa",
       "title": "Among the Stars",
       "rarity": "uncommon",
@@ -47496,7 +47496,7 @@
     "007-080": {
       "canonical_id": "007-080",
       "set_id": "007",
-      "number": "080",
+      "number": "80",
       "name": "Magical Maneuvers",
       "title": null,
       "rarity": "uncommon",
@@ -47530,7 +47530,7 @@
     "007-081": {
       "canonical_id": "007-081",
       "set_id": "007",
-      "number": "081",
+      "number": "81",
       "name": "This Is My Family",
       "title": null,
       "rarity": "common",
@@ -47564,7 +47564,7 @@
     "007-082": {
       "canonical_id": "007-082",
       "set_id": "007",
-      "number": "082",
+      "number": "82",
       "name": "Show Me More!",
       "title": null,
       "rarity": "super rare",
@@ -47598,7 +47598,7 @@
     "007-083": {
       "canonical_id": "007-083",
       "set_id": "007",
-      "number": "083",
+      "number": "83",
       "name": "Restoring the Crown",
       "title": null,
       "rarity": "rare",
@@ -47632,7 +47632,7 @@
     "007-084": {
       "canonical_id": "007-084",
       "set_id": "007",
-      "number": "084",
+      "number": "84",
       "name": "Amethyst Coil",
       "title": null,
       "rarity": "uncommon",
@@ -47666,7 +47666,7 @@
     "007-085": {
       "canonical_id": "007-085",
       "set_id": "007",
-      "number": "085",
+      "number": "85",
       "name": "Drizella",
       "title": "Spoiled Stepsister",
       "rarity": "common",
@@ -47700,7 +47700,7 @@
     "007-086": {
       "canonical_id": "007-086",
       "set_id": "007",
-      "number": "086",
+      "number": "86",
       "name": "Grewnge",
       "title": "Cannon Expert",
       "rarity": "common",
@@ -47734,7 +47734,7 @@
     "007-087": {
       "canonical_id": "007-087",
       "set_id": "007",
-      "number": "087",
+      "number": "87",
       "name": "Baymax",
       "title": "Low Battery",
       "rarity": "common",
@@ -47768,7 +47768,7 @@
     "007-088": {
       "canonical_id": "007-088",
       "set_id": "007",
-      "number": "088",
+      "number": "88",
       "name": "Thomas O'Malley",
       "title": "Feline Charmer",
       "rarity": "uncommon",
@@ -47802,7 +47802,7 @@
     "007-089": {
       "canonical_id": "007-089",
       "set_id": "007",
-      "number": "089",
+      "number": "89",
       "name": "Pete",
       "title": "Pirate Scoundrel",
       "rarity": "common",
@@ -47836,7 +47836,7 @@
     "007-090": {
       "canonical_id": "007-090",
       "set_id": "007",
-      "number": "090",
+      "number": "90",
       "name": "Hiro Hamada",
       "title": "Future Champion",
       "rarity": "common",
@@ -47870,7 +47870,7 @@
     "007-091": {
       "canonical_id": "007-091",
       "set_id": "007",
-      "number": "091",
+      "number": "91",
       "name": "Cheshire Cat",
       "title": "Perplexing Feline",
       "rarity": "common",
@@ -47904,7 +47904,7 @@
     "007-092": {
       "canonical_id": "007-092",
       "set_id": "007",
-      "number": "092",
+      "number": "92",
       "name": "Shere Khan",
       "title": "Infamous Tiger",
       "rarity": "rare",
@@ -47938,7 +47938,7 @@
     "007-093": {
       "canonical_id": "007-093",
       "set_id": "007",
-      "number": "093",
+      "number": "93",
       "name": "Basil",
       "title": "Secret Informer",
       "rarity": "rare",
@@ -47972,7 +47972,7 @@
     "007-094": {
       "canonical_id": "007-094",
       "set_id": "007",
-      "number": "094",
+      "number": "94",
       "name": "Mad Hatter",
       "title": "Unruly Eccentric",
       "rarity": "rare",
@@ -48006,7 +48006,7 @@
     "007-095": {
       "canonical_id": "007-095",
       "set_id": "007",
-      "number": "095",
+      "number": "95",
       "name": "Queen of Hearts",
       "title": "Unpredictable Bully",
       "rarity": "super rare",
@@ -48040,7 +48040,7 @@
     "007-096": {
       "canonical_id": "007-096",
       "set_id": "007",
-      "number": "096",
+      "number": "96",
       "name": "Hiro Hamada",
       "title": "Armor Designer",
       "rarity": "super rare",
@@ -48074,7 +48074,7 @@
     "007-097": {
       "canonical_id": "007-097",
       "set_id": "007",
-      "number": "097",
+      "number": "97",
       "name": "Yokai",
       "title": "Intellectual Schemer",
       "rarity": "uncommon",
@@ -48108,7 +48108,7 @@
     "007-098": {
       "canonical_id": "007-098",
       "set_id": "007",
-      "number": "098",
+      "number": "98",
       "name": "Donald Duck",
       "title": "Lively Pirate",
       "rarity": "rare",
@@ -48142,7 +48142,7 @@
     "007-099": {
       "canonical_id": "007-099",
       "set_id": "007",
-      "number": "099",
+      "number": "99",
       "name": "Berlioz",
       "title": "Mischievous Kitten",
       "rarity": "common",
@@ -48279,11 +48279,11 @@
       "canonical_id": "007-103",
       "set_id": "007",
       "number": "103",
-      "name": "Tweedledee & Tweedledum",
+      "name": "Tweedle Dee & Tweedle Dum",
       "title": "Strange Storytellers",
       "rarity": "uncommon",
       "identifiers": {
-        "dreamborn_hash": "007/97829b8b967834c9905aee2a85a0eee0993c1ff8",
+        "dreamborn_hash": null,
         "tcgplayer_id": 619461,
         "justtcg_available": true,
         "lorcast_available": true,
@@ -52292,7 +52292,7 @@
       "rarity": "super rare",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 634262,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -52305,7 +52305,9 @@
       },
       "finish_mappings": {
         "base": [],
-        "foil": [],
+        "foil": [
+          "dreamborn"
+        ],
         "special": []
       }
     },
@@ -52318,7 +52320,7 @@
       "rarity": "super rare",
       "identifiers": {
         "dreamborn_hash": null,
-        "tcgplayer_id": null,
+        "tcgplayer_id": 634265,
         "justtcg_available": false,
         "lorcast_available": false,
         "manual_tcgplayer_available": false
@@ -52331,14 +52333,16 @@
       },
       "finish_mappings": {
         "base": [],
-        "foil": [],
+        "foil": [
+          "dreamborn"
+        ],
         "special": []
       }
     },
     "008-001": {
       "canonical_id": "008-001",
       "set_id": "008",
-      "number": "001",
+      "number": "1",
       "name": "Louie",
       "title": "One Cool Duck",
       "rarity": "uncommon",
@@ -52368,7 +52372,7 @@
     "008-002": {
       "canonical_id": "008-002",
       "set_id": "008",
-      "number": "002",
+      "number": "2",
       "name": "Dewey",
       "title": "Lovable Showoff",
       "rarity": "common",
@@ -52398,7 +52402,7 @@
     "008-003": {
       "canonical_id": "008-003",
       "set_id": "008",
-      "number": "003",
+      "number": "3",
       "name": "Huey",
       "title": "Reliable Leader",
       "rarity": "uncommon",
@@ -52421,7 +52425,6 @@
           "lorcast"
         ],
         "foil": [
-          "dreamborn",
           "justtcg"
         ],
         "special": []
@@ -52430,7 +52433,7 @@
     "008-004": {
       "canonical_id": "008-004",
       "set_id": "008",
-      "number": "004",
+      "number": "4",
       "name": "Goofy",
       "title": "Groundbreaking Chef",
       "rarity": "legendary",
@@ -52464,7 +52467,7 @@
     "008-005": {
       "canonical_id": "008-005",
       "set_id": "008",
-      "number": "005",
+      "number": "5",
       "name": "Antonio Madrigal",
       "title": "Friend to All",
       "rarity": "rare",
@@ -52498,7 +52501,7 @@
     "008-006": {
       "canonical_id": "008-006",
       "set_id": "008",
-      "number": "006",
+      "number": "6",
       "name": "Minnie Mouse",
       "title": "Daring Defender",
       "rarity": "rare",
@@ -52532,7 +52535,7 @@
     "008-007": {
       "canonical_id": "008-007",
       "set_id": "008",
-      "number": "007",
+      "number": "7",
       "name": "Ludwig Von Drake",
       "title": "All-Around Expert",
       "rarity": "rare",
@@ -52566,7 +52569,7 @@
     "008-008": {
       "canonical_id": "008-008",
       "set_id": "008",
-      "number": "008",
+      "number": "8",
       "name": "Charlotte La Bouff",
       "title": "Mardi Gras Princess",
       "rarity": "common",
@@ -52600,7 +52603,7 @@
     "008-009": {
       "canonical_id": "008-009",
       "set_id": "008",
-      "number": "009",
+      "number": "9",
       "name": "Tiana",
       "title": "Natural Talent",
       "rarity": "rare",
@@ -52634,7 +52637,7 @@
     "008-010": {
       "canonical_id": "008-010",
       "set_id": "008",
-      "number": "010",
+      "number": "10",
       "name": "Mirabel Madrigal",
       "title": "Curious Child",
       "rarity": "common",
@@ -52668,7 +52671,7 @@
     "008-011": {
       "canonical_id": "008-011",
       "set_id": "008",
-      "number": "011",
+      "number": "11",
       "name": "Lady",
       "title": "Family Dog",
       "rarity": "rare",
@@ -52702,7 +52705,7 @@
     "008-012": {
       "canonical_id": "008-012",
       "set_id": "008",
-      "number": "012",
+      "number": "12",
       "name": "Jim Dear",
       "title": "Beloved Husband",
       "rarity": "common",
@@ -52736,7 +52739,7 @@
     "008-013": {
       "canonical_id": "008-013",
       "set_id": "008",
-      "number": "013",
+      "number": "13",
       "name": "Gene",
       "title": "Niceland Resident",
       "rarity": "common",
@@ -52770,7 +52773,7 @@
     "008-014": {
       "canonical_id": "008-014",
       "set_id": "008",
-      "number": "014",
+      "number": "14",
       "name": "Perdita",
       "title": "On the Lookout",
       "rarity": "common",
@@ -52804,7 +52807,7 @@
     "008-015": {
       "canonical_id": "008-015",
       "set_id": "008",
-      "number": "015",
+      "number": "15",
       "name": "Rhino",
       "title": "One-Sixteenth Wolf",
       "rarity": "common",
@@ -52838,7 +52841,7 @@
     "008-016": {
       "canonical_id": "008-016",
       "set_id": "008",
-      "number": "016",
+      "number": "16",
       "name": "Darling Dear",
       "title": "Beloved Wife",
       "rarity": "common",
@@ -52872,7 +52875,7 @@
     "008-017": {
       "canonical_id": "008-017",
       "set_id": "008",
-      "number": "017",
+      "number": "17",
       "name": "The Colonel",
       "title": "Old Sheepdog",
       "rarity": "rare",
@@ -52906,7 +52909,7 @@
     "008-018": {
       "canonical_id": "008-018",
       "set_id": "008",
-      "number": "018",
+      "number": "18",
       "name": "Chief Bogo",
       "title": "Commanding Officer",
       "rarity": "legendary",
@@ -52940,7 +52943,7 @@
     "008-019": {
       "canonical_id": "008-019",
       "set_id": "008",
-      "number": "019",
+      "number": "19",
       "name": "Pua",
       "title": "Protective Pig",
       "rarity": "uncommon",
@@ -52974,7 +52977,7 @@
     "008-020": {
       "canonical_id": "008-020",
       "set_id": "008",
-      "number": "020",
+      "number": "20",
       "name": "Bruno Madrigal",
       "title": "Singing Seer",
       "rarity": "super rare",
@@ -53008,7 +53011,7 @@
     "008-021": {
       "canonical_id": "008-021",
       "set_id": "008",
-      "number": "021",
+      "number": "21",
       "name": "Kaa",
       "title": "Hypnotizing Python",
       "rarity": "uncommon",
@@ -53042,7 +53045,7 @@
     "008-022": {
       "canonical_id": "008-022",
       "set_id": "008",
-      "number": "022",
+      "number": "22",
       "name": "Tramp",
       "title": "Dapper Rascal",
       "rarity": "super rare",
@@ -53076,7 +53079,7 @@
     "008-023": {
       "canonical_id": "008-023",
       "set_id": "008",
-      "number": "023",
+      "number": "23",
       "name": "King Candy",
       "title": "Sugar Rush Nightmare",
       "rarity": "uncommon",
@@ -53110,7 +53113,7 @@
     "008-024": {
       "canonical_id": "008-024",
       "set_id": "008",
-      "number": "024",
+      "number": "24",
       "name": "Wreck-It Ralph",
       "title": "Big Lug",
       "rarity": "super rare",
@@ -53144,7 +53147,7 @@
     "008-025": {
       "canonical_id": "008-025",
       "set_id": "008",
-      "number": "025",
+      "number": "25",
       "name": "Patch",
       "title": "Playful Pup",
       "rarity": "uncommon",
@@ -53178,7 +53181,7 @@
     "008-026": {
       "canonical_id": "008-026",
       "set_id": "008",
-      "number": "026",
+      "number": "26",
       "name": "Rolly",
       "title": "Chubby Puppy",
       "rarity": "uncommon",
@@ -53212,7 +53215,7 @@
     "008-027": {
       "canonical_id": "008-027",
       "set_id": "008",
-      "number": "027",
+      "number": "27",
       "name": "Perdita",
       "title": "Determined Mother",
       "rarity": "super rare",
@@ -53246,7 +53249,7 @@
     "008-028": {
       "canonical_id": "008-028",
       "set_id": "008",
-      "number": "028",
+      "number": "28",
       "name": "Pluto",
       "title": "Tried and True",
       "rarity": "uncommon",
@@ -53280,7 +53283,7 @@
     "008-029": {
       "canonical_id": "008-029",
       "set_id": "008",
-      "number": "029",
+      "number": "29",
       "name": "Bolt",
       "title": "Down but Not Out",
       "rarity": "rare",
@@ -53314,7 +53317,7 @@
     "008-030": {
       "canonical_id": "008-030",
       "set_id": "008",
-      "number": "030",
+      "number": "30",
       "name": "Rhino",
       "title": "Power Hamster",
       "rarity": "super rare",
@@ -53348,7 +53351,7 @@
     "008-031": {
       "canonical_id": "008-031",
       "set_id": "008",
-      "number": "031",
+      "number": "31",
       "name": "Antonio's Jaguar",
       "title": "Faithful Companion",
       "rarity": "common",
@@ -53382,7 +53385,7 @@
     "008-032": {
       "canonical_id": "008-032",
       "set_id": "008",
-      "number": "032",
+      "number": "32",
       "name": "Calhoun",
       "title": "Hard-Nosed Leader",
       "rarity": "common",
@@ -53416,7 +53419,7 @@
     "008-033": {
       "canonical_id": "008-033",
       "set_id": "008",
-      "number": "033",
+      "number": "33",
       "name": "Lady",
       "title": "Decisive Dog",
       "rarity": "rare",
@@ -53450,7 +53453,7 @@
     "008-034": {
       "canonical_id": "008-034",
       "set_id": "008",
-      "number": "034",
+      "number": "34",
       "name": "Alma Madrigal",
       "title": "Accepting Grandmother",
       "rarity": "uncommon",
@@ -53484,7 +53487,7 @@
     "008-035": {
       "canonical_id": "008-035",
       "set_id": "008",
-      "number": "035",
+      "number": "35",
       "name": "Clawhauser",
       "title": "Front Desk Officer",
       "rarity": "rare",
@@ -53518,7 +53521,7 @@
     "008-036": {
       "canonical_id": "008-036",
       "set_id": "008",
-      "number": "036",
+      "number": "36",
       "name": "Joey",
       "title": "Blue Pigeon",
       "rarity": "common",
@@ -53552,7 +53555,7 @@
     "008-037": {
       "canonical_id": "008-037",
       "set_id": "008",
-      "number": "037",
+      "number": "37",
       "name": "Donald Duck",
       "title": "Coin Collector",
       "rarity": "super rare",
@@ -53586,7 +53589,7 @@
     "008-038": {
       "canonical_id": "008-038",
       "set_id": "008",
-      "number": "038",
+      "number": "38",
       "name": "Dalmatian Puppy",
       "title": "Tail Wagger",
       "rarity": "common",
@@ -53620,7 +53623,7 @@
     "008-039": {
       "canonical_id": "008-039",
       "set_id": "008",
-      "number": "039",
+      "number": "39",
       "name": "Candy Drift",
       "title": null,
       "rarity": "uncommon",
@@ -53654,7 +53657,7 @@
     "008-040": {
       "canonical_id": "008-040",
       "set_id": "008",
-      "number": "040",
+      "number": "40",
       "name": "She's Your Person",
       "title": null,
       "rarity": "uncommon",
@@ -53688,7 +53691,7 @@
     "008-041": {
       "canonical_id": "008-041",
       "set_id": "008",
-      "number": "041",
+      "number": "41",
       "name": "Only So Much Room",
       "title": null,
       "rarity": "uncommon",
@@ -53722,7 +53725,7 @@
     "008-042": {
       "canonical_id": "008-042",
       "set_id": "008",
-      "number": "042",
+      "number": "42",
       "name": "It Means No Worries",
       "title": null,
       "rarity": "rare",
@@ -53756,7 +53759,7 @@
     "008-043": {
       "canonical_id": "008-043",
       "set_id": "008",
-      "number": "043",
+      "number": "43",
       "name": "Trials and Tribulations",
       "title": null,
       "rarity": "uncommon",
@@ -53790,7 +53793,7 @@
     "008-044": {
       "canonical_id": "008-044",
       "set_id": "008",
-      "number": "044",
+      "number": "44",
       "name": "The Nephews' Piggy Bank",
       "title": null,
       "rarity": "uncommon",
@@ -53824,7 +53827,7 @@
     "008-045": {
       "canonical_id": "008-045",
       "set_id": "008",
-      "number": "045",
+      "number": "45",
       "name": "Palace Guard",
       "title": "Spectral Sentry",
       "rarity": "common",
@@ -53858,7 +53861,7 @@
     "008-046": {
       "canonical_id": "008-046",
       "set_id": "008",
-      "number": "046",
+      "number": "46",
       "name": "Druun",
       "title": "Ravenous Plague",
       "rarity": "uncommon",
@@ -53892,7 +53895,7 @@
     "008-047": {
       "canonical_id": "008-047",
       "set_id": "008",
-      "number": "047",
+      "number": "47",
       "name": "Madame Medusa",
       "title": "Deceiving Partner",
       "rarity": "uncommon",
@@ -53926,7 +53929,7 @@
     "008-048": {
       "canonical_id": "008-048",
       "set_id": "008",
-      "number": "048",
+      "number": "48",
       "name": "Hades",
       "title": "Ruthless Tyrant",
       "rarity": "super rare",
@@ -53960,7 +53963,7 @@
     "008-049": {
       "canonical_id": "008-049",
       "set_id": "008",
-      "number": "049",
+      "number": "49",
       "name": "Lena Sabrewing",
       "title": "Pure Energy",
       "rarity": "uncommon",
@@ -53994,7 +53997,7 @@
     "008-050": {
       "canonical_id": "008-050",
       "set_id": "008",
-      "number": "050",
+      "number": "50",
       "name": "Abu",
       "title": "Illusory Pachyderm",
       "rarity": "uncommon",
@@ -54028,7 +54031,7 @@
     "008-051": {
       "canonical_id": "008-051",
       "set_id": "008",
-      "number": "051",
+      "number": "51",
       "name": "Bruno Madrigal",
       "title": "Single-Minded",
       "rarity": "common",
@@ -54062,7 +54065,7 @@
     "008-052": {
       "canonical_id": "008-052",
       "set_id": "008",
-      "number": "052",
+      "number": "52",
       "name": "Royal Guard",
       "title": "Octopus Soldier",
       "rarity": "common",
@@ -54096,7 +54099,7 @@
     "008-053": {
       "canonical_id": "008-053",
       "set_id": "008",
-      "number": "053",
+      "number": "53",
       "name": "Kuzco",
       "title": "Bored Royal",
       "rarity": "common",
@@ -54130,7 +54133,7 @@
     "008-054": {
       "canonical_id": "008-054",
       "set_id": "008",
-      "number": "054",
+      "number": "54",
       "name": "Megara",
       "title": "Part of the Plan",
       "rarity": "common",
@@ -54164,7 +54167,7 @@
     "008-055": {
       "canonical_id": "008-055",
       "set_id": "008",
-      "number": "055",
+      "number": "55",
       "name": "Yelana",
       "title": "Northuldra Leader",
       "rarity": "common",
@@ -54198,7 +54201,7 @@
     "008-056": {
       "canonical_id": "008-056",
       "set_id": "008",
-      "number": "056",
+      "number": "56",
       "name": "Ryder",
       "title": "Fleet-Footed Infiltrator",
       "rarity": "common",
@@ -54232,7 +54235,7 @@
     "008-057": {
       "canonical_id": "008-057",
       "set_id": "008",
-      "number": "057",
+      "number": "57",
       "name": "Bambi",
       "title": "Prince of the Forest",
       "rarity": "common",
@@ -54266,7 +54269,7 @@
     "008-058": {
       "canonical_id": "008-058",
       "set_id": "008",
-      "number": "058",
+      "number": "58",
       "name": "Poe De Spell",
       "title": "Magica's Brother",
       "rarity": "common",
@@ -54300,7 +54303,7 @@
     "008-059": {
       "canonical_id": "008-059",
       "set_id": "008",
-      "number": "059",
+      "number": "59",
       "name": "Madam Mim",
       "title": "Up to No Good",
       "rarity": "uncommon",
@@ -54334,7 +54337,7 @@
     "008-060": {
       "canonical_id": "008-060",
       "set_id": "008",
-      "number": "060",
+      "number": "60",
       "name": "Elsa",
       "title": "Fierce Protector",
       "rarity": "rare",
@@ -54368,7 +54371,7 @@
     "008-061": {
       "canonical_id": "008-061",
       "set_id": "008",
-      "number": "061",
+      "number": "61",
       "name": "Pinocchio",
       "title": "Strings Attached",
       "rarity": "legendary",
@@ -54402,7 +54405,7 @@
     "008-062": {
       "canonical_id": "008-062",
       "set_id": "008",
-      "number": "062",
+      "number": "62",
       "name": "Jiminy Cricket",
       "title": "Level-Headed and Wise",
       "rarity": "rare",
@@ -54436,7 +54439,7 @@
     "008-063": {
       "canonical_id": "008-063",
       "set_id": "008",
-      "number": "063",
+      "number": "63",
       "name": "Bambi",
       "title": "Little Prince",
       "rarity": "legendary",
@@ -54470,7 +54473,7 @@
     "008-064": {
       "canonical_id": "008-064",
       "set_id": "008",
-      "number": "064",
+      "number": "64",
       "name": "Monstro",
       "title": "Infamous Whale",
       "rarity": "rare",
@@ -54504,7 +54507,7 @@
     "008-065": {
       "canonical_id": "008-065",
       "set_id": "008",
-      "number": "065",
+      "number": "65",
       "name": "Nero",
       "title": "Fearsome Crocodile",
       "rarity": "common",
@@ -54527,7 +54530,6 @@
           "lorcast"
         ],
         "foil": [
-          "dreamborn",
           "justtcg"
         ],
         "special": []
@@ -54536,7 +54538,7 @@
     "008-066": {
       "canonical_id": "008-066",
       "set_id": "008",
-      "number": "066",
+      "number": "66",
       "name": "Magica De Spell",
       "title": "Shadow Form",
       "rarity": "uncommon",
@@ -54570,7 +54572,7 @@
     "008-067": {
       "canonical_id": "008-067",
       "set_id": "008",
-      "number": "067",
+      "number": "67",
       "name": "Kuzco",
       "title": "Impulsive Llama",
       "rarity": "rare",
@@ -54604,7 +54606,7 @@
     "008-068": {
       "canonical_id": "008-068",
       "set_id": "008",
-      "number": "068",
+      "number": "68",
       "name": "Yzma",
       "title": "On Edge",
       "rarity": "super rare",
@@ -54638,7 +54640,7 @@
     "008-069": {
       "canonical_id": "008-069",
       "set_id": "008",
-      "number": "069",
+      "number": "69",
       "name": "Madam Mim",
       "title": "Rhino",
       "rarity": "uncommon",
@@ -54672,7 +54674,7 @@
     "008-070": {
       "canonical_id": "008-070",
       "set_id": "008",
-      "number": "070",
+      "number": "70",
       "name": "Mother Gothel",
       "title": "Knows What's Best",
       "rarity": "rare",
@@ -54706,7 +54708,7 @@
     "008-071": {
       "canonical_id": "008-071",
       "set_id": "008",
-      "number": "071",
+      "number": "71",
       "name": "Blue Fairy",
       "title": "Guiding Light",
       "rarity": "uncommon",
@@ -54740,7 +54742,7 @@
     "008-072": {
       "canonical_id": "008-072",
       "set_id": "008",
-      "number": "072",
+      "number": "72",
       "name": "Anna",
       "title": "Magical Mission",
       "rarity": "rare",
@@ -54774,7 +54776,7 @@
     "008-073": {
       "canonical_id": "008-073",
       "set_id": "008",
-      "number": "073",
+      "number": "73",
       "name": "The Sultan",
       "title": "Royal Apparition",
       "rarity": "rare",
@@ -54808,7 +54810,7 @@
     "008-074": {
       "canonical_id": "008-074",
       "set_id": "008",
-      "number": "074",
+      "number": "74",
       "name": "Jafar",
       "title": "High Sultan of Lorcana",
       "rarity": "super rare",
@@ -54842,7 +54844,7 @@
     "008-075": {
       "canonical_id": "008-075",
       "set_id": "008",
-      "number": "075",
+      "number": "75",
       "name": "Camilo Madrigal",
       "title": "Center Stage",
       "rarity": "common",
@@ -54876,7 +54878,7 @@
     "008-076": {
       "canonical_id": "008-076",
       "set_id": "008",
-      "number": "076",
+      "number": "76",
       "name": "Flower",
       "title": "Shy Skunk",
       "rarity": "rare",
@@ -54910,7 +54912,7 @@
     "008-077": {
       "canonical_id": "008-077",
       "set_id": "008",
-      "number": "077",
+      "number": "77",
       "name": "Forest Duel",
       "title": null,
       "rarity": "uncommon",
@@ -54944,7 +54946,7 @@
     "008-078": {
       "canonical_id": "008-078",
       "set_id": "008",
-      "number": "078",
+      "number": "78",
       "name": "They Never Come Back",
       "title": null,
       "rarity": "uncommon",
@@ -54978,7 +54980,7 @@
     "008-079": {
       "canonical_id": "008-079",
       "set_id": "008",
-      "number": "079",
+      "number": "79",
       "name": "Fantastical and Magical",
       "title": null,
       "rarity": "rare",
@@ -55012,7 +55014,7 @@
     "008-080": {
       "canonical_id": "008-080",
       "set_id": "008",
-      "number": "080",
+      "number": "80",
       "name": "Pull the Lever!",
       "title": null,
       "rarity": "uncommon",
@@ -55046,7 +55048,7 @@
     "008-081": {
       "canonical_id": "008-081",
       "set_id": "008",
-      "number": "081",
+      "number": "81",
       "name": "Into the Unknown",
       "title": null,
       "rarity": "super rare",
@@ -55080,7 +55082,7 @@
     "008-082": {
       "canonical_id": "008-082",
       "set_id": "008",
-      "number": "082",
+      "number": "82",
       "name": "Everybody's Got a Weakness",
       "title": null,
       "rarity": "rare",
@@ -55114,7 +55116,7 @@
     "008-083": {
       "canonical_id": "008-083",
       "set_id": "008",
-      "number": "083",
+      "number": "83",
       "name": "Scarab",
       "title": null,
       "rarity": "common",
@@ -55148,7 +55150,7 @@
     "008-084": {
       "canonical_id": "008-084",
       "set_id": "008",
-      "number": "084",
+      "number": "84",
       "name": "Ice Spikes",
       "title": null,
       "rarity": "uncommon",
@@ -55182,7 +55184,7 @@
     "008-085": {
       "canonical_id": "008-085",
       "set_id": "008",
-      "number": "085",
+      "number": "85",
       "name": "Wilhelmina Packard",
       "title": "The Radio Operator",
       "rarity": "common",
@@ -55216,7 +55218,7 @@
     "008-086": {
       "canonical_id": "008-086",
       "set_id": "008",
-      "number": "086",
+      "number": "86",
       "name": "Basil",
       "title": "Undercover Detective",
       "rarity": "rare",
@@ -55250,7 +55252,7 @@
     "008-087": {
       "canonical_id": "008-087",
       "set_id": "008",
-      "number": "087",
+      "number": "87",
       "name": "Tramp",
       "title": "Observant Guardian",
       "rarity": "common",
@@ -55284,7 +55286,7 @@
     "008-088": {
       "canonical_id": "008-088",
       "set_id": "008",
-      "number": "088",
+      "number": "88",
       "name": "Chaca",
       "title": "Junior Chipmunk",
       "rarity": "common",
@@ -55318,7 +55320,7 @@
     "008-089": {
       "canonical_id": "008-089",
       "set_id": "008",
-      "number": "089",
+      "number": "89",
       "name": "Tipo",
       "title": "Junior Chipmunk",
       "rarity": "common",
@@ -55352,7 +55354,7 @@
     "008-090": {
       "canonical_id": "008-090",
       "set_id": "008",
-      "number": "090",
+      "number": "90",
       "name": "Bill the Lizard",
       "title": "Chimney Sweep",
       "rarity": "common",
@@ -55386,7 +55388,7 @@
     "008-091": {
       "canonical_id": "008-091",
       "set_id": "008",
-      "number": "091",
+      "number": "91",
       "name": "March Hare",
       "title": "Hare-Brained Eccentric",
       "rarity": "common",
@@ -55420,7 +55422,7 @@
     "008-092": {
       "canonical_id": "008-092",
       "set_id": "008",
-      "number": "092",
+      "number": "92",
       "name": "Fred",
       "title": "Major Science Enthusiast",
       "rarity": "common",
@@ -55454,7 +55456,7 @@
     "008-093": {
       "canonical_id": "008-093",
       "set_id": "008",
-      "number": "093",
+      "number": "93",
       "name": "Mad Dog",
       "title": "Karnage's First Mate",
       "rarity": "common",
@@ -55488,7 +55490,7 @@
     "008-094": {
       "canonical_id": "008-094",
       "set_id": "008",
-      "number": "094",
+      "number": "94",
       "name": "Dale",
       "title": "Bumbler",
       "rarity": "common",
@@ -55522,7 +55524,7 @@
     "008-095": {
       "canonical_id": "008-095",
       "set_id": "008",
-      "number": "095",
+      "number": "95",
       "name": "Louis",
       "title": "Endearing Alligator",
       "rarity": "uncommon",
@@ -55556,7 +55558,7 @@
     "008-096": {
       "canonical_id": "008-096",
       "set_id": "008",
-      "number": "096",
+      "number": "96",
       "name": "Napoleon",
       "title": "Clever Bloodhound",
       "rarity": "uncommon",
@@ -55590,7 +55592,7 @@
     "008-097": {
       "canonical_id": "008-097",
       "set_id": "008",
-      "number": "097",
+      "number": "97",
       "name": "Chip",
       "title": "Quick Thinker",
       "rarity": "uncommon",
@@ -55624,7 +55626,7 @@
     "008-098": {
       "canonical_id": "008-098",
       "set_id": "008",
-      "number": "098",
+      "number": "98",
       "name": "Fred",
       "title": "Giant-Sized",
       "rarity": "rare",
@@ -55658,7 +55660,7 @@
     "008-099": {
       "canonical_id": "008-099",
       "set_id": "008",
-      "number": "099",
+      "number": "99",
       "name": "Gadget Hackwrench",
       "title": "Quirky Scientist",
       "rarity": "rare",
@@ -56565,7 +56567,6 @@
           "lorcast"
         ],
         "foil": [
-          "dreamborn",
           "justtcg"
         ],
         "special": []
@@ -68571,6 +68572,7 @@
         ],
         "foil": [
           "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -69150,6 +69152,7 @@
         ],
         "foil": [
           "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -70257,22 +70260,26 @@
       "identifiers": {
         "dreamborn_hash": "010/548237972fde6562447b17f4e843409fa808dfeb",
         "tcgplayer_id": 658467,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
       "finish_mappings": {
         "base": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ],
         "foil": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ],
@@ -70301,10 +70308,12 @@
       },
       "finish_mappings": {
         "base": [
+          "dreamborn",
           "justtcg",
           "lorcast"
         ],
         "foil": [
+          "dreamborn",
           "justtcg",
           "lorcast"
         ],
@@ -70509,6 +70518,7 @@
         ],
         "foil": [
           "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -70610,6 +70620,7 @@
         ],
         "foil": [
           "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -71361,6 +71372,7 @@
         ],
         "foil": [
           "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -73063,6 +73075,8 @@
           "lorcast"
         ],
         "foil": [
+          "dreamborn",
+          "justtcg",
           "lorcast"
         ],
         "special": []
@@ -75462,13 +75476,13 @@
       "identifiers": {
         "dreamborn_hash": "010/d7aa62343a90c823d3946ac3e8d562d2245b1df2",
         "tcgplayer_id": 660365,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75476,6 +75490,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75491,13 +75507,13 @@
       "identifiers": {
         "dreamborn_hash": "010/3c55c5ec4b3d652c4de5bf99442f38914ff1b101",
         "tcgplayer_id": 658449,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75505,6 +75521,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75520,13 +75538,13 @@
       "identifiers": {
         "dreamborn_hash": "010/b7838a2780198c932d35e7ddc5f91de43eafc744",
         "tcgplayer_id": 658884,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75534,6 +75552,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75549,13 +75569,13 @@
       "identifiers": {
         "dreamborn_hash": "010/c13cae680058bb90534d12ecf6656172d7ae98b5",
         "tcgplayer_id": 660044,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75563,6 +75583,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75578,13 +75600,13 @@
       "identifiers": {
         "dreamborn_hash": "010/6ee29c844c9bf129bbbba79cd36d9dbb501d5c20",
         "tcgplayer_id": 658215,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75593,6 +75615,7 @@
         "foil": [],
         "special": [
           "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75608,13 +75631,13 @@
       "identifiers": {
         "dreamborn_hash": "010/c5fde94e84b8b5acb1e1166487943f0f90999493",
         "tcgplayer_id": 660041,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75623,6 +75646,7 @@
         "foil": [],
         "special": [
           "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75762,13 +75786,13 @@
       "identifiers": {
         "dreamborn_hash": "010/d87414cafef373a34d79f3614df0d8611b429d48",
         "tcgplayer_id": 660042,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75776,6 +75800,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75822,13 +75848,13 @@
       "identifiers": {
         "dreamborn_hash": "010/b164343c32be6f6ecc70b44cfe5f7c0202be476b",
         "tcgplayer_id": 660043,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75836,6 +75862,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75851,13 +75879,13 @@
       "identifiers": {
         "dreamborn_hash": "010/8818aec45b32824102fa465106172318b0076306",
         "tcgplayer_id": 660029,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75865,6 +75893,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75880,13 +75910,13 @@
       "identifiers": {
         "dreamborn_hash": "010/2587a119f92eb3d160755f9c99022237b80a7732",
         "tcgplayer_id": 660011,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75895,6 +75925,7 @@
         "foil": [],
         "special": [
           "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75941,13 +75972,13 @@
       "identifiers": {
         "dreamborn_hash": "010/89cefb61bc257028fbe5f019e1313a7bc9241f6b",
         "tcgplayer_id": 660030,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75955,6 +75986,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75970,13 +76003,13 @@
       "identifiers": {
         "dreamborn_hash": "010/ca423a996695df5d6e427d683394ffdb90b96564",
         "tcgplayer_id": 660031,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
@@ -75984,6 +76017,8 @@
         "base": [],
         "foil": [],
         "special": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ]
@@ -75999,19 +76034,21 @@
       "identifiers": {
         "dreamborn_hash": "010/447631867b87e2692de3959cdfa02565eed487c3",
         "tcgplayer_id": 657885,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
       "finish_mappings": {
         "base": [],
         "foil": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ],
@@ -76028,19 +76065,21 @@
       "identifiers": {
         "dreamborn_hash": "010/2fa67c05857d1206db9e101033dd31c0b4b418c1",
         "tcgplayer_id": 657889,
-        "justtcg_available": false,
+        "justtcg_available": true,
         "lorcast_available": true,
         "manual_tcgplayer_available": true
       },
       "pricing_availability": {
         "dreamborn": true,
-        "justtcg": false,
+        "justtcg": true,
         "lorcast": true,
         "manual_tcgplayer": true
       },
       "finish_mappings": {
         "base": [],
         "foil": [
+          "dreamborn",
+          "justtcg",
           "lorcast",
           "manual_tcgplayer"
         ],
@@ -76050,14 +76089,14 @@
   },
   "statistics": {
     "total_cards": 2263,
-    "cards_with_tcgplayer_id": 2261,
-    "cards_with_hash_id": 243,
+    "cards_with_tcgplayer_id": 2263,
+    "cards_with_hash_id": 242,
     "cards_with_dreamborn_pricing": 2263,
-    "cards_with_justtcg_pricing": 2239,
+    "cards_with_justtcg_pricing": 2254,
     "cards_with_lorcast_data": 2258,
     "cards_with_manual_pricing": 37,
-    "hash_ids_mapped": 230,
-    "hash_ids_unmapped": 13,
-    "promo_cards_skipped": 119
+    "hash_ids_mapped": 242,
+    "hash_ids_unmapped": 0,
+    "promo_cards_skipped": 127
   }
 }

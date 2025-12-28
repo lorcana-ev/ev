@@ -1,11 +1,10 @@
 {
   "metadata": {
-    "created_at": "2025-11-09T03:27:46.332Z",
+    "created_at": "2025-12-28T18:37:04.452Z",
     "version": "1.0.0",
     "description": "Simplified lookup for hash ID to canonical ID conversion"
   },
   "hash_to_canonical": {
-    "007/97829b8b967834c9905aee2a85a0eee0993c1ff8": "007-103",
     "010/8384b543c69a62baaba2fe2b4b3dab2b87123648": "010-001",
     "010/1b3e36001705631645b2cd61b638068c87ffaa4f": "010-002",
     "010/185a15156afe312766185d91be67a79d31d4965c": "010-003",
@@ -250,7 +249,6 @@
     "010/2fa67c05857d1206db9e101033dd31c0b4b418c1": "010-242"
   },
   "canonical_to_hash": {
-    "007-103": "007/97829b8b967834c9905aee2a85a0eee0993c1ff8",
     "010-001": "010/8384b543c69a62baaba2fe2b4b3dab2b87123648",
     "010-002": "010/1b3e36001705631645b2cd61b638068c87ffaa4f",
     "010-003": "010/185a15156afe312766185d91be67a79d31d4965c",
