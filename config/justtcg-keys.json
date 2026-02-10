@@ -13,28 +13,28 @@
       "key": "tcg_0ecc60ebe3854a369313b16a95737637",
       "name": "Key 2",
       "status": "active",
-      "daily_requests": 56,
+      "daily_requests": 54,
       "daily_limit_reset": null,
-      "minute_requests": [],
+      "minute_requests": [
+        1770085760689,
+        1770085768165,
+        1770085775585,
+        1770085783113,
+        1770085790383,
+        1770085797859,
+        1770085805436,
+        1770085812808,
+        1770085820282
+      ],
       "last_burst_limited": "2025-11-08T21:44:53.115Z"
     },
     {
       "key": "tcg_d9656d9c265142939d9cd9edcceb5915",
       "name": "Key 3",
       "status": "active",
-      "daily_requests": 13,
+      "daily_requests": 60,
       "daily_limit_reset": null,
-      "minute_requests": [
-        1766945696999,
-        1766945704852,
-        1766945712338,
-        1766945719738,
-        1766945727158,
-        1766945734546,
-        1766945741810,
-        1766945749245,
-        1766945756560
-      ],
+      "minute_requests": [],
       "last_burst_limited": "2025-11-08T21:45:46.983Z"
     },
     {
@@ -52,22 +52,13 @@
       "status": "active",
       "daily_requests": 56,
       "daily_limit_reset": null,
-      "minute_requests": [
-        1766945607438,
-        1766945614871,
-        1766945622442,
-        1766945629889,
-        1766945637254,
-        1766945644509,
-        1766945651912,
-        1766945659411
-      ],
+      "minute_requests": [],
       "last_burst_limited": "2025-11-08T21:45:46.686Z"
     }
   ],
   "metadata": {
     "created_at": "2025-10-19T19:15:00.000Z",
-    "last_updated": "2025-12-28T18:15:56.588Z",
+    "last_updated": "2026-02-03T02:30:20.370Z",
     "burst_limit_per_minute": 10,
     "daily_limit": 100,
     "daily_reset_hours": 24

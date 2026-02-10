@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "created_at": "2025-12-28T18:37:04.452Z",
+    "created_at": "2026-02-10T02:06:21.307Z",
     "version": "1.0.0",
     "description": "Authoritative mapping between card ID formats from different sources (Sets 1-10 only, no promo cards)",
     "sources": {
-      "cards_json": 2390,
-      "lorcast": 2352,
+      "cards_json": 2642,
+      "lorcast": 2560,
       "justtcg": 2359,
-      "dreamborn_prices": 2390,
+      "dreamborn_prices": 2642,
       "manual_tcgplayer": 42
     },
     "id_formats": {
@@ -76097,6 +76097,6 @@
     "cards_with_manual_pricing": 37,
     "hash_ids_mapped": 242,
     "hash_ids_unmapped": 0,
-    "promo_cards_skipped": 127
+    "promo_cards_skipped": 379
   }
 }
