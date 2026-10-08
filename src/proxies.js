@@ -108,8 +108,14 @@ class ProxyGenerator {
     const normalizedQuery = query.toLowerCase().trim();
 
     // Try to match by ID first (format: "001-001")
-    if (/^\d{3}-\d{3}$/.test(normalizedQuery)) {
-      const card = this.allCards.find(card => card.id === normalizedQuery);
+    const idMatch = normalizedQuery.match(/^(\d{3})-(\d{3})$/);
+    if (idMatch) {
+      // Sets 010+ use hashed IDs (e.g. "014/0426f2..."), so fall back to set + collector number
+      const [, setId, number] = idMatch;
+      const card = this.allCards.find(card => card.id === normalizedQuery) ||
+        this.allCards.find(card =>
+          card.id?.startsWith(`${setId}/`) && Number(card.number) === Number(number)
+        );
       return { card, isFuzzy: false };
     }
 
