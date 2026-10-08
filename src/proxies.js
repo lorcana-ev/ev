@@ -1,4 +1,14 @@
 // Proxies.js - Card proxy generator for Lorcana
+
+// Actual Lorcana card size (2.5" x 3.5"), which 100% scale prints at
+const CARD_WIDTH_MM = 63.5;
+const CARD_HEIGHT_MM = 88.9;
+
+// A4 paper, with a minimum margin to stay clear of the printer's unprintable edge
+const PAGE_SHORT_MM = 210;
+const PAGE_LONG_MM = 297;
+const PAGE_MARGIN_MM = 5;
+
 class ProxyGenerator {
   constructor() {
     this.allCards = [];
@@ -21,6 +31,12 @@ class ProxyGenerator {
     this.cardPreviews = document.getElementById('cardPreviews');
     this.cardCount = document.getElementById('cardCount');
     this.loadingIndicator = document.getElementById('loadingIndicator');
+
+    // Show how many cards fit on a page at each scale
+    for (const option of this.cardScale.options) {
+      const { perPage } = this.getPageLayout(parseFloat(option.value));
+      option.textContent += ` (${perPage} per page)`;
+    }
   }
 
   bindEvents() {
@@ -335,6 +351,32 @@ class ProxyGenerator {
     return `https://cdn.dreamborn.ink/images/en/cards/${card.id}`;
   }
 
+  getPageLayout(scale) {
+    const cardWidth = CARD_WIDTH_MM * scale;
+    const cardHeight = CARD_HEIGHT_MM * scale;
+
+    // Try both orientations and keep whichever fits more cards per page
+    const fit = (orientation, pageWidth, pageHeight) => {
+      const cols = Math.floor((pageWidth - 2 * PAGE_MARGIN_MM) / cardWidth);
+      const rows = Math.floor((pageHeight - 2 * PAGE_MARGIN_MM) / cardHeight);
+      return {
+        orientation,
+        cols,
+        rows,
+        perPage: cols * rows,
+        cardWidth,
+        cardHeight,
+        // Center the grid on the page
+        marginX: (pageWidth - cols * cardWidth) / 2,
+        marginY: (pageHeight - rows * cardHeight) / 2
+      };
+    };
+
+    const portrait = fit('portrait', PAGE_SHORT_MM, PAGE_LONG_MM);
+    const landscape = fit('landscape', PAGE_LONG_MM, PAGE_SHORT_MM);
+    return landscape.perPage > portrait.perPage ? landscape : portrait;
+  }
+
   async generatePDF() {
     if (this.selectedCards.length === 0) {
       this.showMessage('No cards selected. Please load cards first.', 'error');
@@ -345,56 +387,32 @@ class ProxyGenerator {
     this.generatePDFBtn.disabled = true;
 
     try {
+      const scale = parseFloat(this.cardScale.value);
+      const { orientation, cols, perPage, cardWidth, cardHeight, marginX, marginY } = this.getPageLayout(scale);
+
       const { jsPDF } = window.jspdf;
       const pdf = new jsPDF({
-        orientation: 'landscape',
+        orientation,
         unit: 'mm',
         format: 'a4'
       });
-
-      // A4 landscape dimensions: 297x210mm
-      // 8 cards per page: 4 columns x 2 rows
-      // Standard card aspect ratio is approximately 63:88 (about 0.716)
-      const pageWidth = 297;
-      const pageHeight = 210;
-      const cols = 4;
-      const rows = 2;
-
-      // Calculate card dimensions to fit 8 cards with margins
-      const totalMarginX = 20; // Total horizontal margin
-      const totalMarginY = 20; // Total vertical margin
-      const cardSpacing = 5; // Space between cards
-
-      const availableWidth = pageWidth - totalMarginX - (cardSpacing * (cols - 1));
-      const availableHeight = pageHeight - totalMarginY - (cardSpacing * (rows - 1));
-
-      // Get user-selected scale
-      const scale = parseFloat(this.cardScale.value);
-      const cardWidth = (availableWidth / cols) * scale;
-      const cardHeight = (availableHeight / rows) * scale;
-
-      // Recalculate margins to center the smaller cards
-      const totalUsedWidth = (cardWidth * cols) + (cardSpacing * (cols - 1));
-      const totalUsedHeight = (cardHeight * rows) + (cardSpacing * (rows - 1));
-      const marginX = (pageWidth - totalUsedWidth) / 2;
-      const marginY = (pageHeight - totalUsedHeight) / 2;
 
       let pageCardCount = 0;
 
       for (let i = 0; i < this.selectedCards.length; i++) {
         const card = this.selectedCards[i];
 
-        // Start new page after every 8 cards
-        if (pageCardCount === 8) {
+        // Start new page once the current one is full
+        if (pageCardCount === perPage) {
           pdf.addPage();
           pageCardCount = 0;
         }
 
-        // Calculate position (4 columns x 2 rows)
+        // Cards butt up against each other so neighbors share a single cut line
         const col = pageCardCount % cols;
         const row = Math.floor(pageCardCount / cols);
-        const x = marginX + col * (cardWidth + cardSpacing);
-        const y = marginY + row * (cardHeight + cardSpacing);
+        const x = marginX + col * cardWidth;
+        const y = marginY + row * cardHeight;
 
         // Add card image if available
         const imageUrl = this.getCardImageUrl(card);
